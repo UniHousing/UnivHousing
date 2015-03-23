@@ -9,28 +9,28 @@ import com.javaweb.po.User;
 
 public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 
-	// 添加用户
+	// save
 	public void save(User user) {
 		this.getHibernateTemplate().save(user);
 	}
 
-	// 删除用户
+	// delete
 	public void delete(int id) {
 		this.getHibernateTemplate().delete(
 				this.getHibernateTemplate().get(User.class, id));
 	}
 
-	//更新用户
+	//update
 	public void update(User user) {
 		this.getHibernateTemplate().saveOrUpdate(user);
 	}
 
-	//查询所有用户
+	//findAll
 	public List queryAll() {
 		return this.getHibernateTemplate().find("from User");
 	}
 
-	//按id查询用户
+	//find By Id
 	public User queryByID(int id) {
 		return (User) this.getHibernateTemplate().get(User.class, id);
 	}
