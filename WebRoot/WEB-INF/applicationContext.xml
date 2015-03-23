@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- 定义数据源Bean -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://localhost/javaweb</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>641019</value>
+		</property>
+	</bean>
+	
+	<!-- 定义SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/javaweb/po/User.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 定义hibernateTemplate -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+
+	<!-- 配置DAO组件 -->
+	<bean id="userDAO" class="com.javaweb.dao.UserDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+	
+	<!-- 配置业务逻辑组件 -->
+	<bean id="userService" class="com.javaweb.service.UserServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="userDAO" ref="userDAO"></property>
+	</bean>
+	
+	<!-- 创建ShowAllActon实例 -->
+	<bean id="showAllAction" class="com.javaweb.action.ShowAllAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+<!-- 创建deleteAction实例 -->
+	<bean id="deleteAction" class="com.javaweb.action.DeleteAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<!-- 创建addAction实例 -->
+	<bean id="addAction" class="com.javaweb.action.AddAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<!-- 创建updateAction实例 -->
+	<bean id="updateAction" class="com.javaweb.action.UpdateAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<!-- 创建showUserAction实例 -->
+	<bean id="showUserAction" class="com.javaweb.action.ShowUserAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+</beans>
