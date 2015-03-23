@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="JavaWeb21">
+    <wb-module deploy-name="UnivHousing">
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="JavaWeb21"/>
-        <property name="java-output-path" value="/JavaWeb21/WebRoot/WEB-INF/classes"/>
+        <property name="java-output-path" value="/UnivHousing/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="UnivHousing"/>
     </wb-module>
 </project-modules>
