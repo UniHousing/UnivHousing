@@ -10,7 +10,7 @@
 			<value>com.mysql.jdbc.Driver</value>
 		</property>
 		<property name="url">
-			<value>jdbc:mysql://localhost/javaweb</value>
+			<value>jdbc:mysql://localhost/housing</value>
 		</property>
 		<property name="username">
 			<value>root</value>

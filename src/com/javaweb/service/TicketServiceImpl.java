@@ -15,7 +15,7 @@ public class TicketServiceImpl implements TicketService{
 
 	// add User
 	public boolean addTicket(Ticket ticket) {
-		if (ticketDAO.queryByID(ticket.getId()) == null) {
+		if (ticketDAO.queryByID(Ticket.class, ticket.getId()) == null) {
 			ticketDAO.save(ticket);
 		} else {
 			return false;
@@ -24,8 +24,8 @@ public class TicketServiceImpl implements TicketService{
 	}
 
 	public boolean deleteTicket(int id) {
-		if (ticketDAO.queryByID(id) != null) {
-			ticketDAO.delete(id);
+		if (ticketDAO.queryByID(Ticket.class,id) != null) {
+			ticketDAO.delete(Ticket.class,id);
 		} else {
 			return false;
 		}
@@ -33,7 +33,7 @@ public class TicketServiceImpl implements TicketService{
 	}
 
 	public boolean updateTicket(Ticket ticket) {
-		if (ticketDAO.queryByID(ticket.getId()) != null) {
+		if (ticketDAO.queryByID(Ticket.class,ticket.getId()) != null) {
 			ticketDAO.update(ticket);
 		} else {
 			return false;
@@ -42,11 +42,11 @@ public class TicketServiceImpl implements TicketService{
 	}
 
 	public List queryAllTicket() {
-		return ticketDAO.queryAll();
+		return ticketDAO.queryAll(Ticket.class);
 	}
 
 	public Ticket queryTicketByID(int id) {
-		return ticketDAO.queryByID(id);
+		return ticketDAO.queryByID(Ticket.class,id);
 	}
 
 
