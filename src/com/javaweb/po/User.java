@@ -2,21 +2,13 @@ package com.javaweb.po;
 
 import java.util.Date;
 
-public class User {
-	//用户ID
-	private int id;
-	//用户名
+public class User extends IdEntity<User>{
 	private String username;
-	//密码
 	private String password;
-	//年龄
 	private int age;
-	//生日
 	private Date birth;
-	//email地址
 	private String email;
 
-	//各属性的setter和getter方法
 	public int getId() {
 		return id;
 	}

@@ -38,6 +38,7 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/javaweb/po/User.hbm.xml</value>
+				<value>com/javaweb/po/Student.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -55,11 +56,20 @@
 			<ref bean="hibernateTemplate"/>
 		</property>
 	</bean>
+	<bean id="studentDAO" class="com.javaweb.dao.StudentDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
 	
 	<!-- 配置业务逻辑组件 -->
 	<bean id="userService" class="com.javaweb.service.UserServiceImpl">
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="userDAO" ref="userDAO"></property>
+	</bean>
+	<bean id="studentService" class="com.javaweb.service.StudentServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="studentDAO" ref="studentDAO"></property>
 	</bean>
 	
 	<!-- 创建ShowAllActon实例 -->
