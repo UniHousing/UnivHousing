@@ -17,7 +17,7 @@
 			<value>root</value>
 		</property>
 		<property name="password">
-			<value>123456</value>
+			<value>641019</value>
 		</property>
 	</bean>
 	
@@ -38,6 +38,7 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/javaweb/po/User.hbm.xml</value>
+				<value>com/javaweb/po/Ticket.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -55,11 +56,20 @@
 			<ref bean="hibernateTemplate"/>
 		</property>
 	</bean>
+	<bean id="ticketDAO" class="com.javaweb.dao.TicketDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
 	
 	<!-- 配置业务逻辑组件 -->
 	<bean id="userService" class="com.javaweb.service.UserServiceImpl">
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="userDAO" ref="userDAO"></property>
+	</bean>
+	<bean id="ticketService" class="com.javaweb.service.TicketServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="ticketDAO" ref="ticketDAO"></property>
 	</bean>
 	
 	<!-- 创建ShowAllActon实例 -->
@@ -85,6 +95,10 @@
 	<!-- 创建showUserAction实例 -->
 	<bean id="showUserAction" class="com.javaweb.action.ShowUserAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<bean id="showTicketAction" class="com.javaweb.action.ShowTicketAction" scope="prototype">
+		<property name="ticketService" ref="ticketService"></property>
 	</bean>
 	
 </beans>
