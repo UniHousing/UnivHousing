@@ -267,5 +267,7 @@ CREATE TABLE `ticket` (
   `student_id` int(11) default NULL,
   `date` datetime default NULL,
   `location` text,
+  `status` text,
+  `description` text,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

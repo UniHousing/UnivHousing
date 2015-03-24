@@ -9,6 +9,27 @@ public class Ticket extends IdEntity<Ticket> {
 	private int studentId;
 	private Date date;
 	private String location;
+	private String description;
+	private String status;
+	public String getDescription()
+	{
+		return description;
+	}
+	
+	public void setDescription(String description)
+	{
+		this.description=description;
+	}
+	
+	public String getStatus()
+	{
+		return status;
+	}
+	
+	public void setStatus(String status)
+	{
+		this.status=status;
+	}
 	
 	public String getType() {
 		return type;
