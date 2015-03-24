@@ -14,8 +14,9 @@ public class UserServiceImpl implements UserService{
 	}
 
 	// add User
+	@Override
 	public boolean addUser(User user) {
-		if (userDAO.queryByID(user.getId()) == null) {
+		if (userDAO.queryByID(User.class,user.getId()) == null) {
 			userDAO.save(user);
 		} else {
 			return false;
@@ -23,17 +24,19 @@ public class UserServiceImpl implements UserService{
 		return true;
 	}
 
+	@Override
 	public boolean deleteUser(int id) {
-		if (userDAO.queryByID(id) != null) {
-			userDAO.delete(id);
+		if (userDAO.queryByID(User.class,id) != null) {
+			userDAO.delete(User.class,id);
 		} else {
 			return false;
 		}
 		return true;
 	}
 
+	@Override
 	public boolean updateUser(User user) {
-		if (userDAO.queryByID(user.getId()) != null) {
+		if (userDAO.queryByID(User.class,user.getId()) != null) {
 			userDAO.update(user);
 		} else {
 			return false;
@@ -41,12 +44,14 @@ public class UserServiceImpl implements UserService{
 		return true;
 	}
 
+	@Override
 	public List queryAllUser() {
-		return userDAO.queryAll();
+		return userDAO.queryAll(User.class);
 	}
 
+	@Override
 	public User queryUserByID(int id) {
-		return userDAO.queryByID(id);
+		return userDAO.queryByID(User.class,id);
 	}
 
 

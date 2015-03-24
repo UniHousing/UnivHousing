@@ -8,23 +8,15 @@ import com.javaweb.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UpdateAction extends ActionSupport{
-	//ÓÃ»§ID
 	private int id;
-	//ÓÃ»§Ãû
 	private String username;
-	//ÃÜÂë
 	private String password;
-	//ÄêÁä
 	private int age;
-	//ÉúÈÕ
 	private Date birth;
-	//emailµØÖ·
 	private String email;
 	
-	//ÒµÎñÂßŒ­×éŒþ
 	private UserService userService;
 
-	//ÉèÖÃÒµÎñÂßŒ­×éŒþ
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
@@ -90,6 +82,7 @@ public class UpdateAction extends ActionSupport{
 	}
 
 
+	@Override
 	public String execute() throws Exception {
 		User user = new User();
 		user.setId(id);
@@ -98,8 +91,6 @@ public class UpdateAction extends ActionSupport{
 		user.setAge(age);
 		user.setBirth(birth);
 		user.setEmail(email);
-		//µ÷ÓÃÒµÎñÂßŒ­×éŒþ±£ŽæžÃÓÃ»§
-		
 		if(userService.updateUser(user)){
 			return SUCCESS;
 		}else {

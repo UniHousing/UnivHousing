@@ -11,10 +11,7 @@ public class ShowUserAction extends ActionSupport {
 	private int id;
 
 	
-	//ÒµÎñÂßŒ­×éŒþ
 	private UserService userService;
-
-	//ÉèÖÃÒµÎñÂßŒ­×éŒþ
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
@@ -27,10 +24,9 @@ public class ShowUserAction extends ActionSupport {
 	public void setId(int id) {
 		this.id = id;
 	}
+	@Override
 	public String execute() throws Exception {
-		//Íš¹ýµ÷ÓÃÒµÎñÂßŒ­×éŒþ»ñµÃžÃIDµÄÓÃ»§
 		User user = userService.queryUserByID(id);
-		//œ«ËùµÃÓÃ»§ÐÅÏ¢Ž¢ŽæÔÚrequest·¶Î§ÖÐ
 		ServletActionContext.getRequest().setAttribute("user", user);
 		return SUCCESS;
 	}
