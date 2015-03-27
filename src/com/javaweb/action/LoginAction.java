@@ -25,6 +25,7 @@ public class LoginAction extends ActionSupport {
 		this.lc = lc;
 	}
 
+	@Override
 	public String execute() {
 		passMap = new HashMap<String, String>();
 		typeMap = new HashMap<String, String>();

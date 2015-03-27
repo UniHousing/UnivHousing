@@ -13,6 +13,7 @@ public class NearbyServiceImpl implements NearbyService{
 	}
 
 	// add Nearby
+	@Override
 	public boolean addNearby(Nearby entity) {
 		if (nearbyDAO.queryByID(Nearby.class,entity.getId()) == null) {
 			nearbyDAO.save(entity);
@@ -22,6 +23,7 @@ public class NearbyServiceImpl implements NearbyService{
 		return true;
 	}
 
+	@Override
 	public boolean deleteNearby(int id) {
 		if (nearbyDAO.queryByID(Nearby.class,id) != null) {
 			nearbyDAO.delete(Nearby.class,id);
@@ -31,6 +33,7 @@ public class NearbyServiceImpl implements NearbyService{
 		return true;
 	}
 
+	@Override
 	public boolean updateNearby(Nearby entity) {
 		if (nearbyDAO.queryByID(Nearby.class,entity.getId()) != null) {
 			nearbyDAO.update(entity);
@@ -40,9 +43,11 @@ public class NearbyServiceImpl implements NearbyService{
 		return true;
 	}
 
+	@Override
 	public List queryAllNearby() {
 		return nearbyDAO.queryAll(Nearby.class);
 	}
+	@Override
 	public Nearby queryNearbyByID(int id) {
 		return nearbyDAO.queryByID(Nearby.class,id);
 	}

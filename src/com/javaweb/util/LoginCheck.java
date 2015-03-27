@@ -1,10 +1,6 @@
  package com.javaweb.util;
 
 import java.util.HashMap;
-import java.util.List;
-
-import com.javaweb.dao.UserDAO;
-import com.javaweb.po.User;
 
 public class LoginCheck {
 
