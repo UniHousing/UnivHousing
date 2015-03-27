@@ -11,8 +11,10 @@
 	<!-- Action必须放在指定的包名空间中-->
 	<package name="struts2" extends="struts-default">
 		<action name="login" class="loginAction">
-			<result name="success">/login_success.jsp</result>
-			<result name="error">/login_failure.jsp</result>
+			<result name="admin">/admin.jsp</result>
+			<result name="student">student.jsp</result>
+			<result name="guest">guest.jsp</result>
+			<result name="error">/login.jsp</result>
 			<result name="input">/login.jsp</result>
 		</action>
 		<action name="showAll" class="showAllAction">

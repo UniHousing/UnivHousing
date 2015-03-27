@@ -6,7 +6,7 @@
 	<link href="<%=request.getContextPath()+"/css/style.css"%>" rel="stylesheet" type="text/css" />
 <style>
 #header {
-	background-color: black;
+	background-color: grey;
 	color: white;
 	text-align: center;
 	padding-top: 30px;
@@ -21,12 +21,7 @@
 	
 	<div id="header">
 		<%
-			if (request.getAttribute("registerResult") != null)
-				out.print("<font size='5'>" +request.getAttribute("registerResult")+ "</font>");
-			else if (request.getAttribute("loginResult") != null)
-				out.print("<font size='5'>"+request.getAttribute("loginResult")+ "</font>");
-			else
-				out.print("<font size='5'>Welcome! Guest</font>");
+				out.print("<font size='5'>Welcome to University Housing System</font>");
 		%>
 	</div>
 	<br><br><br>
@@ -51,6 +46,7 @@
 				</td>
 			</tr>
 			<tr><td><br></td></tr>
+		
 			<tr>
 				<td colspan="2" align="center">
 					<input type="submit" value="Login" style="width:50px">
@@ -58,13 +54,19 @@
 					<input type="button" value="Exit" onclick="self.close()" style="width:50px">
 				</td>
 			</tr>			
-		</tbody></table>	
+		</tbody></table>
+		<br> 
+		<%
+			if(session.getAttribute("login")=="false")
+				out.print("Wrong Input, Please input again!");
+		 %>
+		<br>	
 		</form>
 		
 		<br><HR><br>
 		<a href="<%=request.getContextPath()+"/jsp/usrReg.jsp"%>" style="color: midnightblue;">Create New Account</a>
 	</div>
 	<br><br><br>
-	<div id="footer">Copyright ©2014 YYYD Database Team.</div>
+	<div id="footer">Copyright ©2015 CSC540 Database Team.</div>
 </body>
 </html>

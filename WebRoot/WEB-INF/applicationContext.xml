@@ -2,12 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
-	<!-- login -->
-	<bean id="loginCheck" class="com.javaweb.util.LoginCheck">	
-	</bean>
-	<bean id="loginAction" class="com.javaweb.action.LoginAction">
-		<property name="lc" ref="loginCheck"></property>
-	</bean>
+
 	<!-- 定义数据源Bean -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -115,7 +110,12 @@
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="residenceHallDAO" ref="residenceHallDAO"></property>
 	</bean>
-
+	<!-- login -->
+	<bean id="loginCheck" class="com.javaweb.util.LoginCheck"></bean>
+	<bean id="loginAction" class="com.javaweb.action.LoginAction">
+		<property name="lc" ref="loginCheck"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
 	<!-- 创建ShowAllActon实例 -->
 	<bean id="showAllAction" class="com.javaweb.action.ShowAllAction"
 		scope="prototype">

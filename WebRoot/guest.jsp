@@ -23,6 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    Login Failed. <br>
+    Guest Login Successful. <br>
   </body>
 </html>

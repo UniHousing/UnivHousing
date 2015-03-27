@@ -11,8 +11,8 @@
 
 	<validator type="regex">
 		<param name="fieldName">username</param>
-		<param name="expression"><![CDATA[(\w{6,20})]]></param>
-		<message>用户名长度必须为6至20之间</message>
+		<param name="expression"><![CDATA[(\w{4,20})]]></param>
+		<message>用户名长度必须为4至20之间</message>
 	</validator>
 
 	<validator type="requiredstring">
@@ -23,8 +23,8 @@
 
 	<validator type="regex">
 		<param name="fieldName">password</param>
-		<param name="expression"><![CDATA[(\w{6,20})]]></param>
-		<message>密码长度必须为6至20之间</message>
+		<param name="expression"><![CDATA[(\w{4,20})]]></param>
+		<message>密码长度必须为4至20之间</message>
 	</validator>
 
 	<validator type="int">
@@ -41,10 +41,10 @@
 		<message>出生日期必须在1900-01-01至2010-01-01之间</message>
 	</validator>
 
-	<validator type="email">
+<!-- 	<validator type="email">
 		<param name="fieldName">email</param>
 		<message>请输入有效的电子邮箱地址</message>
-	</validator>
+	</validator> -->
 </validators>
 
 
