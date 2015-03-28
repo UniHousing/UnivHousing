@@ -34,7 +34,7 @@ public class LoginAction extends ActionSupport {
 			for (User user : userlist) {
 				String tempName = user.getUsername();
 				String tempPassword = user.getPassword();
-				String tempType = user.getEmail();
+				String tempType = user.getType();
 				System.out.println(user.getUsername());
 				passMap.put(tempName, tempPassword);
 				typeMap.put(tempName, tempType);

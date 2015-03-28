@@ -7,7 +7,7 @@ public class User extends IdEntity<User>{
 	private String password;
 	private int age;
 	private Date birth;
-	private String email;
+	private String type;
 
 	@Override
 	public int getId() {
@@ -51,12 +51,12 @@ public class User extends IdEntity<User>{
 		this.birth = birth;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getType() {
+		return type;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }

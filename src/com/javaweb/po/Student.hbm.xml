@@ -16,10 +16,10 @@
   <property generated="never" lazy="false" name="type"/>
   <property generated="never" lazy="false" name="gender"/>
   <property generated="never" lazy="false" name="tel"/>
-  <property generated="never" lazy="false" name="alterTel"/>
+  <property generated="never" lazy="false" name="alterTel" column="alter_tel"/>
   <property generated="never" lazy="false" name="addr"/>
   <property generated="never" lazy="false" name="city"/>
-  <property generated="never" lazy="false" name="postCode"/>
+  <property generated="never" lazy="false" name="postCode" column="post_code"/>
   <property column="birth_date" generated="never" lazy="false"
    name="birthDate" type="date"/>
   <property generated="never" lazy="false" name="category"/>
@@ -28,8 +28,8 @@
   <property generated="never" lazy="false" name="need"/>
   <property generated="never" lazy="false" name="comment"/>
   <property generated="never" lazy="false" name="courses"/>
-  <property generated="never" lazy="false" name="approvalId"/>
-  <property generated="never" lazy="false" name="kinId" type="int"/>
+  <property generated="never" lazy="false" name="approvalId" column="approval_id"/>
+  <property generated="never" lazy="false" name="kinId" type="int" column="kin_id"/>
   
  </class>
 </hibernate-mapping>

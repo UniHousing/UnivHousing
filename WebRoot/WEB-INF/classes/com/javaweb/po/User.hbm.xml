@@ -15,6 +15,6 @@
 		<property name="password"></property>
 		<property name="age" type="int"></property>
 		<property name="birth" type="date"></property>
-		<property name="email"></property>
+		<property name="type"></property>
 	</class>
 </hibernate-mapping>

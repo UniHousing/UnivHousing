@@ -13,6 +13,7 @@
 			<td>用户ID</td>
 			<td>用户名</td>	
 			<td>密码</td>
+			<td>Type</td>
 			<td>是否删除</td>
 			<td>是否更新</td>		
 		</tr>
@@ -21,6 +22,7 @@
 			<td><a href="showUser.action?id=<s:property value='#user.id'/>"><s:property value="#user.id"/></a></td>
 			<td><s:property value="#user.username"/></td>	
 			<td><s:property value="#user.password"/></td>
+			<td><s:property value="#user.type"/></td>
 			<td><a href="delete.action?id=<s:property value='#user.id'/>">删除</a></td>
 			<td><a href="update.jsp?id=<s:property value='#user.id'/>">更新</a></td>	
 		</tr>

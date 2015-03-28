@@ -144,6 +144,11 @@
 		scope="prototype">
 		<property name="userService" ref="userService"></property>
 	</bean>
+		<!-- 创建showStudentAction实例 -->
+	<bean id="showStudentAction" class="com.javaweb.action.ShowStudentAction"
+		scope="prototype">
+		<property name="studentService" ref="studentService"></property>
+	</bean>
 
 	<bean id="showTicketAction" class="com.javaweb.action.ShowTicketAction"
 		scope="prototype">
