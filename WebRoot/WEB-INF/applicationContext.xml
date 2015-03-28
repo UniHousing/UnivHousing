@@ -39,6 +39,9 @@
 				<value>com/javaweb/po/User.hbm.xml</value>
 				<value>com/javaweb/po/Student.hbm.xml</value>
 				<value>com/javaweb/po/Ticket.hbm.xml</value>
+				<value>com/javaweb/po/KinInfo.hbm.xml</value>
+				<value>com/javaweb/po/ResidenceHall.hbm.xml</value>
+				<value>com/javaweb/po/Nearby.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -66,6 +69,21 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
+	<bean id="kinInfoDAO" class="com.javaweb.dao.KinInfoDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="residenceHallDAO" class="com.javaweb.dao.ResidenceHallDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="nearbyDAO" class="com.javaweb.dao.NearbyDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
 
 	<!-- 配置业务逻辑组件 -->
 	<bean id="userService" class="com.javaweb.service.UserServiceImpl">
@@ -80,7 +98,24 @@
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="ticketDAO" ref="ticketDAO"></property>
 	</bean>
-
+	<bean id="nearbyService" class="com.javaweb.service.NearbyServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="nearbyDAO" ref="nearbyDAO"></property>
+	</bean>
+	<bean id="kinInfoService" class="com.javaweb.service.KinInfoServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="kinInfoDAO" ref="kinInfoDAO"></property>
+	</bean>
+	<bean id="residenceHallService" class="com.javaweb.service.ResidenceHallServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="residenceHallDAO" ref="residenceHallDAO"></property>
+	</bean>
+	<!-- login -->
+	<bean id="loginCheck" class="com.javaweb.util.LoginCheck"></bean>
+	<bean id="loginAction" class="com.javaweb.action.LoginAction">
+		<property name="lc" ref="loginCheck"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
 	<!-- 创建ShowAllActon实例 -->
 	<bean id="showAllAction" class="com.javaweb.action.ShowAllAction"
 		scope="prototype">
@@ -108,6 +143,11 @@
 	<bean id="showUserAction" class="com.javaweb.action.ShowUserAction"
 		scope="prototype">
 		<property name="userService" ref="userService"></property>
+	</bean>
+		<!-- 创建showStudentAction实例 -->
+	<bean id="showStudentAction" class="com.javaweb.action.ShowStudentAction"
+		scope="prototype">
+		<property name="studentService" ref="studentService"></property>
 	</bean>
 
 	<bean id="showTicketAction" class="com.javaweb.action.ShowTicketAction"

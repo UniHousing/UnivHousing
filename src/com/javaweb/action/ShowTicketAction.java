@@ -15,6 +15,7 @@ public class ShowTicketAction extends ActionSupport{
 		this.ticketService = ticketService;
 	}
 
+	@Override
 	public String execute() throws Exception {
 
 		List allticket = ticketService.queryAllTicket();

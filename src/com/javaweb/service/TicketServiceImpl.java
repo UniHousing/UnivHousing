@@ -14,6 +14,7 @@ public class TicketServiceImpl implements TicketService{
 	}
 
 	// add User
+	@Override
 	public boolean addTicket(Ticket ticket) {
 		if (ticketDAO.queryByID(Ticket.class, ticket.getId()) == null) {
 			ticketDAO.save(ticket);
@@ -23,6 +24,7 @@ public class TicketServiceImpl implements TicketService{
 		return true;
 	}
 
+	@Override
 	public boolean deleteTicket(int id) {
 		if (ticketDAO.queryByID(Ticket.class,id) != null) {
 			ticketDAO.delete(Ticket.class,id);
@@ -32,6 +34,7 @@ public class TicketServiceImpl implements TicketService{
 		return true;
 	}
 
+	@Override
 	public boolean updateTicket(Ticket ticket) {
 		if (ticketDAO.queryByID(Ticket.class,ticket.getId()) != null) {
 			ticketDAO.update(ticket);
@@ -41,10 +44,12 @@ public class TicketServiceImpl implements TicketService{
 		return true;
 	}
 
+	@Override
 	public List queryAllTicket() {
 		return ticketDAO.queryAll(Ticket.class);
 	}
 
+	@Override
 	public Ticket queryTicketByID(int id) {
 		return ticketDAO.queryByID(Ticket.class,id);
 	}
