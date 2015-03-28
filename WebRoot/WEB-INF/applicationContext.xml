@@ -39,15 +39,13 @@
 				<value>com/javaweb/po/User.hbm.xml</value>
 				<value>com/javaweb/po/Student.hbm.xml</value>
 				<value>com/javaweb/po/Ticket.hbm.xml</value>
-<<<<<<< HEAD
 				<value>com/javaweb/po/KinInfo.hbm.xml</value>
 				<value>com/javaweb/po/ResidenceHall.hbm.xml</value>
 				<value>com/javaweb/po/Nearby.hbm.xml</value>
-=======
 				<value>com/javaweb/po/Room.hbm.xml</value>
 				<value>com/javaweb/po/Staff.hbm.xml</value>
 				<value>com/javaweb/po/TerminReq.hbm.xml</value>
->>>>>>> liang
+
 			</list>
 		</property>
 	</bean>
@@ -75,7 +73,6 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
-<<<<<<< HEAD
 	<bean id="kinInfoDAO" class="com.javaweb.dao.KinInfoDAOImpl">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
@@ -91,25 +88,22 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
-
-=======
 	<bean id="terminReqDAO" class="com.javaweb.dao.TerminReqDAOImpl">
 		<property name="hibernateTemplate">
-			<ref bean="hibernateTemplate"/>
+			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
 	<bean id="staffDAO" class="com.javaweb.dao.StaffDAOImpl">
 		<property name="hibernateTemplate">
-			<ref bean="hibernateTemplate"/>
+			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
 	<bean id="roomDAO" class="com.javaweb.dao.RoomDAOImpl">
 		<property name="hibernateTemplate">
-			<ref bean="hibernateTemplate"/>
+			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
-	
->>>>>>> liang
+
 	<!-- 配置业务逻辑组件 -->
 	<bean id="userService" class="com.javaweb.service.UserServiceImpl">
 		<!-- 为业务逻辑组件注入DAO组件 -->
@@ -123,7 +117,6 @@
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="ticketDAO" ref="ticketDAO"></property>
 	</bean>
-<<<<<<< HEAD
 	<bean id="nearbyService" class="com.javaweb.service.NearbyServiceImpl">
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="nearbyDAO" ref="nearbyDAO"></property>
@@ -136,16 +129,8 @@
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="residenceHallDAO" ref="residenceHallDAO"></property>
 	</bean>
-	<!-- login -->
-	<bean id="loginCheck" class="com.javaweb.util.LoginCheck"></bean>
-	<bean id="loginAction" class="com.javaweb.action.LoginAction">
-		<property name="lc" ref="loginCheck"></property>
-		<property name="userService" ref="userService"></property>
-	</bean>
-=======
-	
 	<bean id="roomService" class="com.javaweb.service.RoomServiceImpl">
-		<property name="roomDAO" ref="roomDAO"></property>	
+		<property name="roomDAO" ref="roomDAO"></property>
 	</bean>
 	<bean id="staffService" class="com.javaweb.service.StaffServiceImpl">
 		<property name="staffDAO" ref="staffDAO"></property>
@@ -153,16 +138,21 @@
 	<bean id="terminReqService" class="com.javaweb.service.TerminReqServiceImpl">
 		<property name="terminReqDAO" ref="terminReqDAO"></property>
 	</bean>
-	
-	
->>>>>>> liang
+	<!-- login -->
+	<bean id="loginCheck" class="com.javaweb.util.LoginCheck"></bean>
+	<bean id="loginAction" class="com.javaweb.action.LoginAction">
+		<property name="lc" ref="loginCheck"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+
+
 	<!-- 创建ShowAllActon实例 -->
 	<bean id="showAllAction" class="com.javaweb.action.ShowAllAction"
 		scope="prototype">
 		<property name="userService" ref="userService"></property>
 	</bean>
-	
-	
+
+
 	<!-- 创建deleteAction实例 -->
 	<bean id="deleteAction" class="com.javaweb.action.DeleteAction"
 		scope="prototype">
@@ -185,7 +175,7 @@
 		scope="prototype">
 		<property name="userService" ref="userService"></property>
 	</bean>
-		<!-- 创建showStudentAction实例 -->
+	<!-- 创建showStudentAction实例 -->
 	<bean id="showStudentAction" class="com.javaweb.action.ShowStudentAction"
 		scope="prototype">
 		<property name="studentService" ref="studentService"></property>
@@ -200,5 +190,5 @@
 		scope="prototype">
 		<property name="staffService" ref="staffService"></property>
 	</bean>
-	
+
 </beans>
