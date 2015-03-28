@@ -220,6 +220,8 @@ CREATE TABLE `staff` (
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
   `id` int(11) NOT NULL auto_increment,
+  `username` varchar(50) default NULL,
+  `password` varchar(50) default NULL,
   `fname` varchar(50) default NULL,
   `lname` varchar(50) default NULL,
   `type` varchar(255) default NULL COMMENT 'student type',

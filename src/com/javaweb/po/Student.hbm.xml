@@ -9,6 +9,8 @@
    <generator class="identity"/>
   </id>
   <!-- 定义其他属性 -->
+  <property name="username"/>
+  <property name="password"></property>
   <property generated="never" lazy="false" name="fname"/>
   <property generated="never" lazy="false" name="lname"/>
   <property generated="never" lazy="false" name="type"/>
@@ -28,5 +30,6 @@
   <property generated="never" lazy="false" name="courses"/>
   <property generated="never" lazy="false" name="approvalId"/>
   <property generated="never" lazy="false" name="kinId" type="int"/>
+  
  </class>
 </hibernate-mapping>
