@@ -39,6 +39,9 @@
 				<value>com/javaweb/po/User.hbm.xml</value>
 				<value>com/javaweb/po/Student.hbm.xml</value>
 				<value>com/javaweb/po/Ticket.hbm.xml</value>
+				<value>com/javaweb/po/Room.hbm.xml</value>
+				<value>com/javaweb/po/Staff.hbm.xml</value>
+				<value>com/javaweb/po/TerminReq.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -66,7 +69,22 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
-
+	<bean id="terminReqDAO" class="com.javaweb.dao.TerminReqDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+	<bean id="staffDAO" class="com.javaweb.dao.StaffDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+	<bean id="roomDAO" class="com.javaweb.dao.RoomDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+	
 	<!-- 配置业务逻辑组件 -->
 	<bean id="userService" class="com.javaweb.service.UserServiceImpl">
 		<!-- 为业务逻辑组件注入DAO组件 -->
@@ -80,13 +98,25 @@
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="ticketDAO" ref="ticketDAO"></property>
 	</bean>
-
+	
+	<bean id="roomService" class="com.javaweb.service.RoomServiceImpl">
+		<property name="roomDAO" ref="roomDAO"></property>	
+	</bean>
+	<bean id="staffService" class="com.javaweb.service.StaffServiceImpl">
+		<property name="staffDAO" ref="staffDAO"></property>
+	</bean>
+	<bean id="terminReqService" class="com.javaweb.service.TerminReqServiceImpl">
+		<property name="terminReqDAO" ref="terminReqDAO"></property>
+	</bean>
+	
+	
 	<!-- 创建ShowAllActon实例 -->
 	<bean id="showAllAction" class="com.javaweb.action.ShowAllAction"
 		scope="prototype">
 		<property name="userService" ref="userService"></property>
 	</bean>
-
+	
+	
 	<!-- 创建deleteAction实例 -->
 	<bean id="deleteAction" class="com.javaweb.action.DeleteAction"
 		scope="prototype">
@@ -115,4 +145,9 @@
 		<property name="ticketService" ref="ticketService"></property>
 	</bean>
 
+	<bean id="showStaffAction" class="com.javaweb.action.ShowStaffAction"
+		scope="prototype">
+		<property name="staffService" ref="staffService"></property>
+	</bean>
+	
 </beans>

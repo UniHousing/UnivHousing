@@ -38,6 +38,10 @@
 			<!-- 定义处理结果与视图资源之间的关系-->
 			<result name="success">/showAllTickets.jsp</result>
 		</action>
+		<action name="showAllStaff" class="showStaffAction">
+			<!-- 定义处理结果与视图资源之间的关系-->
+			<result name="success">/showAllStaff.jsp</result>
+		</action>
 	</package>
 </struts>
 
