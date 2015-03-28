@@ -78,12 +78,27 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
+	<bean id="familyApartmentDAO" class="com.javaweb.dao.FamilyApartmentDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
 	<bean id="residenceHallDAO" class="com.javaweb.dao.ResidenceHallDAOImpl">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
+	<bean id="familyMemberDAO" class="com.javaweb.dao.FamilyMemberDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
 	<bean id="nearbyDAO" class="com.javaweb.dao.NearbyDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="generalApartmentDAO" class="com.javaweb.dao.GeneralApartmentDAOImpl">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
 		</property>
@@ -103,8 +118,29 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
+	<bean id="invoiceDAO" class="com.javaweb.dao.InvoiceDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
 
 	<!-- 配置业务逻辑组件 -->
+	<bean id="familyApartmentService" class="com.javaweb.service.FamilyApartmentServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="familyApartmentDAO" ref="familyApartmentDAO"></property>
+	</bean>
+	<bean id="familyMemberService" class="com.javaweb.service.FamilyMemberServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="familyMemberDAO" ref="familyMemberDAO"></property>
+	</bean>
+	<bean id="generalApartmentService" class="com.javaweb.service.GeneralApartmentServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="generalApartmentDAO" ref="generalApartmentDAO"></property>
+	</bean>
+	<bean id="invoiceService" class="com.javaweb.service.InvoiceServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="invoiceDAO" ref="invoiceDAO"></property>
+	</bean>
 	<bean id="userService" class="com.javaweb.service.UserServiceImpl">
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="userDAO" ref="userDAO"></property>
