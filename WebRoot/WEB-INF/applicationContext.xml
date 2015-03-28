@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- 定义数据源Bean -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://localhost/housing</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>123456</value>
+		</property>
+	</bean>
+
+	<!-- 定义SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/javaweb/po/User.hbm.xml</value>
+				<value>com/javaweb/po/Student.hbm.xml</value>
+				<value>com/javaweb/po/Ticket.hbm.xml</value>
+<<<<<<< HEAD
+				<value>com/javaweb/po/KinInfo.hbm.xml</value>
+				<value>com/javaweb/po/ResidenceHall.hbm.xml</value>
+				<value>com/javaweb/po/Nearby.hbm.xml</value>
+=======
+				<value>com/javaweb/po/Room.hbm.xml</value>
+				<value>com/javaweb/po/Staff.hbm.xml</value>
+				<value>com/javaweb/po/TerminReq.hbm.xml</value>
+>>>>>>> liang
+			</list>
+		</property>
+	</bean>
+
+	<!-- 定义hibernateTemplate -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- 配置DAO组件 -->
+	<bean id="userDAO" class="com.javaweb.dao.UserDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="studentDAO" class="com.javaweb.dao.StudentDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="ticketDAO" class="com.javaweb.dao.TicketDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+<<<<<<< HEAD
+	<bean id="kinInfoDAO" class="com.javaweb.dao.KinInfoDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="residenceHallDAO" class="com.javaweb.dao.ResidenceHallDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="nearbyDAO" class="com.javaweb.dao.NearbyDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+=======
+	<bean id="terminReqDAO" class="com.javaweb.dao.TerminReqDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+	<bean id="staffDAO" class="com.javaweb.dao.StaffDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+	<bean id="roomDAO" class="com.javaweb.dao.RoomDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+	
+>>>>>>> liang
+	<!-- 配置业务逻辑组件 -->
+	<bean id="userService" class="com.javaweb.service.UserServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="userDAO" ref="userDAO"></property>
+	</bean>
+	<bean id="studentService" class="com.javaweb.service.StudentServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="studentDAO" ref="studentDAO"></property>
+	</bean>
+	<bean id="ticketService" class="com.javaweb.service.TicketServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="ticketDAO" ref="ticketDAO"></property>
+	</bean>
+<<<<<<< HEAD
+	<bean id="nearbyService" class="com.javaweb.service.NearbyServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="nearbyDAO" ref="nearbyDAO"></property>
+	</bean>
+	<bean id="kinInfoService" class="com.javaweb.service.KinInfoServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="kinInfoDAO" ref="kinInfoDAO"></property>
+	</bean>
+	<bean id="residenceHallService" class="com.javaweb.service.ResidenceHallServiceImpl">
+		<!-- 为业务逻辑组件注入DAO组件 -->
+		<property name="residenceHallDAO" ref="residenceHallDAO"></property>
+	</bean>
+	<!-- login -->
+	<bean id="loginCheck" class="com.javaweb.util.LoginCheck"></bean>
+	<bean id="loginAction" class="com.javaweb.action.LoginAction">
+		<property name="lc" ref="loginCheck"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+=======
+	
+	<bean id="roomService" class="com.javaweb.service.RoomServiceImpl">
+		<property name="roomDAO" ref="roomDAO"></property>	
+	</bean>
+	<bean id="staffService" class="com.javaweb.service.StaffServiceImpl">
+		<property name="staffDAO" ref="staffDAO"></property>
+	</bean>
+	<bean id="terminReqService" class="com.javaweb.service.TerminReqServiceImpl">
+		<property name="terminReqDAO" ref="terminReqDAO"></property>
+	</bean>
+	
+	
+>>>>>>> liang
+	<!-- 创建ShowAllActon实例 -->
+	<bean id="showAllAction" class="com.javaweb.action.ShowAllAction"
+		scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	
+	<!-- 创建deleteAction实例 -->
+	<bean id="deleteAction" class="com.javaweb.action.DeleteAction"
+		scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+
+	<!-- 创建addAction实例 -->
+	<bean id="addAction" class="com.javaweb.action.AddAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+
+	<!-- 创建updateAction实例 -->
+	<bean id="updateAction" class="com.javaweb.action.UpdateAction"
+		scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+
+	<!-- 创建showUserAction实例 -->
+	<bean id="showUserAction" class="com.javaweb.action.ShowUserAction"
+		scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+		<!-- 创建showStudentAction实例 -->
+	<bean id="showStudentAction" class="com.javaweb.action.ShowStudentAction"
+		scope="prototype">
+		<property name="studentService" ref="studentService"></property>
+	</bean>
+
+	<bean id="showTicketAction" class="com.javaweb.action.ShowTicketAction"
+		scope="prototype">
+		<property name="ticketService" ref="ticketService"></property>
+	</bean>
+
+	<bean id="showStaffAction" class="com.javaweb.action.ShowStaffAction"
+		scope="prototype">
+		<property name="staffService" ref="staffService"></property>
+	</bean>
+	
+</beans>
