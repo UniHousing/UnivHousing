@@ -2,21 +2,21 @@ package com.javaweb.service;
 
 import java.util.List;
 
-import com.javaweb.dao.RoomDAO;
-import com.javaweb.po.Room;
+import com.javaweb.dao.StaffDAO;
+import com.javaweb.po.Staff;
 
-public class StaffServiceImpl implements RoomService {
-	private RoomDAO roomDAO;
+public class StaffServiceImpl implements StaffService {
+	private StaffDAO staffDAO;
 
-	public void setRoomDAO(RoomDAO roomDAO) {
-		this.roomDAO = roomDAO;
+	public void setStaffDAO(StaffDAO staffDAO) {
+		this.staffDAO = staffDAO;
 	}
 
-	// add Room
+	// add Staff
 	@Override
-	public boolean addRoom(Room room) {
-		if (roomDAO.queryByID(Room.class,room.getId()) == null) {
-			roomDAO.save(room);
+	public boolean addStaff(Staff staff) {
+		if (staffDAO.queryByID(Staff.class,staff.getId()) == null) {
+			staffDAO.save(staff);
 		} else {
 			return false;
 		}
@@ -24,9 +24,9 @@ public class StaffServiceImpl implements RoomService {
 	}
 
 	@Override
-	public boolean deleteRoom(int id) {
-		if (roomDAO.queryByID(Room.class,id) != null) {
-			roomDAO.delete(Room.class,id);
+	public boolean deleteStaff(int id) {
+		if (staffDAO.queryByID(Staff.class,id) != null) {
+			staffDAO.delete(Staff.class,id);
 		} else {
 			return false;
 		}
@@ -34,9 +34,9 @@ public class StaffServiceImpl implements RoomService {
 	}
 
 	@Override
-	public boolean updateRoom(Room room) {
-		if (roomDAO.queryByID(Room.class,room.getId()) != null) {
-			roomDAO.update(room);
+	public boolean updateStaff(Staff staff) {
+		if (staffDAO.queryByID(Staff.class,staff.getId()) != null) {
+			staffDAO.update(staff);
 		} else {
 			return false;
 		}
@@ -44,13 +44,13 @@ public class StaffServiceImpl implements RoomService {
 	}
 
 	@Override
-	public List queryAllRoom() {
-		return roomDAO.queryAll(Room.class);
+	public List queryAllStaff() {
+		return staffDAO.queryAll(Staff.class);
 	}
 
 	@Override
-	public Room queryRoomByID(int id) {
-		return roomDAO.queryByID(Room.class,id);
+	public Staff queryStaffByID(int id) {
+		return staffDAO.queryByID(Staff.class,id);
 	}
 
 

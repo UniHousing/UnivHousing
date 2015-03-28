@@ -16,6 +16,6 @@
 		<property name="studentId" column="student_id" type="int"></property>
 		<property name="date" type="date"></property>
 		<property name="status" column="status"></property>
-		<property name="discription" column="discription"></property>
+		<property name="description" column="description"></property>
 	</class>
 </hibernate-mapping>
