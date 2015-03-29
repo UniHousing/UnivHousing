@@ -295,7 +295,20 @@ CREATE TABLE `ticket` (
   `student_id` int(11) default NULL,
   `date` datetime default NULL,
   `location` text,
-  `status` text,
+  `status` varchar(20),
   `description` text,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for ticket
+-- ----------------------------
+DROP TABLE IF EXISTS `parking_request`;
+CREATE TABLE `parking_request` (
+  `id` int(11) NOT NULL auto_increment,
+  `vehicle_type` varchar(20) default NULL,
+  `nearby` varchar(20) default NULL,
+  `handicapped` varchar(20) default NULL,
+  `status` varchar(20) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

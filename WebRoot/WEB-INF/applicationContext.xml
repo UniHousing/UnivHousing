@@ -50,6 +50,7 @@
 				<value>com/javaweb/po/Staff.hbm.xml</value>
 				<value>com/javaweb/po/TerminReq.hbm.xml</value>
 				<value>com/javaweb/po/Guest.hbm.xml</value>
+				<value>com/javaweb/po/ParkingRequest.hbm.xml</value>
 
 			</list>
 		</property>
@@ -133,6 +134,12 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
+	
+	<bean id="parkingRequestDAO" class="com.javaweb.dao.ParkingRequestDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
 
 	<!-- 配置业务逻辑组件 -->
 	<bean id="familyApartmentService" class="com.javaweb.service.FamilyApartmentServiceImpl">
@@ -186,6 +193,9 @@
 	</bean>
 	<bean id="terminReqService" class="com.javaweb.service.TerminReqServiceImpl">
 		<property name="terminReqDAO" ref="terminReqDAO"></property>
+	</bean>
+	<bean id="parkingRequestService" class="com.javaweb.service.ParkingRequestServiceImpl">
+		<property name="parkingRequestDAO" ref="parkingRequestDAO"></property>
 	</bean>
 	<!-- login -->
 	<bean id="loginCheck" class="com.javaweb.util.LoginCheck"></bean>
