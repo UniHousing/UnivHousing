@@ -2,7 +2,7 @@ package com.javaweb.po;
 
 import java.util.Date;
 
-public class Student extends IdEntity<Student> {
+public class Guest extends IdEntity<Guest> {
 	private String password;
 	private String fname;
 	private String lname;
@@ -21,8 +21,6 @@ public class Student extends IdEntity<Student> {
 	private String comment;
 	private String status;
 	private String courses;
-	private int kinId;
-	
 
 	public String getPassword() {
 		return password;
@@ -136,11 +134,5 @@ public class Student extends IdEntity<Student> {
 		this.courses = courses;
 	}
 
-	public int getKinId() {
-		return kinId;
-	}
-	public void setKinId(int kinId) {
-		this.kinId = kinId;
-	}
 
 }

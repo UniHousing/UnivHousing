@@ -49,6 +49,7 @@
 				<value>com/javaweb/po/Room.hbm.xml</value>
 				<value>com/javaweb/po/Staff.hbm.xml</value>
 				<value>com/javaweb/po/TerminReq.hbm.xml</value>
+				<value>com/javaweb/po/Guest.hbm.xml</value>
 
 			</list>
 		</property>
@@ -117,6 +118,11 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
+		<bean id="guestDAO" class="com.javaweb.dao.GuestDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
 	<bean id="roomDAO" class="com.javaweb.dao.RoomDAOImpl">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
@@ -174,6 +180,9 @@
 	</bean>
 	<bean id="staffService" class="com.javaweb.service.StaffServiceImpl">
 		<property name="staffDAO" ref="staffDAO"></property>
+	</bean>
+	<bean id="guestService" class="com.javaweb.service.GuestServiceImpl">
+		<property name="guestDAO" ref="guestDAO"></property>
 	</bean>
 	<bean id="terminReqService" class="com.javaweb.service.TerminReqServiceImpl">
 		<property name="terminReqDAO" ref="terminReqDAO"></property>

@@ -222,7 +222,6 @@ CREATE TABLE `staff` (
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
   `id` int(11) NOT NULL auto_increment,
-  `username` varchar(50) default NULL,
   `password` varchar(50) default NULL,
   `fname` varchar(50) default NULL,
   `lname` varchar(50) default NULL,
@@ -241,11 +240,36 @@ CREATE TABLE `student` (
   `comment` text,
   `status` varchar(10) default NULL,
   `courses` text,
-  `approval_id` varchar(64) default NULL,
   `kin_id` int(11) default NULL COMMENT 'emergency contact',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Table structure for guest
+-- ----------------------------
+DROP TABLE IF EXISTS `guest`;
+CREATE TABLE `guest` (
+  `id` int(11) NOT NULL auto_increment,
+  `password` varchar(50) default NULL,
+  `fname` varchar(50) default NULL,
+  `lname` varchar(50) default NULL,
+  `type` varchar(255) default NULL COMMENT 'student type',
+  `gender` varchar(10) default NULL,
+  `tel` varchar(20) default NULL,
+  `alter_tel` varchar(20) default NULL,
+  `addr` text,
+  `city` varchar(255) default NULL,
+  `post_code` varchar(10) default NULL,
+  `birth_date` datetime default NULL,
+  `category` varchar(255) default NULL,
+  `nation` varchar(40) default NULL,
+  `smoker` varchar(40) default NULL,
+  `need` text COMMENT 'special need',
+  `comment` text,
+  `status` varchar(10) default NULL,
+  `courses` text,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- ----------------------------
 -- Table structure for terminate_request
 -- ----------------------------
