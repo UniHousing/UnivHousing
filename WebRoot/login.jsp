@@ -30,10 +30,10 @@
 		<table><tbody>
 			<tr>
 				<td>
-					<label for="user">Username:</label>
+					<label for="user">uid:</label>
 				</td>
 				<td >
-					<input type="text" name="userName" placeholder="Enter unity id" required>
+					<input type="text" name="id" placeholder="Enter unity id" required>
 				</td>
 			</tr>
 			<tr><td><br></td></tr>
