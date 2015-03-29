@@ -3,7 +3,7 @@
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
  <!-- 每个class对应一个持久化对象 -->
- <class name="com.javaweb.po.Student" table="student">
+ <class name="com.javaweb.po.Guest" table="guest">
   <!-- id元素用来定义主键标识,并指定主键自动递增 -->
   <id name="id">
    <generator class="identity"/>
@@ -27,7 +27,6 @@
   <property generated="never" lazy="false" name="need"/>
   <property generated="never" lazy="false" name="comment"/>
   <property generated="never" lazy="false" name="courses"/>
-  <property generated="never" lazy="false" name="kinId" type="int" column="kin_id"/>
   
  </class>
 </hibernate-mapping>
