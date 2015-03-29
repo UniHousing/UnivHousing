@@ -182,7 +182,8 @@
 	<bean id="loginCheck" class="com.javaweb.util.LoginCheck"></bean>
 	<bean id="loginAction" class="com.javaweb.action.LoginAction">
 		<property name="lc" ref="loginCheck"></property>
-		<property name="userService" ref="userService"></property>
+		<property name="studentService" ref="studentService"></property>
+		<property name="staffService" ref="staffService"></property>
 	</bean>
 
 

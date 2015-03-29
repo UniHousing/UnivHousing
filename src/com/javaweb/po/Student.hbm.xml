@@ -9,7 +9,7 @@
    <generator class="identity"/>
   </id>
   <!-- 定义其他属性 -->
-  <property name="username"/>
+  <property name="username"></property>
   <property name="password"></property>
   <property generated="never" lazy="false" name="fname"/>
   <property generated="never" lazy="false" name="lname"/>

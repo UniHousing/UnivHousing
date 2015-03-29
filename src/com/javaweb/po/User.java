@@ -8,17 +8,6 @@ public class User extends IdEntity<User>{
 	private int age;
 	private Date birth;
 	private String type;
-
-	@Override
-	public int getId() {
-		return id;
-	}
-
-	@Override
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getUsername() {
 		return username;
 	}
