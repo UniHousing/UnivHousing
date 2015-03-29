@@ -36,6 +36,10 @@
 		</property>
 		<property name="mappingResources">
 			<list>
+			    <value>com/javaweb/po/FamilyApartment.hbm.xml</value>
+				<value>com/javaweb/po/FamilyMember.hbm.xml</value>
+			    <value>com/javaweb/po/GeneralApartment.hbm.xml</value>
+				<value>com/javaweb/po/Invoice.hbm.xml</value>
 				<value>com/javaweb/po/User.hbm.xml</value>
 				<value>com/javaweb/po/Student.hbm.xml</value>
 				<value>com/javaweb/po/Ticket.hbm.xml</value>
