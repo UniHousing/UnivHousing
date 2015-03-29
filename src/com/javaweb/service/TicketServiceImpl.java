@@ -54,5 +54,11 @@ public class TicketServiceImpl implements TicketService{
 		return ticketDAO.queryByID(Ticket.class,id);
 	}
 
+	@Override
+	public List<Ticket> queryTicketsbyStudentId(int sid) {
+		// TODO Auto-generated method stub
+		return ticketDAO.findTicketsbyStudentId(sid);
+	}
+
 
 }
