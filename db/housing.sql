@@ -202,6 +202,8 @@ CREATE TABLE `room` (
 DROP TABLE IF EXISTS `staff`;
 CREATE TABLE `staff` (
   `id` int(11) NOT NULL auto_increment,
+  `username` varchar(20) default NULL,
+  `password` varchar(20) default NULL,
   `fname` varchar(20) default NULL,
   `lname` varchar(20) default NULL,
   `addr` text,
@@ -220,6 +222,8 @@ CREATE TABLE `staff` (
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
   `id` int(11) NOT NULL auto_increment,
+  `username` varchar(50) default NULL,
+  `password` varchar(50) default NULL,
   `fname` varchar(50) default NULL,
   `lname` varchar(50) default NULL,
   `type` varchar(255) default NULL COMMENT 'student type',

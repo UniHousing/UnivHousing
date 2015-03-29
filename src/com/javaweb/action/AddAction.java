@@ -13,8 +13,18 @@ public class AddAction extends ActionSupport{
 	private String password;
 	private int age;
 	private Date birth;
-	private String email;
+	private String type;
 	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+
 	private UserService userService;
 
 	public void setUserService(UserService userService) {
@@ -61,15 +71,6 @@ public class AddAction extends ActionSupport{
 	}
 
 
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 
 	@Override
 	public String execute() throws Exception {
@@ -78,7 +79,7 @@ public class AddAction extends ActionSupport{
 		user.setPassword(password);
 		user.setAge(age);
 		user.setBirth(birth);
-		user.setEmail(email);
+		user.setType(type);
 		if(userService.addUser(user)){
 			return SUCCESS; 
 		}else{

@@ -7,16 +7,7 @@ public class User extends IdEntity<User>{
 	private String password;
 	private int age;
 	private Date birth;
-	private String email;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
+	private String type;
 	public String getUsername() {
 		return username;
 	}
@@ -49,12 +40,12 @@ public class User extends IdEntity<User>{
 		this.birth = birth;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getType() {
+		return type;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }

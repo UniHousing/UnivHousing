@@ -30,8 +30,8 @@
 			<td><s:property value="#user.birth"/></td>
 		</tr>
 		<tr>
-			<td>电子邮箱地址</td>
-			<td><s:property value="#user.email"/></td>			
+			<td>Type</td>
+			<td><s:property value="#user.type"/></td>			
 		</tr>	
 	</table>
 	<a href="showAll.action">返回用户列表</a>		

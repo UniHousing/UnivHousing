@@ -4,17 +4,17 @@
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<!-- 每个class对应一个持久化对象 -->
-	<class name="com.javaweb.po.User">
+	<class name="com.javaweb.po.ResidenceHall" table="residence_hall">
 		<!-- id元素用来定义主键标识,并指定主键自动递增 -->
 		<id name="id">
 			<generator class="identity"></generator>
 		</id>
 		
 		<!-- 定义其他属性 -->
-		<property name="username"></property>
-		<property name="password"></property>
-		<property name="age" type="int"></property>
-		<property name="birth" type="date"></property>
-		<property name="email"></property>
+		<property name="name"></property>
+		<property name="addr"></property>
+		<property name="tel"></property>
+		<property name="managerId" type="int"></property>
+
 	</class>
 </hibernate-mapping>
