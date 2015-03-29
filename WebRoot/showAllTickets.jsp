@@ -19,7 +19,7 @@
 		<s:iterator value="#request.all" id="ticket">
 		<tr>
 			<td><a href="showTicket.action?id=<s:property value='#ticket.id'/>"><s:property value="#ticket.id"/></a></td>
-			<td><s:property value="#ticket.studentid"/></td>	
+			<td><s:property value="#ticket.studentId"/></td>	
 			<td><s:property value="#ticket.type"/></td>
 			<td><s:property value="#ticket.date"/></td>
 			<td><s:property value="#ticket:location"/></td>
