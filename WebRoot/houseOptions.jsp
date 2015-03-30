@@ -26,14 +26,14 @@
 	</div>
 	<br><br><br>
 	<div align="center">
-	<h2>Logged in Supervisor/Admin</h2>
-		<br><a href="<%="showNewLeaseRequest.action"%>" style="color: midnightblue;">View New Lease Requests</a>
-		<br><a href="<%="showNewTerminReq.action"%>" style="color: midnightblue;">View Terminate Lease Requests</a>
-		<br><a href="<%="showAllTicket.action"%>" style="color: midnightblue;">View Maintenance Tickets</a>
-		<br><a href="<%="showAllParkingRequest.action"%>" style="color: midnightblue;">View Parking Requests</a>
-		<br><a href="profileOptionsAdmin.jsp" style="color: midnightblue;">Profile</a>
-		
-		<br><a href="login.jsp" style="color: midnightblue;">Back</a>
+	<h2>Logged in Student->House Options</h2>
+		<br><a href="<%="showAllStudent.action"%>" style="color: midnightblue;">View Invoices</a>
+		<br><a href="<%="showAllStudent.action"%>" style="color: midnightblue;">View Leases</a>
+		<br><a href="requestOptions.jsp" style="color: midnightblue;">New Request</a>
+		<br><a href="<%="showAllStudent.action"%>" style="color: midnightblue;">View/Cancel Requests</a>
+		<br><a href="<%="showAllStudent.action"%>" style="color: midnightblue;">View Vacancy Houses</a>
+		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>
+		<br><a href="student.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>
 		
 	</div>

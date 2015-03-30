@@ -10,7 +10,6 @@
   </id>
 
   <!-- 定义其他属性 -->
-  <property name="username"></property>
   <property name="password"></property>
   <property name="fname"></property>
   <property name="lname"></property>
