@@ -245,7 +245,17 @@
 		scope="prototype">
 		<property name="ticketService" ref="ticketService"></property>
 	</bean>
-
+	
+	<bean id="addTicketAction" class="com.javaweb.action.addTicketAction"
+		scope="prototype">
+		<property name="ticketService" ref="ticketService"></property>
+	</bean>
+	
+	<bean id="showTicketStatusAction" class="com.javaweb.action.ShowTicketStatusAction"
+		scope="prototype">
+		<property name="ticketService" ref="ticketService"></property>
+	</bean>
+	
 	<bean id="showStaffAction" class="com.javaweb.action.ShowStaffAction"
 		scope="prototype">
 		<property name="staffService" ref="staffService"></property>

@@ -2,20 +2,22 @@ package com.javaweb.po;
 
 public class ParkingRequest extends IdEntity<ParkingRequest>{
 	private String vehicleType;
-	private String nearby;
+	
 	private String handicapped;
 	private String status;
+	private String nearbyt;
+	
 	public String getVehicleType() {
 		return vehicleType;
 	}
 	public void setVehicleType(String vehicleType) {
 		this.vehicleType = vehicleType;
 	}
-	public String getNearbySpot() {
-		return nearby;
+	public String getNearbyt() {
+		return nearbyt;
 	}
-	public void setNearbySpot(String nearby) {
-		this.nearby = nearby;
+	public void setNearbyt(String nearbyt) {
+		this.nearbyt = nearbyt;
 	}
 	public String getHandicapped() {
 		return handicapped;

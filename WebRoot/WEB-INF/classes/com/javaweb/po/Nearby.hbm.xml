@@ -4,16 +4,15 @@
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<!-- 每个class对应一个持久化对象 -->
-	<class name="com.javaweb.po.ParkingRequest" table="parking_request">
+	<class name="com.javaweb.po.Nearby" table="nearby">
 		<!-- id元素用来定义主键标识,并指定主键自动递增 -->
 		<id name="id">
 			<generator class="identity"></generator>
 		</id>
 		
 		<!-- 定义其他属性 -->
-		<property name="vehicleType" column="vehicle_type"></property>
-		<property name="nearbyt" column="nearbyt"></property>
-		<property name="handicapped" ></property>
-		<property name="status" ></property>
+		<property name="lotId" type="int"></property>
+		<property name="houseId" type="int"></property>
+		
 	</class>
 </hibernate-mapping>

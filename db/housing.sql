@@ -202,7 +202,6 @@ CREATE TABLE `room` (
 DROP TABLE IF EXISTS `staff`;
 CREATE TABLE `staff` (
   `id` int(11) NOT NULL auto_increment,
-  `username` varchar(20) default NULL,
   `password` varchar(20) default NULL,
   `fname` varchar(20) default NULL,
   `lname` varchar(20) default NULL,
@@ -294,9 +293,9 @@ CREATE TABLE `ticket` (
   `type` varchar(20) default NULL COMMENT 'serverity',
   `student_id` int(11) default NULL,
   `date` datetime default NULL,
-  `location` text,
+  `location` varchar(20),
   `status` varchar(20),
-  `description` text,
+  `description` varchar(20),
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -307,7 +306,7 @@ DROP TABLE IF EXISTS `parking_request`;
 CREATE TABLE `parking_request` (
   `id` int(11) NOT NULL auto_increment,
   `vehicle_type` varchar(20) default NULL,
-  `nearby` varchar(20) default NULL,
+  `nearbyt` varchar(20) default NULL,
   `handicapped` varchar(20) default NULL,
   `status` varchar(20) default NULL,
   PRIMARY KEY  (`id`)
