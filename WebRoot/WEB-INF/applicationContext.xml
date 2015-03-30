@@ -311,5 +311,7 @@
 		<property name="generalApartmentService" ref="generalApartmentService"></property>
 		<property name="residenceHallService" ref="residenceHallService"></property>
 	</bean>
-
+	<bean id="updateStudentAction" class="com.javaweb.action.UpdateStudentAction">
+		<property name="studentService" ref="studentService"></property>
+	</bean>
 </beans>
