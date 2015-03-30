@@ -1,27 +1,13 @@
 package com.javaweb.po;
 
 public class ParkingSpot extends IdEntity<ParkingSpot>{
-	private int id;
-	private int lot_id;
+	private int lotId;
 	private String classification;
 	private float fee;
 	private String availability;
 	
 
-	@Override
-	public int getId() {
-		return id;
-	}
-	@Override
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getLot_id() {
-		return lot_id;
-	}
-	public void setLot_id(int lot_id) {
-		this.lot_id = lot_id;
-	}
+
 	public String getClassification() {
 		return classification;
 	}
@@ -39,6 +25,12 @@ public class ParkingSpot extends IdEntity<ParkingSpot>{
 	}
 	public void setAvailability(String availability) {
 		this.availability = availability;
+	}
+	public int getLotId() {
+		return lotId;
+	}
+	public void setLotId(int lotId) {
+		this.lotId = lotId;
 	}
 	
 }

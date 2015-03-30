@@ -26,6 +26,7 @@
 	</div>
 	<br><br><br>
 	<div align="center">
+	<br> Login as a Student or Supervisor
 		<form action="login.action" method="post">
 		<table><tbody>
 			<tr>
@@ -50,6 +51,8 @@
 			<tr>
 				<td colspan="2" align="center">
 					<input type="submit" value="Login" style="width:50px">
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" value="Back" style="width:50px" onclick="javascript:window.location='loginInit.jsp';">
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="button" value="Exit" onclick="self.close()" style="width:50px">
 				</td>

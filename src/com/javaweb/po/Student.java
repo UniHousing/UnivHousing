@@ -3,7 +3,6 @@ package com.javaweb.po;
 import java.util.Date;
 
 public class Student extends IdEntity<Student> {
-	private String username;
 	private String password;
 	private String fname;
 	private String lname;
@@ -22,15 +21,9 @@ public class Student extends IdEntity<Student> {
 	private String comment;
 	private String status;
 	private String courses;
-	private String approvalId; // Visitor needs it. Others are null.
 	private int kinId;
 	
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
+
 	public String getPassword() {
 		return password;
 	}
@@ -142,12 +135,7 @@ public class Student extends IdEntity<Student> {
 	public void setCourses(String courses) {
 		this.courses = courses;
 	}
-	public String getApprovalId() {
-		return approvalId;
-	}
-	public void setApprovalId(String approvalId) {
-		this.approvalId = approvalId;
-	}
+
 	public int getKinId() {
 		return kinId;
 	}

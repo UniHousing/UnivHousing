@@ -49,6 +49,12 @@
 				<value>com/javaweb/po/Room.hbm.xml</value>
 				<value>com/javaweb/po/Staff.hbm.xml</value>
 				<value>com/javaweb/po/TerminReq.hbm.xml</value>
+				<value>com/javaweb/po/Guest.hbm.xml</value>
+				<value>com/javaweb/po/ParkingRequest.hbm.xml</value>
+				<value>com/javaweb/po/Lease.hbm.xml</value>
+				<value>com/javaweb/po/LeaseRequest.hbm.xml</value>
+				<value>com/javaweb/po/ParkingLot.hbm.xml</value>
+				<value>com/javaweb/po/ParkingSpot.hbm.xml</value>
 
 			</list>
 		</property>
@@ -117,6 +123,11 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
+		<bean id="guestDAO" class="com.javaweb.dao.GuestDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
 	<bean id="roomDAO" class="com.javaweb.dao.RoomDAOImpl">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
@@ -127,6 +138,37 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
+	
+	<bean id="parkingRequestDAO" class="com.javaweb.dao.ParkingRequestDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+	<bean id="leaseDAO" class="com.javaweb.dao.LeaseDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	
+		<bean id="leaseRequestDAO" class="com.javaweb.dao.LeaseRequestDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	
+		<bean id="parkingLotDAO" class="com.javaweb.dao.ParkingLotDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	
+		<bean id="parkingSpotDAO" class="com.javaweb.dao.ParkingSpotDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
 
 	<!-- 配置业务逻辑组件 -->
 	<bean id="familyApartmentService" class="com.javaweb.service.FamilyApartmentServiceImpl">
@@ -175,9 +217,29 @@
 	<bean id="staffService" class="com.javaweb.service.StaffServiceImpl">
 		<property name="staffDAO" ref="staffDAO"></property>
 	</bean>
+	<bean id="guestService" class="com.javaweb.service.GuestServiceImpl">
+		<property name="guestDAO" ref="guestDAO"></property>
+	</bean>
 	<bean id="terminReqService" class="com.javaweb.service.TerminReqServiceImpl">
 		<property name="terminReqDAO" ref="terminReqDAO"></property>
 	</bean>
+	<bean id="parkingRequestService" class="com.javaweb.service.ParkingRequestServiceImpl">
+		<property name="parkingRequestDAO" ref="parkingRequestDAO"></property>
+	</bean>
+	<bean id="leaseService" class="com.javaweb.service.LeaseServiceImpl">
+		<property name="leaseDAO" ref="leaseDAO"></property>
+	</bean>
+	<bean id="leaseRequestService" class="com.javaweb.service.LeaseRequestServiceImpl">
+		<property name="leaseRequestDAO" ref="leaseRequestDAO"></property>
+	</bean>
+	<bean id="parkingLotService" class="com.javaweb.service.ParkingLotServiceImpl">
+		<property name="parkingLotDAO" ref="parkingLotDAO"></property>
+	</bean>
+	<bean id="parkingSpotService" class="com.javaweb.service.ParkingSpotServiceImpl">
+		<property name="parkingSpotDAO" ref="parkingSpotDAO"></property>
+	</bean>
+
+	
 	<!-- login -->
 	<bean id="loginCheck" class="com.javaweb.util.LoginCheck"></bean>
 	<bean id="loginAction" class="com.javaweb.action.LoginAction">
@@ -185,7 +247,10 @@
 		<property name="studentService" ref="studentService"></property>
 		<property name="staffService" ref="staffService"></property>
 	</bean>
-
+	<bean id="guestLoginAction" class="com.javaweb.action.GuestLoginAction">
+		<property name="lc" ref="loginCheck"></property>
+		<property name="guestService" ref="guestService"></property>		
+	</bean>
 
 	<!-- 创建ShowAllActon实例 -->
 	<bean id="showAllAction" class="com.javaweb.action.ShowAllAction"
@@ -226,7 +291,17 @@
 		scope="prototype">
 		<property name="ticketService" ref="ticketService"></property>
 	</bean>
-
+	
+	<bean id="addTicketAction" class="com.javaweb.action.AddTicketAction"
+		scope="prototype">
+		<property name="ticketService" ref="ticketService"></property>
+	</bean>
+	
+	<bean id="showTicketStatusAction" class="com.javaweb.action.ShowTicketStatusAction"
+		scope="prototype">
+		<property name="ticketService" ref="ticketService"></property>
+	</bean>
+	
 	<bean id="showStaffAction" class="com.javaweb.action.ShowStaffAction"
 		scope="prototype">
 		<property name="staffService" ref="staffService"></property>
