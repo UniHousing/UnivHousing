@@ -15,6 +15,7 @@
 			<result name="student">/student.jsp</result>
 			<result name="error">/login.jsp</result>
 			<result name="input">/login.jsp</result>
+			<result name="maintenanceTicket">/maintenanceTicket.jsp</result>
 		</action>
 		<action name="guestLogin" class="guestLoginAction">
 			<result name="guest">/student.jsp</result>
@@ -50,9 +51,17 @@
 			<!-- 定义处理结果与视图资源之间的关系-->
 			<result name="success">/showStudent.jsp</result>
 		</action>
-		<action name="showAllTickets" class="showTicketAction">
+		<action name="showTicket" class="showTicketAction">
 			<!-- 定义处理结果与视图资源之间的关系-->
-			<result name="success">/showAllTickets.jsp</result>
+			<result name="success">/showTicket.jsp</result>
+		</action>
+		<action name="showTicketStatus" class="showTicketStatusAction">
+			<!-- 定义处理结果与视图资源之间的关系-->
+			<result name="success">/showTicketStatus.jsp</result>
+		</action>
+		<action name="addTicket" class="addTicketAction">
+			<!-- 定义处理结果与视图资源之间的关系-->
+			<result name="success">/addTicket.jsp</result>
 		</action>
 		<action name="showAllStaff" class="showStaffAction">
 			<!-- 定义处理结果与视图资源之间的关系-->
