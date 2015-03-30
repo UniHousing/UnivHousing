@@ -8,8 +8,7 @@
   <id name="id">
    <generator class="identity"/>
   </id>
-  <property name="id"/>
-  <property name="lot_id"/>
+  <property name="lotId" column="lot_id"/>
   <property name="classification"/>
   <property name="fee"/>
   <property name="availability"/>

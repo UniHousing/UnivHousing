@@ -292,7 +292,7 @@
 		<property name="ticketService" ref="ticketService"></property>
 	</bean>
 	
-	<bean id="addTicketAction" class="com.javaweb.action.addTicketAction"
+	<bean id="addTicketAction" class="com.javaweb.action.AddTicketAction"
 		scope="prototype">
 		<property name="ticketService" ref="ticketService"></property>
 	</bean>

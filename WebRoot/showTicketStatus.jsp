@@ -18,7 +18,7 @@
 		<tr>
 			<td><a href="showTicket.action?id=<s:property value='#ticket.id'/>"><s:property value="#ticket.id"/></a></td>
 			<td><s:property value="#ticket.status"/></td>
-			<td><s:property value="#ticket:description"/></td>
+			<td><s:property value="#ticket.description"/></td>
 		</tr>
 		</s:iterator>	
 	</table>
