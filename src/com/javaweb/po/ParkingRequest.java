@@ -2,9 +2,11 @@ package com.javaweb.po;
 
 public class ParkingRequest extends IdEntity<ParkingRequest>{
 	private String vehicleType;
-	private String nearby;
+	
 	private String handicapped;
 	private String status;
+	private String nearby;
+	
 	public String getVehicleType() {
 		return vehicleType;
 	}

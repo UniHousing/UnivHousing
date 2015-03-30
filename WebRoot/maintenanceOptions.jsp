@@ -28,7 +28,7 @@
 	<div align="center">
 	<h2>Logged in Student->Maintenance Options</h2>
 		<br><a href="<%="addTicket.action"%>" style="color: midnightblue;">New Ticket</a>
-		<br><a href="<%="showAllTicket.action"%>" style="color: midnightblue;">View Ticket Status</a>
+		<br><a href="<%="showTicketStatus.action"%>" style="color: midnightblue;">View Ticket Status</a>
 		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>
 		<br><a href="student.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>

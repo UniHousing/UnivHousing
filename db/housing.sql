@@ -93,7 +93,7 @@ CREATE TABLE `kin_info` (
   `student_id` int(11) default NULL,
   `name` varchar(255) default NULL,
   `relationship` varchar(255) default NULL,
-  `addr` text,
+  `addr` varchar(255),
   `city` varchar(50) default NULL,
   `post_code` varchar(10) default NULL,
   `tel` varchar(20) default NULL,
@@ -178,7 +178,7 @@ DROP TABLE IF EXISTS `residence_hall`;
 CREATE TABLE `residence_hall` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(255) default NULL,
-  `addr` text,
+  `addr` varchar(255),
   `tel` varchar(20) default NULL,
   `manager_id` int(11) default NULL,
   PRIMARY KEY  (`id`)
@@ -202,11 +202,10 @@ CREATE TABLE `room` (
 DROP TABLE IF EXISTS `staff`;
 CREATE TABLE `staff` (
   `id` int(11) NOT NULL auto_increment,
-  `username` varchar(20) default NULL,
   `password` varchar(20) default NULL,
   `fname` varchar(20) default NULL,
   `lname` varchar(20) default NULL,
-  `addr` text,
+  `addr` varchar(255),
   `city` varchar(50) default NULL,
   `post_code` varchar(10) default NULL,
   `birth_date` datetime default NULL,
@@ -229,17 +228,17 @@ CREATE TABLE `student` (
   `gender` varchar(10) default NULL,
   `tel` varchar(20) default NULL,
   `alter_tel` varchar(20) default NULL,
-  `addr` text,
+  `addr` varchar(255),
   `city` varchar(255) default NULL,
   `post_code` varchar(10) default NULL,
   `birth_date` datetime default NULL,
   `category` varchar(255) default NULL,
   `nation` varchar(40) default NULL,
   `smoker` varchar(40) default NULL,
-  `need` text COMMENT 'special need',
-  `comment` text,
+  `need` varchar(255) COMMENT 'special need',
+  `comment` varchar(255),
   `status` varchar(10) default NULL,
-  `courses` text,
+  `courses` varchar(255),
   `kin_id` int(11) default NULL COMMENT 'emergency contact',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -257,17 +256,17 @@ CREATE TABLE `guest` (
   `gender` varchar(10) default NULL,
   `tel` varchar(20) default NULL,
   `alter_tel` varchar(20) default NULL,
-  `addr` text,
+  `addr` varchar(255),
   `city` varchar(255) default NULL,
   `post_code` varchar(10) default NULL,
   `birth_date` datetime default NULL,
   `category` varchar(255) default NULL,
   `nation` varchar(40) default NULL,
   `smoker` varchar(40) default NULL,
-  `need` text COMMENT 'special need',
-  `comment` text,
+  `need` varchar(255) COMMENT 'special need',
+  `comment` varchar(255),
   `status` varchar(10) default NULL,
-  `courses` text,
+  `courses` varchar(255),
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- ----------------------------
@@ -277,7 +276,7 @@ DROP TABLE IF EXISTS `termin_req`;
 CREATE TABLE `termin_req` (
   `id` int(11) NOT NULL auto_increment,
   `lease_id` int(11) default NULL,
-  `reason` text,
+  `reason` varchar(255),
   `date` datetime default NULL,
   `status` varchar(40) default NULL,
   `inspection_date` datetime default NULL,
@@ -294,9 +293,9 @@ CREATE TABLE `ticket` (
   `type` varchar(20) default NULL COMMENT 'serverity',
   `student_id` int(11) default NULL,
   `date` datetime default NULL,
-  `location` text,
+  `location` varchar(255),
   `status` varchar(20),
-  `description` text,
+  `description` varchar(255),
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -307,7 +306,7 @@ DROP TABLE IF EXISTS `parking_request`;
 CREATE TABLE `parking_request` (
   `id` int(11) NOT NULL auto_increment,
   `vehicle_type` varchar(20) default NULL,
-  `nearby` varchar(20) default NULL,
+  `nearbyt` varchar(20) default NULL,
   `handicapped` varchar(20) default NULL,
   `status` varchar(20) default NULL,
   PRIMARY KEY  (`id`)

@@ -13,7 +13,7 @@ public interface TicketService {
 	
 	public List queryAllTicket();
 	
-	public Ticket queryTicketByID(int sid);
+	public Ticket queryTicketByID(int id);
 	
 	public List<Ticket> queryTicketsbyStudentId(int sid);
 }
