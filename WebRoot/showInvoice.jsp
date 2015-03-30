@@ -6,35 +6,47 @@
 </head>
 <body>
 <center>
-	<h2>用户详细信息</h2>
+	<h2>Invoice</h2>
 	<table border="1">
 		<s:set name="user" value="#request.user"/>
 		<tr>
-			<td>用户ID</td>
-			<td><s:property value="#user.id"/></td>
+			<td>Invoice ID</td>
+			<td><s:property value="#invoice.id"/></td>
 		</tr>
 		<tr>	
-			<td>用户名</td>	
-			<td><s:property value="#user.username"/></td>	
+			<td>Lease ID</td>	
+			<td><s:property value="#invoice.leaseId"/></td>	
 		</tr>
 		<tr>
-			<td>密码</td>
-			<td><s:property value="#user.password"/></td>
+			<td>Pay Date</td>
+			<td><s:property value="#invoice.payDate"/></td>
 		</tr>
 		<tr>
-			<td>年龄</td>
-			<td><s:property value="#user.age"/></td>
+			<td>Pay Method</td>
+			<td><s:property value="#invoice.payMethod"/></td>
 		</tr>
 		<tr>
-			<td>出生日期</td>
-			<td><s:property value="#user.birth"/></td>
+			<td>Status</td>
+			<td><s:property value="#invoice.status"/></td>
 		</tr>
 		<tr>
-			<td>Type</td>
-			<td><s:property value="#user.type"/></td>			
+			<td>Penalty</td>
+			<td><s:property value="#invoice.penalty"/></td>			
 		</tr>	
+		<tr>
+			<td>Damage Charge</td>
+			<td><s:property value="#invoice.damageCharge"/></td>			
+		</tr>
+		<tr>
+			<td>Late Fee</td>
+			<td><s:property value="#invoice.lateFee"/></td>			
+		</tr>
+		<tr>
+			<td>Total</td>
+			<td><s:property value="#invoice.total"/></td>			
+		</tr>			
 	</table>
-	<a href="showAll.action">返回用户列表</a>		
+	<a href="showAll.action">Return</a>		
 </center>
 </body>
 </html>
