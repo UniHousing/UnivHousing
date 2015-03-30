@@ -12,11 +12,15 @@
 	<package name="struts2" extends="struts-default">
 		<action name="login" class="loginAction">
 			<result name="admin">/admin.jsp</result>
-			<result name="student">student.jsp</result>
-			<result name="guest">guest.jsp</result>
+			<result name="student">/student.jsp</result>
 			<result name="error">/login.jsp</result>
 			<result name="input">/login.jsp</result>
 			<result name="maintenanceTicket">/maintenanceTicket.jsp</result>
+		</action>
+		<action name="guestLogin" class="guestLoginAction">
+			<result name="guest">/student.jsp</result>
+			<result name="error">/loginGuest.jsp</result>
+			<result name="input">/loginGuest.jsp</result>
 		</action>
 		<action name="showAll" class="showAllAction">
 			<!-- 定义处理结果与视图资源之间的关系--> 

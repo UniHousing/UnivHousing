@@ -14,10 +14,6 @@
 				<td><s:property value="#student.id" /></td>
 			</tr>
 			<tr>
-				<td>System Username</td>
-				<td><s:property value="#student.username" /></td>
-			</tr>
-			<tr>
 				<td>Password</td>
 				<td><s:property value="#student.password" /></td>
 			</tr>
@@ -92,7 +88,7 @@
 
 
 		</table>
-		<a href="showAll.action">Back</a>
+		<a href="student.jsp">Back</a>
 	</center>
 </body>
 </html>

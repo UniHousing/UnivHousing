@@ -204,7 +204,10 @@
 		<property name="studentService" ref="studentService"></property>
 		<property name="staffService" ref="staffService"></property>
 	</bean>
-
+	<bean id="guestLoginAction" class="com.javaweb.action.GuestLoginAction">
+		<property name="lc" ref="loginCheck"></property>
+		<property name="guestService" ref="guestService"></property>		
+	</bean>
 
 	<!-- 创建ShowAllActon实例 -->
 	<bean id="showAllAction" class="com.javaweb.action.ShowAllAction"

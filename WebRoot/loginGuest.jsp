@@ -26,15 +26,15 @@
 	</div>
 	<br><br><br>
 	<div align="center">
-	<br> Login as a Student or Supervisor
-		<form action="login.action" method="post">
+	<br> Login as a Guest
+		<form action="guestLogin.action" method="post">
 		<table><tbody>
 			<tr>
 				<td>
-					<label for="user">uid:</label>
+					<label for="user">Approval Id:</label>
 				</td>
 				<td >
-					<input type="text" name="id" placeholder="Enter unity id" required>
+					<input type="text" name="id" placeholder="Enter approval id" required>
 				</td>
 			</tr>
 			<tr><td><br></td></tr>
