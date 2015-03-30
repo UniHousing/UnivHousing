@@ -17,7 +17,7 @@
 			<result name="input">/login.jsp</result>
 		</action>
 		<action name="guestLogin" class="guestLoginAction">
-			<result name="guest">/student.jsp</result>
+			<result name="guest">/guest.jsp</result>
 			<result name="error">/loginGuest.jsp</result>
 			<result name="input">/loginGuest.jsp</result>
 		</action>

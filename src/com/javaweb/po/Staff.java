@@ -3,6 +3,7 @@ package com.javaweb.po;
 import java.util.Date;
 
 public class Staff extends IdEntity<Staff> {
+	private String username;
 	private String password;
 	private String fname;
 	private String lname;
@@ -13,7 +14,13 @@ public class Staff extends IdEntity<Staff> {
 	private String gender;
 	private String position;
 	private String workAt;
-
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public String getPassword() {
 		return password;
 	}
