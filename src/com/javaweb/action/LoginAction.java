@@ -59,6 +59,7 @@ public class LoginAction extends ActionSupport {
 		if (staff == null) {
 			if (lc.isLogin(getId(), getPassword(), student.getPassword())) {
 				ActionContext.getContext().getSession().put("login", getId());
+				ActionContext.getContext().getSession().put("type", student.getType());
 				return "student";
 			} else {
 				ActionContext.getContext().getSession().put("login", "false");
@@ -68,6 +69,7 @@ public class LoginAction extends ActionSupport {
 		if (student == null) {
 			if (lc.isLogin(getId(), getPassword(), staff.getPassword())) {
 				ActionContext.getContext().getSession().put("login", getId());
+				ActionContext.getContext().getSession().put("type", "admin");
 				return "admin";
 			} else {
 				ActionContext.getContext().getSession().put("login", "false");
