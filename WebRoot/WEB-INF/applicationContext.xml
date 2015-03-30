@@ -36,9 +36,9 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-			    <value>com/javaweb/po/FamilyApartment.hbm.xml</value>
+				<value>com/javaweb/po/FamilyApartment.hbm.xml</value>
 				<value>com/javaweb/po/FamilyMember.hbm.xml</value>
-			    <value>com/javaweb/po/GeneralApartment.hbm.xml</value>
+				<value>com/javaweb/po/GeneralApartment.hbm.xml</value>
 				<value>com/javaweb/po/Invoice.hbm.xml</value>
 				<value>com/javaweb/po/User.hbm.xml</value>
 				<value>com/javaweb/po/Student.hbm.xml</value>
@@ -123,7 +123,7 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
-		<bean id="guestDAO" class="com.javaweb.dao.GuestDAOImpl">
+	<bean id="guestDAO" class="com.javaweb.dao.GuestDAOImpl">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
 		</property>
@@ -138,7 +138,7 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
-	
+
 	<bean id="parkingRequestDAO" class="com.javaweb.dao.ParkingRequestDAOImpl">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
@@ -150,20 +150,20 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
-	
-		<bean id="leaseRequestDAO" class="com.javaweb.dao.LeaseRequestDAOImpl">
+
+	<bean id="leaseRequestDAO" class="com.javaweb.dao.LeaseRequestDAOImpl">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
-	
-		<bean id="parkingLotDAO" class="com.javaweb.dao.ParkingLotDAOImpl">
+
+	<bean id="parkingLotDAO" class="com.javaweb.dao.ParkingLotDAOImpl">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
-	
-		<bean id="parkingSpotDAO" class="com.javaweb.dao.ParkingSpotDAOImpl">
+
+	<bean id="parkingSpotDAO" class="com.javaweb.dao.ParkingSpotDAOImpl">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
 		</property>
@@ -239,7 +239,7 @@
 		<property name="parkingSpotDAO" ref="parkingSpotDAO"></property>
 	</bean>
 
-	
+
 	<!-- login -->
 	<bean id="loginCheck" class="com.javaweb.util.LoginCheck"></bean>
 	<bean id="loginAction" class="com.javaweb.action.LoginAction">
@@ -249,7 +249,7 @@
 	</bean>
 	<bean id="guestLoginAction" class="com.javaweb.action.GuestLoginAction">
 		<property name="lc" ref="loginCheck"></property>
-		<property name="guestService" ref="guestService"></property>		
+		<property name="guestService" ref="guestService"></property>
 	</bean>
 
 	<!-- 创建ShowAllActon实例 -->
@@ -291,20 +291,25 @@
 		scope="prototype">
 		<property name="ticketService" ref="ticketService"></property>
 	</bean>
-	
+
 	<bean id="addTicketAction" class="com.javaweb.action.AddTicketAction"
 		scope="prototype">
 		<property name="ticketService" ref="ticketService"></property>
 	</bean>
-	
+
 	<bean id="showTicketStatusAction" class="com.javaweb.action.ShowTicketStatusAction"
 		scope="prototype">
 		<property name="ticketService" ref="ticketService"></property>
 	</bean>
-	
+
 	<bean id="showStaffAction" class="com.javaweb.action.ShowStaffAction"
 		scope="prototype">
 		<property name="staffService" ref="staffService"></property>
+	</bean>
+	<bean id="showHouseAction" class="com.javaweb.action.ShowHouseAction">
+		<property name="familyApartmentService" ref="familyApartmentService"></property>
+		<property name="generalApartmentService" ref="generalApartmentService"></property>
+		<property name="residenceHallService" ref="residenceHallService"></property>
 	</bean>
 
 </beans>

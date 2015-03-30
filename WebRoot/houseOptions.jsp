@@ -31,7 +31,7 @@
 		<br><a href="<%="showAllStudent.action"%>" style="color: midnightblue;">View Leases</a>
 		<br><a href="requestOptions.jsp" style="color: midnightblue;">New Request</a>
 		<br><a href="<%="showAllStudent.action"%>" style="color: midnightblue;">View/Cancel Requests</a>
-		<br><a href="<%="showAllStudent.action"%>" style="color: midnightblue;">View Vacancy Houses</a>
+		<br><a href="<%="showAllHouse.action"%>" style="color: midnightblue;">View Vacancy Houses</a>
 		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>
 		<br><a href="student.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>
