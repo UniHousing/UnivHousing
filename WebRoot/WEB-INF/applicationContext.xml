@@ -51,6 +51,10 @@
 				<value>com/javaweb/po/TerminReq.hbm.xml</value>
 				<value>com/javaweb/po/Guest.hbm.xml</value>
 				<value>com/javaweb/po/ParkingRequest.hbm.xml</value>
+				<value>com/javaweb/po/Lease.hbm.xml</value>
+				<value>com/javaweb/po/LeaseRequest.hbm.xml</value>
+				<value>com/javaweb/po/ParkingLot.hbm.xml</value>
+				<value>com/javaweb/po/ParkingSpot.hbm.xml</value>
 
 			</list>
 		</property>
@@ -141,6 +145,31 @@
 		</property>
 	</bean>
 
+	<bean id="leaseDAO" class="com.javaweb.dao.LeaseDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	
+		<bean id="leaseRequestDAO" class="com.javaweb.dao.LeaseRequestDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	
+		<bean id="parkingLotDAO" class="com.javaweb.dao.ParkingLotDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	
+		<bean id="parkingSpotDAO" class="com.javaweb.dao.ParkingSpotDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+
 	<!-- 配置业务逻辑组件 -->
 	<bean id="familyApartmentService" class="com.javaweb.service.FamilyApartmentServiceImpl">
 		<!-- 为业务逻辑组件注入DAO组件 -->
@@ -197,6 +226,20 @@
 	<bean id="parkingRequestService" class="com.javaweb.service.ParkingRequestServiceImpl">
 		<property name="parkingRequestDAO" ref="parkingRequestDAO"></property>
 	</bean>
+	<bean id="leaseService" class="com.javaweb.service.LeaseServiceImpl">
+		<property name="leaseDAO" ref="leaseDAO"></property>
+	</bean>
+	<bean id="leaseRequestService" class="com.javaweb.service.LeaseRequestServiceImpl">
+		<property name="leaseRequestDAO" ref="leaseRequestDAO"></property>
+	</bean>
+	<bean id="parkingLotService" class="com.javaweb.service.ParkingLotServiceImpl">
+		<property name="parkingLotDAO" ref="parkingLotDAO"></property>
+	</bean>
+	<bean id="parkingSpotService" class="com.javaweb.service.ParkingSpotServiceImpl">
+		<property name="parkingSpotDAO" ref="parkingSpotDAO"></property>
+	</bean>
+
+	
 	<!-- login -->
 	<bean id="loginCheck" class="com.javaweb.util.LoginCheck"></bean>
 	<bean id="loginAction" class="com.javaweb.action.LoginAction">
