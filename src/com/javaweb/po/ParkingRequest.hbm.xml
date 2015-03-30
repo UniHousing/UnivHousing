@@ -11,7 +11,7 @@
 		</id>
 		
 		<!-- 定义其他属性 -->
-		<property name="vehicle_type"></property>
+		<property name="vehicleType" column="vehicle_type"></property>
 		<property name="nearby"></property>
 		<property name="handicapped" ></property>
 		<property name="status" ></property>

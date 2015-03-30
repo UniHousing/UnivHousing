@@ -11,12 +11,7 @@ public class ParkingRequest extends IdEntity<ParkingRequest>{
 	public void setVehicleType(String vehicleType) {
 		this.vehicleType = vehicleType;
 	}
-	public String getNearbySpot() {
-		return nearby;
-	}
-	public void setNearbySpot(String nearby) {
-		this.nearby = nearby;
-	}
+
 	public String getHandicapped() {
 		return handicapped;
 	}
@@ -28,6 +23,12 @@ public class ParkingRequest extends IdEntity<ParkingRequest>{
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getNearby() {
+		return nearby;
+	}
+	public void setNearby(String nearby) {
+		this.nearby = nearby;
 	}
 	
 }
