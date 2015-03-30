@@ -21,8 +21,9 @@ public class ShowTicketStatusAction extends ActionSupport{
 		
 		int loginId=(Integer) ActionContext.getContext().getSession().get("login");
 		System.out.println("login_id"+loginId);
-		List allticket = ticketService.queryAllTicket();
-	
+//		List allticket = ticketService.queryAllTicket();
+		List allticket=ticketService.queryTicketsbyStudentId(loginId);
+		System.out.println(allticket);
 		ServletActionContext.getRequest().setAttribute("all", allticket);
 		return SUCCESS;
 		
