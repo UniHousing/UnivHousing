@@ -1,6 +1,5 @@
 package com.javaweb.action;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
@@ -34,7 +33,6 @@ public class ShowHouseAction extends ActionSupport{
 	}
 	
 	public String execute() throws Exception {
-		System.out.println(familyApartmentService);
 		List<FamilyApartment> familyApartments=familyApartmentService.queryAllFamilyApartment();
 		List<GeneralApartment> generalApartments=generalApartmentService.queryAllGeneralApartment();
 		List<ResidenceHall> residenceHalls=residenceHallService.queryAllResidenceHall();
