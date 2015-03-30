@@ -2,6 +2,9 @@ package com.javaweb.dao;
 
 import java.util.List;
 
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 
@@ -42,5 +45,23 @@ public class BaseDAOImpl<T> extends HibernateDaoSupport implements BaseDAO<T> {
 		String replacement="$1_$2";
 		return className.replaceAll(regex, replacement).toLowerCase();
     }
+
+	@Override
+	public List queryByForeignId(Class<?> clazz, String columnName,int fid) {
+		// TODO Auto-generated method stub
+		Criterion fidEqualCriterion=Restrictions.eq(columnName, fid);
+		DetachedCriteria detachedCriteria = DetachedCriteria.forClass(clazz);
+		detachedCriteria.add(fidEqualCriterion);
+		return this.getHibernateTemplate().findByCriteria(detachedCriteria);
+	}
+
+	@Override
+	public List queryByAttribute(Class<?> clazz, String columnName, String str) {
+		// TODO Auto-generated method stub
+		Criterion attributeLikeCriterion=Restrictions.like(columnName, "%"+str+"%").ignoreCase();
+		DetachedCriteria detachedCriteria=DetachedCriteria.forClass(clazz);
+		detachedCriteria.add(attributeLikeCriterion);
+		return this.getHibernateTemplate().findByCriteria(detachedCriteria);
+	}
 
 }
