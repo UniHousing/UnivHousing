@@ -13,4 +13,8 @@ public interface BaseDAO<T> {
 	public List queryAll(Class<?> clazz);
 	
 	public T queryByID(Class<?> clazz,int id);
+	
+	public List queryByForeignId(Class<?> clazz, String columnName,int fid);
+	
+	public List queryByAttribute(Class<?> clazz,String columnName,String str);
 }

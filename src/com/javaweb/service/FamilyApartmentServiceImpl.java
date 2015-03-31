@@ -8,7 +8,11 @@ import com.javaweb.po.FamilyApartment;
 public class FamilyApartmentServiceImpl implements FamilyApartmentService {
 	private FamilyApartmentDAO familyApartmentDAO;
 
-	public void setFamilyApartmentDAO(FamilyApartmentDAO familyapartmentDAO) {
+	public FamilyApartmentDAO getFamilyApartmentDAO() {
+		return familyApartmentDAO;
+	}
+
+	public void setFamilyApartmentDAO(FamilyApartmentDAO familyApartmentDAO) {
 		this.familyApartmentDAO = familyApartmentDAO;
 	}
 
