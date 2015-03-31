@@ -8,7 +8,7 @@
 <center>
 	<h2>Invoice</h2>
 	<table border="1">
-		<s:set name="user" value="#request.user"/>
+		<s:set name="invoice" value="#request.invoice"/>
 		<tr>
 			<td>Invoice ID</td>
 			<td><s:property value="#invoice.id"/></td>
