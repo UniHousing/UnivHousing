@@ -59,10 +59,14 @@
 			<!-- 定义处理结果与视图资源之间的关系-->
 			<result name="success">/showTicketStatus.jsp</result>
 		</action>
+		
 		<action name="addTicket" class="addTicketAction">
 			<!-- 定义处理结果与视图资源之间的关系-->
-			<result name="success">/addTicket.jsp</result>
+			<result name="success" type="redirect">/showTicketStatus.action</result>
+			<result name="input">/addTicket.jsp</result>
+			<result name="error">/addTicket.jsp</result>
 		</action>
+		
 		<action name="showAllStaff" class="showStaffAction">
 			<!-- 定义处理结果与视图资源之间的关系-->
 			<result name="success">/showAllStaff.jsp</result>

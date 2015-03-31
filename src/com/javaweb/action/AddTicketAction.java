@@ -5,9 +5,13 @@ import java.util.Date;
 
 import com.javaweb.po.Ticket;
 import com.javaweb.service.TicketService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AddTicketAction extends ActionSupport{
+	/**
+	 * 
+	 */
 	private String type; 
 	private int studentId;
 	private Date date;
@@ -82,14 +86,19 @@ public class AddTicketAction extends ActionSupport{
 	public String execute() throws Exception {
 		Ticket ticket = new Ticket();
 		ticket.setType(type);
-		ticket.setStudentId(studentId);
+		if(type==null) return ERROR;
+		int loginId=(Integer) ActionContext.getContext().getSession().get("login");
+		ticket.setStudentId(loginId);
 		ticket.setDate(date);
 		ticket.setLocation(location);
 		ticket.setDescription(description);
 		ticket.setStatus(status);
-		if(ticketService.addTicket(ticket)){
-			return SUCCESS; 
-		}else{
+		if(ticketService.addTicket(ticket))
+		{
+			return SUCCESS;
+		}
+		else
+		{
 			addActionError("error!");
 			return ERROR;
 		}

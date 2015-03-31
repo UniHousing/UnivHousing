@@ -37,6 +37,7 @@
 			<td>Status</td>
 			<td><s:property value="#ticket.status"/></td>
 		</tr>
+	
 	</table>
 	<a href="showTicketStatus.action">Back to status list</a>		
 </center>
