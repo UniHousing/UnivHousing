@@ -9,10 +9,9 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ShowInvoiceAction extends ActionSupport {
 	private int id;
-
 	
 	private InvoiceService invoiceService;
-	public void setUserService(InvoiceService invoiceService) {
+	public void setInvoiceService(InvoiceService invoiceService) {
 		this.invoiceService = invoiceService;
 	}
 
@@ -30,9 +29,5 @@ public class ShowInvoiceAction extends ActionSupport {
 		ServletActionContext.getRequest().setAttribute("invoice", invoice);
 		return SUCCESS;
 	}
-
-
-
-
 
 }

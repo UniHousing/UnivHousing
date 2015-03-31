@@ -2,7 +2,7 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-	<title>用户详细信息</title>
+	<title>Invoice</title>
 </head>
 <body>
 <center>

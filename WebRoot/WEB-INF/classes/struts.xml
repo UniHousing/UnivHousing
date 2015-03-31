@@ -67,6 +67,10 @@
 			<!-- 定义处理结果与视图资源之间的关系-->
 			<result name="success">/showAllStaff.jsp</result>
 		</action>
+				<action name="showInvoice" class="showInvoiceAction">
+			<!-- 定义处理结果与视图资源之间的关系-->
+			<result name="success">/showInvoice.jsp</result>
+		</action>
 	</package>
 </struts>
 
