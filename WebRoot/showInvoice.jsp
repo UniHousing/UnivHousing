@@ -46,7 +46,7 @@
 			<td><s:property value="#invoice.total"/></td>			
 		</tr>			
 	</table>
-	<a href="showAll.action">Return</a>		
+	<a href="invoiceOptions.jsp">Return</a>		
 </center>
 </body>
 </html>

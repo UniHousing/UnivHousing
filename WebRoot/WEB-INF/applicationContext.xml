@@ -310,6 +310,10 @@
 		scope="prototype">
 		<property name="invoiceService" ref="invoiceService"></property>
 	</bean>
+	<bean id="showAllInvoiceAction" class="com.javaweb.action.ShowAllInvoiceAction"
+		scope="prototype">
+		<property name="invoiceService" ref="invoiceService"></property>
+	</bean>
 	
 	<bean id="showHouseAction" class="com.javaweb.action.ShowHouseAction">
 		<property name="familyApartmentService" ref="familyApartmentService"></property>
