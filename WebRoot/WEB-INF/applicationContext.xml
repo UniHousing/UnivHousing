@@ -318,6 +318,10 @@
 		scope="prototype">
 		<property name="leaseService" ref="leaseService"></property>
 	</bean>
+	<bean id="showAllLeaseAction" class="com.javaweb.action.ShowAllLeaseAction"
+		scope="prototype">
+		<property name="leaseService" ref="leaseService"></property>
+	</bean>
 	
 	<bean id="showHouseAction" class="com.javaweb.action.ShowHouseAction">
 		<property name="familyApartmentService" ref="familyApartmentService"></property>
