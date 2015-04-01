@@ -71,6 +71,22 @@
 			<!-- 定义处理结果与视图资源之间的关系-->
 			<result name="success">/showAllStaff.jsp</result>
 		</action>
+		<action name="showInvoice" class="showInvoiceAction">
+			<!-- 定义处理结果与视图资源之间的关系-->
+			<result name="success">/showInvoice.jsp</result>
+			</action>
+		<action name="showAllInvoice" class="showAllInvoiceAction">
+			<!-- 定义处理结果与视图资源之间的关系-->
+			<result name="success">/showAllInvoice.jsp</result>
+		</action>
+		<action name="showLease" class="showLeaseAction">
+			<!-- 定义处理结果与视图资源之间的关系-->
+			<result name="success">/showLease.jsp</result>
+		</action>
+		<action name="showAllLease" class="showAllLeaseAction">
+			<!-- 定义处理结果与视图资源之间的关系-->
+			<result name="success">/showAllLease.jsp</result>
+		</action>
 		<action name="showAllHouse" class="showHouseAction">
 			<!-- 定义处理结果与视图资源之间的关系-->
 			<result name="success">/showAllHouse.jsp</result>

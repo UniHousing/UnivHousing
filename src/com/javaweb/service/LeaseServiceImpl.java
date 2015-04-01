@@ -5,14 +5,15 @@ import java.util.List;
 import com.javaweb.dao.LeaseDAO;
 import com.javaweb.po.Lease;
 
-public class LeaseServiceImpl implements LeaseService {
+
+public class LeaseServiceImpl implements LeaseService{
 	private LeaseDAO leaseDAO;
 
 	public void setLeaseDAO(LeaseDAO leaseDAO) {
 		this.leaseDAO = leaseDAO;
 	}
 
-	// add Student
+	// add Lease
 	@Override
 	public boolean addLease(Lease lease) {
 		if (leaseDAO.queryByID(Lease.class,lease.getId()) == null) {

@@ -306,6 +306,23 @@
 		scope="prototype">
 		<property name="staffService" ref="staffService"></property>
 	</bean>
+	<bean id="showInvoiceAction" class="com.javaweb.action.ShowInvoiceAction"
+		scope="prototype">
+		<property name="invoiceService" ref="invoiceService"></property>
+	</bean>
+	<bean id="showAllInvoiceAction" class="com.javaweb.action.ShowAllInvoiceAction"
+		scope="prototype">
+		<property name="invoiceService" ref="invoiceService"></property>
+	</bean>
+	<bean id="showLeaseAction" class="com.javaweb.action.ShowLeaseAction"
+		scope="prototype">
+		<property name="leaseService" ref="leaseService"></property>
+	</bean>
+	<bean id="showAllLeaseAction" class="com.javaweb.action.ShowAllLeaseAction"
+		scope="prototype">
+		<property name="leaseService" ref="leaseService"></property>
+	</bean>
+	
 	<bean id="showHouseAction" class="com.javaweb.action.ShowHouseAction">
 		<property name="familyApartmentService" ref="familyApartmentService"></property>
 		<property name="generalApartmentService" ref="generalApartmentService"></property>
