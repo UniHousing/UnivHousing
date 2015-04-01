@@ -1,9 +1,12 @@
 package com.javaweb.action;
 
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.javaweb.po.LeaseRequest;
+import com.javaweb.po.ResidenceHall;
 import com.javaweb.service.FamilyApartmentService;
 import com.javaweb.service.GeneralApartmentService;
 import com.javaweb.service.LeaseRequestService;
@@ -13,6 +16,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class AddRequestAction extends ActionSupport{
 	private int studentId;
+	public static final String SPECIFIC="Specific Hall";
 	private String preference1;
 	private String preference2;
 	private String preference3;
@@ -24,7 +28,19 @@ public class AddRequestAction extends ActionSupport{
 	private GeneralApartmentService generalApartmentService;
 	private FamilyApartmentService familyApartmentService;
 	private ResidenceHallService residenceHallService;
-
+	public AddRequestAction() {
+		// TODO Auto-generated constructor stub
+		
+	}
+	public String handleString(String str) {
+		String [] strings=str.split(",");
+		if (!strings[0].equals(SPECIFIC)) {
+			return strings[0];
+		}
+		else {
+			return strings[1].trim();
+		}
+	}
 
 	public String getPaymentMethod() {
 		return paymentMethod;
@@ -152,12 +168,11 @@ public class AddRequestAction extends ActionSupport{
 	public String execute() throws Exception {
 		LeaseRequest leaseRequest=new LeaseRequest();
 		leaseRequest.setStudentId((Integer)ActionContext.getContext().getSession().get("login"));
-		leaseRequest.setPreference1(preference1);
-		leaseRequest.setPreference2(preference2);
-		leaseRequest.setPreference3(preference3);
+		leaseRequest.setPreference1(handleString(preference1));
+		leaseRequest.setPreference2(handleString(preference2));
+		leaseRequest.setPreference3(handleString(preference3));
 		leaseRequest.setStartDate(startDate);
 		leaseRequest.setEndDate(endDate);
-		System.out.println(paymentMethod);
 		leaseRequest.setPaymentMethod(paymentMethod);
 		leaseRequest.setStatus("Pending");
 		
@@ -169,5 +184,6 @@ public class AddRequestAction extends ActionSupport{
 		}
 		
 	}
+
 	
 }

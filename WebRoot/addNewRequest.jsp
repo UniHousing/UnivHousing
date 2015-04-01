@@ -4,23 +4,61 @@
 <head>
 <title>Add New Request</title>
 </head>
+<script type="text/javascript">
+function CheckHouses(val,id){
+ var element=document.getElementById(id);
+ if(val=='Specific Hall')
+   element.style.display='inline-block';
+ else  
+   element.style.display='none';
+}
+</script> 
 <body>
 	<center>
 		<h2>Add New Request</h2>
 		<s:actionerror />
 		<s:form action="addRequest">
+<%-- 		 Preference1: <select name="preference1" onchange='CheckHouses(this.value,"preference1");'> 
+			    <option>Pick a House</option>  
+			    <option value="Specific Hall">Specific Hall</option>
+			    <option value="Apartment">Apartment</option>
+			    <option value="Resident Hall">Resident Hall</option>
+			  </select> &nbsp;&nbsp;
+			  <input type="text" name="preference1" id="preference1" style='display:none;'/>
+			  <br>
+			Preference2: <select name="preference2" onchange='CheckHouses(this.value,"preference2");'> 
+			    <option>Pick a House</option>  
+			    <option value="Specific Hall">Specific Hall</option>
+			    <option value="Apartment">Apartment</option>
+			    <option value="Resident Hall">Resident Hall</option>
+			  </select> &nbsp;&nbsp;
+			  <input type="text" name="preference2" id="preference2" style='display:none;'/>
+			  
+			  <br>
+			  Preference3: <select name="preference3" onchange='CheckHouses(this.value,"preference3");'> 
+			    <option>Pick a House</option>  
+			    <option value="Specific Hall">Specific Hall</option>
+			    <option value="Apartment">Apartment</option>
+			    <option value="Resident Hall">Resident Hall</option>
+			  </select> &nbsp;&nbsp;
+			  <input type="text" name="preference3" id="preference3" style='display:none;'/>  --%>
 
-			<s:select label="Select Your First Preferences"
-				list="#{'Specific Hall':'Specific Hall', 'Apartment':'Apartment', 'Resident Hall':'Resident Hall'}"
+
+
+   			<s:select label="Select Your First Preferences" onchange='CheckHouses(this.value,"preference1");'
+				list="#{'Apartment':'Apartment', 'Resident Hall':'Resident Hall','Specific Hall':'Specific Hall'}"
 				name="preference1" value="Specific Hall" />
-
-			<s:select label="Select Your Second Preferences"
-				list="#{'Specific Hall':'Specific Hall', 'Apartment':'Apartment', 'Resident Hall':'Resident Hall'}"
+			<s:textfield name="preference1" id="preference1" cssStyle='display:none'></s:textfield>
+			
+			<s:select label="Select Your Second Preferences" onchange='CheckHouses(this.value,"preference2");'
+				list="#{'Apartment':'Apartment', 'Resident Hall':'Resident Hall','Specific Hall':'Specific Hall'}"
 				name="preference2" value="Specific Hall" />
-
-			<s:select label="Select Your Third Preferences"
-				list="#{'Specific Hall':'Specific Hall', 'Apartment':'Apartment', 'Resident Hall':'Resident Hall'}"
+			<s:textfield name="preference2" id="preference2" cssStyle='display:none'></s:textfield>
+			
+			<s:select label="Select Your Third Preferences" onchange='CheckHouses(this.value,"preference3");'
+				list="#{'Apartment':'Apartment', 'Resident Hall':'Resident Hall','Specific Hall':'Specific Hall'}"
 				name="preference3" value="Specific Hall" />
+			<s:textfield name="preference3" id="preference3" cssStyle='display:none'></s:textfield> 
 
 			<s:select label="Payment Method"
 				list="#{'Monthly':'Monthly', 'Semester':'Once per Semester'}"
