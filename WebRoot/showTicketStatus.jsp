@@ -22,7 +22,7 @@
 		</tr>
 		</s:iterator>	
 	</table>
-			
+	<a href="maintenanceOptions.jsp">Back to maintenance</a>
 </center>
 </body>
 </html>
