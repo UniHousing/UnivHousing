@@ -43,6 +43,12 @@
 			<result name="input">/update.jsp</result>
 			<result name="error">/update.jsp</result>
 		</action>
+		<action name="updateStudent" class="updateStudentAction">
+			<!-- 定义处理结果与视图资源之间的关系-->
+			<result name="success" type="redirect">/profileOptions.jsp</result>
+			<result name="input">/updateStudent.jsp</result>
+			<result name="error">/updateStudent.jsp</result>
+		</action>
 		<action name="showUser" class="showUserAction">
 			<!-- 定义处理结果与视图资源之间的关系-->
 			<result name="success">/showUser.jsp</result>
@@ -90,6 +96,11 @@
 		<action name="showAllHouse" class="showHouseAction">
 			<!-- 定义处理结果与视图资源之间的关系-->
 			<result name="success">/showAllHouse.jsp</result>
+		</action>
+		
+		<action name="addRequest" class="addRequestAction">
+			<result name="success">/requestOptions.jsp</result>
+			
 		</action>
 	</package>
 </struts>

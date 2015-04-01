@@ -27,7 +27,7 @@
 	<br><br><br>
 	<div align="center">
 	<h2>Logged in Student->House Options->New Request</h2>
-		<br><a href="<%="addLease.action"%>" style="color: midnightblue;">New Lease Request</a>
+		<br><a href="<%="addNewRequest.jsp"%>" style="color: midnightblue;">New Lease Request</a>
 		<br><a href="<%="addTerminReq.action"%>" style="color: midnightblue;">New Termination Lease Request</a>
 		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>
 		<br><a href="houseOptions.jsp" style="color: midnightblue;">Back</a>

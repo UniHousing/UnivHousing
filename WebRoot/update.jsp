@@ -1,3 +1,4 @@
+<%@page import="com.javaweb.service.UserService"%>
 <%@page contentType="text/html;charset=gb2312"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>

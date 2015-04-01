@@ -131,6 +131,7 @@ CREATE TABLE `lease_request` (
   `preference1` varchar(50) default NULL,
   `preference2` varchar(50) default NULL,
   `preference3` varchar(50) default NULL,
+  `payment_method` varchar(50) default NULL,
   `status` varchar(40) default NULL,
   `start_date` datetime default NULL,
   `end_date` datetime default NULL,

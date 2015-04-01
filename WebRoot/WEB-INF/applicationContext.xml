@@ -328,5 +328,14 @@
 		<property name="generalApartmentService" ref="generalApartmentService"></property>
 		<property name="residenceHallService" ref="residenceHallService"></property>
 	</bean>
-
+	<bean id="updateStudentAction" class="com.javaweb.action.UpdateStudentAction">
+		<property name="studentService" ref="studentService"></property>
+	</bean>
+	
+	<bean id="addRequestAction" class="com.javaweb.action.AddRequestAction">
+		<property name="leaseRequestService" ref="leaseRequestService"></property>
+		<property name="generalApartmentService" ref="generalApartmentService"></property>
+		<property name="familyApartmentService" ref="familyApartmentService"></property>
+		<property name="residenceHallService" ref="residenceHallService"></property>
+	</bean>
 </beans>
