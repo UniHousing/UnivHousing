@@ -3,9 +3,12 @@ package com.javaweb.action;
 import java.util.List;
 
 
+
+
 import org.apache.struts2.ServletActionContext;
 
 import com.javaweb.service.LeaseService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ShowAllLeaseAction extends ActionSupport {
@@ -17,7 +20,8 @@ public class ShowAllLeaseAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		List all = leaseService.queryAllLease();
+		int user_id=(Integer) ActionContext.getContext().getSession().get("login");
+		List all = leaseService.queryLeasebyStudentId(user_id);
 		ServletActionContext.getRequest().setAttribute("all", all);
 		return SUCCESS;
 	}

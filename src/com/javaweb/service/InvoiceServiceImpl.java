@@ -53,5 +53,9 @@ public class InvoiceServiceImpl implements InvoiceService {
 		return invoiceDAO.queryByID(Invoice.class,id);
 	}
 
-
+	@Override
+	public List queryInvoicebyLeaseId(int lid) {
+		// TODO Auto-generated method stub
+		return invoiceDAO.findRequestbyLeaseId(lid);
+	}
 }

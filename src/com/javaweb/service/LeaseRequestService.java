@@ -14,4 +14,6 @@ public interface LeaseRequestService {
 	public List queryAllLeaseRequest();
 	
 	public LeaseRequest queryLeaseRequestByID(int id);
+	
+
 }

@@ -313,6 +313,7 @@
 	<bean id="showAllInvoiceAction" class="com.javaweb.action.ShowAllInvoiceAction"
 		scope="prototype">
 		<property name="invoiceService" ref="invoiceService"></property>
+		<property name="leaseService" ref="leaseService"></property>
 	</bean>
 	<bean id="showLeaseAction" class="com.javaweb.action.ShowLeaseAction"
 		scope="prototype">

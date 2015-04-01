@@ -13,5 +13,8 @@ public interface LeaseService {
 	
 	public List queryAllLease();
 	
+	public List queryLeasebyStudentId(int sid);
+	
 	public Lease queryLeaseByID(int id);
+	
 }
