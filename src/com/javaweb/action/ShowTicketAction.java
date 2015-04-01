@@ -1,7 +1,5 @@
 package com.javaweb.action;
 
-import java.util.List;
-
 import org.apache.struts2.ServletActionContext;
 
 import com.javaweb.po.Ticket;

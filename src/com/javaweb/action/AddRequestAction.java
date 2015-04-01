@@ -3,15 +3,11 @@ package com.javaweb.action;
 
 import java.util.Date;
 
-import org.apache.struts2.ServletActionContext;
-
 import com.javaweb.po.LeaseRequest;
-import com.javaweb.po.User;
 import com.javaweb.service.FamilyApartmentService;
 import com.javaweb.service.GeneralApartmentService;
 import com.javaweb.service.LeaseRequestService;
 import com.javaweb.service.ResidenceHallService;
-import com.javaweb.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 

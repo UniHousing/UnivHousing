@@ -1,11 +1,7 @@
 package com.javaweb.action;
 
 import com.javaweb.po.Guest;
-import com.javaweb.po.Staff;
-import com.javaweb.po.Student;
 import com.javaweb.service.GuestService;
-import com.javaweb.service.StaffService;
-import com.javaweb.service.StudentService;
 import com.javaweb.util.LoginCheck;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;

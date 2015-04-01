@@ -32,6 +32,7 @@ public class ShowHouseAction extends ActionSupport{
 		this.residenceHallService = residenceHallService;
 	}
 	
+	@Override
 	public String execute() throws Exception {
 		List<FamilyApartment> familyApartments=familyApartmentService.queryAllFamilyApartment();
 		List<GeneralApartment> generalApartments=generalApartmentService.queryAllGeneralApartment();
