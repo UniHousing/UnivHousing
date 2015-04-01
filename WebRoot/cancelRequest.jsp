@@ -26,12 +26,21 @@
 	</div>
 	<br><br><br>
 	<div align="center">
-	<h2>Logged in Student->House Options->View/Cancel Request</h2>
-		<br><a href="<%="showAllRequest.action"%>" style="color: midnightblue;">View Request</a>
-		<br><a href="<%="cancelRequest.jsp"%>" style="color: midnightblue;">Cancel Request</a>
-		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>
-		<br><a href="houseOptions.jsp" style="color: midnightblue;">Back</a>
-		<br><HR><br>
+	<h2>Logged in Student->House Options->View/Cancel Request->Cancel Request</h2>
+					<tr>
+				<form action="cancelRequest.action" method="post">
+				<td>
+					<label for="request">Enter Request ID TO CANCEL:</label>
+
+					<input type="text" name="id" placeholder="Enter request id" required>
+				</td>
+				<td colspan="2" align="center">
+					<input type="submit" value="Cancel Request" style="width: 116px">
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" value="Back" style="width:50px" onclick="javascript:window.location='requestViewCancel.jsp';">
+				</td>
+				</form>
+			</tr>
 		
 	</div>
 	<br><br><br>

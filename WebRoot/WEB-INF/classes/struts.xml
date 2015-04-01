@@ -102,6 +102,15 @@
 			<result name="success">/requestOptions.jsp</result>
 			
 		</action>
+		
+		<action name="cancelRequest" class="cancelRequestAction">
+			<result name="success">/cancelRequest.jsp</result>
+		</action>
+		
+		<action name="showAllRequest" class="showAllRequestAction">
+			<!-- 定义处理结果与视图资源之间的关系-->
+			<result name="success">/showAllReq.jsp</result>
+		</action>
 	</package>
 </struts>
 
