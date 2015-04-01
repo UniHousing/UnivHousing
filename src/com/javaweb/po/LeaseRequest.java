@@ -10,6 +10,7 @@ public class LeaseRequest extends IdEntity<LeaseRequest> {
 	private String preference2;
 	private String preference3;
 	private String status;
+	private String paymentMethod;
 	private Date startDate;
 	private Date endDate;
 	
@@ -55,6 +56,12 @@ public class LeaseRequest extends IdEntity<LeaseRequest> {
 	}
 	public void setStudentId(int studentId) {
 		this.studentId = studentId;
+	}
+	public String getPaymentMethod() {
+		return paymentMethod;
+	}
+	public void setPaymentMethod(String paymentMethod) {
+		this.paymentMethod = paymentMethod;
 	}
 }
 

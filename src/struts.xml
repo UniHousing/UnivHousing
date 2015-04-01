@@ -77,6 +77,11 @@
 			<!-- 定义处理结果与视图资源之间的关系-->
 			<result name="success">/showAllHouse.jsp</result>
 		</action>
+		
+		<action name="addRequest" class="addRequestAction">
+			<result name="success">/requestOptions.jsp</result>
+			
+		</action>
 	</package>
 </struts>
 
