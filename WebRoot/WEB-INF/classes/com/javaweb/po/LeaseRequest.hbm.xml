@@ -13,6 +13,7 @@
   <property name="preference2"/>
   <property name="preference3"/>
   <property name="status"/>
+  <property name="paymentMethod" column="payment_method"></property>
   <property column="start_date" name="startDate" type="date"/>
   <property column="end_date" name="endDate" type="date"/>
  </class>
