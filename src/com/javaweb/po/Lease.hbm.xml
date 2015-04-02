@@ -20,5 +20,6 @@
   <property name="payment"/>
   <property name="penalty"/>
   <property column="inspect_date" name="inspectDate" type="date"/>
+  <property name="status"/>
  </class>
 </hibernate-mapping>

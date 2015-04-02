@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.javaweb.dao.LeaseDAO;
 import com.javaweb.po.Lease;
+import com.javaweb.po.Ticket;
 
 public class LeaseServiceImpl implements LeaseService {
 	private LeaseDAO leaseDAO;
@@ -53,5 +54,14 @@ public class LeaseServiceImpl implements LeaseService {
 		return leaseDAO.queryByID(Lease.class,id);
 	}
 
-
+	public List<Lease> queryLeasebyStudentId(int sid) {
+		// TODO Auto-generated method stub
+		return leaseDAO.findLeasebyStudentId(sid);
+	}
+	
+	public int queryCurrentIdbyStudentId(int sid) {
+		// TODO Auto-generated method stub
+		System.out.println("curredt id");
+		return leaseDAO.findCurrentIdbyStudentId(sid);
+	}
 }

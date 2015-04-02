@@ -301,6 +301,7 @@
 		scope="prototype">
 		<property name="ticketService" ref="ticketService"></property>
 	</bean>
+	
 
 	<bean id="showStaffAction" class="com.javaweb.action.ShowStaffAction"
 		scope="prototype">
@@ -310,6 +311,17 @@
 		<property name="familyApartmentService" ref="familyApartmentService"></property>
 		<property name="generalApartmentService" ref="generalApartmentService"></property>
 		<property name="residenceHallService" ref="residenceHallService"></property>
+	</bean>
+	
+	<bean id="addTerminReqAction" class="com.javaweb.action.AddTerminReqAction"
+		scope="prototype">
+		<property name="terminReqService" ref="terminReqService"></property>
+		<property name="leaseService" ref="leaseService"></property>
+	</bean>
+	
+	<bean id="showLeaseStatusAction" class="com.javaweb.action.ShowLeaseStatusAction"
+		scope="prototype">
+		<property name="leaseService" ref="leaseService"></property>
 	</bean>
 
 </beans>

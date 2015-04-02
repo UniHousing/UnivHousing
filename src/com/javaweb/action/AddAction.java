@@ -3,8 +3,8 @@ package com.javaweb.action;
 
 import java.util.Date;
 
-
 import com.javaweb.po.User;
+import com.javaweb.service.StudentService;
 import com.javaweb.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -14,6 +14,7 @@ public class AddAction extends ActionSupport{
 	private int age;
 	private Date birth;
 	private String type;
+
 	
 	public String getType() {
 		return type;

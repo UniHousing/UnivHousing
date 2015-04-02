@@ -75,6 +75,18 @@
 			<!-- 定义处理结果与视图资源之间的关系-->
 			<result name="success">/showAllHouse.jsp</result>
 		</action>
+		
+		<action name="addTerminReq" class="addTerminReqAction">
+			<result name="success" type="redirect">/showLeaseStatus.jsp</result>
+			<result name="input">/addTerminReq.jsp</result>
+			<result name="error">/addTerminReq.jsp</result>
+		</action>
+		
+		<action name="showLeaseStatus" class="showLeaseStatusAction">
+			<!-- 定义处理结果与视图资源之间的关系-->
+			<result name="success">/showLeaseStatus.jsp</result>
+
+		</action>
 	</package>
 </struts>
 

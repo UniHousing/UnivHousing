@@ -4,7 +4,8 @@ import java.util.Date;
 
 
 public class TerminReq extends IdEntity<TerminReq> {
-
+	
+	private int studentId;
 	private int leaseId;
 	private String reason;
 	private Date date;
@@ -12,6 +13,13 @@ public class TerminReq extends IdEntity<TerminReq> {
 	private Date inspectionDate;
 	private float extraFee;
 	
+	
+	public int getStudentId() {
+		return studentId;
+	}
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
 	
 	public String getReason() {
 		return reason;

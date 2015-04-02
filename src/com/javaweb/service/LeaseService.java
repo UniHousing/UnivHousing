@@ -14,4 +14,8 @@ public interface LeaseService {
 	public List queryAllLease();
 	
 	public Lease queryLeaseByID(int id);
+	
+	public List<Lease> queryLeasebyStudentId(int sid);
+	
+	public int queryCurrentIdbyStudentId(int sid);
 }

@@ -18,3 +18,5 @@ INSERT INTO `housing`.`general_apartment` (`name`, `addr`, `tel`, `room_count`, 
 INSERT INTO `housing`.`general_apartment` (`name`, `addr`, `tel`, `room_count`, `bath_count`) VALUES ('uie', 'jfj', '399101', '4', '3');
 INSERT INTO `housing`.`residence_hall` (`name`, `addr`, `tel`, `manager_id`) VALUES ('denail', 'ejkj', '399291', '1');
 INSERT INTO `housing`.`residence_hall` (`name`, `addr`, `tel`, `manager_id`) VALUES ('deenn', 'fjak', '92919', '2');
+
+INSERT INTO `housing`.`lease` (`student_id`,`house_id`,`room_id`,`room_num`,`duration`,`enter_date`,`leave_date`,`deposit`,`payment`,`penalty`,`inspect_date`,`parking_id`,`status`) VALUES (1,2,3,'2001','spring','1991-12-12','1992-12-12','no','no','no','1992-12-30',12,'current')
