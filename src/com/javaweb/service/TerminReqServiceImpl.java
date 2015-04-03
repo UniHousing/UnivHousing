@@ -53,5 +53,11 @@ public class TerminReqServiceImpl implements TerminReqService {
 		return terminReqDAO.queryByID(TerminReq.class,id);
 	}
 
+	@Override
+	public List queryInvoicebyLeaseId(int id) {
+		// TODO Auto-generated method stub
+		return terminReqDAO.findRequestbyLeaseId(id);
+	}
+
 
 }

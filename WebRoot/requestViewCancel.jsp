@@ -27,8 +27,8 @@
 	<br><br><br>
 	<div align="center">
 	<h2>Logged in Student->House Options->View/Cancel Request</h2>
-		<br><a href="<%="addLease.action"%>" style="color: midnightblue;">View Request</a>
-		<br><a href="<%="addTerminReq.action"%>" style="color: midnightblue;">Cancel Request</a>
+		<br><a href="<%="showAllRequest.action"%>" style="color: midnightblue;">View Request</a>
+		<br><a href="<%="cancelRequest.jsp"%>" style="color: midnightblue;">Cancel Request</a>
 		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>
 		<br><a href="houseOptions.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>

@@ -33,7 +33,7 @@
 		<s:submit value="Confirm"></s:submit>
 		<s:reset value="Reset"></s:reset>
 	</s:form>
-	<a href="student.jsp">Back</a>
+	<a href="profileOptions.jsp">Back</a>
 </center>
 </body>
 </html>
