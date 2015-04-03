@@ -77,7 +77,7 @@
 		</action>
 		
 		<action name="addTerminReq" class="addTerminReqAction">
-			<result name="success" type="redirect">/showLeaseStatus.jsp</result>
+			<result name="success" type="redirect">/showLeaseStatus.action</result>
 			<result name="input">/addTerminReq.jsp</result>
 			<result name="error">/addTerminReq.jsp</result>
 		</action>

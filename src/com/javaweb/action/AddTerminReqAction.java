@@ -137,6 +137,8 @@ public class AddTerminReqAction extends ActionSupport{
 		terminReq.setStudentId(loginId);
 		System.out.println(loginId);
 		int leaseid=leaseService.queryCurrentIdbyStudentId(loginId);
+		if(leaseid==-1)
+			return ERROR;
 		System.out.println("leaseid");
 		//if(lease==null)
 		//	return ERROR;

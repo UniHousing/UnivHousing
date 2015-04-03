@@ -16,9 +16,9 @@
   <property name="duration"/>
   <property column="enter_date" name="enterDate" type="date"/>
   <property column="leave_date" name="leaveDate" type="date"/>
-  <property name="deposit"/>
+  <property name="deposit" type="double"/>
   <property name="payment"/>
-  <property name="penalty"/>
+  <property name="penalty" type="double"/>
   <property column="inspect_date" name="inspectDate" type="date"/>
   <property name="status"/>
  </class>
