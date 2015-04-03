@@ -283,7 +283,7 @@ CREATE TABLE `termin_req` (
   `date` datetime default NULL,
   `status` varchar(40) default NULL,
   `inspection_date` datetime default NULL,
-  `extra_fee` float(255,0) default NULL,
+  `extra_fee` float(255,0) NOT NULL default 0,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

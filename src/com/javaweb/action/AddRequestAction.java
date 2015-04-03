@@ -28,10 +28,7 @@ public class AddRequestAction extends ActionSupport{
 	private GeneralApartmentService generalApartmentService;
 	private FamilyApartmentService familyApartmentService;
 	private ResidenceHallService residenceHallService;
-	public AddRequestAction() {
-		// TODO Auto-generated constructor stub
-		
-	}
+
 	public String handleString(String str) {
 		String [] strings=str.split(",");
 		if (!strings[0].equals(SPECIFIC)) {
@@ -162,7 +159,18 @@ public class AddRequestAction extends ActionSupport{
 	public void setResidenceHallService(ResidenceHallService residenceHallService) {
 		this.residenceHallService = residenceHallService;
 	}
-
+	public String doDefault() throws Exception{
+		System.out.println("hat hre ");
+		
+		
+		return SUCCESS;
+		
+	}
+	public String input() throws Exception{
+		System.out.println("input ");
+		return SUCCESS;
+		
+	}
 
 	@Override
 	public String execute() throws Exception {

@@ -360,4 +360,13 @@
 		<property name="leaseService" ref="leaseService"></property>
 		<property name="terminReqService" ref="terminReqService"></property>
 	</bean>
+	
+	<bean id="approveTerminAction" class="com.javaweb.action.ApproveTerminRequestAction">
+		<property name="terminReqService" ref="terminReqService"></property>
+	</bean>
+	
+	<bean id="updateTerminAction" class="com.javaweb.action.UpdateTerminAction">
+		<property name="terminReqService" ref="terminReqService"></property>
+		<property name="leaseService" ref="leaseService"></property>
+	</bean>
 </beans>
