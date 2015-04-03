@@ -14,4 +14,6 @@ public interface InvoiceService {
 	public List queryAllInvoice();
 	
 	public Invoice queryInvoiceByID(int id);
+	
+	public List queryInvoicebyLeaseId(int lid);
 }

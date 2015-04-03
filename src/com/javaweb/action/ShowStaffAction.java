@@ -15,6 +15,7 @@ public class ShowStaffAction extends ActionSupport{
 		this.staffService = staffService;
 	}
 
+	@Override
 	public String execute() throws Exception {
 
 		List allStaff = staffService.queryAllStaff();

@@ -13,6 +13,7 @@ public class LeaseDAOImpl extends BaseDAOImpl<Lease>implements LeaseDAO {
 		return this.queryByForeignId(Lease.class, "studentId", sid);
 	}
 	// save
+
 	
 	public int findCurrentIdbyStudentId(int sid){
 		

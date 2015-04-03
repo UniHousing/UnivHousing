@@ -13,9 +13,9 @@
   <property generated="never" lazy="false" column="pay_date" name="payDate" type="date"/>
   <property column="pay_method" name="payMethod"/>
   <property generated="never" lazy="false" name="status"/>
-  <property generated="never" lazy="false" name="penalty"/>
-  <property generated="never" lazy="false" column="damage_charge" name="damageCharge" type="float"/>
-  <property generated="never" lazy="false" column="late_fee" name="lateFee" type="float"/>
-  <property generated="never" lazy="false" name="total"/>
+  <property generated="never" lazy="false" name="penalty" type="double"/>
+  <property generated="never" lazy="false" column="damage_charge" name="damageCharge" type="double"/>
+  <property generated="never" lazy="false" column="late_fee" name="lateFee" type="double"/>
+  <property generated="never" lazy="false" name="total" type="double"/>
  </class>
 </hibernate-mapping>

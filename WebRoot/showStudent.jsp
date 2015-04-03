@@ -88,7 +88,7 @@
 
 
 		</table>
-		<a href="student.jsp">Back</a>
+		<a href="profileOptions.jsp">Back</a>
 	</center>
 </body>
 </html>

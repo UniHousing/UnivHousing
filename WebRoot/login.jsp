@@ -60,6 +60,11 @@
 		</tbody></table>
 		<br> 
 		<%
+			if(session.getAttribute("login")!="false" && session.getAttribute("login")!=null){
+				session.setAttribute("login", null);
+				out.print("Successful logged out");
+			}
+				
 			if(session.getAttribute("login")=="false")
 				out.print("Wrong Input, Please input again!");
 		 %>

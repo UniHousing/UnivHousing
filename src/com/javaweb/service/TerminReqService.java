@@ -1,5 +1,6 @@
 package com.javaweb.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import com.javaweb.po.TerminReq;
@@ -14,4 +15,6 @@ public interface TerminReqService {
 	public List queryAllTerminReq();
 	
 	public TerminReq queryTerminReqByID(int id);
+
+	public List queryInvoicebyLeaseId(int id);
 }

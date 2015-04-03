@@ -53,5 +53,13 @@ public class LeaseRequestServiceImpl implements LeaseRequestService {
 		return leaseRequestDAO.queryByID(LeaseRequest.class,id);
 	}
 
+	@Override
+	public List queryLeaseRequestByStudentId(int user_id) {
+		// TODO Auto-generated method stub
+		return leaseRequestDAO.findRequestbyStudentId(user_id);
+	}
+
+
+
 
 }

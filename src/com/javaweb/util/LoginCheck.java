@@ -1,7 +1,5 @@
  package com.javaweb.util;
 
-import java.util.HashMap;
-
 public class LoginCheck {
 
 

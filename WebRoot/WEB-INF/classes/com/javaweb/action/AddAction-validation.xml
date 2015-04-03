@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE validators PUBLIC 
   		"-//OpenSymphony Group//XWork Validator 1.0.2//EN" 
   		"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
@@ -41,10 +41,10 @@
 		<message>出生日期必须在1900-01-01至2010-01-01之间</message>
 	</validator>
 
-<!-- 	<validator type="email">
+	<validator type="email">
 		<param name="fieldName">email</param>
 		<message>请输入有效的电子邮箱地址</message>
-	</validator> -->
+	</validator>
 </validators>
 
 
@@ -55,3 +55,4 @@
 
 
 
+ -->

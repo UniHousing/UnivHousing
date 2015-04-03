@@ -1,11 +1,13 @@
 package com.javaweb.po;
 
+import java.util.Date;
+
 
 
 public class Invoice extends IdEntity<Invoice>{
 	
 	private int leaseId;
-	private String payDate;
+	private Date payDate;
 	private String payMethod;
 	private String status;
 	private double penalty;
@@ -13,11 +15,12 @@ public class Invoice extends IdEntity<Invoice>{
 	private double lateFee;
 	private double total;
 
-	public String getPayDate() {
+
+	public Date getPayDate() {
 		return payDate;
 	}
-	public void setPayDate(String dob) {
-		this.payDate = dob;
+	public void setPayDate(Date payDate) {
+		this.payDate = payDate;
 	}
 	public String getStatus() {
 		return status;

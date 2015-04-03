@@ -2,23 +2,38 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-	<title>更</title>
+	<title>Update Profile</title>
 </head>
 <body>
 <center>
-	<h2>更新用户</h2>
+	<h2>Update Profile</h2>
 	<s:actionerror/>
-	<s:form action="update">
-		<s:set name="id" value="#parameters.id[0]"></s:set>
-		<s:textfield label="用户ID" name="id"></s:textfield>
-		<s:textfield label="用户名" name="username"></s:textfield>
-		<s:password label="密码" name="password"></s:password>
-		<s:textfield label="年龄" name="age"></s:textfield>
-		<s:textfield label="生日" name="birth"></s:textfield>
-		<s:textfield label="Type" name="type"></s:textfield>
-		<s:submit value="更新"></s:submit>
-		<s:reset value="重置"></s:reset>
+	<s:form action="updateStudent">
+	<s:set name="id" value="#parameters.id[0]"></s:set>
+		<s:textfield label="Student_id" name="id"></s:textfield>
+		<s:password label="password" name="password"></s:password>
+		<s:textfield label="First Name" name="fname"></s:textfield>
+		<s:textfield label="Last Name" name="lname"></s:textfield>
+		<s:textfield label="tel" name="tel"></s:textfield>
+		<s:textfield label="alternative tel" name="AlterTel"></s:textfield>
+		<s:textfield label="type" name="type"></s:textfield>
+		<s:textfield label="gender" name="gender"></s:textfield>
+		<s:textfield label="address" name="addr"></s:textfield>
+		<s:textfield label="city" name="city"></s:textfield>
+		<s:textfield label="postcode" name="postCode"></s:textfield>
+		<s:textfield label="Birthday" name="birthDate"></s:textfield>
+		<s:textfield label="catergory" name="category"></s:textfield>
+		<s:textfield label="nationality" name="nation"></s:textfield>
+		<s:textfield label="smoker" name="smoker"></s:textfield>
+		<s:textfield label="need" name="need"></s:textfield>
+		<s:textfield label="comment" name="comment"></s:textfield>
+		<s:textfield label="status" name="status"></s:textfield>
+		<s:textfield label="courses" name="courses"></s:textfield>
+		<s:textfield label="kin Info" name="kinId"></s:textfield>
+		<s:submit value="Confirm"></s:submit>
+		<s:reset value="Reset"></s:reset>
 	</s:form>
+	<a href="profileOptions.jsp">Back</a>
 </center>
 </body>
 </html>

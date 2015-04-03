@@ -65,3 +65,4 @@ public class LeaseServiceImpl implements LeaseService {
 		return leaseDAO.findCurrentIdbyStudentId(sid);
 	}
 }
+
