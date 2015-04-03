@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.javaweb.po.LeaseRequest;
 import com.javaweb.po.ResidenceHall;
+import com.javaweb.po.LeaseRequest;
 import com.javaweb.service.FamilyApartmentService;
 import com.javaweb.service.GeneralApartmentService;
 import com.javaweb.service.LeaseRequestService;
@@ -17,6 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class AddRequestAction extends ActionSupport{
 	private int studentId;
 	public static final String SPECIFIC="Specific Hall";
+	private List <ResidenceHall> residenceHalls=new ArrayList<ResidenceHall> ();
 	private String preference1;
 	private String preference2;
 	private String preference3;
@@ -28,10 +29,6 @@ public class AddRequestAction extends ActionSupport{
 	private GeneralApartmentService generalApartmentService;
 	private FamilyApartmentService familyApartmentService;
 	private ResidenceHallService residenceHallService;
-	public AddRequestAction() {
-		// TODO Auto-generated constructor stub
-		
-	}
 	public String handleString(String str) {
 		String [] strings=str.split(",");
 		if (!strings[0].equals(SPECIFIC)) {
