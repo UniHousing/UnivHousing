@@ -47,7 +47,7 @@ public class BaseDAOImpl<T> extends HibernateDaoSupport implements BaseDAO<T> {
     }
 
 	@Override
-	public List queryByForeignId(Class<?> clazz, String columnName,int fid) {
+	public List<T> queryByForeignId(Class<?> clazz, String columnName,int fid) {
 		// TODO Auto-generated method stub
 		Criterion fidEqualCriterion=Restrictions.eq(columnName, fid);
 		DetachedCriteria detachedCriteria = DetachedCriteria.forClass(clazz);

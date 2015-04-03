@@ -12,7 +12,7 @@
 		<s:select label="Select a priority type" 
 		list="#{'Low':'Low', 'Medium':'Medium', 'High':'High'}" 
 		name="type" value="Low" />
-		<s:password label="Description" name="description"></s:password>
+		<s:textfield label="Description" name="description"></s:textfield>
 		<s:textfield label="Location" name="location"></s:textfield>
 		<s:textfield name="Date" label="Format (MM/DD/YEAR)" ></s:textfield>
 		<s:textfield label="Status" name="status"></s:textfield>

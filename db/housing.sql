@@ -113,11 +113,12 @@ CREATE TABLE `lease` (
   `duration` varchar(50) default NULL,
   `enter_date` datetime default NULL,
   `leave_date` datetime default NULL,
-  `deposit` varchar(255) default NULL,
+  `deposit` double default NULL,
   `payment` varchar(50) default NULL,
-  `penalty` varchar(50) default NULL,
+  `penalty` double default NULL,
   `inspect_date` datetime default NULL,
   `parking_id` int(11) default NULL,
+  `status` varchar(50) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -276,6 +277,7 @@ CREATE TABLE `guest` (
 DROP TABLE IF EXISTS `termin_req`;
 CREATE TABLE `termin_req` (
   `id` int(11) NOT NULL auto_increment,
+  `student_id` int(11) default NULL,
   `lease_id` int(11) default NULL,
   `reason` varchar(255),
   `date` datetime default NULL,

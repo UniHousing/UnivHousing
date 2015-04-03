@@ -86,7 +86,7 @@ public class AddTicketAction extends ActionSupport{
 	public String execute() throws Exception {
 		Ticket ticket = new Ticket();
 		ticket.setType(type);
-		if(type==null) return ERROR;
+		//if(type==null) return ERROR;
 		int loginId=(Integer) ActionContext.getContext().getSession().get("login");
 		ticket.setStudentId(loginId);
 		ticket.setDate(date);

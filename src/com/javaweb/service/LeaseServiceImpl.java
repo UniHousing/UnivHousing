@@ -4,16 +4,16 @@ import java.util.List;
 
 import com.javaweb.dao.LeaseDAO;
 import com.javaweb.po.Lease;
+import com.javaweb.po.Ticket;
 
-
-public class LeaseServiceImpl implements LeaseService{
+public class LeaseServiceImpl implements LeaseService {
 	private LeaseDAO leaseDAO;
 
 	public void setLeaseDAO(LeaseDAO leaseDAO) {
 		this.leaseDAO = leaseDAO;
 	}
 
-	// add Lease
+	// add Student
 	@Override
 	public boolean addLease(Lease lease) {
 		if (leaseDAO.queryByID(Lease.class,lease.getId()) == null) {
@@ -54,11 +54,15 @@ public class LeaseServiceImpl implements LeaseService{
 		return leaseDAO.queryByID(Lease.class,id);
 	}
 
-	@Override
-	public List queryLeasebyStudentId(int sid) {
+	public List<Lease> queryLeasebyStudentId(int sid) {
 		// TODO Auto-generated method stub
 		return leaseDAO.findLeasebyStudentId(sid);
 	}
-
-
+	
+	public int queryCurrentIdbyStudentId(int sid) {
+		// TODO Auto-generated method stub
+		System.out.println("curredt id");
+		return leaseDAO.findCurrentIdbyStudentId(sid);
+	}
 }
+

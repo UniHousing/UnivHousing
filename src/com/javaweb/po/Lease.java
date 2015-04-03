@@ -17,8 +17,15 @@ public class Lease extends IdEntity<Lease>{
 	private String payment;
 	private double penalty;
 	private Date inspectDate;
+	private String status;
 	
 	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public int getStudentId() {
 		return studentId;
 	}
@@ -54,17 +61,12 @@ public class Lease extends IdEntity<Lease>{
 	public void setLeaveDate(Date date) {
 		this.leaveDate = date;
 	}
+
 	public double getDeposit() {
 		return deposit;
 	}
-	public void setDeposit(double d) {
-		this.deposit = d;
-	}
-	public String getPayment() {
-		return payment;
-	}
-	public void setPayment(String payment) {
-		this.payment = payment;
+	public void setDeposit(double deposit) {
+		this.deposit = deposit;
 	}
 	public double getPenalty() {
 		return penalty;
@@ -72,6 +74,14 @@ public class Lease extends IdEntity<Lease>{
 	public void setPenalty(double penalty) {
 		this.penalty = penalty;
 	}
+	public String getPayment() {
+		return payment;
+	}
+	public void setPayment(String payment) {
+		this.payment = payment;
+	}
+	
+	
 	public String getRoomNum() {
 		return roomNum;
 	}
@@ -85,7 +95,7 @@ public class Lease extends IdEntity<Lease>{
 		this.enterDate = enterDate;
 	}
 	public Date getInspectDate() {
-		return inspectDate;
+		return this.inspectDate;
 	}
 	public void setInspectDate(Date inspectDate) {
 		this.inspectDate = inspectDate;

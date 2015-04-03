@@ -4,18 +4,18 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
-<!-- struts为配置文件根元素-->
+<!-- struts为配置文件根元素 -->
 <struts>
-	
+
 	<constant name="struts.i18n.encoding" value="gb2312"></constant>
-	<!-- Action必须放在指定的包名空间中-->
+	<!-- Action必须放在指定的包名空间中 -->
 	<package name="struts2" extends="struts-default">
 		<action name="login" class="loginAction">
 			<result name="admin">/admin.jsp</result>
 			<result name="student">/student.jsp</result>
 			<result name="error">/login.jsp</result>
 			<result name="input">/login.jsp</result>
-	
+
 		</action>
 		<action name="guestLogin" class="guestLoginAction">
 			<result name="guest">/student.jsp</result>
@@ -23,92 +23,103 @@
 			<result name="input">/loginGuest.jsp</result>
 		</action>
 		<action name="showAll" class="showAllAction">
-			<!-- 定义处理结果与视图资源之间的关系--> 
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAll.jsp</result>
 		</action>
-		
+
 		<action name="delete" class="deleteAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success" type="redirect">/showAll.action</result>
 		</action>
 		<action name="add" class="addAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success" type="redirect">/showAll.action</result>
 			<result name="input">/add.jsp</result>
 			<result name="error">/add.jsp</result>
 		</action>
 		<action name="update" class="updateAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success" type="redirect">/showAll.action</result>
 			<result name="input">/update.jsp</result>
 			<result name="error">/update.jsp</result>
 		</action>
 		<action name="updateStudent" class="updateStudentAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success" type="redirect">/profileOptions.jsp</result>
 			<result name="input">/updateStudent.jsp</result>
 			<result name="error">/updateStudent.jsp</result>
 		</action>
 		<action name="showUser" class="showUserAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showUser.jsp</result>
 		</action>
 		<action name="showStudent" class="showStudentAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showStudent.jsp</result>
 		</action>
 		<action name="showTicket" class="showTicketAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showTicket.jsp</result>
 		</action>
 		<action name="showTicketStatus" class="showTicketStatusAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showTicketStatus.jsp</result>
 		</action>
-		
+
 		<action name="addTicket" class="addTicketAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success" type="redirect">/showTicketStatus.action</result>
 			<result name="input">/addTicket.jsp</result>
 			<result name="error">/addTicket.jsp</result>
 		</action>
-		
+
 		<action name="showAllStaff" class="showStaffAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllStaff.jsp</result>
 		</action>
 		<action name="showInvoice" class="showInvoiceAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showInvoice.jsp</result>
-			</action>
+		</action>
 		<action name="showAllInvoice" class="showAllInvoiceAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllInvoice.jsp</result>
 		</action>
 		<action name="showLease" class="showLeaseAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showLease.jsp</result>
 		</action>
 		<action name="showAllLease" class="showAllLeaseAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllLease.jsp</result>
 		</action>
 		<action name="showAllHouse" class="showHouseAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllHouse.jsp</result>
 		</action>
-		
+
+		<action name="addTerminReq" class="addTerminReqAction">
+			<result name="success" type="redirect">/showLeaseStatus.action</result>
+			<result name="input">/addTerminReq.jsp</result>
+			<result name="error">/addTerminReq.jsp</result>
+		</action>
+
+		<action name="showLeaseStatus" class="showLeaseStatusAction">
+			<!-- 定义处理结果与视图资源之间的关系 -->
+			<result name="success">/showLeaseStatus.jsp</result>
+		</action>
+
 		<action name="addRequest" class="addRequestAction">
 			<result name="success">/requestOptions.jsp</result>
-			
+
 		</action>
-		
+
 		<action name="cancelRequest" class="cancelRequestAction">
 			<result name="success">/cancelRequest.jsp</result>
 		</action>
-		
+
 		<action name="showAllRequest" class="showAllRequestAction">
-			<!-- 定义处理结果与视图资源之间的关系-->
+			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllReq.jsp</result>
 		</action>
 	</package>

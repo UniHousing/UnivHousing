@@ -4,16 +4,16 @@ import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.javaweb.service.TicketService;
+import com.javaweb.service.LeaseService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ShowTicketStatusAction extends ActionSupport{
-	private TicketService ticketService;
+public class ShowLeaseStatusAction extends ActionSupport{
+	private LeaseService leaseService;
 
 	
-	public void setTicketService(TicketService ticketService) {
-		this.ticketService = ticketService;
+	public void setLeaseService(LeaseService leaseService) {
+		this.leaseService = leaseService;
 	}
 
 	@Override
@@ -22,9 +22,9 @@ public class ShowTicketStatusAction extends ActionSupport{
 		int loginId=(Integer) ActionContext.getContext().getSession().get("login");
 		System.out.println("login_id"+loginId);
 //		List allticket = ticketService.queryAllTicket();
-		List allticket=ticketService.queryTicketsbyStudentId(loginId);
-		System.out.println("ticket");
-		ServletActionContext.getRequest().setAttribute("all", allticket);
+		List alllease=leaseService.queryLeasebyStudentId(loginId);
+		System.out.println("lease");
+		ServletActionContext.getRequest().setAttribute("all", alllease);
 		return SUCCESS;
 		
 	}

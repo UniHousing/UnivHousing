@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.javaweb.po.Lease;
 
+
 public interface LeaseDAO extends BaseDAO<Lease>{
-	public List findLeasebyStudentId(int sid);
+	public List<Lease> findLeasebyStudentId(int sid);
+	public int findCurrentIdbyStudentId(int sid);
 }

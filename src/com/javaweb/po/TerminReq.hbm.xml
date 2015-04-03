@@ -12,6 +12,7 @@
 		
 		<!-- 定义其他属性 -->
 		<property name="leaseId" column="lease_id" type="int"></property>
+		<property name="studentId" column="student_id" type="int"></property>
 		<property name="reason"></property>
 		<property name="date" type="date"></property>
 		<property name="status"></property>
