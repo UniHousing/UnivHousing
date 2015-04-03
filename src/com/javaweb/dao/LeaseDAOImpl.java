@@ -18,11 +18,14 @@ public class LeaseDAOImpl extends BaseDAOImpl<Lease>implements LeaseDAO {
 	public int findCurrentIdbyStudentId(int sid){
 		
 		List<Lease> leases=this.queryByForeignId(Lease.class, "studentId", sid);
-		for (Lease element : leases) // or sArray
-        {
-               if(element.getStatus().equals("current"))
-               	return element.getId();    	
-        }
+		if(leases!=null){
+			for (Lease element : leases) // or sArray
+	        {
+	               if(element.getStatus().equals("current"))
+	               	return element.getId();    	
+	        }
+		}
+		
 		return -1;
 	}
 		

@@ -21,7 +21,7 @@ INSERT INTO `housing`.`general_apartment` (`name`, `addr`, `tel`, `room_count`, 
 INSERT INTO `housing`.`residence_hall` (`name`, `addr`, `tel`, `manager_id`) VALUES ('denail', 'ejkj', '399291', '1');
 INSERT INTO `housing`.`residence_hall` (`name`, `addr`, `tel`, `manager_id`) VALUES ('deenn', 'fjak', '92919', '2');
 
-INSERT INTO `housing`.`lease` (`student_id`, `house_id`, `room_id`, `room_num`, `duration`, `enter_date`, `leave_date`, `deposit`, `payment`, `penalty`, `inspect_date`, `parking_id`) VALUES ('2', '2', '2', '2', '343', '2014-02-13', '2014-09-10', 123, '42', 421, '2014-10-24', '2');
-INSERT INTO `housing`.`lease` (`student_id`, `house_id`, `room_id`, `room_num`, `duration`, `enter_date`, `leave_date`, `deposit`, `payment`, `penalty`, `inspect_date`, `parking_id`) VALUES ('1', '4', '2', '3', '42', '2014-10-20', '2015-01-14', 321, '321', 32, '2015-03-23', '2');
+INSERT INTO `housing`.`lease` (`student_id`, `house_id`, `room_id`, `room_num`, `duration`, `enter_date`, `leave_date`, `deposit`, `payment`, `penalty`, `inspect_date`, `parking_id`, `status`) VALUES ('2', '2', '2', '2', '343', '2014-02-13', '2014-09-10', 123, '42', 421, '2014-10-24', '2','former');
+INSERT INTO `housing`.`lease` (`student_id`, `house_id`, `room_id`, `room_num`, `duration`, `enter_date`, `leave_date`, `deposit`, `payment`, `penalty`, `inspect_date`, `parking_id`, `status`) VALUES ('1', '4', '2', '3', '42', '2014-10-20', '2015-01-14', 321, '321', 32, '2015-03-23', '2','current');
 INSERT INTO `housing`.`invoice` (`lease_id`, `pay_date`, `pay_method`, `status`, `penalty`, `damage_charge`, `late_fee`, `total`) VALUES ('2', '2014-03-12', 'visa', 'pending', '2', '3', '2', '5');
 INSERT INTO `housing`.`invoice` (`lease_id`, `pay_date`, `pay_method`, `status`, `penalty`, `damage_charge`, `late_fee`, `total`) VALUES ('1', '2013-03-12', 'cash', 'pedning', '3', '4', '5', '10');
