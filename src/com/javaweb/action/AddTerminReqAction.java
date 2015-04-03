@@ -4,7 +4,6 @@ package com.javaweb.action;
 import java.util.Date;
 
 import com.javaweb.po.TerminReq;
-import com.javaweb.po.Lease;
 import com.javaweb.service.TerminReqService;
 import com.javaweb.service.LeaseService;
 
@@ -137,9 +136,10 @@ public class AddTerminReqAction extends ActionSupport{
 		terminReq.setStudentId(loginId);
 		System.out.println(loginId);
 		int leaseid=leaseService.queryCurrentIdbyStudentId(loginId);
+		System.out.println("leaseid");
 		if(leaseid==-1)
 			return ERROR;
-		System.out.println("leaseid");
+		
 		//if(lease==null)
 		//	return ERROR;
 		//System.out.println(lease.getId());

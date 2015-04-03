@@ -19,4 +19,7 @@ public interface LeaseService {
 	public List<Lease> queryLeasebyStudentId(int sid);
 	
 	public int queryCurrentIdbyStudentId(int sid);
+	
+	public List<Lease> findCLeasesbyStudentId(int sid);
+	public List<Lease> findFLeasesbyStudentId(int sid);
 }

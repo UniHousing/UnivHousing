@@ -301,7 +301,7 @@
 		scope="prototype">
 		<property name="ticketService" ref="ticketService"></property>
 	</bean>
-	
+
 
 	<bean id="showStaffAction" class="com.javaweb.action.ShowStaffAction"
 		scope="prototype">
@@ -316,7 +316,16 @@
 		<property name="invoiceService" ref="invoiceService"></property>
 		<property name="leaseService" ref="leaseService"></property>
 	</bean>
+	<bean id="showFormerInvoiceAction" class="com.javaweb.action.ShowFormerInvoiceAction"
+		scope="prototype">
+		<property name="invoiceService" ref="invoiceService"></property>
+		<property name="leaseService" ref="leaseService"></property>
+	</bean>
 	<bean id="showLeaseAction" class="com.javaweb.action.ShowLeaseAction"
+		scope="prototype">
+		<property name="leaseService" ref="leaseService"></property>
+	</bean>
+	<bean id="showFormerLeaseAction" class="com.javaweb.action.ShowFormerLeaseAction"
 		scope="prototype">
 		<property name="leaseService" ref="leaseService"></property>
 	</bean>
@@ -324,19 +333,19 @@
 		scope="prototype">
 		<property name="leaseService" ref="leaseService"></property>
 	</bean>
-	
+
 	<bean id="showHouseAction" class="com.javaweb.action.ShowHouseAction">
 		<property name="familyApartmentService" ref="familyApartmentService"></property>
 		<property name="generalApartmentService" ref="generalApartmentService"></property>
 		<property name="residenceHallService" ref="residenceHallService"></property>
 	</bean>
-	
+
 	<bean id="addTerminReqAction" class="com.javaweb.action.AddTerminReqAction"
 		scope="prototype">
 		<property name="terminReqService" ref="terminReqService"></property>
 		<property name="leaseService" ref="leaseService"></property>
 	</bean>
-	
+
 	<bean id="showLeaseStatusAction" class="com.javaweb.action.ShowLeaseStatusAction"
 		scope="prototype">
 		<property name="leaseService" ref="leaseService"></property>
@@ -345,7 +354,7 @@
 	<bean id="updateStudentAction" class="com.javaweb.action.UpdateStudentAction">
 		<property name="studentService" ref="studentService"></property>
 	</bean>
-	
+
 	<bean id="addRequestAction" class="com.javaweb.action.AddRequestAction">
 		<property name="leaseRequestService" ref="leaseRequestService"></property>
 		<property name="generalApartmentService" ref="generalApartmentService"></property>

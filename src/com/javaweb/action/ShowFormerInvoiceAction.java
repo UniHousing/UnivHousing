@@ -18,7 +18,7 @@ import com.javaweb.service.LeaseService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ShowAllInvoiceAction extends ActionSupport {
+public class ShowFormerInvoiceAction extends ActionSupport {
 	private InvoiceService invoiceService;
 	private LeaseService leaseService;
 	public void setInvoiceService(InvoiceService invoiceService) {
@@ -38,7 +38,7 @@ public class ShowAllInvoiceAction extends ActionSupport {
 		List<Invoice> invoices=new ArrayList<Invoice>();
 		if (leases!=null) {
 			for (Lease lease : leases) {
-				invoices.addAll(invoiceService.findCInvoicesbyLeaseId(lease.getId()));
+				invoices.addAll(invoiceService.findFInvoicesbyLeaseId(lease.getId()));
 			}
 		}
 //		List all = invoiceService.queryAllInvoice();
