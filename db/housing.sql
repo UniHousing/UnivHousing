@@ -309,7 +309,7 @@ DROP TABLE IF EXISTS `parking_request`;
 CREATE TABLE `parking_request` (
   `id` int(11) NOT NULL auto_increment,
   `vehicle_type` varchar(20) default NULL,
-  `nearbyt` varchar(20) default NULL,
+  `nearby` varchar(20) default NULL,
   `handicapped` varchar(20) default NULL,
   `status` varchar(20) default NULL,
   PRIMARY KEY  (`id`)

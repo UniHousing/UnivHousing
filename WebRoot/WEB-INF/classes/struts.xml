@@ -122,6 +122,14 @@
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllReq.jsp</result>
 		</action>
+		
+		<action name="addParkingRequest" class="addParkingRequestAction">
+			<result name="success" type="redirect">/parkingOptions.jsp</result>
+			<result name="input">/addParkingRequest.jsp</result>
+			<result name="error">/addParkingRequest.jsp</result>
+		</action>
+		
+		
 	</package>
 </struts>
 
