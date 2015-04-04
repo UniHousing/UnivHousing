@@ -1,0 +1,22 @@
+package com.javaweb.po;
+
+import java.util.Date;
+
+public class ParkingSpotOccupy extends IdEntity<ParkingSpotOccupy> {
+	int parkingSpotId;
+	int studentId;
+	public int getParkingSpotId() {
+		return parkingSpotId;
+	}
+	public void setParkingSpotId(int parkingSpotId) {
+		this.parkingSpotId = parkingSpotId;
+	}
+	public int getStudentId() {
+		return studentId;
+	}
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+	
+
+}

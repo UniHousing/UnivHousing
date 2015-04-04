@@ -158,6 +158,19 @@ CREATE TABLE `parking_lot` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--------------------------------
+-- Table structure for Parking spot occupied 
+--------------------------------
+DROP TABLE IF EXISTS `parking_spot_occupy`;
+CREATE TABLE `parking_spot_occupy`(
+ `id` int(11) NOT NULL auto_increment,
+ `parking_spot_id` int(11) NOT NULL,
+ `student_id` int(11) NOT NULL,
+ PRIMARY KEY(`id`),
+ UNIQUE(`parking_spot_id`),
+ UNIQUE(`student_id`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
 -- ----------------------------
 -- Table structure for parking_spot
 -- ----------------------------
