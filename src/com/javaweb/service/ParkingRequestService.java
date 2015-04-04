@@ -14,4 +14,6 @@ public interface ParkingRequestService {
 	public List queryAllParkingRequest();
 	
 	public ParkingRequest queryParkingRequestByID(int id);
+	
+	public List<ParkingRequest> queryParkingRequestsbyStudentId(int sid);
 }
