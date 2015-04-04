@@ -93,6 +93,8 @@ public class AssignParkingSpotAction extends ActionSupport {
 			else {
 				for (ParkingSpot parkingSpot : parkingSpots) {
 					spot_id=parkingSpot.getId();
+					parkingSpot.setAvailability("no");
+					parkingSpotService.updateParkingSpot(parkingSpot);
 					break;
 				}
 			}

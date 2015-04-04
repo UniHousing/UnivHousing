@@ -154,6 +154,15 @@
 			<result name="success">/approvedLease.jsp</result>
 			<result name="error">/approveLeaseReq.jsp</result>
 		</action>
+		<action name="assignSpot" class="assignSpotAction">
+			<result name="success">/admin.jsp</result>
+			<result name="error">/admin.jsp</result>
+		</action>
+		
+		<action name="showLot" class="showLotAction" >
+			<result name="success">/showCurrentLot.jsp</result>
+			<result name="error">/showCurrentLot.jsp</result>
+		</action>
 		
 		<action name="showParkingRequest" class="showParkingReqAction">
 			<result name="success">/showParkingReqStatus.jsp</result>
