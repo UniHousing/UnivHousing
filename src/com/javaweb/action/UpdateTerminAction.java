@@ -2,13 +2,9 @@ package com.javaweb.action;
 
 import java.util.Date;
 
-import org.apache.struts2.ServletActionContext;
-
 import com.javaweb.po.TerminReq;
-import com.javaweb.po.User;
 import com.javaweb.service.LeaseService;
 import com.javaweb.service.TerminReqService;
-import com.javaweb.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
