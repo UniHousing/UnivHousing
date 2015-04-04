@@ -10,7 +10,7 @@
 	<table border="1">
 		<s:set name="lot" value="#request.lot"/>
 		<tr>
-			<td>Ticket ID</td>
+			<td>Lot ID</td>
 			<td><s:property value="#lot.id"/></td>
 		</tr>
 		<tr>	

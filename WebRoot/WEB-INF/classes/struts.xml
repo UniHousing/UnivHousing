@@ -159,6 +159,11 @@
 			<result name="error">/admin.jsp</result>
 		</action>
 		
+		<action name="showLot" class="showLotAction" >
+			<result name="success">/showCurrentLot.jsp</result>
+			<result name="error">/showCurrentLot.jsp</result>
+		</action>
+		
 	</package>
 </struts>
 
