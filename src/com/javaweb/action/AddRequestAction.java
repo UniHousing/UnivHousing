@@ -25,9 +25,7 @@ public class AddRequestAction extends ActionSupport{
 	private Date startDate;
 	private Date endDate;
 	private LeaseRequestService leaseRequestService;
-	private GeneralApartmentService generalApartmentService;
-	private FamilyApartmentService familyApartmentService;
-	private ResidenceHallService residenceHallService;
+	
 
 	public String handleString(String str) {
 		String [] strings=str.split(",");
@@ -129,48 +127,6 @@ public class AddRequestAction extends ActionSupport{
 	}
 
 
-	public GeneralApartmentService getGeneralApartmentService() {
-		return generalApartmentService;
-	}
-
-
-	public void setGeneralApartmentService(
-			GeneralApartmentService generalApartmentService) {
-		this.generalApartmentService = generalApartmentService;
-	}
-
-
-	public FamilyApartmentService getFamilyApartmentService() {
-		return familyApartmentService;
-	}
-
-
-	public void setFamilyApartmentService(
-			FamilyApartmentService familyApartmentService) {
-		this.familyApartmentService = familyApartmentService;
-	}
-
-
-	public ResidenceHallService getResidenceHallService() {
-		return residenceHallService;
-	}
-
-
-	public void setResidenceHallService(ResidenceHallService residenceHallService) {
-		this.residenceHallService = residenceHallService;
-	}
-	public String doDefault() throws Exception{
-		System.out.println("hat hre ");
-		
-		
-		return SUCCESS;
-		
-	}
-	public String input() throws Exception{
-		System.out.println("input ");
-		return SUCCESS;
-		
-	}
 
 	@Override
 	public String execute() throws Exception {

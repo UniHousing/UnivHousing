@@ -7,9 +7,13 @@ import com.javaweb.po.ResidenceHall;
 
 public class ResidenceHallServiceImpl implements ResidenceHallService{
 	private ResidenceHallDAO residenceHallDAO;
-
+	private RoomService roomService;
 	public void setResidenceHallDAO(ResidenceHallDAO residenceHallDAO) {
 		this.residenceHallDAO = residenceHallDAO;
+	}
+
+	public void setRoomService(RoomService roomService) {
+		this.roomService = roomService;
 	}
 
 	// add ResidenceHall
@@ -51,6 +55,40 @@ public class ResidenceHallServiceImpl implements ResidenceHallService{
 	@Override
 	public ResidenceHall queryResidenceHallByID(int id) {
 		return residenceHallDAO.queryByID(ResidenceHall.class,id);
+	}
+
+	@Override
+	public int queryAvailableHallbyName(String name) {
+		// TODO Auto-generated method stub
+		List<ResidenceHall> halls=residenceHallDAO.findHallsbyName(name);
+		if (halls==null) {
+			return -1;
+		}
+		else {
+			for (ResidenceHall residenceHall : halls) {
+				if (residenceHall.getRoomCount()>roomService.queryRoomsInHouse(residenceHall.getId())) {
+					return residenceHall.getId();
+				}
+			}
+			return -1;
+		}
+	}
+
+	@Override
+	public int queryAvailableHall() {
+		// TODO Auto-generated method stub
+		List<ResidenceHall> halls=this.queryAllResidenceHall();
+		if (halls==null) {
+			return -1;
+		}
+		else {
+			for (ResidenceHall residenceHall : halls) {
+				if (residenceHall.getRoomCount()>roomService.queryRoomsInHouse(residenceHall.getId())) {
+					return residenceHall.getId();
+				}
+			}
+			return -1;
+		}
 	}
 
 }

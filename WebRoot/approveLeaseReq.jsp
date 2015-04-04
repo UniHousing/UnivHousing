@@ -19,7 +19,7 @@
 				<td>Start Date</td>
 				<td>End Date</td>
 				<td>Status</td>
-				
+				<td>Approve/Waiting List</td>
 
 			</tr>
 			<s:iterator value="#request.req" id="lease">
@@ -33,35 +33,13 @@
 					<td><s:property value="#lease.startDate" /></td>
 					<td><s:property value="#lease.endDate" /></td>
 					<td><s:property value="#lease.status" /></td>
+					<s:if test="%{#lease.status!='Processed' }"><td><a href="formLease.action?id=<s:property value='#lease.id'/>">Process</a></td></s:if>
 					
 				</tr>
 			</s:iterator>
 		</table>
-		<h3>Terminal Request List</h3>
-		<table border="1">
-			<tr>
-				<td>id</td>
-				<td>Lease Id</td>
-				<td>Reason</td>
-				<td>Submit Date</td>
-				<td>Inspection Date</td>
-				<td>Extra Fee </td>
-				<td>Status</td>
-
-			</tr>
-			<s:iterator value="#request.termin" id="ter">
-				<tr>
-					<td><s:property value="#ter.id" /></a></td>
-					<td><s:property value="#ter.leaseId" /></td>
-					<td><s:property value="#ter.reason" /></td>
-					<td><s:property value="#ter.date" /></td>
-					<td><s:property value="#ter.inspectionDate" /></td>
-					<td><s:property value="#ter.extraFee" /></td>
-					<td><s:property value="#ter.status" /></td>
-				</tr>
-			</s:iterator>
-		</table>
-		<a href="requestViewCancel.jsp">Back</a>
+		
+		<a href="admin.jsp">Back</a>
 	</center>
 </body>
 </html>

@@ -130,6 +130,13 @@
 			<result name="input">/updateReq.jsp</result>
 			<result name="error">/updateReq.jsp</result>
 		</action>
+		<action name="approveLeaseReq" class="approveLeaseReqAction">
+			<result name="success">/approveLeaseReq.jsp</result>
+		</action>
+		<action name="formLease" class="formLeaseAction">
+			<result name="success">/approvedLease.jsp</result>
+		</action>
+		
 	</package>
 </struts>
 

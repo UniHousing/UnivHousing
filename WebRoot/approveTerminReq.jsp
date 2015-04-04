@@ -16,7 +16,7 @@
 				<td>Inspection Date</td>
 				<td>Extra Fee </td>
 				<td>Status</td>
-				<td>Approve</td>
+				<td>Approve?</td>
 			</tr>
 			<s:iterator value="#request.termin" id="ter">
 				<tr>
@@ -27,7 +27,8 @@
 					<td><s:property value="#ter.inspectionDate" /></td>
 					<td><s:property value="#ter.extraFee" /></td>
 					<td><s:property value="#ter.status" /></td>
-					<td><a href="updateReq.jsp?id=<s:property value='#ter.id'/>">Approve</a></td>
+					<s:if test="%{#ter.status!='Approved'}"><td><a href="updateReq.jsp?id=<s:property value='#ter.id'/>">Approve</a></td></s:if>
+					<s:else><td>Approved</td></s:else>
 				</tr>
 			</s:iterator>
 		</table>
