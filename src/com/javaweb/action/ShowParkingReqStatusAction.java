@@ -21,9 +21,8 @@ public class ShowParkingReqStatusAction extends ActionSupport{
 		int loginId=(Integer) ActionContext.getContext().getSession().get("login");
 		System.out.println("login_id"+loginId);
 //		List allticket = ticketService.queryAllTicket();
-		List alllease=leaseService.queryLeasebyStudentId(loginId);
-		System.out.println("lease");
-		ServletActionContext.getRequest().setAttribute("all", alllease);
+		List all=parkingRequestService.queryParkingRequestsbyStudentId(loginId);
+		ServletActionContext.getRequest().setAttribute("all", all);
 		return SUCCESS;
 		
 	}
