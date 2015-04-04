@@ -7,10 +7,7 @@ import java.util.List;
 
 import com.javaweb.po.ResidenceHall;
 import com.javaweb.po.LeaseRequest;
-import com.javaweb.service.FamilyApartmentService;
-import com.javaweb.service.GeneralApartmentService;
 import com.javaweb.service.LeaseRequestService;
-import com.javaweb.service.ResidenceHallService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
