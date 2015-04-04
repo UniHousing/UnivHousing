@@ -8,9 +8,11 @@ import com.javaweb.po.Lease;
 import com.javaweb.po.ParkingLot;
 import com.javaweb.po.ParkingRequest;
 import com.javaweb.po.ParkingSpot;
+import com.javaweb.po.ParkingSpotOccupy;
 import com.javaweb.service.LeaseService;
 import com.javaweb.service.ParkingLotService;
 import com.javaweb.service.ParkingRequestService;
+import com.javaweb.service.ParkingSpotOccupyService;
 import com.javaweb.service.ParkingSpotService;
 import com.javaweb.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
@@ -24,8 +26,15 @@ public class AssignParkingSpotAction extends ActionSupport {
 	private ParkingSpotService parkingSpotService;
 	private LeaseService leaseService;
 	private ParkingRequestService parkingRequestService;
+	private ParkingSpotOccupyService parkingSpotOccupyService;
 
 	
+	public void setParkingSpotOccupyService(
+			ParkingSpotOccupyService parkingSpotOccupyService) {
+		this.parkingSpotOccupyService = parkingSpotOccupyService;
+	}
+
+
 	public void setParkingSpotService(ParkingSpotService parkingSpotService) {
 		this.parkingSpotService = parkingSpotService;
 	}
@@ -88,6 +97,10 @@ public class AssignParkingSpotAction extends ActionSupport {
 				}
 			}
 		}
+		ParkingSpotOccupy occupy=new ParkingSpotOccupy();
+		occupy.setParkingSpotId(spot_id);
+		occupy.setStudentId(student_id);
+		parkingSpotOccupyService.addParkingSpotOccupy(occupy);
 		parkingRequest.setStatus("Processed");
 		parkingRequestService.updateParkingRequest(parkingRequest);		
 		return SUCCESS;

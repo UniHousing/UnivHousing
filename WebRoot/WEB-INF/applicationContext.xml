@@ -55,6 +55,7 @@
 				<value>com/javaweb/po/LeaseRequest.hbm.xml</value>
 				<value>com/javaweb/po/ParkingLot.hbm.xml</value>
 				<value>com/javaweb/po/ParkingSpot.hbm.xml</value>
+				<value>com/javaweb/po/ParkingSpotOccupy.hbm.xml</value>
 
 			</list>
 		</property>
@@ -168,6 +169,12 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
+	
+	<bean id="parkingSpotOccupyDAO" class="com.javaweb.dao.ParkingSpotOccupyDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
 
 
 	<!-- 配置业务逻辑组件 -->
@@ -239,6 +246,9 @@
 	</bean>
 	<bean id="parkingSpotService" class="com.javaweb.service.ParkingSpotServiceImpl">
 		<property name="parkingSpotDAO" ref="parkingSpotDAO"></property>
+	</bean>
+	<bean id="parkingSpotOccupyService" class="com.javaweb.service.ParkingSpotOccupyServiceImpl">
+		<property name="parkingSpotOccupyDAO" ref="parkingSpotOccupyDAO"></property>
 	</bean>
 
 
@@ -396,5 +406,6 @@
 		<property name="parkingLotService" ref="parkingLotService"></property>
 		<property name="parkingRequestService" ref="parkingRequestService"></property>
 		<property name="parkingSpotService" ref="parkingSpotService"></property>
+		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
 	</bean>
 </beans>
