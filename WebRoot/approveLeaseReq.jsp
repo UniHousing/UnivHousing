@@ -33,8 +33,8 @@
 					<td><s:property value="#lease.startDate" /></td>
 					<td><s:property value="#lease.endDate" /></td>
 					<td><s:property value="#lease.status" /></td>
-					<s:if test="%{#lease.status!='Processed' }"><td><a href="formLease.action?id=<s:property value='#lease.id'/>">Process</a></td></s:if>
-					
+					<s:if test="%{#lease.status=='Pending' }"><td><a href="formLease.action?id=<s:property value='#lease.id'/>">Process</a></td></s:if>
+					<s:else><td>Processed</td></s:else>
 				</tr>
 			</s:iterator>
 		</table>

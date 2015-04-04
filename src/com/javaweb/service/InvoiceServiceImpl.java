@@ -58,4 +58,12 @@ public class InvoiceServiceImpl implements InvoiceService {
 		// TODO Auto-generated method stub
 		return invoiceDAO.findRequestbyLeaseId(lid);
 	}
+	
+	public List<Invoice> findCInvoicesbyLeaseId(int lid){
+		return invoiceDAO.findCInvoicesbyLeaseId(lid);
+	}
+	
+	public List<Invoice> findFInvoicesbyLeaseId(int lid){
+		return invoiceDAO.findFInvoicesbyLeaseId(lid);
+	}
 }

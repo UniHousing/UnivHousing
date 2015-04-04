@@ -85,6 +85,11 @@
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllInvoice.jsp</result>
 		</action>
+		<action name="showFormerInvoice" class="showFormerInvoiceAction">
+			<!-- 定义处理结果与视图资源之间的关系 -->
+			<result name="success">/showFormerInvoice.jsp</result>
+		</action>
+		
 		<action name="showLease" class="showLeaseAction">
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showLease.jsp</result>
@@ -93,13 +98,18 @@
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllLease.jsp</result>
 		</action>
+		<action name="showFormerLease" class="showFormerLeaseAction">
+			<!-- 定义处理结果与视图资源之间的关系 -->
+			<result name="success">/showFormerLease.jsp</result>
+		</action>
+		
 		<action name="showAllHouse" class="showHouseAction">
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllHouse.jsp</result>
 		</action>
 
 		<action name="addTerminReq" class="addTerminReqAction">
-			<result name="success" type="redirect">/showLeaseStatus.action</result>
+			<result name="success" type="redirect">/showAllRequest.action</result>
 			<result name="input">/addTerminReq.jsp</result>
 			<result name="error">/addTerminReq.jsp</result>
 		</action>
@@ -110,8 +120,8 @@
 		</action>
 
 		<action name="addRequest" class="addRequestAction">
-			<result name="success">/requestOptions.jsp</result>
 			<result name="input">/addNewRequest.jsp</result>
+			<result name="success">/requestOptions.jsp</result>
 		</action>
 
 		<action name="cancelRequest" class="cancelRequestAction">
@@ -135,6 +145,7 @@
 		</action>
 		<action name="formLease" class="formLeaseAction">
 			<result name="success">/approvedLease.jsp</result>
+			<result name="error">/approveLeaseReq.jsp</result>
 		</action>
 		
 	</package>
