@@ -21,6 +21,11 @@ public class ShowCurrentParkingLotAction extends ActionSupport {
 	}
 
 
+	public void setParkingSpotService(ParkingSpotService parkingSpotService) {
+		this.parkingSpotService = parkingSpotService;
+	}
+
+
 	public void setParkingLotService(ParkingLotService parkingLotService) {
 		this.parkingLotService = parkingLotService;
 	}

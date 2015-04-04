@@ -420,6 +420,7 @@
 	<bean id="showLotAction" class="com.javaweb.action.ShowCurrentParkingLotAction">
 		<property name="parkingLotService" ref="parkingLotService"></property>
 		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
+		<property name="parkingSpotService" ref="parkingSpotService"></property>
 	</bean>
 	<bean id="showParkingReqAction" class="com.javaweb.action.ShowParkingReqStatusAction">
 		<property name="parkingRequestService" ref="parkingRequestService"></property>
