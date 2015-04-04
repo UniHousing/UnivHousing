@@ -147,6 +147,10 @@
 			<result name="success">/approvedLease.jsp</result>
 			<result name="error">/approveLeaseReq.jsp</result>
 		</action>
+		<action name="assignSpot" class="assignSpotAction">
+			<result name="success">/admin.jsp</result>
+			<result name="error">/admin.jsp</result>
+		</action>
 		
 	</package>
 </struts>
