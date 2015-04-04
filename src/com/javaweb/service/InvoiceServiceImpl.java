@@ -59,10 +59,12 @@ public class InvoiceServiceImpl implements InvoiceService {
 		return invoiceDAO.findRequestbyLeaseId(lid);
 	}
 	
+	@Override
 	public List<Invoice> findCInvoicesbyLeaseId(int lid){
 		return invoiceDAO.findCInvoicesbyLeaseId(lid);
 	}
 	
+	@Override
 	public List<Invoice> findFInvoicesbyLeaseId(int lid){
 		return invoiceDAO.findFInvoicesbyLeaseId(lid);
 	}

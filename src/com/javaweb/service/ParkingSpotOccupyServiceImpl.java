@@ -8,7 +8,7 @@ import com.javaweb.po.ParkingSpotOccupy;
 public class ParkingSpotOccupyServiceImpl implements ParkingSpotOccupyService {
 	private ParkingSpotOccupyDAO parkingSpotOccupyDAO;
 
-	public void setParkingSpotDAO(ParkingSpotOccupyDAO parkingSpotOccupyDAO) {
+	public void setParkingSpotOccupyDAO(ParkingSpotOccupyDAO parkingSpotOccupyDAO) {
 		this.parkingSpotOccupyDAO = parkingSpotOccupyDAO;
 	}
 
@@ -44,7 +44,7 @@ public class ParkingSpotOccupyServiceImpl implements ParkingSpotOccupyService {
 	}
 
 	@Override
-	public List queryAllParkingSpot() {
+	public List queryAllParkingSpotOccupy() {
 		return parkingSpotOccupyDAO.queryAll(ParkingSpotOccupy.class);
 	}
 

@@ -180,7 +180,7 @@ CREATE TABLE `parking_spot` (
   `lot_id` int(11) default NULL,
   `classification` varchar(40) default NULL,
   `fee` float default NULL,
-  `availablity` varchar(10) default NULL,
+  `availability` varchar(10) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -320,8 +320,9 @@ CREATE TABLE `ticket` (
 DROP TABLE IF EXISTS `parking_request`;
 CREATE TABLE `parking_request` (
   `id` int(11) NOT NULL auto_increment,
+  `student_id` int(11) default NULL,  
   `vehicle_type` varchar(20) default NULL,
-  `nearbyt` varchar(20) default NULL,
+  `nearby` varchar(20) default NULL,
   `handicapped` varchar(20) default NULL,
   `status` varchar(20) default NULL,
   PRIMARY KEY  (`id`)

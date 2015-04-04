@@ -12,7 +12,7 @@ public interface ParkingSpotOccupyService {
 	
 	public boolean updateParkingSpotOccupy(ParkingSpotOccupy parkingSpotOccupy);
 	
-	public List queryAllParkingSpot();
+	public List queryAllParkingSpotOccupy();
 	
 	public ParkingSpotOccupy queryParkingSpotOccupyByID(int id);
 	

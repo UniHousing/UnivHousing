@@ -8,26 +8,26 @@
 <center>
 	<h2>ParkingSpot</h2>
 	<table border="1">
-		<s:set name="parkingspot" value="#request.parkingspot"/>
+		<s:set name="parkingSpot" value="#request.parkingSpot"/>
 		<tr>
 			<td>ParkingSpot ID</td>
-			<td><s:property value="#parkingspot.id"/></td>
+			<td><s:property value="#parkingSpot.id"/></td>
 		</tr>
 		<tr>	
 			<td>Lot ID</td>	
-			<td><s:property value="#parkingspot.lotId"/></td>	
+			<td><s:property value="#parkingSpot.lotId"/></td>	
 		</tr>
 		<tr>
 			<td>Classification</td>
-			<td><s:property value="#parkingspot.classification"/></td>
+			<td><s:property value="#parkingSpot.classification"/></td>
 		</tr>
 		<tr>
 			<td>Fee</td>
-			<td><s:property value="#parkingspot.fee"/></td>
+			<td><s:property value="#parkingSpot.fee"/></td>
 		</tr>
 		<tr>
 			<td>Availability</td>
-			<td><s:property value="#parkingspot.availability"/></td>
+			<td><s:property value="#parkingSpot.availability"/></td>
 		</tr>		
 	</table>
 	<a href="parkingOptions.jsp">Back</a>		

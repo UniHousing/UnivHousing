@@ -55,6 +55,7 @@
 				<value>com/javaweb/po/LeaseRequest.hbm.xml</value>
 				<value>com/javaweb/po/ParkingLot.hbm.xml</value>
 				<value>com/javaweb/po/ParkingSpot.hbm.xml</value>
+				<value>com/javaweb/po/ParkingSpotOccupy.hbm.xml</value>
 
 			</list>
 		</property>
@@ -168,6 +169,12 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
+	
+	<bean id="parkingSpotOccupyDAO" class="com.javaweb.dao.ParkingSpotOccupyDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
 
 
 	<!-- 配置业务逻辑组件 -->
@@ -239,6 +246,9 @@
 	</bean>
 	<bean id="parkingSpotService" class="com.javaweb.service.ParkingSpotServiceImpl">
 		<property name="parkingSpotDAO" ref="parkingSpotDAO"></property>
+	</bean>
+	<bean id="parkingSpotOccupyService" class="com.javaweb.service.ParkingSpotOccupyServiceImpl">
+		<property name="parkingSpotOccupyDAO" ref="parkingSpotOccupyDAO"></property>
 	</bean>
 
 
@@ -369,6 +379,14 @@
 		<property name="terminReqService" ref="terminReqService"></property>
 	</bean>
 	
+	<bean id="addParkingRequestAction" class="com.javaweb.action.AddParkingRequestAction">
+		<property name="parkingRequestService" ref="parkingRequestService"></property>	
+	</bean>
+	
+	<bean id="showCParkingSpotAction" class="com.javaweb.action.ShowCParkingSpotAction">
+		<property name="parkingSpotService" ref="parkingSpotService"></property>
+		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
+	</bean>
 	<bean id="approveTerminAction" class="com.javaweb.action.ApproveTerminRequestAction">
 		<property name="terminReqService" ref="terminReqService"></property>
 	</bean>
@@ -389,5 +407,13 @@
 		<property name="familyApartmentService" ref="familyApartmentService"></property>
 		<property name="residenceHallService" ref="residenceHallService"></property>
 		<property name="roomService" ref="roomService"></property>
+	</bean>
+	
+	<bean id="assignSpotAction" class="com.javaweb.action.AssignParkingSpotAction">
+		<property name="leaseService" ref="leaseService"></property>
+		<property name="parkingLotService" ref="parkingLotService"></property>
+		<property name="parkingRequestService" ref="parkingRequestService"></property>
+		<property name="parkingSpotService" ref="parkingSpotService"></property>
+		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
 	</bean>
 </beans>

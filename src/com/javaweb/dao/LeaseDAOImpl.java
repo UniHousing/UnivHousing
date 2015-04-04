@@ -31,6 +31,7 @@ public class LeaseDAOImpl extends BaseDAOImpl<Lease>implements LeaseDAO {
 		return -1;
 	}
 	
+	@Override
 	public List<Lease> findCLeasesbyStudentId(int sid){
 		List<Lease> leases=this.queryByForeignId(Lease.class, "studentId", sid);
 		List<Lease> cLeases=new ArrayList<Lease>();
@@ -45,6 +46,7 @@ public class LeaseDAOImpl extends BaseDAOImpl<Lease>implements LeaseDAO {
 		return cLeases;
 	};
 	
+	@Override
 	public List<Lease> findFLeasesbyStudentId(int sid){
 		List<Lease> leases=this.queryByForeignId(Lease.class, "studentId", sid);
 		List<Lease> fLeases=new ArrayList<Lease>();

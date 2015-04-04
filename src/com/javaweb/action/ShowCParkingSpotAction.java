@@ -27,8 +27,12 @@ public class ShowCParkingSpotAction extends ActionSupport {
 	public String execute() throws Exception {
 		int loginId=(Integer) ActionContext.getContext().getSession().get("login");
 		int parkingSpotId=parkingSpotOccupyService.findSpotIdbyStudentId(loginId);
-		
-		ParkingSpot parkingSpot =parkingSpotService.queryParkingSpotByID(parkingSpotId);
+		System.out.println((parkingSpotId));
+		ParkingSpot parkingSpot;
+		if(parkingSpotId==-1)
+			parkingSpot=null;
+		else
+			parkingSpot=parkingSpotService.queryParkingSpotByID(parkingSpotId);
 		ServletActionContext.getRequest().setAttribute("parkingSpot", parkingSpot);
 		return SUCCESS;
 	}

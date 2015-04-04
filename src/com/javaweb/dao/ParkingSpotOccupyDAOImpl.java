@@ -31,7 +31,7 @@ public class ParkingSpotOccupyDAOImpl extends BaseDAOImpl<ParkingSpotOccupy> imp
 		if(parkingSpotOccupy!=null){
 			for (ParkingSpotOccupy element : parkingSpotOccupy) // or sArray
 	        {
-	               return element.getStudentId();   	
+	               return element.getParkingSpotId();   	
 	        }
 		}
 		return -1;

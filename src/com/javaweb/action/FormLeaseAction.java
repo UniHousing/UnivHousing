@@ -1,10 +1,6 @@
 package com.javaweb.action;
 
 
-import java.util.HashMap;
-
-import javax.management.j2ee.statistics.Statistic;
-
 import org.apache.struts2.ServletActionContext;
 
 import com.javaweb.po.Lease;

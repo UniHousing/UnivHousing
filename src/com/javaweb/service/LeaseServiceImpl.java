@@ -66,10 +66,12 @@ public class LeaseServiceImpl implements LeaseService {
 		return leaseDAO.findCurrentIdbyStudentId(sid);
 	}
 	
+	@Override
 	public List<Lease> findCLeasesbyStudentId(int sid){;
 	   return leaseDAO.findCLeasesbyStudentId(sid);
 	}
 	
+	@Override
 	public List<Lease> findFLeasesbyStudentId(int sid){
 		return leaseDAO.findFLeasesbyStudentId(sid);
 	};
