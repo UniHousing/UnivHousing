@@ -29,7 +29,7 @@
 	<h2>Logged in Student->Parking Options</h2>
 		<br><a href="<%="addParkingRequest.action"%>" style="color: midnightblue;">Request New Parking Spot</a>
 		<br><a href="<%="showAllStudent.action"%>" style="color: midnightblue;">View Parking Lot Information</a>
-		<br><a href="requestOptions.jsp" style="color: midnightblue;">View Current Parking Spot</a>
+		<br><a href="showCParkingSpot.jsp" style="color: midnightblue;">View Current Parking Spot</a>
 		<br><a href="<%="showAllStudent.action"%>" style="color: midnightblue;">Renew Parking Spot</a>
 		<br><a href="<%="showAllStudent.action"%>" style="color: midnightblue;">View Request Status</a>
 		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>

@@ -5,7 +5,7 @@
 	<title>Add Ticket</title>
 </head>
 <body>
-
+<center>
 	<h2>Add Ticket</h2>
 	<s:actionerror/>
 	<s:form  action="addTicket">
@@ -22,6 +22,6 @@
 	
 	</s:form>	
 	<a href="maintenanceOptions.jsp">Back to maintenance</a>
-
+</center>
 </body>
 </html>
