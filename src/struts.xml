@@ -164,6 +164,11 @@
 			<result name="error">/showCurrentLot.jsp</result>
 		</action>
 		
+		<action name="showParkingRequest" class="showParkingReqAction">
+			<result name="success">/showParkingReqStatus.jsp</result>
+			<result name="error">/showParkingReqStatus.jsp</result>
+		</action>
+		
 	</package>
 </struts>
 

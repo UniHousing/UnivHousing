@@ -53,5 +53,11 @@ public class ParkingRequestServiceImpl implements ParkingRequestService {
 		return parkingRequestDAO.queryByID(ParkingRequest.class,id);
 	}
 
+	@Override
+	public List<ParkingRequest> queryParkingRequestsbyStudentId(int sid) {
+		// TODO Auto-generated method stub
+		return parkingRequestDAO.findParkingRequestsbyStudentId(sid);
+	}
+
 
 }
