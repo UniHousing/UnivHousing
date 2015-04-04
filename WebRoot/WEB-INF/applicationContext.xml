@@ -390,4 +390,11 @@
 		<property name="residenceHallService" ref="residenceHallService"></property>
 		<property name="roomService" ref="roomService"></property>
 	</bean>
+	
+	<bean id="assignSpotAction" class="com.javaweb.action.AssignParkingSpotAction">
+		<property name="leaseService" ref="leaseService"></property>
+		<property name="parkingLotService" ref="parkingLotService"></property>
+		<property name="parkingRequestService" ref="parkingRequestService"></property>
+		<property name="parkingSpotService" ref="parkingSpotService"></property>
+	</bean>
 </beans>
