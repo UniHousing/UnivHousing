@@ -14,4 +14,6 @@ public interface ParkingLotService {
 	public List queryAllParkingLot();
 	
 	public ParkingLot queryParkingLotByID(int id);
+	
+	public List<ParkingLot> queryNearbyParkingLot(int houseId);
 }

@@ -11,6 +11,7 @@
 		</id>
 		
 		<!-- 定义其他属性 -->
+		<property name="studentId" column="student_id" type="int"></property>
 		<property name="vehicleType" column="vehicle_type"></property>
 
 
