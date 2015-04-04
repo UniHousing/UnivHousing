@@ -2,8 +2,6 @@ package com.javaweb.action;
 
 import java.util.List;
 
-import org.apache.struts2.ServletActionContext;
-
 import com.javaweb.po.Lease;
 import com.javaweb.po.ParkingLot;
 import com.javaweb.po.ParkingRequest;
@@ -14,7 +12,6 @@ import com.javaweb.service.ParkingLotService;
 import com.javaweb.service.ParkingRequestService;
 import com.javaweb.service.ParkingSpotOccupyService;
 import com.javaweb.service.ParkingSpotService;
-import com.javaweb.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AssignParkingSpotAction extends ActionSupport {

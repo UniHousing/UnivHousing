@@ -1,7 +1,5 @@
 package com.javaweb.po;
 
-import java.util.Date;
-
 public class ParkingSpotOccupy extends IdEntity<ParkingSpotOccupy> {
 	int parkingSpotId;
 	int studentId;

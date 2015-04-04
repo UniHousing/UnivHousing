@@ -1,8 +1,5 @@
 package com.javaweb.dao;
 
-import java.util.List;
-
-import com.javaweb.po.Invoice;
 import com.javaweb.po.ParkingSpotOccupy;
 
 

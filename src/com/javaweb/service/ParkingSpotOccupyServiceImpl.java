@@ -53,11 +53,13 @@ public class ParkingSpotOccupyServiceImpl implements ParkingSpotOccupyService {
 	}
 	
 	
+	@Override
 	public int findStudentIdbySpotId(int pid)
 	{
 		return parkingSpotOccupyDAO.findStudentIdbySpotId(pid);
 	}
 
+	@Override
 	public int findSpotIdbyStudentId(int sid)
 	{
 		return parkingSpotOccupyDAO.findSpotIdbyStudentId(sid);

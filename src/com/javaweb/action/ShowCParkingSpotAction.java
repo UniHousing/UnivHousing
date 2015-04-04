@@ -4,7 +4,6 @@ package com.javaweb.action;
 import org.apache.struts2.ServletActionContext;
 
 import com.javaweb.po.ParkingSpot;
-import com.javaweb.po.ParkingSpotOccupy;
 import com.javaweb.service.ParkingSpotOccupyService;
 import com.javaweb.service.ParkingSpotService;
 import com.opensymphony.xwork2.ActionContext;

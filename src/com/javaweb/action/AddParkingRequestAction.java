@@ -1,15 +1,7 @@
 package com.javaweb.action;
 
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import com.javaweb.po.ParkingRequest;
-import com.javaweb.po.ParkingLot;
-import com.javaweb.po.ParkingSpot;
-import com.javaweb.service.ParkingLotService;
-import com.javaweb.service.ParkingSpotService;
 import com.javaweb.service.ParkingRequestService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -77,6 +69,8 @@ public class AddParkingRequestAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		ParkingRequest parkingRequest=new ParkingRequest();
+		int user_id=(Integer) ActionContext.getContext().getSession().get("login");
+		parkingRequest.setStudentId(user_id);
 		parkingRequest.setVehicleType(vehicleType);
 		parkingRequest.setHandicapped(handicapped);
 		parkingRequest.setNearby(nearby);
