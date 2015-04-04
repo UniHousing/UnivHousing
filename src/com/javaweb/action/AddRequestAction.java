@@ -5,18 +5,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.javaweb.po.LeaseRequest;
 import com.javaweb.po.ResidenceHall;
-import com.javaweb.service.FamilyApartmentService;
-import com.javaweb.service.GeneralApartmentService;
+import com.javaweb.po.LeaseRequest;
 import com.javaweb.service.LeaseRequestService;
-import com.javaweb.service.ResidenceHallService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AddRequestAction extends ActionSupport{
 	private int studentId;
 	public static final String SPECIFIC="Specific Hall";
+	private List <ResidenceHall> residenceHalls=new ArrayList<ResidenceHall> ();
 	private String preference1;
 	private String preference2;
 	private String preference3;
@@ -25,13 +23,6 @@ public class AddRequestAction extends ActionSupport{
 	private Date startDate;
 	private Date endDate;
 	private LeaseRequestService leaseRequestService;
-	private GeneralApartmentService generalApartmentService;
-	private FamilyApartmentService familyApartmentService;
-	private ResidenceHallService residenceHallService;
-	public AddRequestAction() {
-		// TODO Auto-generated constructor stub
-		
-	}
 	public String handleString(String str) {
 		String [] strings=str.split(",");
 		if (!strings[0].equals(SPECIFIC)) {
@@ -131,37 +122,6 @@ public class AddRequestAction extends ActionSupport{
 		this.leaseRequestService = leaseRequestService;
 	}
 
-
-	public GeneralApartmentService getGeneralApartmentService() {
-		return generalApartmentService;
-	}
-
-
-	public void setGeneralApartmentService(
-			GeneralApartmentService generalApartmentService) {
-		this.generalApartmentService = generalApartmentService;
-	}
-
-
-	public FamilyApartmentService getFamilyApartmentService() {
-		return familyApartmentService;
-	}
-
-
-	public void setFamilyApartmentService(
-			FamilyApartmentService familyApartmentService) {
-		this.familyApartmentService = familyApartmentService;
-	}
-
-
-	public ResidenceHallService getResidenceHallService() {
-		return residenceHallService;
-	}
-
-
-	public void setResidenceHallService(ResidenceHallService residenceHallService) {
-		this.residenceHallService = residenceHallService;
-	}
 
 
 	@Override

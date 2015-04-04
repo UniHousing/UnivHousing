@@ -53,5 +53,22 @@ public class ParkingSpotServiceImpl implements ParkingSpotService {
 		return parkingSpotDAO.queryByID(ParkingSpot.class,id);
 	}
 
+	@Override
+	public List<ParkingSpot> queryParkingSpotsbyLotId(int lot_id) {
+		// TODO Auto-generated method stub
+		return parkingSpotDAO.findParkingSpotsbyLotId(lot_id);
+	}
+
+	@Override
+	public List<ParkingSpot> queryAvlParkingSpotsbyLotId(int lot_id,String prefer) {
+		// TODO Auto-generated method stub
+		String str="normal";
+		
+		if (prefer.contains("yes")) {
+			str="handicapped";
+		}
+		return parkingSpotDAO.findAvlParkingSpotsbyLotId(lot_id, str);
+	}
+
 
 }

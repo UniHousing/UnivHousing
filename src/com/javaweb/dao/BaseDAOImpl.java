@@ -64,4 +64,14 @@ public class BaseDAOImpl<T> extends HibernateDaoSupport implements BaseDAO<T> {
 		return this.getHibernateTemplate().findByCriteria(detachedCriteria);
 	}
 
+	@Override
+	public List queryByNumberLargerthan(Class<?> clazz, String columnName,
+			int number) {
+		// TODO Auto-generated method stub
+		Criterion numberCriterion=Restrictions.gt(columnName, number);
+		DetachedCriteria detachedCriteria = DetachedCriteria.forClass(clazz);
+		detachedCriteria.add(numberCriterion);
+		return this.getHibernateTemplate().findByCriteria(detachedCriteria);
+	}
+
 }

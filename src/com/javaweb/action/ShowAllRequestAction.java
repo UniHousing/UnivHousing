@@ -14,11 +14,9 @@ import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.javaweb.po.Invoice;
 import com.javaweb.po.Lease;
 import com.javaweb.po.LeaseRequest;
 import com.javaweb.po.TerminReq;
-import com.javaweb.service.InvoiceService;
 import com.javaweb.service.LeaseRequestService;
 import com.javaweb.service.LeaseService;
 import com.javaweb.service.TerminReqService;

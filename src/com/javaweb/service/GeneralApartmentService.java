@@ -14,4 +14,6 @@ public interface GeneralApartmentService {
 	public List queryAllGeneralApartment();
 	
 	public GeneralApartment queryGeneralApartmentByID(int id);
+	
+	public int queryAvailableApartments();
 }

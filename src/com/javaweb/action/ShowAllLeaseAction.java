@@ -10,7 +10,7 @@ import org.apache.struts2.ServletActionContext;
 import com.javaweb.service.LeaseService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-
+//this is actually to show current Lease
 public class ShowAllLeaseAction extends ActionSupport {
 	private LeaseService leaseService;
 
@@ -21,7 +21,7 @@ public class ShowAllLeaseAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		int user_id=(Integer) ActionContext.getContext().getSession().get("login");
-		List all = leaseService.queryLeasebyStudentId(user_id);
+		List all = leaseService.findCLeasesbyStudentId(user_id);
 		ServletActionContext.getRequest().setAttribute("all", all);
 		return SUCCESS;
 	}

@@ -14,4 +14,8 @@ public interface ParkingSpotService {
 	public List queryAllParkingSpot();
 	
 	public ParkingSpot queryParkingSpotByID(int id);
+	
+	public List<ParkingSpot> queryParkingSpotsbyLotId(int lot_id);
+	
+	public List<ParkingSpot> queryAvlParkingSpotsbyLotId(int lot_id,String prefer);
 }

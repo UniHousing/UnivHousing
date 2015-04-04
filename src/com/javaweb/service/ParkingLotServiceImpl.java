@@ -1,16 +1,25 @@
 package com.javaweb.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.javaweb.dao.NearbyDAO;
 import com.javaweb.dao.ParkingLotDAO;
 import com.javaweb.po.ParkingLot;
 
 public class ParkingLotServiceImpl implements ParkingLotService {
 	private ParkingLotDAO parkingLotDAO;
+	private NearbyDAO nearbyDAO;
 
 	public void setParkingLotDAO(ParkingLotDAO parkingLotDAO) {
 		this.parkingLotDAO = parkingLotDAO;
 	}
+	
+
+	public void setNearbyDAO(NearbyDAO nearbyDAO) {
+		this.nearbyDAO = nearbyDAO;
+	}
+
 
 	// add Student
 	@Override
@@ -51,6 +60,22 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 	@Override
 	public ParkingLot queryParkingLotByID(int id) {
 		return parkingLotDAO.queryByID(ParkingLot.class,id);
+	}
+
+	@Override
+	public List<ParkingLot> queryNearbyParkingLot(int houseId) {
+		// TODO Auto-generated method stub
+		List <Integer> parkingList=nearbyDAO.findNearbyParkingbyHouseId(houseId);
+		List<ParkingLot> parkingLots= new ArrayList<ParkingLot>();
+		if (parkingList==null) {
+			return null;
+		}
+		else {
+			for (Integer integer : parkingList) {
+				parkingLots.add(parkingLotDAO.queryByID(ParkingLot.class, integer));
+			}
+			return parkingLots;
+		}
 	}
 
 

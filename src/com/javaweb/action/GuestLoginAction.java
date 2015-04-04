@@ -47,6 +47,7 @@ public class GuestLoginAction extends ActionSupport {
 		else {
 			if (lc.isLogin(getId(), getPassword(), guest.getPassword())) {
 				ActionContext.getContext().getSession().put("login", getId());
+				ActionContext.getContext().getSession().put("type", "guest");
 				return "guest";
 			} else {
 				ActionContext.getContext().getSession().put("login", "false");

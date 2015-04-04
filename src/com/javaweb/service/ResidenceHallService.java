@@ -14,4 +14,8 @@ public boolean addResidenceHall(ResidenceHall residenceHall);
 	public List queryAllResidenceHall();
 	
 	public ResidenceHall queryResidenceHallByID(int id);
+	
+	public int queryAvailableHallbyName(String name);
+	
+	public int queryAvailableHall();
 }

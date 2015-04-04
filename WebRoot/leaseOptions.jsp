@@ -27,8 +27,8 @@
 	<br><br><br>
 	<div align="center">
 	<h2>Logged in Student->House Options->Lease Options</h2>
-		<br><a href="<%="showAllStudent.action"%>" style="color: midnightblue;">View Current Lease</a>
-		<br><a href="<%="showAllLease.action"%>" style="color: midnightblue;">View Former Leases</a>
+		<br><a href="<%="showAllLease.action"%>" style="color: midnightblue;">View Current Lease</a>
+		<br><a href="<%="showFormerLease.action"%>" style="color: midnightblue;">View Former Leases</a>
 		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>
 		<br><a href="houseOptions.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>

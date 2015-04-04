@@ -5,6 +5,7 @@ public class ResidenceHall extends IdEntity<ResidenceHall> {
 	private String name;
 	private String addr;
 	private String tel;
+	private int roomCount;
 	private int managerId;
 	
 	public String getName() {
@@ -30,6 +31,12 @@ public class ResidenceHall extends IdEntity<ResidenceHall> {
 	}
 	public void setManagerId(int managerId) {
 		this.managerId = managerId;
+	}
+	public int getRoomCount() {
+		return roomCount;
+	}
+	public void setRoomCount(int roomCount) {
+		this.roomCount = roomCount;
 	}
 
 }

@@ -38,7 +38,7 @@ public class ShowAllInvoiceAction extends ActionSupport {
 		List<Invoice> invoices=new ArrayList<Invoice>();
 		if (leases!=null) {
 			for (Lease lease : leases) {
-				invoices.addAll(invoiceService.queryInvoicebyLeaseId(lease.getId()));
+				invoices.addAll(invoiceService.findCInvoicesbyLeaseId(lease.getId()));
 			}
 		}
 //		List all = invoiceService.queryAllInvoice();

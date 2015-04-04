@@ -85,6 +85,11 @@
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllInvoice.jsp</result>
 		</action>
+		<action name="showFormerInvoice" class="showFormerInvoiceAction">
+			<!-- 定义处理结果与视图资源之间的关系 -->
+			<result name="success">/showFormerInvoice.jsp</result>
+		</action>
+		
 		<action name="showLease" class="showLeaseAction">
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showLease.jsp</result>
@@ -93,13 +98,18 @@
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllLease.jsp</result>
 		</action>
+		<action name="showFormerLease" class="showFormerLeaseAction">
+			<!-- 定义处理结果与视图资源之间的关系 -->
+			<result name="success">/showFormerLease.jsp</result>
+		</action>
+		
 		<action name="showAllHouse" class="showHouseAction">
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showAllHouse.jsp</result>
 		</action>
 
 		<action name="addTerminReq" class="addTerminReqAction">
-			<result name="success" type="redirect">/showLeaseStatus.action</result>
+			<result name="success" type="redirect">/showAllRequest.action</result>
 			<result name="input">/addTerminReq.jsp</result>
 			<result name="error">/addTerminReq.jsp</result>
 		</action>
@@ -110,8 +120,8 @@
 		</action>
 
 		<action name="addRequest" class="addRequestAction">
+			<result name="input">/addNewRequest.jsp</result>
 			<result name="success">/requestOptions.jsp</result>
-
 		</action>
 
 		<action name="cancelRequest" class="cancelRequestAction">
@@ -129,6 +139,21 @@
 			<result name="error">/addParkingRequest.jsp</result>
 		</action>
 		
+		<action name="approveTerminReq" class="approveTerminAction">
+			<result name="success">/approveTerminReq.jsp</result>
+		</action>
+		<action name="updateTerminReq" class="updateTerminAction">
+			<result name="success" type="redirect">/approveTerminReq.action</result>
+			<result name="input">/updateReq.jsp</result>
+			<result name="error">/updateReq.jsp</result>
+		</action>
+		<action name="approveLeaseReq" class="approveLeaseReqAction">
+			<result name="success">/approveLeaseReq.jsp</result>
+		</action>
+		<action name="formLease" class="formLeaseAction">
+			<result name="success">/approvedLease.jsp</result>
+			<result name="error">/approveLeaseReq.jsp</result>
+		</action>
 		
 	</package>
 </struts>

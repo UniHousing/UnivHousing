@@ -1,6 +1,5 @@
 package com.javaweb.service;
 
-import java.util.Collection;
 import java.util.List;
 
 import com.javaweb.po.TerminReq;
