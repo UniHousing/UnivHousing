@@ -416,4 +416,13 @@
 		<property name="parkingSpotService" ref="parkingSpotService"></property>
 		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
 	</bean>
+	
+	<bean id="showLotAction" class="com.javaweb.action.ShowCurrentParkingLotAction">
+		<property name="parkingLotService" ref="parkingLotService"></property>
+		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
+	</bean>
+	<bean id="showParkingReqAction" class="com.javaweb.action.ShowParkingReqStatusAction">
+		<property name="parkingRequestService" ref="parkingRequestService"></property>
+	</bean>
+
 </beans>
