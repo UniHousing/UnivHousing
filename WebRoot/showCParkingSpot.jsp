@@ -2,67 +2,35 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-	<title>Lease</title>
+	<title>ParkingSpot</title>
 </head>
 <body>
 <center>
-	<h2>Lease</h2>
+	<h2>ParkingSpot</h2>
 	<table border="1">
-		<s:set name="lease" value="#request.lease"/>
+		<s:set name="parkingSpot" value="#request.parkingSpot"/>
 		<tr>
-			<td>Lease ID</td>
-			<td><s:property value="#lease.id"/></td>
+			<td>ParkingSpot ID</td>
+			<td><s:property value="#parkingSpot.id"/></td>
 		</tr>
 		<tr>	
-			<td>Student ID</td>	
-			<td><s:property value="#lease.studentId"/></td>	
+			<td>Lot ID</td>	
+			<td><s:property value="#parkingSpot.lotId"/></td>	
 		</tr>
 		<tr>
-			<td>House ID</td>
-			<td><s:property value="#lease.houseId"/></td>
+			<td>Classification</td>
+			<td><s:property value="#parkingSpot.classification"/></td>
 		</tr>
 		<tr>
-			<td>Room ID</td>
-			<td><s:property value="#lease.roomId"/></td>
+			<td>Fee</td>
+			<td><s:property value="#parkingSpot.fee"/></td>
 		</tr>
 		<tr>
-			<td>Parking ID</td>
-			<td><s:property value="#lease.parkingId"/></td>
-		</tr>
-		<tr>
-			<td>Room number</td>
-			<td><s:property value="#lease.roomNum"/></td>			
-		</tr>	
-		<tr>
-			<td>Duration</td>
-			<td><s:property value="#lease.duration"/></td>			
-		</tr>
-		<tr>
-			<td>Enter Date</td>
-			<td><s:property value="#lease.enterDate"/></td>			
-		</tr>
-		<tr>
-			<td>Leave Date</td>
-			<td><s:property value="#lease.leaveDate"/></td>			
-		</tr>
-		<tr>
-			<td>Deposit</td>
-			<td><s:property value="#lease.deposit"/></td>			
-		</tr>
-		<tr>
-			<td>Payment</td>
-			<td><s:property value="#lease.payment"/></td>			
-		</tr>
-		<tr>
-			<td>Penalty</td>
-			<td><s:property value="#lease.penalty"/></td>			
-		</tr>
-		<tr>
-			<td>Inspect Date</td>
-			<td><s:property value="#lease.inspectDate"/></td>			
-		</tr>			
+			<td>Availability</td>
+			<td><s:property value="#parkingSpot.availability"/></td>
+		</tr>		
 	</table>
-	<a href="leaseOptions.jsp">Back</a>		
+	<a href="parkingOptions.jsp">Back</a>		
 </center>
 </body>
 </html>

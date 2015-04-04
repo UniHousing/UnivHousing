@@ -25,4 +25,6 @@ INSERT INTO `housing`.`termin_req` (`lease_id`,`student_id`,`reason`, `date`, `s
 INSERT INTO `housing`.`invoice` (`lease_id`, `pay_date`, `pay_method`, `status`, `penalty`, `damage_charge`, `late_fee`, `total`) VALUES ('2', '2014-03-12', 'visa', 'current', '2', '3', '2', '5');
 INSERT INTO `housing`.`invoice` (`lease_id`, `pay_date`, `pay_method`, `status`, `penalty`, `damage_charge`, `late_fee`, `total`) VALUES ('1', '2013-03-12', 'cash', 'former', '3', '4', '5', '10');
 INSERT INTO `housing`.`invoice` (`lease_id`, `pay_date`, `pay_method`, `status`, `penalty`, `damage_charge`, `late_fee`, `total`) VALUES ('5', '2013-03-12', 'cash', 'former', '3', '4', '5', '10');
+INSERT INTO `housing`.`parking_spot`(`id`,`lot_id`,`classification`,`fee`,`availability`) VALUES (100,100,'general',1.0,'yes');
+INSERT INTO `housing`.`parking_spot_occupy`(`id`,`parking_spot_id`,`student_id`) VALUES (200,100,1)
 

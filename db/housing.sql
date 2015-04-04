@@ -180,7 +180,7 @@ CREATE TABLE `parking_spot` (
   `lot_id` int(11) default NULL,
   `classification` varchar(40) default NULL,
   `fee` float default NULL,
-  `availablity` varchar(10) default NULL,
+  `availability` varchar(10) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
