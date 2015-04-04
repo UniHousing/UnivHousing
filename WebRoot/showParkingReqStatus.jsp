@@ -12,6 +12,7 @@
 		
 		<tr>
 			<td>ID</td>
+			<td>Student_ID</td>
 			<td>Status</td>
 			<td>Handicapped(yes/no)</td>
 			<td>Vehicle Type</td>
@@ -20,14 +21,15 @@
 		<s:iterator value="#request.all" id="spot">
 		<tr>
 			<td><s:property value="#spot.id"/></td>
+			<td><s:property value="#spot.studentId"/></td>
 			<td><s:property value="#spot.status"/></td>
-			<td><s:property value="#spot.nearby"/></td>
 			<td><s:property value="#spot.handicapped"/></td>
 			<td><s:property value="#spot.vehicleType"/></td>
+			<td><s:property value="#spot.nearby"/></td>
 		</tr>
 		</s:iterator>	
 	</table>
-	<a href="ParkingOptions.jsp">Back to Parking</a>
+	<a href="parkingOptions.jsp">Back to Parking</a>
 </center>
 </body>
 </html>
