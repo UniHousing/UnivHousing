@@ -26,9 +26,6 @@ public class AddRequestAction extends ActionSupport{
 	private Date startDate;
 	private Date endDate;
 	private LeaseRequestService leaseRequestService;
-	private GeneralApartmentService generalApartmentService;
-	private FamilyApartmentService familyApartmentService;
-	private ResidenceHallService residenceHallService;
 	public String handleString(String str) {
 		String [] strings=str.split(",");
 		if (!strings[0].equals(SPECIFIC)) {
@@ -128,37 +125,6 @@ public class AddRequestAction extends ActionSupport{
 		this.leaseRequestService = leaseRequestService;
 	}
 
-
-	public GeneralApartmentService getGeneralApartmentService() {
-		return generalApartmentService;
-	}
-
-
-	public void setGeneralApartmentService(
-			GeneralApartmentService generalApartmentService) {
-		this.generalApartmentService = generalApartmentService;
-	}
-
-
-	public FamilyApartmentService getFamilyApartmentService() {
-		return familyApartmentService;
-	}
-
-
-	public void setFamilyApartmentService(
-			FamilyApartmentService familyApartmentService) {
-		this.familyApartmentService = familyApartmentService;
-	}
-
-
-	public ResidenceHallService getResidenceHallService() {
-		return residenceHallService;
-	}
-
-
-	public void setResidenceHallService(ResidenceHallService residenceHallService) {
-		this.residenceHallService = residenceHallService;
-	}
 
 
 	@Override

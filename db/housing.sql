@@ -116,8 +116,6 @@ CREATE TABLE `lease` (
   `deposit` double default NULL,
   `payment` varchar(50) default NULL,
   `penalty` double default NULL,
-  `inspect_date` datetime default NULL,
-  `parking_id` int(11) default NULL,
   `status` varchar(50) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -181,6 +179,7 @@ CREATE TABLE `residence_hall` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(255) default NULL,
   `addr` varchar(255),
+  `room_count` int(11) default NULL,
   `tel` varchar(20) default NULL,
   `manager_id` int(11) default NULL,
   PRIMARY KEY  (`id`)
@@ -283,7 +282,7 @@ CREATE TABLE `termin_req` (
   `date` datetime default NULL,
   `status` varchar(40) default NULL,
   `inspection_date` datetime default NULL,
-  `extra_fee` float(255,0) default NULL,
+  `extra_fee` float(255,0) NOT NULL default 0,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

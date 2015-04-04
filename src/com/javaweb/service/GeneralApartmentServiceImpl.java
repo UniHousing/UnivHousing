@@ -7,9 +7,13 @@ import com.javaweb.po.GeneralApartment;
 
 public class GeneralApartmentServiceImpl implements GeneralApartmentService {
 	private GeneralApartmentDAO generalApartmentDAO;
-
+	private RoomService roomService;
 	public void setGeneralApartmentDAO(GeneralApartmentDAO generalApartmentDAO) {
 		this.generalApartmentDAO = generalApartmentDAO;
+	}
+
+	public void setRoomService(RoomService roomService) {
+		this.roomService = roomService;
 	}
 
 	// add Student
@@ -51,6 +55,23 @@ public class GeneralApartmentServiceImpl implements GeneralApartmentService {
 	@Override
 	public GeneralApartment queryGeneralApartmentByID(int id) {
 		return generalApartmentDAO.queryByID(GeneralApartment.class,id);
+	}
+
+	@Override
+	public int queryAvailableApartments() {
+		// TODO Auto-generated method stub
+		List<GeneralApartment> apartments=this.queryAllGeneralApartment();
+		if (apartments==null) {
+			return -1;
+		}
+		else {
+			for (GeneralApartment generalApartment : apartments) {
+				if (generalApartment.getRoomCount()>roomService.queryRoomsInHouse(generalApartment.getId())) {
+					return generalApartment.getId();
+				}
+			}
+			return -1;
+		}
 	}
 
 

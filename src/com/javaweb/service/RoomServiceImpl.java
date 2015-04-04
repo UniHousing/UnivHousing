@@ -53,5 +53,11 @@ public class RoomServiceImpl implements RoomService {
 		return roomDAO.queryByID(Room.class,id);
 	}
 
+	@Override
+	public int queryRoomsInHouse(int aptId) {
+		// TODO Auto-generated method stub
+		return roomDAO.findRoombyAptId(aptId).size();
+	}
+
 
 }

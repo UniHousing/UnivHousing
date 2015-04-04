@@ -11,15 +11,13 @@
   <property column="student_id" name="studentId" type="int"/>
   <property column="house_id" name="houseId" type="int"/>
   <property column="room_id" name="roomId" type="int"/>
-  <property column="parking_id" name="parkingId" type="int"/>
-  <property column="room_num" name="roomNum" type="string"/>
+  <property column="room_num" name="roomNum"/>
   <property name="duration"/>
   <property column="enter_date" name="enterDate" type="date"/>
   <property column="leave_date" name="leaveDate" type="date"/>
   <property name="deposit" type="double"/>
   <property name="payment"/>
   <property name="penalty" type="double"/>
-  <property column="inspect_date" name="inspectDate" type="date"/>
   <property name="status"/>
  </class>
 </hibernate-mapping>

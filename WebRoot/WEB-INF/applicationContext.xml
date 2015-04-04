@@ -182,6 +182,7 @@
 	<bean id="generalApartmentService" class="com.javaweb.service.GeneralApartmentServiceImpl">
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="generalApartmentDAO" ref="generalApartmentDAO"></property>
+		<property name="roomService" ref="roomService"></property>
 	</bean>
 	<bean id="invoiceService" class="com.javaweb.service.InvoiceServiceImpl">
 		<!-- 为业务逻辑组件注入DAO组件 -->
@@ -210,6 +211,7 @@
 	<bean id="residenceHallService" class="com.javaweb.service.ResidenceHallServiceImpl">
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="residenceHallDAO" ref="residenceHallDAO"></property>
+		<property name="roomService" ref="roomService"></property>
 	</bean>
 	<bean id="roomService" class="com.javaweb.service.RoomServiceImpl">
 		<property name="roomDAO" ref="roomDAO"></property>
@@ -357,9 +359,6 @@
 
 	<bean id="addRequestAction" class="com.javaweb.action.AddRequestAction">
 		<property name="leaseRequestService" ref="leaseRequestService"></property>
-		<property name="generalApartmentService" ref="generalApartmentService"></property>
-		<property name="familyApartmentService" ref="familyApartmentService"></property>
-		<property name="residenceHallService" ref="residenceHallService"></property>
 	</bean>
 	<bean id="cancelRequestAction" class="com.javaweb.action.DeleteRequestAction">
 		<property name="leaseRequestService" ref="leaseRequestService"></property>
@@ -368,5 +367,27 @@
 		<property name="leaseRequestService" ref="leaseRequestService"></property>
 		<property name="leaseService" ref="leaseService"></property>
 		<property name="terminReqService" ref="terminReqService"></property>
+	</bean>
+	
+	<bean id="approveTerminAction" class="com.javaweb.action.ApproveTerminRequestAction">
+		<property name="terminReqService" ref="terminReqService"></property>
+	</bean>
+	
+	<bean id="updateTerminAction" class="com.javaweb.action.UpdateTerminAction">
+		<property name="terminReqService" ref="terminReqService"></property>
+		<property name="leaseService" ref="leaseService"></property>
+	</bean>
+	
+	<bean id="approveLeaseReqAction" class="com.javaweb.action.ApproveLeaseRequestAction">
+		<property name="leaseRequestService" ref="leaseRequestService"></property>
+	</bean>
+	
+	<bean id="formLeaseAction" class="com.javaweb.action.FormLeaseAction">
+		<property name="leaseRequestService" ref="leaseRequestService"></property>
+		<property name="leaseService" ref="leaseService"></property>
+		<property name="generalApartmentService" ref="generalApartmentService"></property>
+		<property name="familyApartmentService" ref="familyApartmentService"></property>
+		<property name="residenceHallService" ref="residenceHallService"></property>
+		<property name="roomService" ref="roomService"></property>
 	</bean>
 </beans>

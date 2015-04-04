@@ -71,7 +71,7 @@ public class AddAction extends ActionSupport{
 		this.birth = birth;
 	}
 
-
+	
 
 	@Override
 	public String execute() throws Exception {
