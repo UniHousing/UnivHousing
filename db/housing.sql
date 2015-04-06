@@ -175,6 +175,18 @@ CREATE TABLE `parking_spot_occupy`(
  UNIQUE(`student_id`)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
+ --------------------------------
+-- Table structure for Parking spot price 
+--------------------------------
+DROP TABLE IF EXISTS `parking_spot_price`;
+CREATE TABLE `parking_spot_occupy`(
+ `id` int(11) NOT NULL auto_increment,
+ `parking_spot_classification` varchar(40) NOT NULL,
+ `price` int(11) NOT NULL,
+ PRIMARY KEY(`id`),
+ UNIQUE(`parking_spot_classification`),
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
 -- ----------------------------
 -- Table structure for parking_spot
 -- ----------------------------

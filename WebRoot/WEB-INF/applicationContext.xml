@@ -56,6 +56,7 @@
 				<value>com/javaweb/po/ParkingLot.hbm.xml</value>
 				<value>com/javaweb/po/ParkingSpot.hbm.xml</value>
 				<value>com/javaweb/po/ParkingSpotOccupy.hbm.xml</value>
+				<value>com/javaweb/po/ParkingSpotPrice.hbm.xml</value>
 				<value>com/javaweb/po/HousingInterest.hbm.xml</value>
 			</list>
 		</property>
@@ -180,6 +181,12 @@
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
+	
+	<bean id="parkingSpotPriceDAO" class="com.javaweb.dao.ParkingSpotPriceDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
 
 
 	<!-- 配置业务逻辑组件 -->
@@ -254,6 +261,9 @@
 	</bean>
 	<bean id="parkingSpotOccupyService" class="com.javaweb.service.ParkingSpotOccupyServiceImpl">
 		<property name="parkingSpotOccupyDAO" ref="parkingSpotOccupyDAO"></property>
+	</bean>
+	<bean id="parkingSpotPriceService" class="com.javaweb.service.ParkingSpotPriceServiceImpl">
+		<property name="parkingSpotPriceDAO" ref="parkingSpotPriceDAO"></property>
 	</bean>
 	<bean id="housingInterestService" class="com.javaweb.service.HousingInterestServiceImpl">
 		<property name="housingInterestDAO" ref="housingInterestDAO"></property>
