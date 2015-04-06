@@ -432,5 +432,9 @@
 	<bean id="showParkingReqAction" class="com.javaweb.action.ShowParkingReqStatusAction">
 		<property name="parkingRequestService" ref="parkingRequestService"></property>
 	</bean>
+	<bean id="returnParkingSpotAction" class="com.javaweb.action.ReturnParkingAction">
+		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
+		<property name="parkingSpotService" ref="parkingSpotService"></property>
+	</bean>
 
 </beans>

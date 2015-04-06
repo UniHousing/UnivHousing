@@ -7,6 +7,8 @@ public class GeneralApartment extends IdEntity<GeneralApartment> {
 	private String tel;
 	private int roomCount;
 	private int bathCount;
+	private float rent;
+	private float deposit;
 	
 	public String getName() {
 		return name;
@@ -38,4 +40,17 @@ public class GeneralApartment extends IdEntity<GeneralApartment> {
 	public void setBathCount(int bathCount) {
 		this.bathCount = bathCount;
 	}
+	public float getRent() {
+		return rent;
+	}
+	public void setRent(float rent) {
+		this.rent = rent;
+	}
+	public float getDeposit() {
+		return deposit;
+	}
+	public void setDeposit(float deposit) {
+		this.deposit = deposit;
+	}
+	
 }

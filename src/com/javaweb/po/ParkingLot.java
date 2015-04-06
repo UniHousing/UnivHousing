@@ -3,13 +3,15 @@ package com.javaweb.po;
 
 public class ParkingLot extends IdEntity<ParkingLot>{
 	
-	private int numParkingSpot;
-	
-	public int getNumParkingSpot() {
-		return numParkingSpot;
+	private String type;
+
+	public String getType() {
+		return type;
 	}
 
-	public void setNumParkingSpot(int numParkingLot) {
-		this.numParkingSpot = numParkingLot;
+	public void setType(String type) {
+		this.type = type;
 	}
+	
+
 }

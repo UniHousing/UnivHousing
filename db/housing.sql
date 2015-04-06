@@ -18,6 +18,7 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 -- Table structure for family_apartment
 -- ----------------------------
+<<<<<<< HEAD
 
 
 DROP TABLE IF EXISTS family_apartment;
@@ -31,6 +32,19 @@ bed_count int(11) default NULL,
 month_rate float default NULL,
 deposit float default NULL,
 PRIMARY KEY (id)
+=======
+DROP TABLE IF EXISTS `family_apartment`;
+CREATE TABLE `family_apartment` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  `addr` varchar(255) default NULL,
+  `tel` varchar(20) default NULL,
+  `apt_num` int(11) default NULL,
+  `bed_count` int(11) default NULL,
+  `month_rate` float default NULL,
+  `deposit` float default NULL,
+  PRIMARY KEY  (`id`)
+>>>>>>> master
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -48,6 +62,7 @@ CREATE TABLE `family_member` (
 -- ----------------------------
 -- Table structure for general_apartment
 -- ----------------------------
+<<<<<<< HEAD
 
 DROP TABLE IF EXISTS general_apartment;
 CREATE TABLE general_apartment (
@@ -60,6 +75,19 @@ bath_count int(11) default NULL,
 rent float default NULL,
 deposit float default NULL,
 PRIMARY KEY (id)
+=======
+DROP TABLE IF EXISTS `general_apartment`;
+CREATE TABLE `general_apartment` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  `addr` varchar(255) default NULL,
+  `tel` varchar(255) default NULL,
+  `room_count` int(11) default NULL,
+  `bath_count` int(11) default NULL,
+  `rent` float default NULL,
+  `deposit` float default NULL,
+  PRIMARY KEY  (`id`)
+>>>>>>> master
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -157,12 +185,20 @@ CREATE TABLE `nearby` (
 -- ----------------------------
 -- Table structure for parking_lot
 -- ----------------------------
+<<<<<<< HEAD
 
 DROP TABLE IF EXISTS parking_lot;
 CREATE TABLE parking_lot (
 id int(11) NOT NULL auto_increment,
 type varchar(20) default NULL,
 PRIMARY KEY (id)
+=======
+DROP TABLE IF EXISTS `parking_lot`;
+CREATE TABLE `parking_lot` (
+  `id` int(11) NOT NULL auto_increment,
+  `type` varchar(20) default NULL,
+  PRIMARY KEY  (`id`)
+>>>>>>> master
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --------------------------------
@@ -197,6 +233,7 @@ CREATE TABLE `parking_spot` (
 -- ----------------------------
 -- Table structure for residence_hall
 -- ----------------------------
+<<<<<<< HEAD
 
 
 DROP TABLE IF EXISTS residence_hall;
@@ -210,6 +247,19 @@ manager_id int(11) default NULL,
 rent float default NULL,
 deposit float default NULL,
 PRIMARY KEY (id)
+=======
+DROP TABLE IF EXISTS `residence_hall`;
+CREATE TABLE `residence_hall` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  `addr` varchar(255),
+  `room_count` int(11) default NULL,
+  `tel` varchar(20) default NULL,
+  `manager_id` int(11) default NULL,
+  `rent` float default NULL,
+  `deposit` float default NULL,
+  PRIMARY KEY  (`id`)
+>>>>>>> master
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -325,10 +375,17 @@ CREATE TABLE `ticket` (
   `type` varchar(20) default NULL COMMENT 'serverity',
   `student_id` int(11) default NULL,
   `date` datetime default NULL,
+<<<<<<< HEAD
   `issue` varchar(255), 
   `status` varchar(20),
   `comment` varchar(255),
     PRIMARY KEY  (`id`)
+=======
+  `issue` varchar(255),--location
+  `status` varchar(20),
+  `comment` varchar(255),--description
+  PRIMARY KEY  (`id`)
+>>>>>>> master
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -356,4 +413,8 @@ CREATE TABLE `housing_interest`(
 	`interests` varchar(20) NOT NULL,
 	PRIMARY KEY  (`id`),
 	UNIQUE(`house_id`)
+<<<<<<< HEAD
 	);
+=======
+	)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+>>>>>>> master

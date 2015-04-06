@@ -3,6 +3,7 @@ package com.javaweb.po;
 public class Room extends IdEntity<Room> {
 
 	private String roomNumber;
+	private String placeNumber;
 	private float monthRate;
 	private int houseId;
 	
@@ -23,6 +24,12 @@ public class Room extends IdEntity<Room> {
 	}
 	public void setHouseId(int houseId) {
 		this.houseId = houseId;
+	}
+	public String getPlaceNumber() {
+		return placeNumber;
+	}
+	public void setPlaceNumber(String placeNumber) {
+		this.placeNumber = placeNumber;
 	}
 	
 }
