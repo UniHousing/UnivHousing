@@ -28,14 +28,14 @@
 	<div align="center">
 	<h2>Logged in Student->House Options->View/Cancel Request->Cancel Request</h2>
 					<tr>
-				<form action="returnSpot.action" method="post">
+				<form action="cancelRequest.action" method="post">
 				<td>
-					<label for="request">Enter Parking Spot ID TO Return:</label>
+					<label for="request">Enter Request ID To Cancel:</label>
 
 					<input type="text" name="id" placeholder="Enter request id" required>
 				</td>
 				<td colspan="2" align="center">
-					<input type="submit" value="Return Parking" style="width: 116px">
+					<input type="submit" value="Cancel Request" style="width: 116px">
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="button" value="Back" style="width:50px" onclick="javascript:window.location='requestViewCancel.jsp';">
 				</td>

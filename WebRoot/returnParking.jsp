@@ -30,7 +30,7 @@
 					<tr>
 				<form action="returnSpot.action" method="post">
 				<td>
-					<label for="spot">Enter Parking Spot ID TO CANCEL:</label>
+					<label for="spot">Enter Parking Spot ID To Return:</label>
 
 					<input type="text" name="id" placeholder="Enter spot id" required>
 				</td>
