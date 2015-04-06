@@ -16,6 +16,8 @@
 		<property name="tel"></property>
 		<property name="roomCount" column="room_count" type="int"></property>
 		<property name="managerId" column ="manager_id" type="int"></property>
+		<property name="rent" type="float"></property>
+		<property name="deposit" type="float"></property>
 
 	</class>
 </hibernate-mapping>

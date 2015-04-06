@@ -12,8 +12,9 @@
   <property generated="never" lazy="false" name="name"/>
   <property generated="never" lazy="false" name="addr"/>
   <property generated="never" lazy="false" name="tel"/>
-  <property generated="never" lazy="false" column="room_count" name="roomCount" type="int"/>
-  <property generated="never" lazy="false" column="bath_count" name="bathCount" type="int"/>
-  <property generated="never" lazy="false" column="month_rate" name="monthRate" type="double"/>
+  <property generated="never" lazy="false" column="apt_num" name="aptNum" type="int"/>
+  <property generated="never" lazy="false" column="bed_count" name="bedCount" type="int"/>
+  <property generated="never" lazy="false" column="month_rate" name="monthRate" type="float"/>
+   <property generated="never" lazy="false" column="deposit" name="deposit" type="float"/>
  </class>
 </hibernate-mapping>

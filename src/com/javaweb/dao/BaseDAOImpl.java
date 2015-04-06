@@ -2,6 +2,8 @@ package com.javaweb.dao;
 
 import java.util.List;
 
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
@@ -73,5 +75,13 @@ public class BaseDAOImpl<T> extends HibernateDaoSupport implements BaseDAO<T> {
 		detachedCriteria.add(numberCriterion);
 		return this.getHibernateTemplate().findByCriteria(detachedCriteria);
 	}
+//	public Object querybySQL(Class<?> clazz,String str) {
+//		
+//		Session session=this.getSessionFactory().getCurrentSession();
+//		SQLQuery sqlQuery=session.createSQLQuery(str).addEntity(clazz);
+//		sqlQuery.executeUpdate();
+//		
+//		return sqlQuery.uniqueResult(); 
+//	}
 
 }

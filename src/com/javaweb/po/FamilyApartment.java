@@ -5,10 +5,10 @@ public class FamilyApartment extends IdEntity<FamilyApartment> {
 	private String name;
 	private String addr;
 	private String tel;
-	private int roomCount;
-	private int bathCount;
-	private double monthRate;
-	
+	private int aptNum;
+	private int bedCount;
+	private float monthRate;
+	private float deposit;
 	public String getName() {
 		return name;
 	}
@@ -27,23 +27,30 @@ public class FamilyApartment extends IdEntity<FamilyApartment> {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	public int getRoomCount() {
-		return roomCount;
+	public int getAptNum() {
+		return aptNum;
 	}
-	public void setRoomCount(int roomCount) {
-		this.roomCount = roomCount;
+	public void setAptNum(int aptNum) {
+		this.aptNum = aptNum;
 	}
-	public int getBathCount() {
-		return bathCount;
+	public int getBedCount() {
+		return bedCount;
 	}
-	public void setBathCount(int bathCount) {
-		this.bathCount = bathCount;
+	public void setBedCount(int bedCount) {
+		this.bedCount = bedCount;
 	}
-	public double getMonthRate() {
+	public float getMonthRate() {
 		return monthRate;
 	}
-	public void setMonthRate(double monthRate) {
+	public void setMonthRate(float monthRate) {
 		this.monthRate = monthRate;
 	}
+	public float getDeposit() {
+		return deposit;
+	}
+	public void setDeposit(float deposit) {
+		this.deposit = deposit;
+	}
+	
 }
 

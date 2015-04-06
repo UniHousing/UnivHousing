@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Log in</title>
+<title>Return Parking</title>
 	<link href="<%=request.getContextPath()+"/css/style.css"%>" rel="stylesheet" type="text/css" />
 <style>
 #header {
@@ -26,16 +26,16 @@
 	</div>
 	<br><br><br>
 	<div align="center">
-	<h2>Logged in Student->House Options->View/Cancel Request->Cancel Request</h2>
+	<h2>Logged in Student->Parking Options->Return Parking Spot</h2>
 					<tr>
-				<form action="cancelRequest.action" method="post">
+				<form action="returnSpot.action" method="post">
 				<td>
-					<label for="request">Enter Request ID To Cancel:</label>
+					<label for="spot">Enter Parking Spot ID To Return:</label>
 
-					<input type="text" name="id" placeholder="Enter request id" required>
+					<input type="text" name="id" placeholder="Enter spot id" required>
 				</td>
 				<td colspan="2" align="center">
-					<input type="submit" value="Cancel Request" style="width: 116px">
+					<input type="submit" value="Return Spot" style="width: 116px">
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="button" value="Back" style="width:50px" onclick="javascript:window.location='requestViewCancel.jsp';">
 				</td>

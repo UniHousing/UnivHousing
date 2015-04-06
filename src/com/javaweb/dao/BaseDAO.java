@@ -19,4 +19,6 @@ public interface BaseDAO<T> {
 	public List queryByAttribute(Class<?> clazz,String columnName,String str);
 	
 	public List queryByNumberLargerthan(Class<?> clazz,String columnName,int number);
+	
+//	public Object querybySQL(Class<?> clazz,String str) ;
 }
