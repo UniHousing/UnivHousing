@@ -70,9 +70,13 @@ public class AddParkingRequestAction extends ActionSupport{
 	public String execute() throws Exception {
 		ParkingRequest parkingRequest=new ParkingRequest();
 		int user_id=(Integer) ActionContext.getContext().getSession().get("login");
+		String type=(String) ActionContext.getContext().getSession().get("type");
 		parkingRequest.setStudentId(user_id);
 		parkingRequest.setVehicleType(vehicleType);
-		parkingRequest.setHandicapped(handicapped);
+		if(type.equals("student"))
+			parkingRequest.setHandicapped(handicapped);
+		else
+			parkingRequest.setHandicapped("no");
 		parkingRequest.setNearby(nearby);
 		
 		parkingRequest.setStatus("Pending");

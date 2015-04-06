@@ -56,7 +56,7 @@
 				<value>com/javaweb/po/ParkingLot.hbm.xml</value>
 				<value>com/javaweb/po/ParkingSpot.hbm.xml</value>
 				<value>com/javaweb/po/ParkingSpotOccupy.hbm.xml</value>
-
+				<value>com/javaweb/po/HousingInterest.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -72,6 +72,11 @@
 	<bean id="userDAO" class="com.javaweb.dao.UserDAOImpl">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="housingInterestDAO" class="com.javaweb.dao.HousingInterestDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
 		</property>
 	</bean>
 	<bean id="studentDAO" class="com.javaweb.dao.StudentDAOImpl">
@@ -250,7 +255,9 @@
 	<bean id="parkingSpotOccupyService" class="com.javaweb.service.ParkingSpotOccupyServiceImpl">
 		<property name="parkingSpotOccupyDAO" ref="parkingSpotOccupyDAO"></property>
 	</bean>
-
+	<bean id="housingInterestService" class="com.javaweb.service.HousingInterestServiceImpl">
+		<property name="housingInterestDAO" ref="housingInterestDAO"></property>
+	</bean>
 
 	<!-- login -->
 	<bean id="loginCheck" class="com.javaweb.util.LoginCheck"></bean>
