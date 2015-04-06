@@ -5,6 +5,7 @@ import com.javaweb.po.ParkingSpot;
 import com.javaweb.service.LeaseRequestService;
 import com.javaweb.service.ParkingSpotOccupyService;
 import com.javaweb.service.ParkingSpotService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ReturnParkingAction extends ActionSupport{
@@ -34,11 +35,18 @@ public class ReturnParkingAction extends ActionSupport{
 
 	@Override
 	public String execute() throws Exception {
-		if(parkingSpotOccupyService.deleteParkingSpotOccupy(id)){
-			ParkingSpot parkingSpot=parkingSpotService.queryParkingSpotByID(id);
-			parkingSpot.setAvailability("yes");
-			parkingSpotService.updateParkingSpot(parkingSpot);
-			return SUCCESS;
+		int user_id=(Integer) ActionContext.getContext().getSession().get("login");
+		if(parkingSpotOccupyService.queryParkingSpotOccupyByID(id).getStudentId()==user_id){
+			if (parkingSpotOccupyService.deleteParkingSpotOccupy(id)) {
+				ParkingSpot parkingSpot=parkingSpotService.queryParkingSpotByID(id);
+				parkingSpot.setAvailability("yes");
+				parkingSpotService.updateParkingSpot(parkingSpot);
+				return SUCCESS;
+			}
+			else {
+				return ERROR;
+			}
+			
 		}else {
 			return ERROR;
 		}
