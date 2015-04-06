@@ -59,6 +59,7 @@ CREATE TABLE `general_apartment` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 -- ----------------------------
 -- Table structure for house
 -- ----------------------------
@@ -93,7 +94,6 @@ CREATE TABLE `invoice` (
 DROP TABLE IF EXISTS `kin_info`;
 CREATE TABLE `kin_info` (
   `id` int(11) NOT NULL auto_increment,
-  `student_id` int(11) default NULL,
   `name` varchar(255) default NULL,
   `relationship` varchar(255) default NULL,
   `addr` varchar(255),
@@ -164,6 +164,7 @@ CREATE TABLE `parking_lot` (
 --------------------------------
 -- Table structure for Parking spot occupied 
 --------------------------------
+
 DROP TABLE IF EXISTS `parking_spot_occupy`;
 CREATE TABLE `parking_spot_occupy`(
  `id` int(11) NOT NULL auto_increment,
@@ -187,6 +188,8 @@ CREATE TABLE `parking_spot` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+
 -- ----------------------------
 -- Table structure for residence_hall
 -- ----------------------------
@@ -206,13 +209,14 @@ CREATE TABLE `residence_hall` (
 -- ----------------------------
 -- Table structure for room
 -- ----------------------------
-DROP TABLE IF EXISTS `room`;
-CREATE TABLE `room` (
-  `id` int(11) NOT NULL auto_increment,
-  `room_number` varchar(50) default NULL,
-  `month_rate` float default NULL,
-  `house_id` int(11) default NULL,
-  PRIMARY KEY  (`id`)
+
+DROP TABLE IF EXISTS room;
+CREATE TABLE room (
+id int(11) NOT NULL auto_increment,
+room_number varchar(50) default NULL,
+month_rate float default NULL,
+house_id int(11) default NULL,
+PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -307,6 +311,8 @@ CREATE TABLE `termin_req` (
 -- ----------------------------
 -- Table structure for ticket
 -- ----------------------------
+
+
 DROP TABLE IF EXISTS `ticket`;
 CREATE TABLE `ticket` (
   `id` int(11) NOT NULL auto_increment,
@@ -322,6 +328,7 @@ CREATE TABLE `ticket` (
 -- ----------------------------
 -- Table structure for ticket
 -- ----------------------------
+
 DROP TABLE IF EXISTS `parking_request`;
 CREATE TABLE `parking_request` (
   `id` int(11) NOT NULL auto_increment,
