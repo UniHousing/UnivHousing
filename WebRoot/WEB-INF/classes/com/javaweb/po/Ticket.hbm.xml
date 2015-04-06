@@ -12,10 +12,10 @@
 		
 		<!-- 定义其他属性 -->
 		<property name="type"></property>
-		<property name="location"></property>
+		<property name="location" column="issue"></property>
 		<property name="studentId" column="student_id" type="int"></property>
 		<property name="date" type="date"></property>
 		<property name="status" column="status"></property>
-		<property name="description" column="description"></property>
+		<property name="description" column="comment"></property>
 	</class>
 </hibernate-mapping>

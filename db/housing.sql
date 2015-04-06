@@ -24,9 +24,10 @@ CREATE TABLE `family_apartment` (
   `name` varchar(255) default NULL,
   `addr` varchar(255) default NULL,
   `tel` varchar(20) default NULL,
-  `room_count` int(11) default NULL,
-  `bath_count` int(11) default NULL,
+  `apt_num` int(11) default NULL,
+  `bed_count` int(11) default NULL,
   `month_rate` float default NULL,
+  `deposit` float default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -53,6 +54,8 @@ CREATE TABLE `general_apartment` (
   `tel` varchar(255) default NULL,
   `room_count` int(11) default NULL,
   `bath_count` int(11) default NULL,
+  `rent` float default NULL,
+  `deposit` float default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -154,7 +157,7 @@ CREATE TABLE `nearby` (
 DROP TABLE IF EXISTS `parking_lot`;
 CREATE TABLE `parking_lot` (
   `id` int(11) NOT NULL auto_increment,
-  `num_parking_spot` int(11) default NULL,
+  `type` varchar(20) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -193,8 +196,11 @@ CREATE TABLE `residence_hall` (
   `name` varchar(255) default NULL,
   `addr` varchar(255),
   `room_count` int(11) default NULL,
+  `place_num` varchar(50) default NULL,
   `tel` varchar(20) default NULL,
   `manager_id` int(11) default NULL,
+  `rent` float default NULL,
+  `deposit` float default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -205,6 +211,7 @@ DROP TABLE IF EXISTS `room`;
 CREATE TABLE `room` (
   `id` int(11) NOT NULL auto_increment,
   `room_number` varchar(50) default NULL,
+  `place_number` varchar(50) default NULL,
   `month_rate` float default NULL,
   `house_id` int(11) default NULL,
   PRIMARY KEY  (`id`)
@@ -308,9 +315,9 @@ CREATE TABLE `ticket` (
   `type` varchar(20) default NULL COMMENT 'serverity',
   `student_id` int(11) default NULL,
   `date` datetime default NULL,
-  `location` varchar(255),
+  `issue` varchar(255),--location
   `status` varchar(20),
-  `description` varchar(255),
+  `comment` varchar(255),--description
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

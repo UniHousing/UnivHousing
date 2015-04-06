@@ -14,5 +14,7 @@
   <property generated="never" lazy="false" name="tel"/>
   <property generated="never" lazy="false" column="room_count" name="roomCount" type="int"/>
   <property generated="never" lazy="false" column="bath_count" name="bathCount" type="int"/>
+  <property name="rent" type="float"></property>
+  <property name="deposit" type="float"></property>
  </class>
 </hibernate-mapping>
