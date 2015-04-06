@@ -18,16 +18,19 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 -- Table structure for family_apartment
 -- ----------------------------
-DROP TABLE IF EXISTS `family_apartment`;
-CREATE TABLE `family_apartment` (
-  `id` int(11) NOT NULL auto_increment,
-  `name` varchar(255) default NULL,
-  `addr` varchar(255) default NULL,
-  `tel` varchar(20) default NULL,
-  `room_count` int(11) default NULL,
-  `bath_count` int(11) default NULL,
-  `month_rate` float default NULL,
-  PRIMARY KEY  (`id`)
+
+
+DROP TABLE IF EXISTS family_apartment;
+CREATE TABLE family_apartment (
+id int(11) NOT NULL auto_increment,
+name varchar(255) default NULL,
+addr varchar(255) default NULL,
+tel varchar(20) default NULL,
+apt_num int(11) default NULL,
+bed_count int(11) default NULL,
+month_rate float default NULL,
+deposit float default NULL,
+PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -45,16 +48,20 @@ CREATE TABLE `family_member` (
 -- ----------------------------
 -- Table structure for general_apartment
 -- ----------------------------
-DROP TABLE IF EXISTS `general_apartment`;
-CREATE TABLE `general_apartment` (
-  `id` int(11) NOT NULL auto_increment,
-  `name` varchar(255) default NULL,
-  `addr` varchar(255) default NULL,
-  `tel` varchar(255) default NULL,
-  `room_count` int(11) default NULL,
-  `bath_count` int(11) default NULL,
-  PRIMARY KEY  (`id`)
+
+DROP TABLE IF EXISTS general_apartment;
+CREATE TABLE general_apartment (
+id int(11) NOT NULL auto_increment,
+name varchar(255) default NULL,
+addr varchar(255) default NULL,
+tel varchar(255) default NULL,
+room_count int(11) default NULL,
+bath_count int(11) default NULL,
+rent float default NULL,
+deposit float default NULL,
+PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- ----------------------------
 -- Table structure for house
@@ -90,7 +97,6 @@ CREATE TABLE `invoice` (
 DROP TABLE IF EXISTS `kin_info`;
 CREATE TABLE `kin_info` (
   `id` int(11) NOT NULL auto_increment,
-  `student_id` int(11) default NULL,
   `name` varchar(255) default NULL,
   `relationship` varchar(255) default NULL,
   `addr` varchar(255),
@@ -151,16 +157,18 @@ CREATE TABLE `nearby` (
 -- ----------------------------
 -- Table structure for parking_lot
 -- ----------------------------
-DROP TABLE IF EXISTS `parking_lot`;
-CREATE TABLE `parking_lot` (
-  `id` int(11) NOT NULL auto_increment,
-  `num_parking_spot` int(11) default NULL,
-  PRIMARY KEY  (`id`)
+
+DROP TABLE IF EXISTS parking_lot;
+CREATE TABLE parking_lot (
+id int(11) NOT NULL auto_increment,
+type varchar(20) default NULL,
+PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --------------------------------
 -- Table structure for Parking spot occupied 
 --------------------------------
+
 DROP TABLE IF EXISTS `parking_spot_occupy`;
 CREATE TABLE `parking_spot_occupy`(
  `id` int(11) NOT NULL auto_increment,
@@ -184,30 +192,37 @@ CREATE TABLE `parking_spot` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+
 -- ----------------------------
 -- Table structure for residence_hall
 -- ----------------------------
-DROP TABLE IF EXISTS `residence_hall`;
-CREATE TABLE `residence_hall` (
-  `id` int(11) NOT NULL auto_increment,
-  `name` varchar(255) default NULL,
-  `addr` varchar(255),
-  `room_count` int(11) default NULL,
-  `tel` varchar(20) default NULL,
-  `manager_id` int(11) default NULL,
-  PRIMARY KEY  (`id`)
+
+
+DROP TABLE IF EXISTS residence_hall;
+CREATE TABLE residence_hall (
+id int(11) NOT NULL auto_increment,
+name varchar(255) default NULL,
+addr varchar(255),
+room_count int(11) default NULL,
+tel varchar(20) default NULL,
+manager_id int(11) default NULL,
+rent float default NULL,
+deposit float default NULL,
+PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for room
 -- ----------------------------
-DROP TABLE IF EXISTS `room`;
-CREATE TABLE `room` (
-  `id` int(11) NOT NULL auto_increment,
-  `room_number` varchar(50) default NULL,
-  `month_rate` float default NULL,
-  `house_id` int(11) default NULL,
-  PRIMARY KEY  (`id`)
+
+DROP TABLE IF EXISTS room;
+CREATE TABLE room (
+id int(11) NOT NULL auto_increment,
+room_number varchar(50) default NULL,
+month_rate float default NULL,
+house_id int(11) default NULL,
+PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -302,21 +317,24 @@ CREATE TABLE `termin_req` (
 -- ----------------------------
 -- Table structure for ticket
 -- ----------------------------
+
+
 DROP TABLE IF EXISTS `ticket`;
 CREATE TABLE `ticket` (
   `id` int(11) NOT NULL auto_increment,
   `type` varchar(20) default NULL COMMENT 'serverity',
   `student_id` int(11) default NULL,
   `date` datetime default NULL,
-  `location` varchar(255),
+  `issue` varchar(255), 
   `status` varchar(20),
-  `description` varchar(255),
-  PRIMARY KEY  (`id`)
+  `comment` varchar(255),
+    PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for ticket
 -- ----------------------------
+
 DROP TABLE IF EXISTS `parking_request`;
 CREATE TABLE `parking_request` (
   `id` int(11) NOT NULL auto_increment,
@@ -338,4 +356,4 @@ CREATE TABLE `housing_interest`(
 	`interests` varchar(20) NOT NULL,
 	PRIMARY KEY  (`id`),
 	UNIQUE(`house_id`)
-	)
+	);
