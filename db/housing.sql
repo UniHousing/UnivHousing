@@ -327,3 +327,15 @@ CREATE TABLE `parking_request` (
   `status` varchar(20) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for Housing Interest
+-- ----------------------------
+DROP TABLE IF EXISTS `housing_interest`;
+CREATE TABLE `housing_interest`(
+	`id` int(11) NOT NULL,
+	`house_id` int(11) NOT NULL,
+	`interests` varchar(20) NOT NULL,
+	PRIMARY KEY  (`id`),
+	UNIQUE(`house_id`)
+	)

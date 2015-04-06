@@ -31,7 +31,7 @@
 		<br><a href="parkingOptions.jsp" style="color: midnightblue;">Parking Options</a>
 		<br><a href="maintenanceOptions.jsp" style="color: midnightblue;">Maintenance</a>
 		<br><a href="profileOptions.jsp" style="color: midnightblue;">Profile</a>
-		<br><a href="login.jsp" style="color: midnightblue;">Back</a>
+		<br><a href="loginInit.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>
 		
 	</div>
