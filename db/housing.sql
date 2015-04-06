@@ -196,7 +196,6 @@ CREATE TABLE `residence_hall` (
   `name` varchar(255) default NULL,
   `addr` varchar(255),
   `room_count` int(11) default NULL,
-  `place_num` varchar(50) default NULL,
   `tel` varchar(20) default NULL,
   `manager_id` int(11) default NULL,
   `rent` float default NULL,
@@ -345,4 +344,4 @@ CREATE TABLE `housing_interest`(
 	`interests` varchar(20) NOT NULL,
 	PRIMARY KEY  (`id`),
 	UNIQUE(`house_id`)
-	)
+	)ENGINE=InnoDB DEFAULT CHARSET=utf8;
