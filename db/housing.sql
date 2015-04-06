@@ -210,7 +210,6 @@ DROP TABLE IF EXISTS `room`;
 CREATE TABLE `room` (
   `id` int(11) NOT NULL auto_increment,
   `room_number` varchar(50) default NULL,
-  `place_number` varchar(50) default NULL,
   `month_rate` float default NULL,
   `house_id` int(11) default NULL,
   PRIMARY KEY  (`id`)
