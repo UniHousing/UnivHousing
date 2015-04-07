@@ -3,8 +3,10 @@ package com.javaweb.action;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.javaweb.po.GeneralApartment;
 import com.javaweb.po.Lease;
 import com.javaweb.po.LeaseRequest;
+import com.javaweb.po.ResidenceHall;
 import com.javaweb.po.Room;
 import com.javaweb.service.FamilyApartmentService;
 import com.javaweb.service.GeneralApartmentService;
@@ -18,9 +20,10 @@ public class FormLeaseAction extends ActionSupport {
 	private int id;
 	public static final String APARTMENT="apartment";
 	public static final String RESIDENCE="residenceHall";
-	public static final float MONTH_RATE=300;
-	public static final double DEPOSIT=300;
-	public static final double PENALTY=300;
+	public static final String FAMILY="family apartment";
+	public static  float MONTH_RATE;
+	public static  double DEPOSIT;
+	public static  double PENALTY;
 	private int house_id;
 	private int room_id;
 	private String room_num;
@@ -69,21 +72,33 @@ public class FormLeaseAction extends ActionSupport {
 			int houseId=residenceHallService.queryAvailableHallbyName(prefer);
 			if (houseId!=-1) {
 				house_id=houseId;
-				return residenceHallService.queryResidenceHallByID(houseId);
+				ResidenceHall residenceHall=residenceHallService.queryResidenceHallByID(houseId);
+				MONTH_RATE=residenceHall.getRent();
+				DEPOSIT=residenceHall.getDeposit();
+				return residenceHall;
 			}
 		}
 		else if (prefer.equalsIgnoreCase(APARTMENT)) {
 			int houseId= generalApartmentService.queryAvailableApartments();
 			if (houseId!=-1) {
 				house_id=houseId;
-				return generalApartmentService.queryGeneralApartmentByID(houseId);
+				GeneralApartment generalApartment=generalApartmentService.queryGeneralApartmentByID(houseId);
+				MONTH_RATE=generalApartment.getRent();
+				DEPOSIT=generalApartment.getDeposit();
+				return generalApartment;
 			}
+		}
+		else if (prefer.equalsIgnoreCase(FAMILY)) {
+			int houseId=familyApartmentService.q
 		}
 		else {
 			int houseId= residenceHallService.queryAvailableHall();
 			if (houseId!=-1) {
 				house_id=houseId;
-				return residenceHallService.queryResidenceHallByID(houseId);
+				ResidenceHall residenceHall=residenceHallService.queryResidenceHallByID(houseId);
+				MONTH_RATE=residenceHall.getRent();
+				DEPOSIT=residenceHall.getDeposit();
+				return residenceHall;
 			}
 		}
 		return null;
@@ -117,6 +132,7 @@ public class FormLeaseAction extends ActionSupport {
 		int diffInDays = (int)( (leaseRequest.getEndDate().getTime() - leaseRequest.getStartDate().getTime()) 
                 / (1000 * 60 * 60 * 24) );
 		lease.setDuration(diffInDays+" Days");
+		
 		lease.setDeposit(DEPOSIT);
 		lease.setPenalty(PENALTY);
 		lease.setPayment(leaseRequest.getPaymentMethod());
