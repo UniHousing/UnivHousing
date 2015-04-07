@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,13 +31,16 @@
 		<br><a href="houseOptions.jsp" style="color: midnightblue;">House Options</a>
 		<br><a href="parkingOptions.jsp" style="color: midnightblue;">Parking Options</a>
 		<br><a href="maintenanceOptions.jsp" style="color: midnightblue;">Maintenance</a>
-		<s:if test="#session.type=='student'">
+		<s:if test="#session.type=='Student'">
 		<br><a href="profileOptions.jsp" style="color: midnightblue;">Profile</a>
 		</s:if>
+		
 		<s:if test="#session.type=='guest'">
-		<br><a href="profileOptionsgGuest.jsp" style="color: midnightblue;">Profile</a>
+		<br><a href="profileOptionsGuest.jsp" style="color: midnightblue;">Profile</a>
 		</s:if>
+		
 		<br><a href="loginInit.jsp" style="color: midnightblue;">Back</a>
+	
 		<br><HR><br>
 		
 	</div>

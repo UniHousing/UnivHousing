@@ -49,6 +49,19 @@
 			<result name="input">/updateStudent.jsp</result>
 			<result name="error">/updateStudent.jsp</result>
 		</action>
+		<action name="updateStaff" class="updateStaffAction">
+			<!-- 定义处理结果与视图资源之间的关系 -->
+			<result name="success" type="redirect">/profileOptionsStaff.jsp</result>
+			<result name="input">/updateStaff.jsp</result>
+			<result name="error">/updateStaff.jsp</result>
+		</action>
+		<action name="updateGuest" class="updateGuestAction">
+			<!-- 定义处理结果与视图资源之间的关系 -->
+			<result name="success" type="redirect">/profileOptionsGuest.jsp</result>
+			<result name="input">/updateGuest.jsp</result>
+			<result name="error">/updateGuest.jsp</result>
+		</action>
+		
 		<action name="showUser" class="showUserAction">
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showUser.jsp</result>
@@ -57,6 +70,15 @@
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showStudent.jsp</result>
 		</action>
+		<action name="showStaff" class="showStaffAction">
+			<!-- 定义处理结果与视图资源之间的关系 -->
+			<result name="success">/showStaff.jsp</result>
+		</action>
+		<action name="showGuest" class="showGuestAction">
+			<!-- 定义处理结果与视图资源之间的关系 -->
+			<result name="success">/showGuest.jsp</result>
+		</action>
+		
 		<action name="showTicket" class="showTicketAction">
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showTicket.jsp</result>
