@@ -92,7 +92,7 @@ public class AddTicketAction extends ActionSupport{
 		ticket.setDate(date);
 		ticket.setLocation(location);
 		ticket.setDescription(description);
-		ticket.setStatus(status);
+		ticket.setStatus("Pending");
 		if(ticketService.addTicket(ticket))
 		{
 			return SUCCESS;

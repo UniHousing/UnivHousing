@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.javaweb.po.Staff;
 import com.javaweb.service.StaffService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ShowStaffAction extends ActionSupport{
@@ -17,10 +19,9 @@ public class ShowStaffAction extends ActionSupport{
 
 	@Override
 	public String execute() throws Exception {
-
-		List allStaff = staffService.queryAllStaff();
-	
-		ServletActionContext.getRequest().setAttribute("all", allStaff);
+		int loginId=(Integer) ActionContext.getContext().getSession().get("login");
+		Staff staff = staffService.queryStaffByID(loginId);
+		ServletActionContext.getRequest().setAttribute("staff", staff);
 		return SUCCESS;
 		
 	}

@@ -27,6 +27,7 @@
   <property generated="never" lazy="false" name="need"/>
   <property generated="never" lazy="false" name="comment"/>
   <property generated="never" lazy="false" name="courses"/>
+  <property generated="never" lazy="false" name="kinId" type="int" column="kin_id"/>
   
  </class>
 </hibernate-mapping>

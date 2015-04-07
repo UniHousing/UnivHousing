@@ -2,11 +2,11 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-	<title>Maintenance Tickets</title>
+	<title>Staff</title>
 </head>
 <body>
 <center>
-	<h2>Ticket List</h2>
+	<h2>Staff List</h2>
 	<table border="1">
 		
 		<tr>
