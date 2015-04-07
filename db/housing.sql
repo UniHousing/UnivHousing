@@ -303,6 +303,7 @@ CREATE TABLE `guest` (
   `comment` varchar(255),
   `status` varchar(10) default NULL,
   `courses` varchar(255),
+  `kin_id` int(11) NOT NULL default 0 COMMENT 'emergency contact',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- ----------------------------
