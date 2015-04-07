@@ -179,12 +179,12 @@ CREATE TABLE `parking_spot_occupy`(
 -- Table structure for Parking spot price 
 --------------------------------
 DROP TABLE IF EXISTS `parking_spot_price`;
-CREATE TABLE `parking_spot_occupy`(
+CREATE TABLE `parking_spot_price`(
  `id` int(11) NOT NULL auto_increment,
  `parking_spot_classification` varchar(40) NOT NULL,
  `price` int(11) NOT NULL,
  PRIMARY KEY(`id`),
- UNIQUE(`parking_spot_classification`),
+ UNIQUE(`parking_spot_classification`)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 -- ----------------------------
@@ -228,6 +228,7 @@ id int(11) NOT NULL auto_increment,
 room_number varchar(50) default NULL,
 month_rate float NOT NULL default 0,
 house_id int(11) NOT NULL default 0,
+place_number int(11) NOT NULL default 0,
 PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -333,7 +334,7 @@ CREATE TABLE `ticket` (
   `date` datetime default NULL,
   `issue` varchar(255),--location
   `status` varchar(20),
-  `comment` varchar(255),--description
+  `comment` varchar(255),
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
