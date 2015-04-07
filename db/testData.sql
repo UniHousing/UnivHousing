@@ -1,13 +1,90 @@
---update housing id
-UPDATE `housing`.`general_apartment` SET `id`='6' WHERE `id`='1';
-UPDATE `housing`.`general_apartment` SET `id`='5' WHERE `id`='4';
-UPDATE `housing`.`general_apartment` SET `id`='4' WHERE `id`='3';
-UPDATE `housing`.`general_apartment` SET `id`='3' WHERE `id`='2';
-UPDATE `housing`.`family_apartment` SET `id`='7' WHERE `id`='1';
-UPDATE `housing`.`family_apartment` SET `id`='8' WHERE `id`='2';
-UPDATE `housing`.`family_apartment` SET `id`='9' WHERE `id`='3';
+--nearby
+INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('1', '1', '1');
+INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('2', '2', '2');
+INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('3', '3', '3');
+INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('4', '4', '3');
+INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('5', '3', '4');
+INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('6', '4', '4');
+INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('7', '5', '5');
+INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('8', '5', '6');
+
+
+--parking_spot_price
+
+INSERT INTO `housing`.`parking_spot_price` (`id`, `parking_spot_classification`, `price`) VALUES ('1', 'Handicapped', '25');
+INSERT INTO `housing`.`parking_spot_price` (`id`, `parking_spot_classification`, `price`) VALUES ('2', 'Bike', '30');
+INSERT INTO `housing`.`parking_spot_price` (`id`, `parking_spot_classification`, `price`) VALUES ('3', 'Small Car', '35');
+INSERT INTO `housing`.`parking_spot_price` (`id`, `parking_spot_classification`, `price`) VALUES ('4', 'Large Car', '40');
+
+
+--parking_spot
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('1', '1', 'Handicapped');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('2', '1', 'Bike');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('3', '1', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('4', '1', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('5', '2', 'Handicapped');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('6', '2', 'Bike');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('7', '2', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('8', '2', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('9', '2', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('10', '2', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('11', '3', 'Handicapped');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('12', '3', 'Bike');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('13', '3', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('14', '3', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('15', '3', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('16', '3', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('17', '4', 'Handicapped');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('18', '4', 'Bike');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('19', '4', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('20', '4', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('21', '5', 'Handicapped');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('22', '5', 'Handicapped');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('23', '5', 'Bike');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('24', '5', 'Bike');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('25', '5', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('26', '5', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('27', '5', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('28', '5', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('29', '6', 'Handicapped');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('30', '6', 'Handicapped');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('31', '6', 'Bike');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('32', '6', 'Bike');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('33', '6', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('34', '6', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('35', '6', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('36', '6', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('37', '6', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('38', '6', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('39', '6', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('40', '6', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('41', '7', 'Handicapped');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('42', '7', 'Handicapped');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('43', '7', 'Bike');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('44', '7', 'Bike');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('45', '7', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('46', '7', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('47', '7', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('48', '7', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('49', '7', 'Small Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('50', '7', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('51', '7', 'Large Car');
+INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`) VALUES ('52', '7');
+
+
+--parking_lot
+INSERT INTO `housing`.`parking_lot` (`id`, `type`) VALUES ('1', 'Dedicated');
+INSERT INTO `housing`.`parking_lot` (`id`, `type`) VALUES ('2', 'Dedicated');
+INSERT INTO `housing`.`parking_lot` (`id`, `type`) VALUES ('3', 'Dedicated');
+INSERT INTO `housing`.`parking_lot` (`id`, `type`) VALUES ('4', 'Dedicated');
+INSERT INTO `housing`.`parking_lot` (`id`, `type`) VALUES ('5', 'Dedicated');
+INSERT INTO `housing`.`parking_lot` (`id`, `type`) VALUES ('6', 'Dedicated');
+INSERT INTO `housing`.`parking_lot` (`id`, `type`) VALUES ('7', 'General');
+
+
 
 --room
+
 INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('5', '400', '1', '1');
 INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('5', '400', '1', '2');
 INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('5', '400', '1', '3');
@@ -98,6 +175,9 @@ INSERT INTO `housing`.`general_apartment` (`id`, `name`, `addr`, `tel`, `room_co
 
 
 --family_apartment
+INSERT INTO `housing`.`family_apartment` (`id`, `name`, `addr`, `tel`, `apt_num`, `bed_count`, `month_rate`, `deposit`) VALUES ('7', 'Hogwarts', '300, Wade Avenue, Raleigh - 27606, NC', '919 540 005', '105', '1', '450', '500');
+INSERT INTO `housing`.`family_apartment` (`id`, `name`, `addr`, `tel`, `apt_num`, `bed_count`, `month_rate`, `deposit`) VALUES ('8', 'Hogwarts', '300, Wade Avenue, Raleigh - 27606, NC', '919 540 005', '106', '2', '550', '600');
+INSERT INTO `housing`.`family_apartment` (`id`, `name`, `addr`, `tel`, `apt_num`, `bed_count`, `month_rate`, `deposit`) VALUES ('9', 'Hogwarts', '300, Wade Avenue, Raleigh - 27606, NC', '919 540 005', '107', '3', '700', '800');
 
 
 --residential_hall
