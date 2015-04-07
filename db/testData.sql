@@ -94,6 +94,9 @@ INSERT INTO `housing`.`general_apartment` (`name`, `addr`, `tel`, `room_count`, 
 INSERT INTO `housing`.`general_apartment` (`name`, `addr`, `tel`, `room_count`, `bath_count`) VALUES ('Hufflepuff', '515, University Commons, Raleigh - 27606, NC', '919 540 004', '4', '4');
 INSERT INTO `housing`.`general_apartment` (`name`, `addr`, `tel`, `room_count`, `bath_count`) VALUES ('Ravenclaw', '315, Gorman Crossings, Raleigh - 27606, NC', '919 540 003', '3', '3');
 INSERT INTO `housing`.`general_apartment` (`name`, `addr`, `tel`, `room_count`, `bath_count`) VALUES ('Ravenclaw', '315, Gorman Crossings, Raleigh - 27606, NC', '919 540 003', '4', '4');
+UPDATE `housing`.`general_apartment` SET `rent`='375', `deposit`='450' WHERE `id`='1';
+UPDATE `housing`.`general_apartment` SET `rent`='375', `deposit`='450' WHERE `id`='2';
+UPDATE `housing`.`general_apartment` SET `rent`='375', `deposit`='450' WHERE `id`='3';
 
 --family_apartment
 INSERT INTO `housing`.`family_apartment` (`name`, `addr`, `tel`, `apt_num`, `bed_count`, `month_rate`, `deposit`) VALUES ('Hogwarts', '300, Wade Avenue, Raleigh - 27606, NC', ' 919 540 005', '105', '1', '450', '500');
@@ -105,3 +108,4 @@ UPDATE `housing`.`residence_hall` SET `room_count`='5', `rent`='400', `deposit`=
 INSERT INTO `housing`.`residence_hall` (`name`, `addr`, `room_count`, `tel`, `rent`, `deposit`) VALUES ('Slytherin Hall', '210 Dan Allen Dr, Raleigh, NC 27695', '3', '919 540 002', '450', '500');
 INSERT INTO `housing`.`residence_hall` (`name`, `addr`, `tel`) VALUES ('Gryffindor Hall', '2751 Cates Avenue, Gryffindor Residence Hall, Raleigh, NC 27607', '919 540 001');
 UPDATE `housing`.`residence_hall` SET `tel`='919 540 002' WHERE `id`='2';
+UPDATE `housing`.`residence_hall` SET `room_count`='5', `rent`='400', `deposit`='400' WHERE `id`='2';
