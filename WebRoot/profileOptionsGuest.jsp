@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Student Housing System</title>
+<title>Profile Options</title>
 	<link href="<%=request.getContextPath()+"/css/style.css"%>" rel="stylesheet" type="text/css" />
 <style>
 #header {
@@ -26,17 +26,10 @@
 	</div>
 	<br><br><br>
 	<div align="center">
-	<h2>Logged in Student/Guest</h2>
-		<br><a href="houseOptions.jsp" style="color: midnightblue;">House Options</a>
-		<br><a href="parkingOptions.jsp" style="color: midnightblue;">Parking Options</a>
-		<br><a href="maintenanceOptions.jsp" style="color: midnightblue;">Maintenance</a>
-		<s:if test="#session.type=='student'">
-		<br><a href="profileOptions.jsp" style="color: midnightblue;">Profile</a>
-		</s:if>
-		<s:if test="#session.type=='guest'">
-		<br><a href="profileOptionsgGuest.jsp" style="color: midnightblue;">Profile</a>
-		</s:if>
-		<br><a href="loginInit.jsp" style="color: midnightblue;">Back</a>
+	<h2>Logged in Student->Profile Options</h2>
+		<br><a href="<%="showGuest.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">View Profile</a>
+		<br><a href="<%="updateGuest.jsp?id="+session.getAttribute("login")%>" style="color: midnightblue;">Update Profile</a>
+		<br><a href="student.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>
 		
 	</div>

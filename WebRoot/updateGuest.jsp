@@ -8,9 +8,9 @@
 <center>
 	<h2>Update Profile</h2>
 	<s:actionerror/>
-	<s:form action="updateStudent">
+	<s:form action="updateGuest">
 	<s:set name="id" value="#parameters.id[0]"></s:set>
-		<s:textfield label="Student_id" name="id"></s:textfield>
+		<s:textfield label="Approval ID" name="id"></s:textfield>
 		<s:password label="password" name="password"></s:password>
 		<s:textfield label="First Name" name="fname"></s:textfield>
 		<s:textfield label="Last Name" name="lname"></s:textfield>
@@ -29,7 +29,7 @@
 		<s:submit value="Confirm"></s:submit>
 		<s:reset value="Reset"></s:reset>
 	</s:form>
-	<a href="profileOptions.jsp">Back</a>
+	<a href="profileOptionsGuest.jsp">Back</a>
 </center>
 </body>
 </html>
