@@ -24,10 +24,10 @@ CREATE TABLE `family_apartment` (
   `name` varchar(255) default NULL,
   `addr` varchar(255) default NULL,
   `tel` varchar(20) default NULL,
-  `apt_num` int(11) default NULL,
-  `bed_count` int(11) default NULL,
-  `month_rate` float default NULL,
-  `deposit` float default NULL,
+  `apt_num` int(11) NOT NULL default 0,
+  `bed_count` int(11) NOT NULL default 0,
+  `month_rate` float NOT NULL default 0,
+  `deposit` float NOT NULL default 0,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -37,7 +37,7 @@ CREATE TABLE `family_apartment` (
 DROP TABLE IF EXISTS `family_member`;
 CREATE TABLE `family_member` (
   `id` int(11) NOT NULL auto_increment,
-  `student_id` int(11) default NULL,
+  `student_id` int(11) NOT NULL default 0,
   `name` varchar(255) default NULL,
   `birth_date` datetime default NULL,
   PRIMARY KEY  (`id`)
@@ -52,10 +52,10 @@ CREATE TABLE `general_apartment` (
   `name` varchar(255) default NULL,
   `addr` varchar(255) default NULL,
   `tel` varchar(255) default NULL,
-  `room_count` int(11) default NULL,
-  `bath_count` int(11) default NULL,
-  `rent` float default NULL,
-  `deposit` float default NULL,
+  `room_count` int(11) NOT NULL default 0,
+  `bath_count` int(11) NOT NULL default 0,
+  `rent` float NOT NULL default 0,
+  `deposit` float NOT NULL default 0,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -77,14 +77,14 @@ CREATE TABLE `house` (
 DROP TABLE IF EXISTS `invoice`;
 CREATE TABLE `invoice` (
   `id` int(11) NOT NULL auto_increment,
-  `lease_id` int(11) default NULL,
+  `lease_id` int(11) NOT NULL default 0,
   `pay_date` datetime default NULL,
   `pay_method` varchar(50) default NULL,
   `status` varchar(20) default NULL,
-  `penalty` float default NULL,
-  `damage_charge` float default NULL,
-  `late_fee` float default NULL,
-  `total` float(255,0) default NULL,
+  `penalty` float NOT NULL default 0,
+  `damage_charge` float NOT NULL default 0,
+  `late_fee` float NOT NULL default 0,
+  `total` float(255,0) NOT NULL default 0,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -109,9 +109,9 @@ CREATE TABLE `kin_info` (
 DROP TABLE IF EXISTS `lease`;
 CREATE TABLE `lease` (
   `id` int(11) NOT NULL auto_increment,
-  `student_id` int(11) default NULL,
-  `house_id` int(11) default NULL,
-  `room_id` int(11) default NULL,
+  `student_id` int(11) NOT NULL default 0,
+  `house_id` int(11) NOT NULL default 0,
+  `room_id` int(11) NOT NULL default 0,
   `room_num` varchar(50) default NULL,
   `duration` varchar(50) default NULL,
   `enter_date` datetime default NULL,
@@ -129,7 +129,7 @@ CREATE TABLE `lease` (
 DROP TABLE IF EXISTS `lease_request`;
 CREATE TABLE `lease_request` (
   `id` int(11) NOT NULL auto_increment,
-  `student_id` int(11) default NULL,
+  `student_id` int(11) NOT NULL default 0,
   `preference1` varchar(50) default NULL,
   `preference2` varchar(50) default NULL,
   `preference3` varchar(50) default NULL,
@@ -193,9 +193,9 @@ CREATE TABLE `parking_spot_occupy`(
 DROP TABLE IF EXISTS `parking_spot`;
 CREATE TABLE `parking_spot` (
   `id` int(11) NOT NULL auto_increment,
-  `lot_id` int(11) default NULL,
+  `lot_id` int(11) NOT NULL default 0,
   `classification` varchar(40) default NULL,
-  `fee` float default NULL,
+  `fee` float NOT NULL default 0,
   `availability` varchar(10) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -210,11 +210,11 @@ CREATE TABLE `residence_hall` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(255) default NULL,
   `addr` varchar(255),
-  `room_count` int(11) default NULL,
+  `room_count` int(11) NOT NULL default 0,
   `tel` varchar(20) default NULL,
-  `manager_id` int(11) default NULL,
-  `rent` float default NULL,
-  `deposit` float default NULL,
+  `manager_id` int(11) NOT NULL default 0,
+  `rent` float NOT NULL default 0,
+  `deposit` float NOT NULL default 0,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -226,8 +226,8 @@ DROP TABLE IF EXISTS room;
 CREATE TABLE room (
 id int(11) NOT NULL auto_increment,
 room_number varchar(50) default NULL,
-month_rate float default NULL,
-house_id int(11) default NULL,
+month_rate float NOT NULL default 0,
+house_id int(11) NOT NULL default 0,
 PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -274,7 +274,7 @@ CREATE TABLE `student` (
   `comment` varchar(255),
   `status` varchar(10) default NULL,
   `courses` varchar(255),
-  `kin_id` int(11) default NULL COMMENT 'emergency contact',
+  `kin_id` int(11) NOT NULL default 0 COMMENT 'emergency contact',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -310,8 +310,8 @@ CREATE TABLE `guest` (
 DROP TABLE IF EXISTS `termin_req`;
 CREATE TABLE `termin_req` (
   `id` int(11) NOT NULL auto_increment,
-  `student_id` int(11) default NULL,
-  `lease_id` int(11) default NULL,
+  `student_id` int(11) NOT NULL default 0,
+  `lease_id` int(11) NOT NULL default 0,
   `reason` varchar(255),
   `date` datetime default NULL,
   `status` varchar(40) default NULL,
@@ -329,7 +329,7 @@ DROP TABLE IF EXISTS `ticket`;
 CREATE TABLE `ticket` (
   `id` int(11) NOT NULL auto_increment,
   `type` varchar(20) default NULL COMMENT 'serverity',
-  `student_id` int(11) default NULL,
+  `student_id` int(11) NOT NULL default 0,
   `date` datetime default NULL,
   `issue` varchar(255),--location
   `status` varchar(20),
@@ -344,7 +344,7 @@ CREATE TABLE `ticket` (
 DROP TABLE IF EXISTS `parking_request`;
 CREATE TABLE `parking_request` (
   `id` int(11) NOT NULL auto_increment,
-  `student_id` int(11) default NULL,  
+  `student_id` int(11) NOT NULL default 0,  
   `vehicle_type` varchar(20) default NULL,
   `nearby` varchar(20) default NULL,
   `handicapped` varchar(20) default NULL,
