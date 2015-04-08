@@ -255,6 +255,7 @@
 	</bean>
 	<bean id="parkingLotService" class="com.javaweb.service.ParkingLotServiceImpl">
 		<property name="parkingLotDAO" ref="parkingLotDAO"></property>
+		<property name="nearbyDAO" ref="nearbyDAO"></property>
 	</bean>
 	<bean id="parkingSpotService" class="com.javaweb.service.ParkingSpotServiceImpl">
 		<property name="parkingSpotDAO" ref="parkingSpotDAO"></property>
@@ -463,6 +464,7 @@
 		<property name="parkingRequestService" ref="parkingRequestService"></property>
 		<property name="parkingSpotService" ref="parkingSpotService"></property>
 		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
+		<property name="parkingSpotPriceService" ref="parkingSpotPriceService"></property>
 	</bean>
 	
 	<bean id="showLotAction" class="com.javaweb.action.ShowCurrentParkingLotAction">

@@ -60,7 +60,7 @@ public class BaseDAOImpl<T> extends HibernateDaoSupport implements BaseDAO<T> {
 	@Override
 	public List queryByAttribute(Class<?> clazz, String columnName, String str) {
 		// TODO Auto-generated method stub
-		Criterion attributeLikeCriterion=Restrictions.like(columnName, "%"+str+"%").ignoreCase();
+		Criterion attributeLikeCriterion=Restrictions.like(columnName, str).ignoreCase();
 		DetachedCriteria detachedCriteria=DetachedCriteria.forClass(clazz);
 		detachedCriteria.add(attributeLikeCriterion);
 		return this.getHibernateTemplate().findByCriteria(detachedCriteria);

@@ -58,6 +58,16 @@ public class ParkingSpotPriceServiceImpl  implements ParkingSpotPriceService{
 	@Override
 	public float findPricebySpotClassification(String classification)
 	{
-		return parkingSpotPriceDAO.findPricebySpotClassification(classification);
+		String [] reqStrings=classification.split(" ");
+		List<ParkingSpotPrice> parkingSpotPrices=parkingSpotPriceDAO.findPricebySpotClassification(reqStrings[0]);
+		if (parkingSpotPrices.size()==0) {
+			return 0;
+		}
+		else {
+			for (ParkingSpotPrice parkingSpotPrice : parkingSpotPrices) {
+				return parkingSpotPrice.getPrice();
+			}
+		}
+		return 0;
 	}
 }

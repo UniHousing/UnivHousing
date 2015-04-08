@@ -53,7 +53,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 	}
 
 	@Override
-	public List queryAllParkingLot() {
+	public List<ParkingLot> queryAllParkingLot() {
 		return parkingLotDAO.queryAll(ParkingLot.class);
 	}
 
@@ -67,12 +67,16 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 		// TODO Auto-generated method stub
 		List <Integer> parkingList=nearbyDAO.findNearbyParkingbyHouseId(houseId);
 		List<ParkingLot> parkingLots= new ArrayList<ParkingLot>();
-		if (parkingList==null) {
+		if (parkingList.size()==0) {
 			return null;
 		}
 		else {
 			for (Integer integer : parkingList) {
-				parkingLots.add(parkingLotDAO.queryByID(ParkingLot.class, integer));
+				ParkingLot parkingLot=parkingLotDAO.queryByID(ParkingLot.class, integer);
+				if (parkingLot!=null) {
+					parkingLots.add(parkingLot);
+				}
+				
 			}
 			return parkingLots;
 		}

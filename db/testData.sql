@@ -12,6 +12,7 @@ UPDATE `housing`.`guest` SET `kin_id`='6' WHERE `id`='200540002';
 
 
 --test for report query 4
+
 UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='1';
 UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='3';
 UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='6';
@@ -29,6 +30,7 @@ UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='48';
 
 
 --nearby
+
 INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('1', '1', '1');
 INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('2', '2', '2');
 INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('3', '3', '3');
@@ -50,6 +52,7 @@ INSERT INTO `housing`.`parking_spot_price` (`id`, `parking_spot_classification`,
 
 
 --parking_spot
+
 INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('1', '1', 'Handicapped');
 INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('2', '1', 'Bike');
 INSERT INTO `housing`.`parking_spot` (`id`, `lot_id`, `classification`) VALUES ('3', '1', 'Small Car');
@@ -144,6 +147,7 @@ INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_nu
 
 
 --lease
+
 INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('1','1','100540001', '1', '2015-01-01', '2015-07-31', 'Semester','current');
 INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('3','2','100540002', '9', '2015-01-01', '2015-07-31', 'Semester','current');
 INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('1','3','100540003', '2', '2015-01-01', '2015-05-31', 'Monthly','current');
@@ -194,6 +198,7 @@ UPDATE `housing`.`guest` SET `addr`='32 A, Maxime Road, Paris - 2331, France' WH
 
 
 --student
+
 INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `alter_tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `status`, `courses`) VALUES ('100540008','123456', 'Vernon', 'Dursley', 'Family', 'Male', '9198954357', '9198954786', '32 A, Dursley Road, Raleigh', 'Raleigh', '27606', '1975-11-29', 'Graduate', 'American', 'Yes', 'Placed', 'Muggle Studies');
 INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `need`, `status`, `courses`) VALUES ('100540003','123456', 'Ron', 'Weasley', 'Student', 'Male', '9189567067', '31 B, Weasley Road, Rome', 'Rome', '27456', '1986-03-01', 'Freshman', 'Italian', 'No', 'None', 'Placed', 'Care of Magical Creatures');
 INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `need`, `status`, `courses`) VALUES ('100540004','123456', 'Hermione', 'Granger', 'Student', 'Female', '9189568567', '32 A, Granger Road, Edinburg', 'Edinburg', '25556', '1986-09-19', 'Freshman', 'Scottish', 'No', 'None', 'Placed', 'Muggle Studies');
@@ -213,6 +218,7 @@ UPDATE `housing`.`student` SET `addr`='31 B, Malfoy Drive, New York - 27506, USA
 
 
 --general_apartment
+
 INSERT INTO `housing`.`general_apartment` (`id`, `name`, `addr`, `tel`, `room_count`, `bath_count`, `rent`, `deposit`) VALUES ('3', 'Ravenclaw', '315, Gorman Crossings, Raleigh - 27606, NC', '919 540 003', '3', '3', '350', '400');
 INSERT INTO `housing`.`general_apartment` (`id`, `name`, `addr`, `tel`, `room_count`, `bath_count`, `rent`, `deposit`) VALUES ('4', 'Ravenclaw', '315, Gorman Crossings, Raleigh - 27606, NC', '919 540 003', '4', '4', '350', '400');
 INSERT INTO `housing`.`general_apartment` (`id`, `name`, `addr`, `tel`, `room_count`, `bath_count`, `rent`, `deposit`) VALUES ('5', 'Hufflepuff', '515, University Commons, Raleigh - 27606, NC', '919 540 004', '3', '3', '375', '450');
@@ -220,12 +226,14 @@ INSERT INTO `housing`.`general_apartment` (`id`, `name`, `addr`, `tel`, `room_co
 
 
 --family_apartment
+
 INSERT INTO `housing`.`family_apartment` (`id`, `name`, `addr`, `tel`, `apt_num`, `bed_count`, `month_rate`, `deposit`) VALUES ('7', 'Hogwarts', '300, Wade Avenue, Raleigh - 27606, NC', '919 540 005', '105', '1', '450', '500');
 INSERT INTO `housing`.`family_apartment` (`id`, `name`, `addr`, `tel`, `apt_num`, `bed_count`, `month_rate`, `deposit`) VALUES ('8', 'Hogwarts', '300, Wade Avenue, Raleigh - 27606, NC', '919 540 005', '106', '2', '550', '600');
 INSERT INTO `housing`.`family_apartment` (`id`, `name`, `addr`, `tel`, `apt_num`, `bed_count`, `month_rate`, `deposit`) VALUES ('9', 'Hogwarts', '300, Wade Avenue, Raleigh - 27606, NC', '919 540 005', '107', '3', '700', '800');
 
 
 --residential_hall
+
 INSERT INTO `housing`.`residence_hall` (`id`, `name`, `addr`, `room_count`, `tel`, `rent`, `deposit`,`specific`) VALUES ('1', 'Gryffindor Hall', '2751 Cates Avenue, Gryffindor Residence Hall, Raleigh, NC 27607', '5', '919 540 001', '400', '400','0');
 INSERT INTO `housing`.`residence_hall` (`id`, `name`, `addr`, `room_count`, `tel`, `rent`, `deposit`,`specific`) VALUES ('2', 'Slytherin Hall', '210 Dan Allen Dr, Raleigh, NC 27695', '3', '919 540 002', '450', '500','1');
 
