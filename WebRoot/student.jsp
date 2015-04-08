@@ -15,9 +15,7 @@
     padding-bottom: 30px;
     padding-left: 50px;
 } 
-body {
-text-align: center;  /* 页面元素居中 */
-} 
+
 </style>
 </head>
 
@@ -29,6 +27,7 @@ text-align: center;  /* 页面元素居中 */
 		%>
 	</div>
 	<br><br><br>
+	<div align="center">
 	<h2>Logged in Student/Guest</h2>
 	    
 		<br><a href="houseOptions.jsp" style="color: midnightblue;">House Options</a>
