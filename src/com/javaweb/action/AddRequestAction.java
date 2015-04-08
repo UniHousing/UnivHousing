@@ -13,7 +13,11 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class AddRequestAction extends ActionSupport{
 	private int studentId;
+	public static final String APT="Apartment";
+	public static final String FAMILY="Family Apartment";
+	public static final String HALL="Residence Hall";
 	public static final String SPECIFIC="Specific Hall";
+	public static final String OFF="Off Campus";
 	private List <ResidenceHall> residenceHalls=new ArrayList<ResidenceHall> ();
 	private String preference1;
 	private String preference2;
@@ -22,7 +26,16 @@ public class AddRequestAction extends ActionSupport{
 	private String paymentMethod;
 	private Date startDate;
 	private Date endDate;
+	private List<String> selectList;
 	private LeaseRequestService leaseRequestService;
+	public AddRequestAction() {
+		// TODO Auto-generated constructor stub
+		selectList=new ArrayList<String>();
+		selectList.add(APT);
+		selectList.add(HALL);
+		selectList.add(SPECIFIC);
+
+	}
 	public String handleString(String str) {
 		String [] strings=str.split(",");
 		if (!strings[0].equals(SPECIFIC)) {
