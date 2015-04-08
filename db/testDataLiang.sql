@@ -1,21 +1,18 @@
-INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `alter_tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `need`, `comment`, `status`, `courses`, `kin_id`) 
-VALUES ('100540001','123456', 'Harry', 'Potter', 'student', 'male', '9189327078', '9176326078', '31 B, Privet Drive, London - 27605, England', 'San Jose', '29191', '1991-07-21', 'Freshman', 'British', 'No', 'No', null, 'placed', 'CS','1');
-
-remove city, postcode
-add family,Family details
-
-
-Housing : Gryffindor Hall
-Place Number : 001
-Parking spot : 003
-Lease Start Date (also parking) : 01 Jan 2014
-Lease End Date: 31 Jul 2014
-Payment Option: Semester
-
-should be put in lease and parking, room number is not given
-
-
-INSERT INTO `housing`.`staff` (`id`,`password`, `fname`, `lname`, `addr`, `city`, `post_code`, `birth_date`, `gender`, `position`, `work_at`) 
-VALUES ('1','admin', 'Minerva', 'McGonagall', 'McGonagall Road, Delhi - 011, India', null, null, '1950-10-04', 'Female', 'Hall Manager', 'Gryffindor Hall');
-
-Relationship between staff and hall 
+USE housing;
+CREATE TABLE temp(name CHAR(20), stu_num int(10));
+SELECT temp.name
+FROM (SELECT H.name as name, COUNT(DISTINCT R.student_id) as stu_num
+FROM residence_hall H, lease_request R
+WHERE R.preference1 = H.name OR R.preference2 = H.name OR R.preference3 = H.name
+GROUP BY H.name
+UNION
+SELECT GA.name, COUNT(DISTINCT R.student_id)
+FROM general_apartment GA, lease_request R
+WHERE R.preference1 = GA.name OR R.preference2 = GA.name OR R.preference3 = GA.name
+GROUP BY GA.name
+UNION
+SELECT FA.name, COUNT(DISTINCT R.student_id)
+FROM family_apartment FA, lease_request R
+WHERE R.preference1 = FA.name OR R.preference2 = FA.name OR R.preference3 = FA.name
+GROUP BY FA.name) AS temp
+WHERE temp.stu_num = (SELECT max(stu_num) FROM temp);

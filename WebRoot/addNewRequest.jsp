@@ -72,7 +72,7 @@ function CheckHouses(val,id){
 			
 				
 		
-		<s:if test="#session.type=='student'">
+		<s:if test="#session.type=='Student'">
 		<s:select label="Select Your First Preferences" onchange='CheckHouses(this.value,"preference1");'
 				list="#{'Apartment':'Apartment', 'Resident Hall':'Resident Hall','Specific Hall':'Specific Hall'}"
 				name="preference1" value="Specific Hall" />
