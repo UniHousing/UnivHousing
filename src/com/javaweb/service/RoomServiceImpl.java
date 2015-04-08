@@ -56,7 +56,37 @@ public class RoomServiceImpl implements RoomService {
 	@Override
 	public int queryRoomsInHouse(int aptId) {
 		// TODO Auto-generated method stub
-		return roomDAO.findRoombyAptId(aptId).size();
+		int count=0;
+		List<Room> rooms= roomDAO.findRoombyAptId(aptId);
+		if (rooms==null) {
+			return count;
+		}
+		else {
+			for (Room room : rooms) {
+				if (room.getVacancy()==1) {
+					count++;
+				}
+			}
+			return count;
+		}
+		
+	}
+
+	@Override
+	public Room queryRoomInHouse(int houseId) {
+		// TODO Auto-generated method stub
+		List<Room> rooms= roomDAO.findRoombyAptId(houseId);
+		if (rooms==null) {
+			return null;
+		}
+		else {
+			for (Room room : rooms) {
+				if (room.getVacancy()==0) {
+					return room;
+				}
+			}
+		}
+		return null;
 	}
 
 

@@ -18,4 +18,8 @@ public boolean addResidenceHall(ResidenceHall residenceHall);
 	public int queryAvailableHallbyName(String name);
 	
 	public int queryAvailableHall();
+	
+	public int queryGeneralHall();
+	
+	public int queryGeneralHallbyName(String name);
 }

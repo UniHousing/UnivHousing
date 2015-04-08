@@ -229,4 +229,6 @@ INSERT INTO `housing`.`family_apartment` (`id`, `name`, `addr`, `tel`, `apt_num`
 INSERT INTO `housing`.`residence_hall` (`id`, `name`, `addr`, `room_count`, `tel`, `rent`, `deposit`,`specific`) VALUES ('1', 'Gryffindor Hall', '2751 Cates Avenue, Gryffindor Residence Hall, Raleigh, NC 27607', '5', '919 540 001', '400', '400','0');
 INSERT INTO `housing`.`residence_hall` (`id`, `name`, `addr`, `room_count`, `tel`, `rent`, `deposit`,`specific`) VALUES ('2', 'Slytherin Hall', '210 Dan Allen Dr, Raleigh, NC 27695', '3', '919 540 002', '450', '500','1');
 
+INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `need`, `status`, `courses`) VALUES ('100540010','123456', 'George', 'Weasley', 'Student', 'Male', '9133368568', '31 B, Weasley Road,Rome', 'Rome', '27456', '1982-10-20', 'Senior', 'Italian', 'No', 'None', 'Placed', 'Muggle Studies');
+UPDATE `housing`.`student` SET `addr`='31 B, Malfoy Drive, New York' WHERE `id`='100540010';
 

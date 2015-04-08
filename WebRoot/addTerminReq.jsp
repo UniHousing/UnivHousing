@@ -10,8 +10,8 @@
 	<s:actionerror/>
 	<s:form action="addTerminReq">
 		<s:textfield label="reason" name="reason"></s:textfield>
-		<s:textfield label="extraFee" name="extraFee"></s:textfield>
-		<s:textfield name="inspectionDate" label="Format (MM/DD/YEAR)" ></s:textfield>
+		<s:textfield label="ExtraFee" name="extraFee"></s:textfield>
+		<s:textfield name="inspectionDate" label="Desired termination date (MM/DD/YEAR)" ></s:textfield>
 		<s:submit value="Submit"></s:submit>
 		<s:reset value="Reset"></s:reset>
 	</s:form>	

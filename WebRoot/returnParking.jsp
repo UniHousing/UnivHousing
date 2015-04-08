@@ -37,7 +37,7 @@
 				<td colspan="2" align="center">
 					<input type="submit" value="Return Spot" style="width: 116px">
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="button" value="Back" style="width:50px" onclick="javascript:window.location='requestViewCancel.jsp';">
+					<input type="button" value="Back" style="width:50px" onclick="javascript:window.location='parkingOptions.jsp';">
 				</td>
 				</form>
 			</tr>

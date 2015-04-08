@@ -12,6 +12,7 @@
   <property name="roomNumber" column="room_number"></property>
   <property name="monthRate" column="month_rate" type="float"></property>
   <property name="houseId" column="house_id" type="int"></property>
+  <property name="vacancy" type="int"></property>
   <property name="placeNumber" column="place_number"></property>
  </class>
 </hibernate-mapping>

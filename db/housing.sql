@@ -24,6 +24,7 @@ CREATE TABLE `family_apartment` (
   `name` varchar(255) default NULL,
   `addr` varchar(255) default NULL,
   `tel` varchar(20) default NULL,
+  `vacancy` int(1) NOT NULL default 0,
   `apt_num` int(11) NOT NULL default 0,
   `bed_count` int(11) NOT NULL default 0,
   `month_rate` float NOT NULL default 0,
@@ -196,7 +197,9 @@ CREATE TABLE `parking_spot` (
   `lot_id` int(11) NOT NULL default 0,
   `classification` varchar(40) default NULL,
   `fee` float NOT NULL default 0,
-  `availability` varchar(10) default NULL,
+  `availability` int(1) NOT NULL default 0,
+  `start_date` datetime default NULL,
+  `end_date` datetime default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -228,6 +231,7 @@ CREATE TABLE room (
 id int(11) NOT NULL auto_increment,
 room_number varchar(50) default NULL,
 month_rate float NOT NULL default 0,
+`vacancy` int(1) NOT NULL default 0,
 house_id int(11) NOT NULL default 0,
 place_number int(11) NOT NULL default 0,
 PRIMARY KEY (id)

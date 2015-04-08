@@ -91,4 +91,38 @@ public class ResidenceHallServiceImpl implements ResidenceHallService{
 		}
 	}
 
+	@Override
+	public int queryGeneralHallbyName(String name) {
+		// TODO Auto-generated method stub
+		List<ResidenceHall> halls=residenceHallDAO.findHallsbyName(name);
+		if (halls==null) {
+			return -1;
+		}
+		else {
+			for (ResidenceHall residenceHall : halls) {
+				if (residenceHall.getSpecific()==0 && residenceHall.getRoomCount()>roomService.queryRoomsInHouse(residenceHall.getId())) {
+					return residenceHall.getId();
+				}
+			}
+			return -1;
+		}
+	}
+
+	@Override
+	public int queryGeneralHall() {
+		// TODO Auto-generated method stub
+		List<ResidenceHall> halls=residenceHallDAO.queryAll(ResidenceHall.class);
+		if (halls==null) {
+			return -1;
+		}
+		else {
+			for (ResidenceHall residenceHall : halls) {
+				if (residenceHall.getSpecific()==0 && residenceHall.getRoomCount()>roomService.queryRoomsInHouse(residenceHall.getId())) {
+					return residenceHall.getId();
+				}
+			}
+			return -1;
+		}
+	}
+
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Log in</title>
+<title>Renew Parking</title>
 	<link href="<%=request.getContextPath()+"/css/style.css"%>" rel="stylesheet" type="text/css" />
 <style>
 #header {
@@ -26,12 +26,21 @@
 	</div>
 	<br><br><br>
 	<div align="center">
-	<h2>Logged in Student->House Options->Invoice Options</h2>
-		<br><a href="<%="showAllInvoice.action"%>" style="color: midnightblue;">View Current Invoice</a>
-		<br><a href="<%="showFormerInvoice.action"%>" style="color: midnightblue;">View Former Invoice</a>
-		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>
-		<br><a href="houseOptions.jsp" style="color: midnightblue;">Back</a>
-		<br><HR><br>
+	<h2>Logged in Student->Parking Options->Renew Parking Spot</h2>
+					<tr>
+				<form action="renewSpot.action" method="post">
+				<td>
+					<label for="spot">Enter Parking Spot ID To Renew:</label>
+
+					<input type="text" name="id" placeholder="Enter spot id" required>
+				</td>
+				<td colspan="2" align="center">
+					<input type="submit" value="Renew Spot" style="width: 116px">
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" value="Back" style="width:50px" onclick="javascript:window.location='parkingOptions.jsp';">
+				</td>
+				</form>
+			</tr>
 		
 	</div>
 	<br><br><br>

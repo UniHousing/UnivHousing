@@ -14,4 +14,6 @@ public interface FamilyApartmentService {
 	public List queryAllFamilyApartment();
 	
 	public FamilyApartment queryFamilyApartmentByID(int id);
+	
+	public int queryAvailableApartments();
 }

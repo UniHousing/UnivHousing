@@ -32,7 +32,8 @@
 
 		<br><a href="<%="showLot.action"%>" style="color: midnightblue;">View Parking Lot Information</a>
 		<br><a href="showCParkingSpot.action" style="color: midnightblue;">View Current Parking Spot</a>
-		<br><a href="<%="showParkingRequest.action"%>" style="color: midnightblue;">Renew Parking Spot</a>
+		<br><a href="<%="renewParking.jsp"%>" style="color: midnightblue;">Renew Parking Spot</a>
+		<br><a href="<%="returnParking.jsp"%>" style="color: midnightblue;">Return Parking Status</a>
 		<br><a href="<%="showParkingRequest.action"%>" style="color: midnightblue;">View Request Status</a>
 
 		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>

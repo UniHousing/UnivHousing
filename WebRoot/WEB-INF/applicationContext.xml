@@ -454,6 +454,7 @@
 		<property name="familyApartmentService" ref="familyApartmentService"></property>
 		<property name="residenceHallService" ref="residenceHallService"></property>
 		<property name="roomService" ref="roomService"></property>
+		<property name="studentService" ref="studentService"></property>
 	</bean>
 	
 	<bean id="assignSpotAction" class="com.javaweb.action.AssignParkingSpotAction">
@@ -474,6 +475,11 @@
 	</bean>
 	<bean id="returnParkingSpotAction" class="com.javaweb.action.ReturnParkingAction">
 		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
+		<property name="parkingSpotService" ref="parkingSpotService"></property>
+	</bean>
+	<bean id="renewParkingSpotAction" class="com.javaweb.action.RenewParkingAction">
+		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
+		<property name="leaseService" ref="leaseService"></property>
 		<property name="parkingSpotService" ref="parkingSpotService"></property>
 	</bean>
 
