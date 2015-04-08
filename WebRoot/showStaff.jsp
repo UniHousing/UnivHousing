@@ -23,7 +23,7 @@
 		</tr>
 		<tr>
 			<td>Address</td>
-			<td><s:property value="#staff.address"/></td>
+			<td><s:property value="#staff.addr"/></td>
 		</tr>
 		<tr>
 			<td>BirthDate</td>

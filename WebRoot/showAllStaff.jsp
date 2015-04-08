@@ -27,12 +27,12 @@
 			<td><s:property value="#staff.fname"/></td>	
 			<td><s:property value="#staff.lname"/></td>
 			<td><s:property value="#staff.address"/></td>
-			<td><s:property value="#staff:city"/></td>
-			<td><s:property value="#staff:postCode"/></td>
-			<td><s:property value="#staff:birthDate"/></td>
-			<td><s:property value="#staff:gender"/></td>
-			<td><s:property value="#staff:position"/></td>
-			<td><s:property value="staff:workAt"/></td>
+			<td><s:property value="#staff.city"/></td>
+			<td><s:property value="#staff.postCode"/></td>
+			<td><s:property value="#staff.birthDate"/></td>
+			<td><s:property value="#staff.gender"/></td>
+			<td><s:property value="#staff.position"/></td>
+			<td><s:property value="#staff.workAt"/></td>
 			
 			
 			
