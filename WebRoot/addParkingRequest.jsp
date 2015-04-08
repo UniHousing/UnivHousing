@@ -14,7 +14,7 @@
 		
 		<s:select label="Select a vehicle Type: " 
 		list="#{'small car':'small car', 'large car':'large car', 'bike':'bike', 'handicapped':'handicapped'}" 
-		name="classification1" value="small car"/>
+		name="classification" value="small car"/>
 		
    		<s:select label="Accept non-nearby spot assignment or not" 
 		list="#{'yes':'yes', 'no':'no'}" 
