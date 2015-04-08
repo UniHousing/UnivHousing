@@ -15,7 +15,7 @@
 		</tr>
 		<tr>	
 			<td>Num of Parking Spot</td>	
-			<td><s:property value="#lot.numParkingSpot"/></td>	
+			<td><s:property value="#lot.type"/></td>	
 		</tr>
 		
 	

@@ -37,13 +37,13 @@ public class ReturnParkingAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		int user_id=(Integer) ActionContext.getContext().getSession().get("login");
-		ParkingSpotOccupy parkingOccupy=parkingSpotOccupyService.queryParkingSpotOccupyByID(id);
+		ParkingSpotOccupy parkingOccupy=parkingSpotOccupyService.queryOccupyBySpotId(id);
 		if (parkingOccupy==null) {
 			return ERROR;
 		}
 		if(parkingOccupy.getStudentId()==user_id){
 			ParkingSpot parkingSpot=parkingSpotService.queryParkingSpotByID(parkingOccupy.getParkingSpotId());
-			if (parkingSpotOccupyService.deleteParkingSpotOccupy(id)) {
+			if (parkingSpotOccupyService.deleteParkingSpotOccupy(parkingOccupy.getId())) {
 				parkingSpot.setAvailability(0);
 				parkingSpotService.updateParkingSpot(parkingSpot);
 				return SUCCESS;

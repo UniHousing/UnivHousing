@@ -38,4 +38,10 @@ public class ParkingSpotOccupyDAOImpl extends BaseDAOImpl<ParkingSpotOccupy> imp
 		return -1;
 		
 	}
+
+	@Override
+	public List<ParkingSpotOccupy> findParkingSpotOccupybySpotId(int pid) {
+		// TODO Auto-generated method stub
+		return this.queryByForeignId(ParkingSpotOccupy.class, "parkingSpotId", pid);
+	}
 }

@@ -18,4 +18,6 @@ public interface ParkingSpotOccupyService {
 	
 	public int findStudentIdbySpotId(int pid);
 	public int findSpotIdbyStudentId(int sid);
+
+	public ParkingSpotOccupy queryOccupyBySpotId(int id);
 }
