@@ -11,6 +11,8 @@
   <property name="lotId" column="lot_id"/>
   <property name="classification"/>
   <property name="fee"/>
-  <property name="availability"/>
+  <property name="availability" type="int"/>
+  <property name="startDate" type="date" column="start_date"></property>
+  <property name="endDate" type="date" column="end_date"></property>
  </class>
 </hibernate-mapping>

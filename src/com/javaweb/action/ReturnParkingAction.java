@@ -44,7 +44,7 @@ public class ReturnParkingAction extends ActionSupport{
 		if(parkingOccupy.getStudentId()==user_id){
 			ParkingSpot parkingSpot=parkingSpotService.queryParkingSpotByID(parkingOccupy.getParkingSpotId());
 			if (parkingSpotOccupyService.deleteParkingSpotOccupy(id)) {
-				parkingSpot.setAvailability("yes");
+				parkingSpot.setAvailability(0);
 				parkingSpotService.updateParkingSpot(parkingSpot);
 				return SUCCESS;
 			}

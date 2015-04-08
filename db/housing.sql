@@ -197,7 +197,9 @@ CREATE TABLE `parking_spot` (
   `lot_id` int(11) NOT NULL default 0,
   `classification` varchar(40) default NULL,
   `fee` float NOT NULL default 0,
-  `availability` varchar(10) default NULL,
+  `availability` int(1) NOT NULL default 0,
+  `start_date` datetime default NULL,
+  `end_date` datetime default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

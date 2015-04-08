@@ -95,8 +95,8 @@ public class AssignParkingSpotAction extends ActionSupport {
 			else {
 				for (ParkingSpot parkingSpot : parkingSpots) {
 					spot_id=parkingSpot.getId();
-					parkingSpot.setAvailability("no");
-					parkingSpot.setStartdDate(startDate);
+					parkingSpot.setAvailability(1);
+					parkingSpot.setStartDate(startDate);
 					parkingSpot.setEndDate(endDate);
 					parkingSpotService.updateParkingSpot(parkingSpot);
 					break;
