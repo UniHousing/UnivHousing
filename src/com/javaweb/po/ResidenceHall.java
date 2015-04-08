@@ -7,6 +7,7 @@ public class ResidenceHall extends IdEntity<ResidenceHall> {
 	private String tel;
 	private int roomCount;
 	private int managerId;
+	private int specific;
 	private float rent;
 	private float deposit;
 	public String getName() {
@@ -50,6 +51,12 @@ public class ResidenceHall extends IdEntity<ResidenceHall> {
 	}
 	public void setDeposit(float deposit) {
 		this.deposit = deposit;
+	}
+	public int getSpecific() {
+		return specific;
+	}
+	public void setSpecific(int specific) {
+		this.specific = specific;
 	}
 	
 

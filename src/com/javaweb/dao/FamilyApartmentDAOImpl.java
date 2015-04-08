@@ -9,7 +9,7 @@ public class FamilyApartmentDAOImpl extends BaseDAOImpl<FamilyApartment>implemen
 	@Override
 	public List findAvailableFamilyApt() {
 		// TODO Auto-generated method stub
-		return null;
+		return queryByAttribute(FamilyApartment.class, "vacancy", "0");
 	}
 
 	

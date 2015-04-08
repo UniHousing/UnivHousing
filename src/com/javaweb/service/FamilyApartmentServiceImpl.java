@@ -60,13 +60,16 @@ public class FamilyApartmentServiceImpl implements FamilyApartmentService {
 	@Override
 	public int queryAvailableApartments() {
 		// TODO Auto-generated method stub
-		List<FamilyApartment> familyApartments=familyApartmentDAO.queryAll(FamilyApartment.class);
+		List<FamilyApartment> familyApartments=familyApartmentDAO.findAvailableFamilyApt();
 		if (familyApartments==null) {
 			return -1;
 		}
 		else {
-			
+			for (FamilyApartment familyApartment : familyApartments) {
+				return familyApartment.getId();
+			}
 		}
+		return -1;
 	}
 
 

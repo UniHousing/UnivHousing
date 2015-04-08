@@ -16,4 +16,6 @@ public interface RoomService {
 	public Room queryRoomByID(int id);
 	
 	public int queryRoomsInHouse(int aptId);
+	
+	public Room queryRoomInHouse(int houseId);
 }

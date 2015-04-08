@@ -3,6 +3,7 @@ package com.javaweb.action;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.javaweb.po.FamilyApartment;
 import com.javaweb.po.GeneralApartment;
 import com.javaweb.po.Lease;
 import com.javaweb.po.LeaseRequest;
@@ -14,6 +15,7 @@ import com.javaweb.service.LeaseRequestService;
 import com.javaweb.service.LeaseService;
 import com.javaweb.service.ResidenceHallService;
 import com.javaweb.service.RoomService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class FormLeaseAction extends ActionSupport {
@@ -21,12 +23,14 @@ public class FormLeaseAction extends ActionSupport {
 	public static final String APARTMENT="apartment";
 	public static final String RESIDENCE="residenceHall";
 	public static final String FAMILY="family apartment";
+	public static final String OFFCAMPUS="off campus";
 	public static  float MONTH_RATE;
 	public static  double DEPOSIT;
-	public static  double PENALTY;
+	public static  double PENALTY=50;
 	private int house_id;
 	private int room_id;
 	private String room_num;
+	private int level=0;
 	private LeaseRequestService leaseRequestService;
 	private LeaseService leaseService;
 	private ResidenceHallService residenceHallService;
@@ -69,7 +73,14 @@ public class FormLeaseAction extends ActionSupport {
 	}
 	public Object checkHouse(String prefer) {
 		if (!prefer.equalsIgnoreCase(APARTMENT) && !prefer.equalsIgnoreCase(RESIDENCE)) {
-			int houseId=residenceHallService.queryAvailableHallbyName(prefer);
+			int houseId;
+			if (level==10) {
+				houseId=residenceHallService.queryAvailableHallbyName(prefer);
+			}
+			else {
+				houseId=residenceHallService.queryGeneralHallbyName(prefer);
+			}
+			
 			if (houseId!=-1) {
 				house_id=houseId;
 				ResidenceHall residenceHall=residenceHallService.queryResidenceHallByID(houseId);
@@ -89,10 +100,23 @@ public class FormLeaseAction extends ActionSupport {
 			}
 		}
 		else if (prefer.equalsIgnoreCase(FAMILY)) {
-			int houseId=familyApartmentService.q
+			int houseId=familyApartmentService.queryAvailableApartments();
+			if (houseId!=-1) {
+				house_id=houseId;
+				FamilyApartment familyApartment=familyApartmentService.queryFamilyApartmentByID(houseId);
+				MONTH_RATE=familyApartment.getMonthRate();
+				DEPOSIT=familyApartment.getDeposit();
+				return familyApartment;
+			}
 		}
 		else {
-			int houseId= residenceHallService.queryAvailableHall();
+			int houseId;
+			if (level==10) {
+				houseId= residenceHallService.queryAvailableHall();
+			}
+			else {
+				houseId=residenceHallService.queryGeneralHall();
+			}
 			if (houseId!=-1) {
 				house_id=houseId;
 				ResidenceHall residenceHall=residenceHallService.queryResidenceHallByID(houseId);
@@ -103,21 +127,18 @@ public class FormLeaseAction extends ActionSupport {
 		}
 		return null;
 	}
-	public void assignRoom(float monthRate) {
-		Room room=new Room();
-		room.setHouseId(house_id);
-		room.setMonthRate(monthRate);
-		room.setRoomNumber(room_num);
-		roomService.addRoom(room);
+	public void assignRoom() {
+		Room room=roomService.queryRoomInHouse(house_id);
 		room_id=room.getId();
+		room.setVacancy(1);
+		roomService.updateRoom(room);
 	}
 	public boolean assignHouse() {
 		if (house_id==0 || house_id==-1) {
 			return false;
 		}
 		else {
-			room_num="a";
-			assignRoom(MONTH_RATE);
+			assignRoom();
 			return true;
 		}
 	}
@@ -132,7 +153,6 @@ public class FormLeaseAction extends ActionSupport {
 		int diffInDays = (int)( (leaseRequest.getEndDate().getTime() - leaseRequest.getStartDate().getTime()) 
                 / (1000 * 60 * 60 * 24) );
 		lease.setDuration(diffInDays+" Days");
-		
 		lease.setDeposit(DEPOSIT);
 		lease.setPenalty(PENALTY);
 		lease.setPayment(leaseRequest.getPaymentMethod());
@@ -146,11 +166,30 @@ public class FormLeaseAction extends ActionSupport {
 		String preference1=leaseRequest.getPreference1();
 		String preference2=leaseRequest.getPreference2();
 		String preference3=leaseRequest.getPreference3();
-		if (checkHouse(preference1)!=null) {
+		String category=(String) ActionContext.getContext().getSession().get("category");
+		if (category.equalsIgnoreCase("graduate")) {
+			level=10;
+		}
+		if (preference1.equalsIgnoreCase(OFFCAMPUS)) {
+			leaseRequest.setStatus("Approved");
+			leaseRequestService.updateLeaseRequest(leaseRequest);
+			return ERROR;
+		}
+		else if (checkHouse(preference1)!=null) {
 			assignHouse();
+		}
+		if (preference2.equalsIgnoreCase(OFFCAMPUS)) {
+			leaseRequest.setStatus("Approved");
+			leaseRequestService.updateLeaseRequest(leaseRequest);
+			return ERROR;
 		}
 		else if (checkHouse(preference2)!=null) {
 			assignHouse();
+		}
+		if (preference3.equalsIgnoreCase(OFFCAMPUS)) {
+			leaseRequest.setStatus("Approved");
+			leaseRequestService.updateLeaseRequest(leaseRequest);
+			return ERROR;
 		}
 		else if (checkHouse(preference3)!=null) {
 			assignHouse();
