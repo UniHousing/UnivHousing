@@ -240,20 +240,3 @@ INSERT INTO `housing`.`residence_hall` (`id`, `name`, `addr`, `room_count`, `tel
 INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `need`, `status`, `courses`) VALUES ('100540010','123456', 'George', 'Weasley', 'Student', 'Male', '9133368568', '31 B, Weasley Road,Rome', 'Rome', '27456', '1982-10-20', 'Senior', 'Italian', 'No', 'None', 'Placed', 'Muggle Studies');
 UPDATE `housing`.`student` SET `addr`='31 B, Malfoy Drive, New York' WHERE `id`='100540010';
 
-
-INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('1', '1', '2015-01-01','check','current','2505');
-INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('2', '2', '2015-01-01','check','current','2265');
-INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('3', '6', '2015-01-01','credit','current','2440');
-INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('4', '7', '2015-01-01','credit','current','2875');
-INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('5', '8', '2015-01-01','cash','current','4415');
-
-
-INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('6', '3', '2015-04-01','credit','current','435');
-INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('7', '4', '2015-04-01','check','current','435');
-INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('8', '5', '2015-04-01','cash','current','410');
-INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('9', '8', '2015-04-01','check','current','385');
-INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('10', '9', '2015-04-01','credit','current','385');
-
-
-
-
