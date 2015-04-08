@@ -63,7 +63,7 @@ public class RoomServiceImpl implements RoomService {
 		}
 		else {
 			for (Room room : rooms) {
-				if (room.getVacancy()==0) {
+				if (room.getVacancy()==1) {
 					count++;
 				}
 			}

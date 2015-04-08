@@ -15,6 +15,7 @@ import com.javaweb.service.LeaseRequestService;
 import com.javaweb.service.LeaseService;
 import com.javaweb.service.ResidenceHallService;
 import com.javaweb.service.RoomService;
+import com.javaweb.service.StudentService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -27,16 +28,21 @@ public class FormLeaseAction extends ActionSupport {
 	public static  float MONTH_RATE;
 	public static  double DEPOSIT;
 	public static  double PENALTY=50;
-	private int house_id;
+	private int house_id=0;
 	private int room_id;
 	private String room_num;
 	private int level=0;
 	private LeaseRequestService leaseRequestService;
 	private LeaseService leaseService;
+	private StudentService studentService;
 	private ResidenceHallService residenceHallService;
 	private GeneralApartmentService generalApartmentService;
 	private FamilyApartmentService familyApartmentService;
 	private RoomService roomService;
+
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
+	}
 
 	public void setLeaseRequestService(LeaseRequestService leaseRequestService) {
 		this.leaseRequestService = leaseRequestService;
@@ -130,6 +136,7 @@ public class FormLeaseAction extends ActionSupport {
 	public void assignRoom() {
 		Room room=roomService.queryRoomInHouse(house_id);
 		room_id=room.getId();
+		room_num=room.getRoomNumber();
 		room.setVacancy(1);
 		roomService.updateRoom(room);
 	}
@@ -166,7 +173,7 @@ public class FormLeaseAction extends ActionSupport {
 		String preference1=leaseRequest.getPreference1();
 		String preference2=leaseRequest.getPreference2();
 		String preference3=leaseRequest.getPreference3();
-		String category=(String) ActionContext.getContext().getSession().get("category");
+		String category=studentService.queryStudentByID(leaseRequest.getStudentId()).getCategory();
 		if (category.equalsIgnoreCase("graduate")) {
 			level=10;
 		}
@@ -178,7 +185,7 @@ public class FormLeaseAction extends ActionSupport {
 		else if (checkHouse(preference1)!=null) {
 			assignHouse();
 		}
-		if (preference2.equalsIgnoreCase(OFFCAMPUS)) {
+		else if (preference2.equalsIgnoreCase(OFFCAMPUS)) {
 			leaseRequest.setStatus("Approved");
 			leaseRequestService.updateLeaseRequest(leaseRequest);
 			return ERROR;
@@ -186,7 +193,7 @@ public class FormLeaseAction extends ActionSupport {
 		else if (checkHouse(preference2)!=null) {
 			assignHouse();
 		}
-		if (preference3.equalsIgnoreCase(OFFCAMPUS)) {
+		else if (preference3.equalsIgnoreCase(OFFCAMPUS)) {
 			leaseRequest.setStatus("Approved");
 			leaseRequestService.updateLeaseRequest(leaseRequest);
 			return ERROR;

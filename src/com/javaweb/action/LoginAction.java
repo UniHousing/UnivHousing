@@ -2,6 +2,9 @@ package com.javaweb.action;
 
 import com.javaweb.po.Staff;
 import com.javaweb.po.Student;
+import com.javaweb.service.FamilyApartmentService;
+import com.javaweb.service.GeneralApartmentService;
+import com.javaweb.service.ResidenceHallService;
 import com.javaweb.service.StaffService;
 import com.javaweb.service.StudentService;
 import com.javaweb.util.LoginCheck;
@@ -60,6 +63,7 @@ public class LoginAction extends ActionSupport {
 			if (lc.isLogin(getId(), getPassword(), student.getPassword())) {
 				ActionContext.getContext().getSession().put("login", getId());
 				ActionContext.getContext().getSession().put("type", student.getType());
+				ActionContext.getContext().getSession().put("category", student.getCategory());
 				return "student";
 			} else {
 				ActionContext.getContext().getSession().put("login", "false");
