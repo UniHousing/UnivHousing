@@ -28,14 +28,6 @@ public class AddRequestAction extends ActionSupport{
 	private Date endDate;
 	private List<String> selectList;
 	private LeaseRequestService leaseRequestService;
-	public AddRequestAction() {
-		// TODO Auto-generated constructor stub
-		selectList=new ArrayList<String>();
-		selectList.add(APT);
-		selectList.add(HALL);
-		selectList.add(SPECIFIC);
-
-	}
 	public String handleString(String str) {
 		String [] strings=str.split(",");
 		if (!strings[0].equals(SPECIFIC)) {
