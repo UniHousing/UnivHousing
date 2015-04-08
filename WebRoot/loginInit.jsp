@@ -28,7 +28,7 @@
 	<div align="center">
 		<br><a href="login.jsp" style="color: midnightblue;">Login as Student or Supervisor</a>
 		<br><br><br><a href="loginGuest.jsp" style="color: midnightblue;">Login as Guest</a>
-		<br><HR><br>
+		<br><br><br><HR><br>
 		
 	</div>
 	<br><br><br>
