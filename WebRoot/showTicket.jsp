@@ -26,11 +26,11 @@
 			<td><s:property value="#ticket.date"/></td>
 		</tr>
 		<tr>
-			<td>Location</td>
+			<td>Issue</td>
 			<td><s:property value="#ticket.location"/></td>
 		</tr>
 		<tr>
-			<td>Description</td>
+			<td>Comments</td>
 			<td><s:property value="#ticket.description"/></td>			
 		</tr>	
 		<tr>

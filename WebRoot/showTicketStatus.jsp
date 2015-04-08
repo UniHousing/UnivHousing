@@ -13,7 +13,7 @@
 		<tr>
 			<td>ID</td>
 			<td>Status</td>
-			<td>description</td>
+			<td>Comments</td>
 		</tr>
 		<s:iterator value="#request.all" id="ticket">
 		<tr>

@@ -315,7 +315,15 @@
 		scope="prototype">
 		<property name="studentService" ref="studentService"></property>
 	</bean>
-
+	<bean id="showStaffAction" class="com.javaweb.action.ShowStaffAction"
+		scope="prototype">
+		<property name="staffService" ref="staffService"></property>
+	</bean>
+	<bean id="showGuestAction" class="com.javaweb.action.ShowGuestAction"
+		scope="prototype">
+		<property name="guestService" ref="guestService"></property>
+	</bean>
+	
 	<bean id="showTicketAction" class="com.javaweb.action.ShowTicketAction"
 		scope="prototype">
 		<property name="ticketService" ref="ticketService"></property>
@@ -332,10 +340,7 @@
 	</bean>
 
 
-	<bean id="showStaffAction" class="com.javaweb.action.ShowStaffAction"
-		scope="prototype">
-		<property name="staffService" ref="staffService"></property>
-	</bean>
+	
 	<bean id="showInvoiceAction" class="com.javaweb.action.ShowInvoiceAction"
 		scope="prototype">
 		<property name="invoiceService" ref="invoiceService"></property>
@@ -383,10 +388,20 @@
 	<bean id="updateStudentAction" class="com.javaweb.action.UpdateStudentAction">
 		<property name="studentService" ref="studentService"></property>
 	</bean>
-
+	
+	<bean id="updateGuestAction" class="com.javaweb.action.UpdateGuestAction">
+		<property name="guestService" ref="guestService"></property>
+	</bean>
+	
+	<bean id="updateStaffAction" class="com.javaweb.action.UpdateStaffAction">
+		<property name="staffService" ref="staffService"></property>
+	</bean>
+	
 	<bean id="addRequestAction" class="com.javaweb.action.AddRequestAction">
 		<property name="leaseRequestService" ref="leaseRequestService"></property>
 	</bean>
+
+	
 	<bean id="cancelRequestAction" class="com.javaweb.action.DeleteRequestAction">
 		<property name="leaseRequestService" ref="leaseRequestService"></property>
 	</bean>
