@@ -9,7 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class AddParkingRequestAction extends ActionSupport{
 
 	private String status;
-	private String nearby;
+	private int nearby;
 	private String classification;
 	private ParkingRequestService parkingRequestService;
 
@@ -24,12 +24,13 @@ public class AddParkingRequestAction extends ActionSupport{
 	}
 
 
-	public String getNearby() {
+
+	public int getNearby() {
 		return nearby;
 	}
 
 
-	public void setNearby(String nearby) {
+	public void setNearby(int nearby) {
 		this.nearby = nearby;
 	}
 

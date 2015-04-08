@@ -11,8 +11,8 @@
 		</id>
 		
 		<!-- 定义其他属性 -->
-		<property name="lotId" type="int"></property>
-		<property name="houseId" type="int"></property>
+		<property name="lotId" type="int" column="lot_id"></property>
+		<property name="houseId" type="int" column="house_id"></property>
 		
 	</class>
 </hibernate-mapping>

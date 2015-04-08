@@ -117,9 +117,9 @@ CREATE TABLE `lease` (
   `duration` varchar(50) default NULL,
   `enter_date` datetime default NULL,
   `leave_date` datetime default NULL,
-  `deposit` double default NULL,
+  `deposit` double NOT NULL default 0,
   `payment` varchar(50) default NULL,
-  `penalty` double default NULL,
+  `penalty` double NOT NULL default 0,
   `status` varchar(50) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -352,7 +352,7 @@ DROP TABLE IF EXISTS `parking_request`;
 CREATE TABLE `parking_request` (
   `id` int(11) NOT NULL auto_increment,
   `student_id` int(11) NOT NULL default 0,  
-  `nearby` varchar(20) default NULL,
+  `nearby` int(1) NOT NULL default 0,  
   `classification` varchar(20) default NULL,
   `status` varchar(20) default NULL,
   PRIMARY KEY  (`id`)

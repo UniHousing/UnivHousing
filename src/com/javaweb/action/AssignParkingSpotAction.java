@@ -12,6 +12,7 @@ import com.javaweb.service.LeaseService;
 import com.javaweb.service.ParkingLotService;
 import com.javaweb.service.ParkingRequestService;
 import com.javaweb.service.ParkingSpotOccupyService;
+import com.javaweb.service.ParkingSpotPriceService;
 import com.javaweb.service.ParkingSpotService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -27,8 +28,15 @@ public class AssignParkingSpotAction extends ActionSupport {
 	private LeaseService leaseService;
 	private ParkingRequestService parkingRequestService;
 	private ParkingSpotOccupyService parkingSpotOccupyService;
+	private ParkingSpotPriceService parkingSpotPriceService;
 
 	
+	public void setParkingSpotPriceService(
+			ParkingSpotPriceService parkingSpotPriceService) {
+		this.parkingSpotPriceService = parkingSpotPriceService;
+	}
+
+
 	public void setParkingSpotOccupyService(
 			ParkingSpotOccupyService parkingSpotOccupyService) {
 		this.parkingSpotOccupyService = parkingSpotOccupyService;
@@ -55,6 +63,16 @@ public class AssignParkingSpotAction extends ActionSupport {
 	}
 
 
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 	@Override
 	public String execute() throws Exception {
 		ParkingRequest parkingRequest=parkingRequestService.queryParkingRequestByID(id);
@@ -63,7 +81,7 @@ public class AssignParkingSpotAction extends ActionSupport {
 		}
 		student_id=parkingRequest.getStudentId();
 		List<Lease> leases=leaseService.queryLeasebyStudentId(student_id);
-		if (leases==null) {
+		if (leases.size()==0) {
 			return "lease";
 		}
 		else {
@@ -80,22 +98,23 @@ public class AssignParkingSpotAction extends ActionSupport {
 			return ERROR;
 		}
 		List<ParkingLot> parkingLots;
-		if (parkingRequest.getNearby().equalsIgnoreCase("yes")) {
+		if (parkingRequest.getNearby()==1) {
 			parkingLots=parkingLotService.queryNearbyParkingLot(house_id);
 		}
 		else parkingLots=parkingLotService.queryAllParkingLot();
-		if (parkingLots==null) {
+		System.out.println(parkingLots);
+		if (parkingLots.size()==0) {
 			return ERROR;
 		}
 		for (ParkingLot parkingLot : parkingLots) {
 			List<ParkingSpot> parkingSpots=parkingSpotService.queryAvlParkingSpotsbyLotId(parkingLot.getId(),parkingRequest.getClassification());
-			if (parkingSpots==null) {
+			if (parkingSpots.size()==0) {
 				continue;
 			}
 			else {
 				for (ParkingSpot parkingSpot : parkingSpots) {
 					spot_id=parkingSpot.getId();
-					parkingSpot.setFee(fee);
+					parkingSpot.setFee(parkingSpotPriceService.findPricebySpotClassification(parkingSpot.getClassification()));
 					parkingSpot.setAvailability(1);
 					parkingSpot.setStartDate(startDate);
 					parkingSpot.setEndDate(endDate);
@@ -103,6 +122,9 @@ public class AssignParkingSpotAction extends ActionSupport {
 					break;
 				}
 			}
+		}
+		if (spot_id==0) {
+			return ERROR;
 		}
 		ParkingSpotOccupy occupy=new ParkingSpotOccupy();
 		occupy.setParkingSpotId(spot_id);

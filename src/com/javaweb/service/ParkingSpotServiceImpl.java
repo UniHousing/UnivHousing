@@ -62,12 +62,8 @@ public class ParkingSpotServiceImpl implements ParkingSpotService {
 	@Override
 	public List<ParkingSpot> queryAvlParkingSpotsbyLotId(int lot_id,String prefer) {
 		// TODO Auto-generated method stub
-		String str="normal";
 		
-		if (prefer.contains("yes")) {
-			str="handicapped";
-		}
-		return parkingSpotDAO.findAvlParkingSpotsbyLotId(lot_id, str);
+		return parkingSpotDAO.findAvlParkingSpotsbyLotId(lot_id, prefer.toLowerCase());
 	}
 
 
