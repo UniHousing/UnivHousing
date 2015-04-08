@@ -117,27 +117,28 @@ INSERT INTO `housing`.`parking_lot` (`id`, `type`) VALUES ('7', 'General');
 
 --room
 
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('5', '400', '1', '1');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('5', '400', '1', '2');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('5', '400', '1', '3');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('5', '400', '1', '4');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '400', '1', '1');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '400', '1', '2');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '400', '1', '3');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '400', '1', '4');
 INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('5', '400', '1', '5');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '450', '2', '6');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '450', '2', '7');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '450', '2', '6');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '450', '2', '7');
 INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '450', '2', '8');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '350', '3', '1');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '350', '3', '2');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '350', '3', '1');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '350', '3', '2');
 INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '350', '3', '3');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '350', '4', '4');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '350', '4', '5');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '350', '4', '6');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '350', '4', '4');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '350', '4', '5');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '350', '4', '6');
 INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '350', '4', '7');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '375', '5', '8');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '375', '5', '9');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '375', '5', '8');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '375', '5', '9');
 INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '375', '5', '10');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '375', '6', '11');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '375', '6', '12');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '375', '6', '13');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '375', '6', '11');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '375', '6', '12');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '375', '6', '13');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '375', '6', '14');
 INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '375', '6', '14');
 
 
@@ -234,7 +235,7 @@ INSERT INTO `housing`.`family_apartment` (`id`, `name`, `addr`, `tel`, `apt_num`
 
 
 --residential_hall
-INSERT INTO `housing`.`residence_hall` (`id`, `name`, `addr`, `room_count`, `tel`, `rent`, `deposit`) VALUES ('1', 'Gryffindor Hall', '2751 Cates Avenue, Gryffindor Residence Hall, Raleigh, NC 27607', '5', '919 540 001', '400', '400');
-INSERT INTO `housing`.`residence_hall` (`id`, `name`, `addr`, `room_count`, `tel`, `rent`, `deposit`) VALUES ('2', 'Slytherin Hall', '210 Dan Allen Dr, Raleigh, NC 27695', '3', '919 540 002', '450', '500');
+INSERT INTO `housing`.`residence_hall` (`id`, `name`, `addr`, `room_count`, `tel`, `rent`, `deposit`,`specific`) VALUES ('1', 'Gryffindor Hall', '2751 Cates Avenue, Gryffindor Residence Hall, Raleigh, NC 27607', '5', '919 540 001', '400', '400','0');
+INSERT INTO `housing`.`residence_hall` (`id`, `name`, `addr`, `room_count`, `tel`, `rent`, `deposit`,`specific`) VALUES ('2', 'Slytherin Hall', '210 Dan Allen Dr, Raleigh, NC 27695', '3', '919 540 002', '450', '500','1');
 
 
