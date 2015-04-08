@@ -1,5 +1,6 @@
 package com.javaweb.action;
 
+import java.util.Date;
 import java.util.List;
 
 import com.javaweb.po.Lease;
@@ -19,6 +20,8 @@ public class AssignParkingSpotAction extends ActionSupport {
 	private int student_id;
 	private int house_id;
 	private int spot_id;
+	private Date startDate;
+	private Date endDate;
 	private ParkingLotService parkingLotService;
 	private ParkingSpotService parkingSpotService;
 	private LeaseService leaseService;
@@ -67,6 +70,8 @@ public class AssignParkingSpotAction extends ActionSupport {
 			for (Lease lease : leases) {
 				if (lease.getStatus().equalsIgnoreCase("current")) {
 					house_id=lease.getHouseId();
+					startDate=lease.getEnterDate();
+					endDate=lease.getLeaveDate();
 					break;
 				}
 			}
@@ -91,6 +96,8 @@ public class AssignParkingSpotAction extends ActionSupport {
 				for (ParkingSpot parkingSpot : parkingSpots) {
 					spot_id=parkingSpot.getId();
 					parkingSpot.setAvailability("no");
+					parkingSpot.setStartdDate(startDate);
+					parkingSpot.setEndDate(endDate);
 					parkingSpotService.updateParkingSpot(parkingSpot);
 					break;
 				}

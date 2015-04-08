@@ -201,6 +201,10 @@
 			<result name="success">/parkingOptions.jsp</result>
 			<result name="error">/parkingOptions.jsp</result>
 		</action>
+		<action name="renewSpot" class="renewParkingSpotAction">
+			<result name="success">/parkingOptions.jsp</result>
+			<result name="error">/parkingOptions.jsp</result>
+		</action>
 	</package>
 </struts>
 
