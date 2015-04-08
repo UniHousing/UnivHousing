@@ -8,7 +8,7 @@
   <id name="id">
    <generator class="identity"/>
   </id>
-  <property column="parking_spot_classification" name="classification" type="int"/>
-  <property column="price" name="price" type="int"/>
+  <property column="classification" name="classification"/>
+  <property column="price" name="price" type="float"/>
  </class>
 </hibernate-mapping>

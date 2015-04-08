@@ -56,7 +56,7 @@ public class ParkingSpotPriceServiceImpl  implements ParkingSpotPriceService{
 	
 	
 	@Override
-	public int findPricebySpotClassification(String classification)
+	public float findPricebySpotClassification(String classification)
 	{
 		return parkingSpotPriceDAO.findPricebySpotClassification(classification);
 	}

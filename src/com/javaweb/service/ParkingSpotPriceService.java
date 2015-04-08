@@ -16,6 +16,6 @@ public interface ParkingSpotPriceService {
 	
 	public ParkingSpotPrice queryParkingSpotPriceByID(int id);
 	
-	public int findPricebySpotClassification(String classification);
+	public float findPricebySpotClassification(String classification);
 
 }

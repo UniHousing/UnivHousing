@@ -5,5 +5,5 @@ import com.javaweb.po.ParkingSpotPrice;
 
 
 public interface ParkingSpotPriceDAO extends BaseDAO<ParkingSpotPrice> {
-	public int findPricebySpotClassification(String classification);
+	public float findPricebySpotClassification(String classification);
 }

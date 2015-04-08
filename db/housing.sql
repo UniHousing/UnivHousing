@@ -182,10 +182,10 @@ CREATE TABLE `parking_spot_occupy`(
 DROP TABLE IF EXISTS `parking_spot_price`;
 CREATE TABLE `parking_spot_price`(
  `id` int(11) NOT NULL auto_increment,
- `parking_spot_classification` varchar(40) NOT NULL,
- `price` int(11) NOT NULL,
+ `classification` varchar(40) NOT NULL,
+ `price` float NOT NULL default 0,
  PRIMARY KEY(`id`),
- UNIQUE(`parking_spot_classification`)
+ UNIQUE(`classification`)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 -- ----------------------------

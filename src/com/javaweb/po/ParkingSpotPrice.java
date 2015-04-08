@@ -2,7 +2,7 @@ package com.javaweb.po;
 
 public class ParkingSpotPrice extends IdEntity<ParkingSpotPrice> {
 	private String classification;
-	private int price;
+	private float price;
 	
 	public String getClassification() {
 		return classification;
@@ -10,7 +10,7 @@ public class ParkingSpotPrice extends IdEntity<ParkingSpotPrice> {
 	public void setClassification(String classification) {
 		this.classification = classification;
 	}
-	public int getPrice() {
+	public float getPrice() {
 		return price;
 	}
 	public void setPrice(int price) {
