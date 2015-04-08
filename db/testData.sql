@@ -117,53 +117,44 @@ INSERT INTO `housing`.`parking_lot` (`id`, `type`) VALUES ('7', 'General');
 
 --room
 
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '400', '1', '1');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '400', '1', '2');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '400', '1', '3');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '400', '1', '4');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('5', '400', '1', '5');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '450', '2', '6');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '450', '2', '7');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '450', '2', '8');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '350', '3', '1');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '350', '3', '2');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '350', '3', '3');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '350', '4', '4');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '350', '4', '5');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '350', '4', '6');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '350', '4', '7');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '375', '5', '8');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '375', '5', '9');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '375', '5', '10');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('1', '375', '6', '11');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('2', '375', '6', '12');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('3', '375', '6', '13');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '375', '6', '14');
-INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`) VALUES ('4', '375', '6', '14');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('1', '400', '1', '1','1');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('2', '400', '1', '2','2');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('3', '400', '1', '3','3');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('4', '400', '1', '4','4');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('5', '400', '1', '5','5');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('1', '450', '2', '6','6');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('2', '450', '2', '7','7');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('3', '450', '2', '8','8');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('1', '350', '3', '1','9');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('2', '350', '3', '2','10');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('3', '350', '3', '3','11');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('1', '350', '4', '4','12');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('2', '350', '4', '5','13');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('3', '350', '4', '6','14');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('4', '350', '4', '7','15');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('1', '375', '5', '8','16');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('2', '375', '5', '9','17');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('3', '375', '5', '10','18');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('1', '375', '6', '11','19');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('2', '375', '6', '12','20');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('3', '375', '6', '13','21');
+INSERT INTO `housing`.`room` (`room_number`, `month_rate`, `house_id`, `place_number`,`id`) VALUES ('4', '375', '6', '14','22');
+
 
 
 
 --lease
-INSERT INTO `housing`.`lease` (`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`) VALUES ('1','100540001', '001', '2014-01-01', '2014-07-31', 'Semester');
-INSERT INTO `housing`.`lease` (`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`) VALUES ('2','100540002', '001', '2014-01-01', '2014-07-31', 'Semester');
-INSERT INTO `housing`.`lease` (`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`) VALUES ('3','100540003', '002', '2014-01-01', '2014-05-31', 'Monthly');
-INSERT INTO `housing`.`lease` (`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`) VALUES ('4','100540004', '003', '2014-01-01', '2014-07-31', 'Monthly');
-INSERT INTO `housing`.`lease` (`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`) VALUES ('5','100540005', '008', '2014-01-01', '2014-05-31', 'Monthly');
-INSERT INTO `housing`.`lease` (`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`) VALUES ('6','100540006', '009', '2014-01-01', '2014-07-31', 'Semester');
-INSERT INTO `housing`.`lease` (`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`) VALUES ('7','100540007', '006', '2014-01-01', '2014-07-31', 'Semester');
-INSERT INTO `housing`.`lease` (`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`) VALUES ('8','200540001', '004', '2014-05-01', '2014-04-30', 'Monthly');
-INSERT INTO `housing`.`lease` (`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`) VALUES ('9','200540002', '005', '2014-04-01', '2014-04-30', 'Monthly');
-INSERT INTO `housing`.`lease` (`id`,`student_id`, `house_id`, `enter_date`, `leave_date`, `payment`) VALUES ('10','100540008', '107', '2014-01-01', '2014-07-31', 'Semester');
-UPDATE `housing`.`lease` SET `house_id`='9' WHERE `id`='10';
-UPDATE `housing`.`lease` SET `house_id`='4' WHERE `id`='9';
-UPDATE `housing`.`lease` SET `house_id`='4' WHERE `id`='8';
-UPDATE `housing`.`lease` SET `house_id`='2' WHERE `id`='7';
-UPDATE `housing`.`lease` SET `house_id`='5' WHERE `id`='6';
-UPDATE `housing`.`lease` SET `house_id`='5' WHERE `id`='5';
-UPDATE `housing`.`lease` SET `house_id`='1' WHERE `id`='4';
-UPDATE `housing`.`lease` SET `house_id`='1' WHERE `id`='1';
-UPDATE `housing`.`lease` SET `house_id`='1' WHERE `id`='3';
-UPDATE `housing`.`lease` SET `house_id`='3' WHERE `id`='2';
+INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('1','1','100540001', '1', '2015-01-01', '2015-07-31', 'Semester','current');
+INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('3','2','100540002', '9', '2015-01-01', '2015-07-31', 'Semester','current');
+INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('1','3','100540003', '2', '2015-01-01', '2015-05-31', 'Monthly','current');
+INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('1','4','100540004', '3', '2015-01-01', '2015-07-31', 'Monthly','current');
+INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('5','5','100540005', '16', '2015-01-01', '2015-05-31', 'Monthly','current');
+INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('5','6','100540006', '17', '2015-01-01', '2015-07-31', 'Semester','current');
+INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('2','7','100540007', '6', '2015-01-01', '2015-07-31', 'Semester','current');
+INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('4','8','200540001', '12', '2015-05-01', '2015-04-30', 'Monthly','current');
+INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `room_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('4','9','200540002', '13', '2015-04-01', '2015-04-30', 'Monthly','current');
+INSERT INTO `housing`.`lease` (`house_id`,`id`,`student_id`, `enter_date`, `leave_date`, `payment`,`status`) VALUES ('9','10','100540008', '2015-01-01', '2015-07-31', 'Semester','current');
+
 
 --kin
 INSERT INTO `housing`.`kin_info` (`id`, `name`, `relationship`, `addr`, `tel`) VALUES ('1', 'Sirius Black', 'Godfather', '12, Grimmauld Place', '9439560752');
@@ -176,10 +167,10 @@ INSERT INTO `housing`.`kin_info` (`id`,`name`, `relationship`, `addr`, `city`, `
 
 
 --tiket
-INSERT INTO `housing`.`ticket` (`student_id`, `date`, `issue`, `status`, `comment`) VALUES ('100540001', '2015-04-06', 'Water', 'Pending', 'No water');
-INSERT INTO `housing`.`ticket` (`student_id`, `date`, `issue`, `status`, `comment`) VALUES ('100540003', '2015-03-30', 'Internet', 'Complete', 'Internet not working');
-INSERT INTO `housing`.`ticket` (`student_id`, `date`, `issue`, `status`, `comment`) VALUES ('100540007', '2015-03-15', 'Cleaning', 'Complete', 'Cleaning');
-INSERT INTO `housing`.`ticket` (`student_id`, `date`, `issue`, `status`, `comment`) VALUES ('200540002', '2015-04-02', 'Miscellaneous', 'Pending', 'Window broken');
+INSERT INTO `housing`.`ticket` (`student_id`, `date`, `issue`, `status`, `comment`,`type`) VALUES ('100540001', '2015-04-06', 'Water', 'Pending', 'No water','High');
+INSERT INTO `housing`.`ticket` (`student_id`, `date`, `issue`, `status`, `comment`,`type`) VALUES ('100540003', '2015-03-30', 'Internet', 'Complete', 'Internet not working','Medium');
+INSERT INTO `housing`.`ticket` (`student_id`, `date`, `issue`, `status`, `comment`,`type`) VALUES ('100540007', '2015-03-15', 'Cleaning', 'Complete', 'Cleaning','Low');
+INSERT INTO `housing`.`ticket` (`student_id`, `date`, `issue`, `status`, `comment`,`type`) VALUES ('200540002', '2015-04-02', 'Miscellaneous', 'Pending', 'Window broken','Low');
 
 
 --supervisor

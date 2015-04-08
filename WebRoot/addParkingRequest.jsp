@@ -12,15 +12,9 @@
 
 		<s:textfield label="Input lease number" name="leaseId"></s:textfield>
 		
-		<s:if test="#session.type=='student'">
-		<s:select label=" Need special handicapped parking or not" 
-		list="#{'no':'no', 'yes':'yes'}" 
-		name="handicapped " value="no" />
-		</s:if>
-		
 		<s:select label="Select a vehicle Type: " 
-		list="#{'small car':'small car', 'large car':'large car', 'bike':'bike'}" 
-		name="vehicleType" value="small car" />
+		list="#{'small car':'small car', 'large car':'large car', 'bike':'bike', 'handicapped':'handicapped'}" 
+		name="classification" value="small car" />
 		
    		<s:select label="Accept non-nearby spot assignment or not" 
 		list="#{'yes':'yes', 'no':'no'}" 

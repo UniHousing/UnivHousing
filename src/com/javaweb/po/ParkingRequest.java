@@ -2,9 +2,8 @@ package com.javaweb.po;
 
 public class ParkingRequest extends IdEntity<ParkingRequest>{
 	private int studentId;
-	private String vehicleType;
 	
-	private String handicapped;
+	private String classification;
 	private String status;
 	private String nearby;
 	
@@ -14,19 +13,14 @@ public class ParkingRequest extends IdEntity<ParkingRequest>{
 	public void setStudentId(int studentId) {
 		this.studentId = studentId;
 	}
-	public String getVehicleType() {
-		return vehicleType;
+	
+	public String getClassification() {
+		return classification;
 	}
-	public void setVehicleType(String vehicleType) {
-		this.vehicleType = vehicleType;
+	public void setClassification(String classification) {
+		this.classification = classification;
 	}
-
-	public String getHandicapped() {
-		return handicapped;
-	}
-	public void setHandicapped(String handicapped) {
-		this.handicapped = handicapped;
-	}
+	
 	public String getStatus() {
 		return status;
 	}

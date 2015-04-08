@@ -287,7 +287,22 @@
 		<property name="userService" ref="userService"></property>
 	</bean>
 
-
+	
+	<bean id="showAllTicketsAction" class="com.javaweb.action.ShowAllTicketsAction"
+		scope="prototype">
+		<property name="ticketService" ref="ticketService"></property>
+	</bean>
+	
+	<bean id="showAllParkingRequestAction" class="com.javaweb.action.ShowAllParkingRequestAction"
+		scope="prototype">
+		<property name="parkingRequestService" ref="parkingRequestService"></property>
+	</bean>
+	
+	<bean id="formTicketAction" class="com.javaweb.action.FormTicketAction"
+		scope="prototype">
+		<property name="ticketService" ref="ticketService"></property>
+	</bean>
+	
 	<!-- 创建deleteAction实例 -->
 	<bean id="deleteAction" class="com.javaweb.action.DeleteAction"
 		scope="prototype">

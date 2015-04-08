@@ -7,11 +7,26 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AddParkingRequestAction extends ActionSupport{
-	private String vehicleType;
-	private String handicapped;
+
 	private String status;
 	private String nearby;
+	private String classification;
 	
+
+	public String getClassfication() {
+		return classification;
+	}
+
+	public void setClassfication(String classification) {
+		this.classification = classification;
+	}
+
+	public ParkingRequestService getParkingRequestService() {
+		return parkingRequestService;
+	}
+
+
+
 
 	private ParkingRequestService parkingRequestService;
 
@@ -24,25 +39,6 @@ public class AddParkingRequestAction extends ActionSupport{
 		
 	}
 
-
-	public String getVehicleType() {
-		return vehicleType;
-	}
-
-
-	public void setVehicleType(String vehicleType) {
-		this.vehicleType = vehicleType;
-	}
-
-
-	public String getHandicapped() {
-		return handicapped;
-	}
-
-
-	public void setHandicapped(String handicapped) {
-		this.handicapped = handicapped;
-	}
 
 
 	public String getNearby() {
@@ -72,11 +68,10 @@ public class AddParkingRequestAction extends ActionSupport{
 		int user_id=(Integer) ActionContext.getContext().getSession().get("login");
 		String type=(String) ActionContext.getContext().getSession().get("type");
 		parkingRequest.setStudentId(user_id);
-		parkingRequest.setVehicleType(vehicleType);
-		if(type.equals("student"))
-			parkingRequest.setHandicapped(handicapped);
-		else
-			parkingRequest.setHandicapped("no");
+		
+		parkingRequest.setClassification(classification);
+		System.out.println(classification);
+		
 		parkingRequest.setNearby(nearby);
 		
 		parkingRequest.setStatus("Pending");

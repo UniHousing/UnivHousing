@@ -13,13 +13,14 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ShowAllTicketsAction extends ActionSupport {
 	private TicketService ticketService;
-
-	public void setInvoiceService(TicketService ticketService) {
-		this.ticketService = ticketService;
-	}
 	
+	
+	public TicketService getTicketService() {
+		return ticketService;
+	}
 
-	public void setLeaseService(TicketService ticketService) {
+
+	public void setTicketService(TicketService ticketService) {
 		this.ticketService = ticketService;
 	}
 
