@@ -88,7 +88,7 @@ public class AssignParkingSpotAction extends ActionSupport {
 			return ERROR;
 		}
 		for (ParkingLot parkingLot : parkingLots) {
-			List<ParkingSpot> parkingSpots=parkingSpotService.queryAvlParkingSpotsbyLotId(parkingLot.getId(),parkingRequest.getHandicapped());
+			List<ParkingSpot> parkingSpots=parkingSpotService.queryAvlParkingSpotsbyLotId(parkingLot.getId(),parkingRequest.getClassification());
 			if (parkingSpots==null) {
 				continue;
 			}

@@ -14,8 +14,7 @@
 			<td>ID</td>
 			<td>Student_ID</td>
 			<td>Status</td>
-			<td>Handicapped(yes/no)</td>
-			<td>Vehicle Type</td>
+			<td>classification</td>
 			<td>Accept non-nearby parking(yes/no)<td>
 		</tr>
 		<s:iterator value="#request.all" id="spot">
@@ -23,8 +22,7 @@
 			<td><s:property value="#spot.id"/></td>
 			<td><s:property value="#spot.studentId"/></td>
 			<td><s:property value="#spot.status"/></td>
-			<td><s:property value="#spot.handicapped"/></td>
-			<td><s:property value="#spot.vehicleType"/></td>
+			<td><s:property value="#spot.classification"/></td>
 			<td><s:property value="#spot.nearby"/></td>
 		</tr>
 		</s:iterator>	

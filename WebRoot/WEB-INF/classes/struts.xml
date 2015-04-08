@@ -87,7 +87,11 @@
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success">/showTicketStatus.jsp</result>
 		</action>
-
+		
+		<action name="showAllParkingRequest" class="showAllParkingRequestAction">
+			<result name="success">/showAllParkingRequest.jsp</result>
+		</action>
+		
 		<action name="addTicket" class="addTicketAction">
 			<!-- 定义处理结果与视图资源之间的关系 -->
 			<result name="success" type="redirect">/showTicketStatus.action</result>
@@ -159,6 +163,11 @@
 			<result name="success">/showAllReq.jsp</result>
 		</action>
 		
+		<action name="showAllTickets" class="showAllTicketsAction">
+			<!-- 定义处理结果与视图资源之间的关系 -->
+			<result name="success">/showAllTickets.jsp</result>
+		</action>
+		
 		<action name="addParkingRequest" class="addParkingRequestAction">
 			<result name="success" type="redirect">/parkingOptions.jsp</result>
 			<result name="input">/addParkingRequest.jsp</result>
@@ -182,6 +191,9 @@
 		<action name="formLease" class="formLeaseAction">
 			<result name="success">/approvedLease.jsp</result>
 			<result name="error">/approveLeaseReq.jsp</result>
+		</action>
+		<action name="formTicket" class="formTicketAction">
+			<result name="success">/showAllTickets.jsp</result>
 		</action>
 		<action name="assignSpot" class="assignSpotAction">
 			<result name="success">/admin.jsp</result>

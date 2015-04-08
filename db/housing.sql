@@ -338,7 +338,7 @@ CREATE TABLE `ticket` (
   `type` varchar(20) default NULL COMMENT 'serverity',
   `student_id` int(11) NOT NULL default 0,
   `date` datetime default NULL,
-  `issue` varchar(255),--location
+  `issue` varchar(255),
   `status` varchar(20),
   `comment` varchar(255),
   PRIMARY KEY  (`id`)
@@ -352,9 +352,8 @@ DROP TABLE IF EXISTS `parking_request`;
 CREATE TABLE `parking_request` (
   `id` int(11) NOT NULL auto_increment,
   `student_id` int(11) NOT NULL default 0,  
-  `vehicle_type` varchar(20) default NULL,
   `nearby` varchar(20) default NULL,
-  `handicapped` varchar(20) default NULL,
+  `classification` varchar(20) default NULL,
   `status` varchar(20) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
