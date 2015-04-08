@@ -10,16 +10,10 @@ public class AddParkingRequestAction extends ActionSupport{
 
 	private String status;
 	private String nearby;
-	private String classification;
+	private String classification1;
 	
 
-	public String getClassfication() {
-		return classification;
-	}
 
-	public void setClassfication(String classification) {
-		this.classification = classification;
-	}
 
 	public ParkingRequestService getParkingRequestService() {
 		return parkingRequestService;
@@ -60,7 +54,13 @@ public class AddParkingRequestAction extends ActionSupport{
 	}
 
 
-	
+	public String getClassfication() {
+		return classification1;
+	}
+
+	public void setClassfication(String classification) {
+		this.classification1 = classification;
+	}
 
 	@Override
 	public String execute() throws Exception {
@@ -69,8 +69,8 @@ public class AddParkingRequestAction extends ActionSupport{
 		String type=(String) ActionContext.getContext().getSession().get("type");
 		parkingRequest.setStudentId(user_id);
 		
-		parkingRequest.setClassification(classification);
-		System.out.println(classification);
+		parkingRequest.setClassification(classification1);
+		System.out.println(classification1);
 		
 		parkingRequest.setNearby(nearby);
 		
