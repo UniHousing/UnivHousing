@@ -216,6 +216,7 @@ CREATE TABLE `residence_hall` (
   `manager_id` int(11) NOT NULL default 0,
   `rent` float NOT NULL default 0,
   `deposit` float NOT NULL default 0,
+  `specific` int(11) NOT NULL default 0,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

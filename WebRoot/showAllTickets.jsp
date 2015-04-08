@@ -14,7 +14,9 @@
 			<td>StudentID</td>	
 			<td>Type</td>
 			<td>Date</td>
-			<td>Location</td>		
+			<td>Issue</td>	
+			<td>Comments</td>
+			<td>Status</td>	
 		</tr>
 		<s:iterator value="#request.all" id="ticket">
 		<tr>
@@ -22,7 +24,10 @@
 			<td><s:property value="#ticket.studentId"/></td>	
 			<td><s:property value="#ticket.type"/></td>
 			<td><s:property value="#ticket.date"/></td>
-			<td><s:property value="#ticket:location"/></td>
+			<td><s:property value="#ticket.location"/></td>
+			<td><s:property value="#ticket.description"/></td>
+			<s:if test="%{#ticket.status=='Pending' }"><td><a href="formTicket.action?id=<s:property value='#ticket.id'/>">Process</a></td></s:if>
+			<s:else><td>Processed</td></s:else>
 			
 		</tr>
 		</s:iterator>	
