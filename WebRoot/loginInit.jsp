@@ -27,11 +27,21 @@
 	<br><br><br>
 	<div align="center">
 		<br><a href="login.jsp" style="color: midnightblue;">Login as Student or Supervisor</a>
-		<br><a href="loginGuest.jsp" style="color: midnightblue;">Login as Guest</a>
+		<br><br><br><a href="loginGuest.jsp" style="color: midnightblue;">Login as Guest</a>
 		<br><HR><br>
 		
 	</div>
 	<br><br><br>
 	<div id="footer">Copyright ©2015 CSC540 Database Team.</div>
+	<br><br>
+	<div id="blink">CSC540 Database project by Team 6: <br><PRE>shou3, yhuang34, ldong6, sxu11</div> 
+<script language="javascript"> 
+function changeColor(){ 
+var color="#f00|#0f0|#00f|#880|#808|#088|yellow|green|blue|gray"; 
+color=color.split("|"); 
+document.getElementById("blink").style.color=color[parseInt(Math.random() * color.length)]; 
+} 
+setInterval("changeColor()",200); 
+</script>
 </body>
 </html>

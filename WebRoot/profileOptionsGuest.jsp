@@ -28,8 +28,8 @@
 	<div align="center">
 	<h2>Logged in Student->Profile Options</h2>
 		<br><a href="<%="showGuest.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">View Profile</a>
-		<br><a href="<%="updateGuest.jsp?id="+session.getAttribute("login")%>" style="color: midnightblue;">Update Profile</a>
-		<br><a href="student.jsp" style="color: midnightblue;">Back</a>
+		<br><br><a href="<%="updateGuest.jsp?id="+session.getAttribute("login")%>" style="color: midnightblue;">Update Profile</a>
+		<br><br><a href="student.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>
 		
 	</div>

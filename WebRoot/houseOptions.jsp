@@ -28,12 +28,12 @@
 	<div align="center">
 	<h2>Logged in Student->House Options</h2>
 		<br><a href="<%="invoiceOptions.jsp"%>" style="color: midnightblue;">View Invoices</a>
-		<br><a href="<%="leaseOptions.jsp"%>" style="color: midnightblue;">View Leases</a>
-		<br><a href="requestOptions.jsp" style="color: midnightblue;">New Request</a>
-		<br><a href="<%="requestViewCancel.jsp"%>" style="color: midnightblue;">View/Cancel Requests</a>
-		<br><a href="<%="showAllHouse.action"%>" style="color: midnightblue;">View Vacancy Houses</a>
+		<br><br><a href="<%="leaseOptions.jsp"%>" style="color: midnightblue;">View Leases</a>
+		<br><br><a href="requestOptions.jsp" style="color: midnightblue;">New Request</a>
+		<br><br><a href="<%="requestViewCancel.jsp"%>" style="color: midnightblue;">View/Cancel Requests</a>
+		<br><br><a href="<%="showAllHouse.action"%>" style="color: midnightblue;">View Vacancy Houses</a>
 		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>
-		<br><a href="student.jsp" style="color: midnightblue;">Back</a>
+		<br><br><a href="student.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>
 		
 	</div>

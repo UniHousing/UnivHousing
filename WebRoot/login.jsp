@@ -16,22 +16,23 @@
 } 
 </style>
 </head>
-
-<body style="font-family: sans-serif; font-weight:lighter ">
 	
+<body style="font-family: sans-serif; font-weight:lighter ">
 	<div id="header">
 		<%
 				out.print("<font size='5'>Welcome to University Housing System</font>");
 		%>
 	</div>
 	<br><br><br>
-	<div align="center">
-	<br> Login as a Student or Supervisor
+
+</script>
+	<div align="center">Login as a Student or Supervisor
+	<br><br>
 		<form action="login.action" method="post">
 		<table><tbody>
 			<tr>
 				<td>
-					<label for="user">uid:</label>
+					<label for="user">Unity id:</label>
 				</td>
 				<td >
 					<input type="text" name="id" placeholder="Enter unity id" required>

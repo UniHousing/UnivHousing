@@ -28,12 +28,12 @@
 	<div align="center">
 	<h2>Logged in Supervisor/Admin</h2>
 		<br><a href="<%="approveLeaseReq.action"%>" style="color: midnightblue;">View New Lease Requests</a>
-		<br><a href="<%="approveTerminReq.action"%>" style="color: midnightblue;">View Terminate Lease Requests</a>
-		<br><a href="<%="showAllTickets.action"%>" style="color: midnightblue;">View Maintenance Tickets</a>
-		<br><a href="<%="showAllParkingRequest.action"%>" style="color: midnightblue;">View Parking Requests</a>
-		<br><a href="profileOptionsAdmin.jsp" style="color: midnightblue;">Profile</a>
+		<br><br><a href="<%="approveTerminReq.action"%>" style="color: midnightblue;">View Terminate Lease Requests</a>
+		<br><br><a href="<%="showAllTickets.action"%>" style="color: midnightblue;">View Maintenance Tickets</a>
+		<br><br><a href="<%="showAllParkingRequest.action"%>" style="color: midnightblue;">View Parking Requests</a>
+		<br><br><a href="profileOptionsAdmin.jsp" style="color: midnightblue;">Profile</a>
 		
-		<br><a href="login.jsp" style="color: midnightblue;">Back</a>
+		<br><br><a href="login.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>
 		
 	</div>

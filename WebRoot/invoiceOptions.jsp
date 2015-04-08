@@ -28,9 +28,9 @@
 	<div align="center">
 	<h2>Logged in Student->House Options->Invoice Options</h2>
 		<br><a href="<%="showAllInvoice.action"%>" style="color: midnightblue;">View Current Invoice</a>
-		<br><a href="<%="showFormerInvoice.action"%>" style="color: midnightblue;">View Former Invoice</a>
+		<br><br><a href="<%="showFormerInvoice.action"%>" style="color: midnightblue;">View Former Invoice</a>
 		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>
-		<br><a href="houseOptions.jsp" style="color: midnightblue;">Back</a>
+		<br><br><a href="houseOptions.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>
 		
 	</div>

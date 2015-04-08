@@ -28,8 +28,8 @@
 	<div align="center">
 	<h2>Logged in Supervisor/Admin->Profile Options</h2>
 		<br><a href="<%="showStaff.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">View Profile</a>
-		<br><a href="<%="updateStaff.jsp?id="+session.getAttribute("login")%>" style="color: midnightblue;">Update Profile</a>
-		<br><a href="admin.jsp" style="color: midnightblue;">Back</a>
+		<br><br><a href="<%="updateStaff.jsp?id="+session.getAttribute("login")%>" style="color: midnightblue;">Update Profile</a>
+		<br><br><a href="admin.jsp" style="color: midnightblue;">Back</a>
 		<br><HR><br>
 		
 	</div>

@@ -15,6 +15,9 @@
     padding-bottom: 30px;
     padding-left: 50px;
 } 
+body {
+text-align: center;  /* 页面元素居中 */
+} 
 </style>
 </head>
 
@@ -26,20 +29,20 @@
 		%>
 	</div>
 	<br><br><br>
-	<div align="center">
 	<h2>Logged in Student/Guest</h2>
+	    
 		<br><a href="houseOptions.jsp" style="color: midnightblue;">House Options</a>
-		<br><a href="parkingOptions.jsp" style="color: midnightblue;">Parking Options</a>
-		<br><a href="maintenanceOptions.jsp" style="color: midnightblue;">Maintenance</a>
+		<br><br><a href="parkingOptions.jsp" style="color: midnightblue;">Parking Options</a>
+		<br><br><a href="maintenanceOptions.jsp" style="color: midnightblue;">Maintenance</a>
 		<s:if test="#session.type=='Student'">
-		<br><a href="profileOptions.jsp" style="color: midnightblue;">Profile</a>
+		<br><br><a href="profileOptions.jsp" style="color: midnightblue;">Profile</a>
 		</s:if>
 		
 		<s:if test="#session.type=='guest'">
-		<br><a href="profileOptionsGuest.jsp" style="color: midnightblue;">Profile</a>
+		<br><br><a href="profileOptionsGuest.jsp" style="color: midnightblue;">Profile</a>
 		</s:if>
 		
-		<br><a href="loginInit.jsp" style="color: midnightblue;">Back</a>
+		<br><br><a href="loginInit.jsp" style="color: midnightblue;">Back</a>
 	
 		<br><HR><br>
 		

@@ -26,7 +26,7 @@
 	</div>
 	<br><br><br>
 	<div align="center">
-	<br> Login as a Guest
+	<br> Login as a Guest<br><br>
 		<form action="guestLogin.action" method="post">
 		<table><tbody>
 			<tr>
