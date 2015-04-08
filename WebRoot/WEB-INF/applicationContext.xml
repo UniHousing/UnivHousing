@@ -462,5 +462,10 @@
 		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
 		<property name="parkingSpotService" ref="parkingSpotService"></property>
 	</bean>
+	<bean id="renewParkingSpotAction" class="com.javaweb.action.RenewParkingAction">
+		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
+		<property name="leaseService" ref="leaseService"></property>
+		<property name="parkingSpotService" ref="parkingSpotService"></property>
+	</bean>
 
 </beans>
