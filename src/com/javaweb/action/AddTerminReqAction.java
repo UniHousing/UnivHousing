@@ -20,7 +20,7 @@ public class AddTerminReqAction extends ActionSupport{
 	private Date date;
 	private String status;
 	private Date inspectionDate;
-	private float extraFee;
+	private float extraFee=0;
 	private LeaseService leaseService;
 	
 	

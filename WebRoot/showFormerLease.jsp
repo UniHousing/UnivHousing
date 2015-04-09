@@ -6,7 +6,7 @@
 </head>
 <body>
 <center>
-	<h2>Lease List</h2>
+	<h2>Former Lease List</h2>
 	<table border="1">
 		
 		<tr>

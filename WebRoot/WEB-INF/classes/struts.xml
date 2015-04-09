@@ -221,6 +221,9 @@
 			<result name="success">/parkingOptions.jsp</result>
 			<result name="error">/parkingOptions.jsp</result>
 		</action>
+		<action name="cancelTerminRequest" class="cancelTerminRequestAction">
+			<result name="success">/cancelRequest.jsp</result>
+		</action>
 	</package>
 </struts>
 

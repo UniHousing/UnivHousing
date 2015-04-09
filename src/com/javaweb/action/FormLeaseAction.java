@@ -205,12 +205,16 @@ public class FormLeaseAction extends ActionSupport {
 		{
 			category="guest";
 			guest=guestService.queryGuestByID(leaseRequest.getStudentId());
+			interest=guest.getComment();
 		}
-		else
+		else {
 			category=student.getCategory();
+			interest=studentService.queryStudentByID(leaseRequest.getStudentId()).getComment();
+		}
+			
 		
 
-		interest=studentService.queryStudentByID(leaseRequest.getStudentId()).getComment();
+		
 		//String category=studentService.queryStudentByID(leaseRequest.getStudentId()).getCategory();
 
 		if (category.equalsIgnoreCase("graduate")) {
@@ -254,9 +258,18 @@ public class FormLeaseAction extends ActionSupport {
 		}
 		leaseRequest.setStatus("Approved");
 		
-		if(student!=null)student.setStatus("placed");
-		else 
-			if(guest!=null)guest.setStatus("placed");
+		if(student!=null) {
+			student.setStatus("placed");
+			studentService.updateStudent(student);
+		
+		}
+		else {
+			if(guest!=null) {
+				guest.setStatus("placed");
+				guestService.updateGuest(guest);
+			}
+		}
+			
 		
 		
 		leaseRequestService.updateLeaseRequest(leaseRequest);

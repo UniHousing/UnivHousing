@@ -30,7 +30,7 @@
 					<tr>
 				<form action="cancelRequest.action" method="post">
 				<td>
-					<label for="request">Enter Request ID To Cancel:</label>
+					<label for="request">Enter Lease Request ID To Cancel:</label>
 
 					<input type="text" name="id" placeholder="Enter request id" required>
 				</td>
@@ -42,7 +42,7 @@
 				</form>
 				<form action="cancelTerminRequest.action" method="post">
 				<td>
-					<label for="request">Enter Request ID To Cancel:</label>
+					<label for="request">Enter Terminate Request ID To Cancel:</label>
 
 					<input type="text" name="id" placeholder="Enter request id" required>
 				</td>
