@@ -14,7 +14,6 @@
 			<td>Student ID</td>	
 			<td>House ID</td>
 			<td>Room ID</td>
-			<td>Parking ID</td>
 			<td>Room number</td>
 			<td>Duration</td>
 			<td>Enter Date</td>
@@ -22,7 +21,6 @@
 			<td>Deposit</td>	
 			<td>Payment</td>
 			<td>Penalty</td>
-			<td>Inspect Date</td>			
 		</tr>
 		<s:iterator value="#request.all" id="lease">
 		<tr>
@@ -30,7 +28,6 @@
 			<td><s:property value="#lease.studentId"/></td>
 			<td><s:property value="#lease.houseId"/></td>
 			<td><s:property value="#lease.roomId"/></td>
-			<td><s:property value="#lease.parkingId"/></td>
 			<td><s:property value="#lease.roomNum"/></td>
 			<td><s:property value="#lease.duration"/></td>
 			<td><s:property value="#lease.enterDate"/></td>
@@ -38,7 +35,6 @@
 			<td><s:property value="#lease.deposit"/></td>
 			<td><s:property value="#lease.payment"/></td>
 			<td><s:property value="#lease.penalty"/></td>
-			<td><s:property value="#lease.inspectDate"/></td>
 		</tr>
 		</s:iterator>	
 	</table>

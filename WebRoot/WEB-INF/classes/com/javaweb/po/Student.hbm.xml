@@ -26,6 +26,7 @@
   <property generated="never" lazy="false" name="smoker"/>
   <property generated="never" lazy="false" name="need"/>
   <property generated="never" lazy="false" name="comment"/>
+  <property name="status"></property>
   <property generated="never" lazy="false" name="courses"/>
   <property generated="never" lazy="false" name="kinId" type="int" column="kin_id"/>
   

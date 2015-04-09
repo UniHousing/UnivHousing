@@ -450,6 +450,8 @@
 		<property name="terminReqService" ref="terminReqService"></property>
 		<property name="leaseService" ref="leaseService"></property>
 		<property name="roomService" ref="roomService"></property>
+		<property name="studentService" ref="studentService"></property>
+		<property name="guestService" ref="guestService"></property>
 	</bean>
 	
 	<bean id="approveLeaseReqAction" class="com.javaweb.action.ApproveLeaseRequestAction">

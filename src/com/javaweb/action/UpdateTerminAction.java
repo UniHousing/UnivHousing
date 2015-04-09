@@ -2,11 +2,15 @@ package com.javaweb.action;
 
 import java.util.Date;
 
+import com.javaweb.po.Guest;
 import com.javaweb.po.Lease;
 import com.javaweb.po.Room;
+import com.javaweb.po.Student;
 import com.javaweb.po.TerminReq;
+import com.javaweb.service.GuestService;
 import com.javaweb.service.LeaseService;
 import com.javaweb.service.RoomService;
+import com.javaweb.service.StudentService;
 import com.javaweb.service.TerminReqService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -19,7 +23,23 @@ public class UpdateTerminAction extends ActionSupport{
 	private TerminReqService terminReqService;
 	private LeaseService leaseService;
 	private RoomService roomService;
+	private GuestService guestService;
+	private StudentService studentService;
 	
+	public void setGuestService(GuestService guestService) {
+		this.guestService = guestService;
+	}
+
+
+
+
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
+	}
+
+
+
+
 	public void setRoomService(RoomService roomService) {
 		this.roomService = roomService;
 	}
@@ -99,6 +119,15 @@ public class UpdateTerminAction extends ActionSupport{
 			}
 			room.setVacancy(0);
 			roomService.updateRoom(room);
+			Student student=studentService.queryStudentByID(lease.getStudentId());
+			Guest guest=guestService.queryGuestByID(lease.getStudentId());
+			if (guest!=null) {
+				guest.setStatus("unplaced");
+			}
+			else if (student!=null) {
+				student.setStatus("unplaced");
+			}
+			else return ERROR;
 			return SUCCESS;
 		}else {
 			return ERROR;
