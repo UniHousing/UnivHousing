@@ -6,6 +6,7 @@ import org.apache.struts2.ServletActionContext;
 import com.javaweb.po.FamilyApartment;
 import com.javaweb.po.GeneralApartment;
 import com.javaweb.po.HousingInterest;
+import com.javaweb.po.Invoice;
 import com.javaweb.po.Lease;
 import com.javaweb.po.LeaseRequest;
 import com.javaweb.po.ResidenceHall;
@@ -13,6 +14,7 @@ import com.javaweb.po.Room;
 import com.javaweb.service.FamilyApartmentService;
 import com.javaweb.service.GeneralApartmentService;
 import com.javaweb.service.HousingInterestService;
+import com.javaweb.service.InvoiceService;
 import com.javaweb.service.LeaseRequestService;
 import com.javaweb.service.LeaseService;
 import com.javaweb.service.ResidenceHallService;
@@ -43,7 +45,8 @@ public class FormLeaseAction extends ActionSupport {
 	private FamilyApartmentService familyApartmentService;
 	private RoomService roomService;
 	private HousingInterestService housingInterestService;
-	
+
+
 	public void setHousingInterestService(
 			HousingInterestService housingInterestService) {
 		this.housingInterestService = housingInterestService;

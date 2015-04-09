@@ -63,6 +63,7 @@ CREATE TABLE `house` (
 DROP TABLE IF EXISTS `invoice`;
 CREATE TABLE `invoice` (
   `id` int(11) NOT NULL auto_increment,
+  `due_date` datetime default NULL,
   `lease_id` int(11) NOT NULL default 0,
   `pay_date` datetime default NULL,
   `pay_method` varchar(50) default NULL,

@@ -8,6 +8,7 @@ public class Invoice extends IdEntity<Invoice>{
 	
 	private int leaseId;
 	private Date payDate;
+	private Date dueDate;
 	private String payMethod;
 	private String status;
 	private double penalty;
@@ -63,5 +64,11 @@ public class Invoice extends IdEntity<Invoice>{
 	}
 	public void setLeaseId(int leaseId) {
 		this.leaseId = leaseId;
+	}
+	public Date getDueDate() {
+		return dueDate;
+	}
+	public void setDueDate(Date dueDate) {
+		this.dueDate = dueDate;
 	}
 }
