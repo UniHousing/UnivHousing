@@ -22,4 +22,14 @@ public boolean addResidenceHall(ResidenceHall residenceHall);
 	public int queryGeneralHall();
 	
 	public int queryGeneralHallbyName(String name);
+	
+	public int queryAvailableHallbyName(String name,String interest);
+	
+	public int queryAvailableHall(String interest);
+	
+	public int queryGeneralHall(String interest);
+	
+	public int queryGeneralHallbyName(String name,String interest);
+	
+	
 }

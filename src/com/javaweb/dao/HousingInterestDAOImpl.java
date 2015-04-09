@@ -11,4 +11,10 @@ public class HousingInterestDAOImpl extends BaseDAOImpl<HousingInterest>implemen
 		return queryByAttribute(HousingInterest.class, "interests", interest);
 	}
 
+	@Override
+	public List findbyHouseId(int houseId) {
+		// TODO Auto-generated method stub
+		return queryByForeignId(HousingInterest.class, "houseId", houseId);
+	}
+
 }

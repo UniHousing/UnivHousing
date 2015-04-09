@@ -348,7 +348,7 @@ CREATE TABLE `parking_request` (
 
 DROP TABLE IF EXISTS `housing_interest`;
 CREATE TABLE `housing_interest`(
-	`id` int(11) NOT NULL,
+	`id` int(11) NOT NULL auto_increment,
 	`house_id` int(11) NOT NULL,
 	`interests` varchar(20) NOT NULL,
 	PRIMARY KEY  (`id`),

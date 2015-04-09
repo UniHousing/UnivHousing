@@ -201,6 +201,7 @@
 	<bean id="generalApartmentService" class="com.javaweb.service.GeneralApartmentServiceImpl">
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="generalApartmentDAO" ref="generalApartmentDAO"></property>
+		<property name="housingInterestService" ref="housingInterestService"></property>
 		<property name="roomService" ref="roomService"></property>
 	</bean>
 	<bean id="invoiceService" class="com.javaweb.service.InvoiceServiceImpl">
@@ -231,6 +232,7 @@
 		<!-- 为业务逻辑组件注入DAO组件 -->
 		<property name="residenceHallDAO" ref="residenceHallDAO"></property>
 		<property name="roomService" ref="roomService"></property>
+		<property name="housingInterestService" ref="housingInterestService"></property>
 	</bean>
 	<bean id="roomService" class="com.javaweb.service.RoomServiceImpl">
 		<property name="roomDAO" ref="roomDAO"></property>
@@ -456,6 +458,7 @@
 		<property name="residenceHallService" ref="residenceHallService"></property>
 		<property name="roomService" ref="roomService"></property>
 		<property name="studentService" ref="studentService"></property>
+		<property name="housingInterestService" ref="housingInterestService"></property>
 	</bean>
 	
 	<bean id="assignSpotAction" class="com.javaweb.action.AssignParkingSpotAction">

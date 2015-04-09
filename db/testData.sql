@@ -254,3 +254,14 @@ INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`statu
 INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('9', '8', '2015-04-01','check','current','385');
 INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('10', '9', '2015-04-01','credit','current','385');
 
+
+
+
+
+INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `alter_tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `status`, `courses`) VALUES ('1005408000','123456', 'Vernon', 'Dursley', 'Family', 'Male', '9198954357', '9198954786', '32 A, Dursley Road, Raleigh', 'Raleigh', '27606', '1975-11-29', 'Graduate', 'American', 'Yes', 'Placed', 'Muggle Studies');
+INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `alter_tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `status`, `courses`) VALUES ('1005408001','123456', 'Vernon', 'Dursley', 'Family', 'Male', '9198954357', '9198954786', '32 A, Dursley Road, Raleigh', 'Raleigh', '27606', '1975-11-29', 'Graduate', 'American', 'Yes', 'Placed', 'Muggle Studies');
+
+
+
+
+

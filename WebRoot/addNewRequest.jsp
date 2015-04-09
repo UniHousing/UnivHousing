@@ -21,33 +21,33 @@ function CheckHouses(val,id){
 
 		<s:if test="%{#session.category!='Freshman'}">
 			<s:select label="Select Your First Preferences" onchange='CheckHouses(this.value,"preference1");'
-				list="#{'Apartment':'Apartment', 'Resident Hall':'Resident Hall','Specific Hall':'Specific Hall','Off Campus':'Off Campus','Family Apartment':'Family Apartment'}"
+				list="#{'Apartment':'Apartment', 'Residence Hall':'Residence Hall','Specific Hall':'Specific Hall','Off Campus':'Off Campus','Family Apartment':'Family Apartment'}"
 				name="preference1" value="Specific Hall" />
 			<s:textfield name="preference1" id="preference1" cssStyle='display:none'></s:textfield>
 			
 			<s:select label="Select Your Second Preferences" onchange='CheckHouses(this.value,"preference2");'
-				list="#{'Apartment':'Apartment', 'Resident Hall':'Resident Hall','Specific Hall':'Specific Hall','Off Campus':'Off Campus','Family Apartment':'Family Apartment'}"
+				list="#{'Apartment':'Apartment', 'Residence Hall':'Residence Hall','Specific Hall':'Specific Hall','Off Campus':'Off Campus','Family Apartment':'Family Apartment'}"
 				name="preference2" value="Specific Hall" />
 			<s:textfield name="preference2" id="preference2" cssStyle='display:none'></s:textfield>
 			
 			<s:select label="Select Your Third Preferences" onchange='CheckHouses(this.value,"preference3");'
-				list="#{'Apartment':'Apartment', 'Resident Hall':'Resident Hall','Specific Hall':'Specific Hall','Off Campus':'Off Campus','Family Apartment':'Family Apartment'}"
+				list="#{'Apartment':'Apartment', 'Residence Hall':'Residence Hall','Specific Hall':'Specific Hall','Off Campus':'Off Campus','Family Apartment':'Family Apartment'}"
 				name="preference3" value="Specific Hall" />
 			<s:textfield name="preference3" id="preference3" cssStyle='display:none'></s:textfield> 
 		</s:if>
 		<s:else>
 			<s:select label="Select Your First Preferences" onchange='CheckHouses(this.value,"preference1");'
-				list="#{'Apartment':'Apartment', 'Resident Hall':'Resident Hall','Specific Hall':'Specific Hall','Family Apartment':'Family Apartment'}"
+				list="#{'Apartment':'Apartment', 'Residence Hall':'Residence Hall','Specific Hall':'Specific Hall','Family Apartment':'Family Apartment'}"
 				name="preference1" value="Specific Hall" />
 			<s:textfield name="preference1" id="preference1" cssStyle='display:none'></s:textfield>
 			
 			<s:select label="Select Your Second Preferences" onchange='CheckHouses(this.value,"preference2");'
-				list="#{'Apartment':'Apartment', 'Resident Hall':'Resident Hall','Specific Hall':'Specific Hall','Family Apartment':'Family Apartment'}"
+				list="#{'Apartment':'Apartment', 'Residence Hall':'Residence Hall','Specific Hall':'Specific Hall','Family Apartment':'Family Apartment'}"
 				name="preference2" value="Specific Hall" />
 			<s:textfield name="preference2" id="preference2" cssStyle='display:none'></s:textfield>
 			
 			<s:select label="Select Your Third Preferences" onchange='CheckHouses(this.value,"preference3");'
-				list="#{'Apartment':'Apartment', 'Resident Hall':'Resident Hall','Specific Hall':'Specific Hall','Family Apartment':'Family Apartment'}"
+				list="#{'Apartment':'Apartment', 'Residence Hall':'Residence Hall','Specific Hall':'Specific Hall','Family Apartment':'Family Apartment'}"
 				name="preference3" value="Specific Hall" />
 			<s:textfield name="preference3" id="preference3" cssStyle='display:none'></s:textfield> 
 		</s:else>	

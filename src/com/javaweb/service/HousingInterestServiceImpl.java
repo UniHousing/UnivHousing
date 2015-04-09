@@ -1,5 +1,6 @@
 package com.javaweb.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.javaweb.dao.HousingInterestDAO;
@@ -57,7 +58,28 @@ public class HousingInterestServiceImpl implements HousingInterestService {
 	@Override
 	public List findHousingIdbyInterest(String interest)
 	{
-		return housingInterestDAO.findHousingIdbyInterest(interest);
+		List<Integer> houseIds=new ArrayList<Integer>();
+		List<HousingInterest> housingInterests=housingInterestDAO.findHousingIdbyInterest(interest);
+		if (housingInterests.size()==0) {
+			return null;
+		}
+		else {
+			for (HousingInterest housingInterest : housingInterests) {
+				houseIds.add(housingInterest.getHouseId());
+			}
+			
+		}
+		return houseIds;
+	}
+
+	@Override
+	public boolean checkHouse(int houseId) {
+		// TODO Auto-generated method stub
+		List<HousingInterest> houseList=housingInterestDAO.findbyHouseId(houseId);
+		if (houseList.size()==0) {
+			return false;
+		}
+		else return true;
 	}
 }
 

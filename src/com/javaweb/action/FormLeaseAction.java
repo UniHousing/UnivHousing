@@ -5,12 +5,14 @@ import org.apache.struts2.ServletActionContext;
 
 import com.javaweb.po.FamilyApartment;
 import com.javaweb.po.GeneralApartment;
+import com.javaweb.po.HousingInterest;
 import com.javaweb.po.Lease;
 import com.javaweb.po.LeaseRequest;
 import com.javaweb.po.ResidenceHall;
 import com.javaweb.po.Room;
 import com.javaweb.service.FamilyApartmentService;
 import com.javaweb.service.GeneralApartmentService;
+import com.javaweb.service.HousingInterestService;
 import com.javaweb.service.LeaseRequestService;
 import com.javaweb.service.LeaseService;
 import com.javaweb.service.ResidenceHallService;
@@ -22,7 +24,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class FormLeaseAction extends ActionSupport {
 	private int id;
 	public static final String APARTMENT="apartment";
-	public static final String RESIDENCE="residenceHall";
+	public static final String RESIDENCE="residence hall";
 	public static final String FAMILY="family apartment";
 	public static final String OFFCAMPUS="off campus";
 	public static  float MONTH_RATE;
@@ -32,6 +34,7 @@ public class FormLeaseAction extends ActionSupport {
 	private int room_id;
 	private String room_num;
 	private int level=0;
+	private String interest="";
 	private LeaseRequestService leaseRequestService;
 	private LeaseService leaseService;
 	private StudentService studentService;
@@ -39,6 +42,12 @@ public class FormLeaseAction extends ActionSupport {
 	private GeneralApartmentService generalApartmentService;
 	private FamilyApartmentService familyApartmentService;
 	private RoomService roomService;
+	private HousingInterestService housingInterestService;
+	
+	public void setHousingInterestService(
+			HousingInterestService housingInterestService) {
+		this.housingInterestService = housingInterestService;
+	}
 
 	public void setStudentService(StudentService studentService) {
 		this.studentService = studentService;
@@ -81,10 +90,10 @@ public class FormLeaseAction extends ActionSupport {
 		if (!prefer.equalsIgnoreCase(APARTMENT) && !prefer.equalsIgnoreCase(RESIDENCE)) {
 			int houseId;
 			if (level==10) {
-				houseId=residenceHallService.queryAvailableHallbyName(prefer);
+				houseId=residenceHallService.queryAvailableHallbyName(prefer,interest);
 			}
 			else {
-				houseId=residenceHallService.queryGeneralHallbyName(prefer);
+				houseId=residenceHallService.queryGeneralHallbyName(prefer,interest);
 			}
 			
 			if (houseId!=-1) {
@@ -96,7 +105,7 @@ public class FormLeaseAction extends ActionSupport {
 			}
 		}
 		else if (prefer.equalsIgnoreCase(APARTMENT)) {
-			int houseId= generalApartmentService.queryAvailableApartments();
+			int houseId= generalApartmentService.queryAvailableApartmentsByInterest(interest);
 			if (houseId!=-1) {
 				house_id=houseId;
 				GeneralApartment generalApartment=generalApartmentService.queryGeneralApartmentByID(houseId);
@@ -163,7 +172,7 @@ public class FormLeaseAction extends ActionSupport {
 		lease.setDeposit(DEPOSIT);
 		lease.setPenalty(PENALTY);
 		lease.setPayment(leaseRequest.getPaymentMethod());
-		lease.setStatus("Approved");
+		lease.setStatus("current");
 		leaseService.addLease(lease);
 		return lease;
 	}
@@ -173,6 +182,7 @@ public class FormLeaseAction extends ActionSupport {
 		String preference1=leaseRequest.getPreference1();
 		String preference2=leaseRequest.getPreference2();
 		String preference3=leaseRequest.getPreference3();
+		interest=studentService.queryStudentByID(leaseRequest.getStudentId()).getComment();
 		String category=studentService.queryStudentByID(leaseRequest.getStudentId()).getCategory();
 		if (category.equalsIgnoreCase("graduate")) {
 			level=10;
@@ -207,6 +217,12 @@ public class FormLeaseAction extends ActionSupport {
 			return ERROR;
 		}
 		Lease lease=generateLease(leaseRequest);
+		if (housingInterestService.checkHouse(house_id)==false) {
+			HousingInterest housingInterest=new HousingInterest();
+			housingInterest.setHouseId(house_id);
+			housingInterest.setInterests(interest);
+			housingInterestService.addHousingInterest(housingInterest);
+		}
 		leaseRequest.setStatus("Approved");
 		leaseRequestService.updateLeaseRequest(leaseRequest);
 		ServletActionContext.getRequest().setAttribute("lease", lease);
