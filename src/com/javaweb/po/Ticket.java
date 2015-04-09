@@ -1,6 +1,9 @@
 package com.javaweb.po;
 
+import java.lang.reflect.Type;
 import java.util.Date;
+
+import org.hibernate.validator.jtype.Types;
 
 
 public class Ticket extends IdEntity<Ticket> {
@@ -11,6 +14,33 @@ public class Ticket extends IdEntity<Ticket> {
 	private String location;
 	private String description;
 	private String status;
+	
+	public static void main(String[] args){
+		Ticket t = new Ticket();
+		t.setType("High");
+		int rank = t.getRank();
+		System.out.println(rank);
+	}
+	private enum Type{
+		HIGH("High",0), MEDIUM("Medium", 1), LOW("Low", 2);
+		 private String name;
+	     private int index;
+
+	        
+	        private Type(String name, int index) {
+	            this.name = name;
+	            this.index = index;
+	        }
+	        
+	        public int  getIndex(){
+	        	return this.index;
+	        }
+	}
+	
+	public int getRank(){
+		return Type.valueOf(this.type.toUpperCase()).getIndex();
+	}
+	
 	public String getDescription()
 	{
 		return description;

@@ -1,6 +1,7 @@
 package com.javaweb.action;
 
 
+import java.util.Calendar;
 import java.util.Date;
 
 import com.javaweb.po.ParkingSpot;
@@ -44,15 +45,18 @@ public class RenewParkingAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		int user_id=(Integer) ActionContext.getContext().getSession().get("login");
-		ParkingSpotOccupy parkingOccupy=parkingSpotOccupyService.queryParkingSpotOccupyByID(id);
+		ParkingSpotOccupy parkingOccupy=parkingSpotOccupyService.queryOccupyBySpotId(id);
 		if (parkingOccupy==null) {
 			return ERROR;
 		}
 		if(parkingOccupy.getStudentId()==user_id){
 			ParkingSpot parkingSpot=parkingSpotService.queryParkingSpotByID(parkingOccupy.getParkingSpotId());
-			Date newEndDate=parkingSpot.getEndDate();
-			newEndDate.setMonth(newEndDate.getMonth()+1);
-			parkingSpot.setEndDate(newEndDate);
+			Date endDate=parkingSpot.getEndDate();
+			System.out.println("End data "+endDate);
+			Calendar cal = Calendar.getInstance();
+			cal.setTime(endDate);
+			cal.add(Calendar.MONTH, 1);
+			parkingSpot.setEndDate(cal.getTime());
 			parkingSpotService.updateParkingSpot(parkingSpot);
 			return SUCCESS;
 		}else {

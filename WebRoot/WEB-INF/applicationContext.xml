@@ -459,7 +459,6 @@
 		<property name="roomService" ref="roomService"></property>
 		<property name="studentService" ref="studentService"></property>
 		<property name="housingInterestService" ref="housingInterestService"></property>
-		<property name="invoiceService" ref="invoiceService"></property>
 	</bean>
 	
 	<bean id="assignSpotAction" class="com.javaweb.action.AssignParkingSpotAction">
