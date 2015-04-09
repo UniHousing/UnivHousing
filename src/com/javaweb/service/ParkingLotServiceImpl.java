@@ -83,4 +83,11 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 	}
 
 
+	@Override
+	public List<ParkingLot> queryGeneralParkingLot() {
+		// TODO Auto-generated method stub
+		return parkingLotDAO.findBytype("general");
+	}
+
+
 }
