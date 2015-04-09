@@ -10,7 +10,7 @@
 		<s:actionerror />
 		<s:form action="addParkingRequest">
 
-		<s:textfield label="Input lease number" name="leaseId"></s:textfield>
+	
 		
 		<s:select label="Select a vehicle Type: " 
 		list="#{'small car':'small car', 'large car':'large car', 'bike':'bike', 'handicapped':'handicapped'}" 

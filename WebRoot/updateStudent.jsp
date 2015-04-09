@@ -25,7 +25,7 @@
 		<s:textfield label="comment" name="comment"></s:textfield>
 		<s:textfield label="status" name="status"></s:textfield>
 		<s:textfield label="courses" name="courses"></s:textfield>
-		<s:textfield label="kin Info" name="kinId"></s:textfield>
+		
 		<s:submit value="Confirm"></s:submit>
 		<s:reset value="Reset"></s:reset>
 	</s:form>

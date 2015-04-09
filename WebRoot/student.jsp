@@ -35,6 +35,11 @@
 		<br><a href="profileOptions.jsp" style="color: midnightblue;">Profile</a>
 		</s:if>
 		
+		<s:if test="#session.type=='Family'">
+		<br><a href="profileOptions.jsp" style="color: midnightblue;">Profile</a>
+		</s:if>
+		
+		
 		<s:if test="#session.type=='guest'">
 		<br><a href="profileOptionsGuest.jsp" style="color: midnightblue;">Profile</a>
 		</s:if>

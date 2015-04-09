@@ -423,6 +423,11 @@
 	<bean id="cancelRequestAction" class="com.javaweb.action.DeleteRequestAction">
 		<property name="leaseRequestService" ref="leaseRequestService"></property>
 	</bean>
+	
+	<bean id="cancelTerminRequestAction" class="com.javaweb.action.DeleteTerminRequestAction">
+		<property name="terminReqService" ref="terminReqService"></property>
+	</bean>
+	
 	<bean id="showAllRequestAction" class="com.javaweb.action.ShowAllRequestAction">
 		<property name="leaseRequestService" ref="leaseRequestService"></property>
 		<property name="leaseService" ref="leaseService"></property>
@@ -459,7 +464,8 @@
 		<property name="residenceHallService" ref="residenceHallService"></property>
 		<property name="roomService" ref="roomService"></property>
 		<property name="studentService" ref="studentService"></property>
-		<property name="housingInterestService" ref="housingInterestService"></property>
+		<property name="guestService" ref="guestService"></property>
+		<property name="housingInterestService" ref="housingInterestService"></property>	
 	</bean>
 	
 	<bean id="assignSpotAction" class="com.javaweb.action.AssignParkingSpotAction">

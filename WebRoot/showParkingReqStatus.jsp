@@ -15,7 +15,7 @@
 			<td>Student_ID</td>
 			<td>Status</td>
 			<td>classification</td>
-			<td>Accept non-nearby parking(yes/no)<td>
+			<td>Non-nearby</td>
 		</tr>
 		<s:iterator value="#request.all" id="spot">
 		<tr>

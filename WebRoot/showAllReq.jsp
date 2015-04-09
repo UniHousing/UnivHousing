@@ -11,7 +11,7 @@
 		<table border="1">
 			<tr>
 				<td>id</td>
-				<td>Student id</td>
+				<td>Student/Approved id</td>
 				<td>Preference1</td>
 				<td>Preference2</td>
 				<td>Preference3</td>

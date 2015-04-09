@@ -1,3 +1,18 @@
+/*Fill in NULL area*/
+UPDATE `housing`.`guest` SET `alter_tel`='None' WHERE `id`='200540002';
+UPDATE `housing`.`kin_info` SET `city`='None' WHERE `id`='1';
+UPDATE `housing`.`kin_info` SET `post_code`='None' WHERE `id`='1';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540002';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Chess' WHERE `id`='100540003';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540004';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Art' WHERE `id`='100540006';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540007';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Chess' WHERE `id`='100540010';
+UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540001';
+UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540005';
+UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540008';
+
+
 /*Link kin_info with student and guest*/
 
 UPDATE `housing`.`student` SET `kin_id`='1' WHERE `id`='100540001';
@@ -217,8 +232,9 @@ UPDATE `housing`.`student` SET `addr`='32 A, William Road, Brussels - 2535, Belg
 UPDATE `housing`.`student` SET `addr`='32 A, Dursley Road, Raleigh - 27606, USA' WHERE `id`='100540008';
 UPDATE `housing`.`student` SET `addr`='31 B, Malfoy Drive, New York - 27506, USA' WHERE `id`='100540002';
 
-
-
+INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `alter_tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `status`, `courses`) VALUES ('100540009','123456', 'Liang', 'Dong', 'Family', 'Male', '9195925125', '9198954786', 'University Court 1220, Raleigh', 'Raleigh', '27606', '1990-03-13', 'Graduate', 'Chinese', 'Yes', 'Placed', 'Computer Science');
+INSERT INTO `housing`.`guest` (`id`, `fname`, `lname`, `type`, `gender`, `tel`, `alter_tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `status`, `courses`) VALUES ('200540003', 'dragonfly', 'Li', 'Student', 'Male', '9198333567', '9198332233', '32 A, Krum Road, Sofia', 'Sofia', '2221', '1989-11-29', 'Visitor', 'Bulgarian', 'Yes', 'Placed', 'Finance');
+UPDATE `housing`.`guest` SET `password`='123456' WHERE `id`='200540003'
 
 INSERT INTO `housing`.`general_apartment` (`id`, `name`, `addr`, `tel`, `room_count`, `bath_count`, `rent`, `deposit`) VALUES ('3', 'Ravenclaw', '315, Gorman Crossings, Raleigh - 27606, NC', '919 540 003', '3', '3', '350', '400');
 INSERT INTO `housing`.`general_apartment` (`id`, `name`, `addr`, `tel`, `room_count`, `bath_count`, `rent`, `deposit`) VALUES ('4', 'Ravenclaw', '315, Gorman Crossings, Raleigh - 27606, NC', '919 540 003', '4', '4', '350', '400');
