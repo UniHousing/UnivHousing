@@ -78,7 +78,8 @@ CREATE TABLE `invoice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TRIGGER `housing`.`invoice_BEFORE_INSERT` BEFORE INSERT ON `invoice` FOR EACH ROW
 	set NEW.total=NEW.penalty+NEW.damage_charge+NEW.late_fee;
-
+CREATE TRIGGER `housing`.`invoice_BEFORE_UPDATE` BEFORE UPDATE ON `invoice` FOR EACH ROW
+	set NEW.total=NEW.penalty+NEW.damage_charge+NEW.late_fee;
 
 
 DROP TABLE IF EXISTS `kin_info`;
