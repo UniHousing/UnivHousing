@@ -17,6 +17,9 @@ UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Chess' WHERE `id`='10
 UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540001';
 UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540005';
 UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540008';
+UPDATE `housing`.`student` SET `need`='None', `comment`='Math' WHERE `id`='100540008';
+UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540005';
+
 
 
 /*Link kin_info with student and guest*/
