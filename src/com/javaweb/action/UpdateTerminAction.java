@@ -2,8 +2,11 @@ package com.javaweb.action;
 
 import java.util.Date;
 
+import com.javaweb.po.Lease;
+import com.javaweb.po.Room;
 import com.javaweb.po.TerminReq;
 import com.javaweb.service.LeaseService;
+import com.javaweb.service.RoomService;
 import com.javaweb.service.TerminReqService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -15,6 +18,15 @@ public class UpdateTerminAction extends ActionSupport{
 	private String status;
 	private TerminReqService terminReqService;
 	private LeaseService leaseService;
+	private RoomService roomService;
+	
+	public void setRoomService(RoomService roomService) {
+		this.roomService = roomService;
+	}
+
+
+
+
 	public int getExtraFee() {
 		return extraFee;
 	}
@@ -73,6 +85,20 @@ public class UpdateTerminAction extends ActionSupport{
 		terminReq.setInspectionDate(inspectionDate);
 		terminReq.setStatus("Approved");
 		if(terminReqService.updateTerminReq(terminReq)){
+			Lease lease=leaseService.queryLeaseByID(terminReq.getLeaseId());
+			if (lease==null) {
+				return ERROR;
+			}
+			lease.setLeaveDate(terminReq.getDate());
+			lease.setPenalty((double)terminReq.getExtraFee());
+			lease.setStatus("former");
+			leaseService.updateLease(lease);
+			Room room=roomService.queryRoomByID(lease.getRoomId());
+			if (room==null) {
+				return ERROR;
+			}
+			room.setVacancy(0);
+			roomService.updateRoom(room);
 			return SUCCESS;
 		}else {
 			return ERROR;

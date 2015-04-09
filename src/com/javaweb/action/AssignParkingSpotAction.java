@@ -1,5 +1,6 @@
 package com.javaweb.action;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +15,7 @@ import com.javaweb.service.ParkingRequestService;
 import com.javaweb.service.ParkingSpotOccupyService;
 import com.javaweb.service.ParkingSpotPriceService;
 import com.javaweb.service.ParkingSpotService;
+import com.javaweb.service.StudentService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AssignParkingSpotAction extends ActionSupport {
@@ -26,11 +28,17 @@ public class AssignParkingSpotAction extends ActionSupport {
 	private ParkingLotService parkingLotService;
 	private ParkingSpotService parkingSpotService;
 	private LeaseService leaseService;
+	private StudentService studentService;
 	private ParkingRequestService parkingRequestService;
 	private ParkingSpotOccupyService parkingSpotOccupyService;
 	private ParkingSpotPriceService parkingSpotPriceService;
 
 	
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
+	}
+
+
 	public void setParkingSpotPriceService(
 			ParkingSpotPriceService parkingSpotPriceService) {
 		this.parkingSpotPriceService = parkingSpotPriceService;
@@ -102,6 +110,9 @@ public class AssignParkingSpotAction extends ActionSupport {
 			parkingLots=parkingLotService.queryNearbyParkingLot(house_id);
 		}
 		else parkingLots=parkingLotService.queryAllParkingLot();
+		if (studentService.queryStudentByID(student_id)==null) {
+			parkingLots=parkingLotService.queryGeneralParkingLot();
+		}
 		System.out.println(parkingLots);
 		if (parkingLots.size()==0) {
 			return ERROR;

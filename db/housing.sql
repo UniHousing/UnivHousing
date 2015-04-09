@@ -26,7 +26,8 @@ CREATE TABLE `family_member` (
   `student_id` int(11) NOT NULL default 0,
   `name` varchar(255) default NULL,
   `birth_date` datetime default NULL,
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY  (`id`),
+  FOREIGN KEY (`student_id`) REFERENCES `housing`.`student` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -72,10 +73,13 @@ CREATE TABLE `invoice` (
   `damage_charge` float NOT NULL default 0,
   `late_fee` float NOT NULL default 0,
   `total` float(255,0) NOT NULL default 0,
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY  (`id`),
+  FOREIGN KEY (`lease_id`) REFERENCES `housing`.`lease` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
+CREATE TRIGGER `housing`.`invoice_BEFORE_INSERT` BEFORE INSERT ON `invoice` FOR EACH ROW
+	set NEW.total=NEW.penalty+NEW.damage_charge+NEW.late_fee;
+CREATE TRIGGER `housing`.`invoice_BEFORE_UPDATE` BEFORE UPDATE ON `invoice` FOR EACH ROW
+	set NEW.total=NEW.penalty+NEW.damage_charge+NEW.late_fee;
 
 
 DROP TABLE IF EXISTS `kin_info`;
@@ -107,9 +111,12 @@ CREATE TABLE `lease` (
   `payment` varchar(50) default NULL,
   `penalty` double NOT NULL default 0,
   `status` varchar(50) default NULL,
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY  (`id`),
+   FOREIGN KEY (`student_id`) REFERENCES `housing`.`student` (`id`),
+   FOREIGN KEY (`room_id`) REFERENCES `housing`.`room` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
+CREATE TRIGGER `housing`.`lease_BEFORE_INSERT` BEFORE INSERT ON `lease` FOR EACH ROW
+	set NEW.duration=datediff(NEW.leave_date,NEW.enter_date);
 
 
 
@@ -124,7 +131,8 @@ CREATE TABLE `lease_request` (
   `status` varchar(40) default NULL,
   `start_date` datetime default NULL,
   `end_date` datetime default NULL,
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY  (`id`),
+  FOREIGN KEY (`student_id`) REFERENCES `housing`.`student` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -149,7 +157,7 @@ CREATE TABLE `parking_lot` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-ed 
+
 
 
 DROP TABLE IF EXISTS `parking_spot_occupy`;
@@ -159,7 +167,8 @@ CREATE TABLE `parking_spot_occupy`(
  `student_id` int(11) NOT NULL,
  PRIMARY KEY(`id`),
  UNIQUE(`parking_spot_id`),
- UNIQUE(`student_id`)
+ UNIQUE(`student_id`),
+ FOREIGN KEY (`student_id`) REFERENCES `housing`.`student` (`id`)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
  
@@ -310,7 +319,9 @@ CREATE TABLE `termin_req` (
   `status` varchar(40) default NULL,
   `inspection_date` datetime default NULL,
   `extra_fee` float(255,0) NOT NULL default 0,
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY  (`id`),
+  FOREIGN KEY (`student_id`) REFERENCES `housing`.`student` (`id`),
+  FOREIGN KEY (`lease_id`) REFERENCES `housing`.`lease` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -327,7 +338,8 @@ CREATE TABLE `ticket` (
   `issue` varchar(255),
   `status` varchar(20),
   `comment` varchar(255),
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY  (`id`),
+  FOREIGN KEY (`student_id`) REFERENCES `housing`.`student` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -341,7 +353,8 @@ CREATE TABLE `parking_request` (
   `nearby` int(1) NOT NULL default 0,  
   `classification` varchar(20) default NULL,
   `status` varchar(20) default NULL,
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY  (`id`),
+  FOREIGN KEY (`student_id`) REFERENCES `housing`.`student` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
