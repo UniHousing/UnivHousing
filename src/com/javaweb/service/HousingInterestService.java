@@ -17,4 +17,6 @@ public interface HousingInterestService {
 	public HousingInterest queryHousingInterestByID(int id);
 	
 	public List findHousingIdbyInterest(String interest);
+	
+	public boolean checkHouse(int houseId);
 }

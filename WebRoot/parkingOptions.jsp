@@ -29,11 +29,20 @@
 	<h2>Logged in Student->Parking Options</h2>
 
 		<br><a href="<%="addParkingRequest.jsp"%>" style="color: midnightblue;">Request New Parking Spot</a>
+<<<<<<< HEAD
 		<br><br><a href="<%="showLot.action"%>" style="color: midnightblue;">View Parking Lot Information</a>
 		<br><br><a href="showCParkingSpot.action" style="color: midnightblue;">View Current Parking Spot</a>
 		<br><br><a href="<%="renewParking.jsp"%>" style="color: midnightblue;">Renew Parking Spot</a>
 		<br><br><a href="<%="returnParking.jsp"%>" style="color: midnightblue;">Return Parking Status</a>
 		<br><br><a href="<%="showParkingRequest.action"%>" style="color: midnightblue;">View Request Status</a>
+=======
+
+		<br><a href="<%="showLot.action"%>" style="color: midnightblue;">View Parking Lot Information</a>
+		<br><a href="showCParkingSpot.action" style="color: midnightblue;">View Current Parking Spot</a>
+		<br><a href="<%="renewParking.jsp"%>" style="color: midnightblue;">Renew Parking Spot</a>
+		<br><a href="<%="returnParking.jsp"%>" style="color: midnightblue;">Return Parking Spot</a>
+		<br><a href="<%="showParkingRequest.action"%>" style="color: midnightblue;">View Request Status</a>
+>>>>>>> master
 
 		<%-- <br><a href="<%="showStudent.action?id="+session.getAttribute("login")%>" style="color: midnightblue;">Profile</a> --%>
 		<br><br><a href="student.jsp" style="color: midnightblue;">Back</a>

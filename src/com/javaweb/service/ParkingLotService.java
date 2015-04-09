@@ -11,7 +11,7 @@ public interface ParkingLotService {
 	
 	public boolean updateParkingLot(ParkingLot parkingLot);
 	
-	public List queryAllParkingLot();
+	public List<ParkingLot> queryAllParkingLot();
 	
 	public ParkingLot queryParkingLotByID(int id);
 	

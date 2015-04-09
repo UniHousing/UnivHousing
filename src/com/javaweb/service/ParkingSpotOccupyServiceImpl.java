@@ -65,5 +65,15 @@ public class ParkingSpotOccupyServiceImpl implements ParkingSpotOccupyService {
 		return parkingSpotOccupyDAO.findSpotIdbyStudentId(sid);
 	}
 
+	@Override
+	public ParkingSpotOccupy queryOccupyBySpotId(int id) {
+		// TODO Auto-generated method stub
+		List<ParkingSpotOccupy> occupies=parkingSpotOccupyDAO.findParkingSpotOccupybySpotId(id);
+		if (occupies.size()>0) {
+			return occupies.get(0);
+		}
+		else return null;
+	}
+
 
 }

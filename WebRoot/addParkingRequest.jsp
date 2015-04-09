@@ -17,8 +17,8 @@
 		name="classification" value="small car"/>
 		
    		<s:select label="Accept non-nearby spot assignment or not" 
-		list="#{'yes':'yes', 'no':'no'}" 
-		name="nearby" value="yes" />
+		list="#{'1':'yes', '0':'no'}" 
+		name="nearby" value="1" />
 
 			<s:submit value="Submit"></s:submit>
 			<s:reset value="Reset"></s:reset>

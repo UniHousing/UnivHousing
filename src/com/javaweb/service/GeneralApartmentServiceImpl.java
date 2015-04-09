@@ -1,15 +1,23 @@
 package com.javaweb.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.javaweb.dao.GeneralApartmentDAO;
 import com.javaweb.po.GeneralApartment;
+import com.javaweb.po.HousingInterest;
 
 public class GeneralApartmentServiceImpl implements GeneralApartmentService {
 	private GeneralApartmentDAO generalApartmentDAO;
+	private HousingInterestService housingInterestService;
 	private RoomService roomService;
 	public void setGeneralApartmentDAO(GeneralApartmentDAO generalApartmentDAO) {
 		this.generalApartmentDAO = generalApartmentDAO;
+	}
+
+	public void setHousingInterestService(
+			HousingInterestService housingInterestService) {
+		this.housingInterestService = housingInterestService;
 	}
 
 	public void setRoomService(RoomService roomService) {
@@ -61,7 +69,7 @@ public class GeneralApartmentServiceImpl implements GeneralApartmentService {
 	public int queryAvailableApartments() {
 		// TODO Auto-generated method stub
 		List<GeneralApartment> apartments=this.queryAllGeneralApartment();
-		if (apartments==null) {
+		if (apartments.size()==0) {
 			return -1;
 		}
 		else {
@@ -71,6 +79,34 @@ public class GeneralApartmentServiceImpl implements GeneralApartmentService {
 				}
 			}
 			return -1;
+		}
+	}
+
+	@Override
+	public int queryAvailableApartmentsByInterest(String interest) {
+		// TODO Auto-generated method stub
+		List<Integer> houseIds=housingInterestService.findHousingIdbyInterest(interest);
+		if (houseIds==null) {
+			return this.queryAvailableApartments();
+		}
+		else {
+			List<GeneralApartment> apartments=this.queryAllGeneralApartment();
+			if (apartments==null) {
+				return -1;
+			}
+			else {
+				int init_id=-1;
+				for (GeneralApartment generalApartment : apartments) {
+					int aptId=generalApartment.getId();
+					if (generalApartment.getRoomCount()>roomService.queryRoomsInHouse(aptId)) {
+						if (houseIds.contains(aptId)) {
+							return aptId;
+						}
+						init_id=aptId;
+					}
+				}
+				return init_id;
+			}
 		}
 	}
 

@@ -2,7 +2,7 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-	<title>Maintenance Parking Request</title>
+	<title>Parking Request</title>
 </head>
 <body>
 <center>
@@ -23,13 +23,13 @@
 			<td><s:property value="#parkingRequest.studentId"/></td>	
 			<td><s:property value="#parkingRequest.classification"/></td>
 			<td><s:property value="#parkingRequest.nearby"/></td>
-			<s:if test="%{#parkingRequest.status=='Pending' }"><td><a href="AssignParkingSpot.action?id=<s:property value='#parkingRequest.id'/>">Process</a></td></s:if>
+			<s:if test="%{#parkingRequest.status=='Pending' }"><td><a href="assignSpot.action?id=<s:property value='#parkingRequest.id'/>">Process</a></td></s:if>
 			<s:else><td>Processed</td></s:else>
 			
 		</tr>
 		</s:iterator>	
 	</table>
-		<a href="login.action">Back</a>	
+		<a href="admin.jsp">Back</a>	
 </center>
 </body>
 </html>

@@ -1,5 +1,8 @@
 package com.javaweb.service;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import com.javaweb.dao.TicketDAO;
@@ -46,7 +49,9 @@ public class TicketServiceImpl implements TicketService{
 
 	@Override
 	public List queryAllTicket() {
-		return ticketDAO.queryAll(Ticket.class);
+		List tickets =  ticketDAO.queryAll(Ticket.class);
+		Collections.sort(tickets, new TicketComparator());
+		return tickets;
 	}
 
 	@Override
@@ -59,6 +64,14 @@ public class TicketServiceImpl implements TicketService{
 		// TODO Auto-generated method stub
 		return ticketDAO.findTicketsbyStudentId(sid);
 	}
+	
+}
 
+class TicketComparator implements Comparator<Ticket>{
 
+	@Override
+	public int compare(Ticket o1, Ticket o2) {
+		return o1.getRank() - o2.getRank();
+	}
+	
 }

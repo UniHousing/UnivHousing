@@ -26,9 +26,13 @@
 			<td><s:property value="#parkingSpot.fee"/></td>
 		</tr>
 		<tr>
-			<td>Availability</td>
-			<td><s:property value="#parkingSpot.availability"/></td>
-		</tr>		
+			<td>Start Date:</td>
+			<td><s:property value="#parkingSpot.startDate"/></td>
+		</tr>	
+		<tr>
+			<td>End Date:</td>
+			<td><s:property value="#parkingSpot.endDate"/></td>
+		</tr>	
 	</table>
 	<a href="parkingOptions.jsp">Back</a>		
 </center>

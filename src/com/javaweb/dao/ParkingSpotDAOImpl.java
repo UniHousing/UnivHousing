@@ -20,8 +20,8 @@ public class ParkingSpotDAOImpl extends BaseDAOImpl<ParkingSpot>implements Parki
 	public List<ParkingSpot> findAvlParkingSpotsbyLotId(int lot_id,String prefer) {
 		// TODO Auto-generated method stub
 		Criterion fidEqualCriterion=Restrictions.eq("lotId", lot_id);
-		Criterion availablityCriterion=Restrictions.like("availability", "%"+"yes"+"%").ignoreCase();
-		Criterion classficationCriterion=Restrictions.like("classification", "%"+"handicapped"+"%").ignoreCase();
+		Criterion availablityCriterion=Restrictions.eq("availability", 0);
+		Criterion classficationCriterion=Restrictions.like("classification", "%"+prefer+"%").ignoreCase();
 		DetachedCriteria detachedCriteria = DetachedCriteria.forClass(ParkingSpot.class);
 		detachedCriteria.add(fidEqualCriterion);
 		detachedCriteria.add(availablityCriterion);

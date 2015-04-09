@@ -15,7 +15,7 @@
 		<property name="classification" ></property>
 
 
-		<property name="nearby"></property>
+		<property name="nearby" type="int"></property>
 
 		<property name="status" ></property>
 	</class>
