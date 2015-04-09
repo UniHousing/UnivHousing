@@ -474,7 +474,7 @@
 		<property name="parkingSpotService" ref="parkingSpotService"></property>
 		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
 		<property name="parkingSpotPriceService" ref="parkingSpotPriceService"></property>
-		<property name="housingInterestService" ref="housingInterestService"></property>
+	
 	</bean>
 	
 	<bean id="showLotAction" class="com.javaweb.action.ShowCurrentParkingLotAction">
