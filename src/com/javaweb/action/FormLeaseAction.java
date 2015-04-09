@@ -47,10 +47,10 @@ public class FormLeaseAction extends ActionSupport {
 	private GeneralApartmentService generalApartmentService;
 	private FamilyApartmentService familyApartmentService;
 	private RoomService roomService;
-<<<<<<< HEAD
+
     private GuestService guestService;
     
-=======
+
 	private HousingInterestService housingInterestService;
 
 
@@ -59,7 +59,6 @@ public class FormLeaseAction extends ActionSupport {
 		this.housingInterestService = housingInterestService;
 	}
 
->>>>>>> master
 	public void setStudentService(StudentService studentService) {
 		this.studentService = studentService;
 	}
@@ -197,7 +196,7 @@ public class FormLeaseAction extends ActionSupport {
 		String preference1=leaseRequest.getPreference1();
 		String preference2=leaseRequest.getPreference2();
 		String preference3=leaseRequest.getPreference3();
-<<<<<<< HEAD
+
 		Student student=studentService.queryStudentByID(leaseRequest.getStudentId());
 		String category;
 		Guest guest=null;
@@ -210,10 +209,10 @@ public class FormLeaseAction extends ActionSupport {
 		else
 			category=student.getCategory();
 		
-=======
+
 		interest=studentService.queryStudentByID(leaseRequest.getStudentId()).getComment();
-		String category=studentService.queryStudentByID(leaseRequest.getStudentId()).getCategory();
->>>>>>> master
+		//String category=studentService.queryStudentByID(leaseRequest.getStudentId()).getCategory();
+
 		if (category.equalsIgnoreCase("graduate")) {
 			level=10;
 		}

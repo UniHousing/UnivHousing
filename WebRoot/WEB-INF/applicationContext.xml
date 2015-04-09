@@ -463,10 +463,8 @@
 		<property name="residenceHallService" ref="residenceHallService"></property>
 		<property name="roomService" ref="roomService"></property>
 		<property name="studentService" ref="studentService"></property>
-
 		<property name="guestService" ref="guestService"></property>
-
-		<property name="housingInterestService" ref="housingInterestService"></property>
+		<property name="housingInterestService" ref="housingInterestService"></property>	
 	</bean>
 	
 	<bean id="assignSpotAction" class="com.javaweb.action.AssignParkingSpotAction">
@@ -476,6 +474,7 @@
 		<property name="parkingSpotService" ref="parkingSpotService"></property>
 		<property name="parkingSpotOccupyService" ref="parkingSpotOccupyService"></property>
 		<property name="parkingSpotPriceService" ref="parkingSpotPriceService"></property>
+		<property name="housingInterestService" ref="housingInterestService"></property>
 	</bean>
 	
 	<bean id="showLotAction" class="com.javaweb.action.ShowCurrentParkingLotAction">
