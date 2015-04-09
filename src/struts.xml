@@ -157,6 +157,10 @@
 		<action name="cancelRequest" class="cancelRequestAction">
 			<result name="success">/cancelRequest.jsp</result>
 		</action>
+		
+		<action name="cancelTerminRequest " class="cancelTerminRequestAction">
+			<result name="success">/cancelRequest.jsp</result>
+		</action>
 
 		<action name="showAllRequest" class="showAllRequestAction">
 			<!-- 定义处理结果与视图资源之间的关系 -->

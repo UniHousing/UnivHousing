@@ -9,6 +9,8 @@ import com.javaweb.po.Lease;
 import com.javaweb.po.LeaseRequest;
 import com.javaweb.po.ResidenceHall;
 import com.javaweb.po.Room;
+import com.javaweb.po.Student;
+import com.javaweb.po.Guest;
 import com.javaweb.service.FamilyApartmentService;
 import com.javaweb.service.GeneralApartmentService;
 import com.javaweb.service.LeaseRequestService;
@@ -16,6 +18,7 @@ import com.javaweb.service.LeaseService;
 import com.javaweb.service.ResidenceHallService;
 import com.javaweb.service.RoomService;
 import com.javaweb.service.StudentService;
+import com.javaweb.service.GuestService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -39,9 +42,14 @@ public class FormLeaseAction extends ActionSupport {
 	private GeneralApartmentService generalApartmentService;
 	private FamilyApartmentService familyApartmentService;
 	private RoomService roomService;
-
+    private GuestService guestService;
+    
 	public void setStudentService(StudentService studentService) {
 		this.studentService = studentService;
+	}
+	
+	public void setGuestService(GuestService guestService) {
+		this.guestService = guestService;
 	}
 
 	public void setLeaseRequestService(LeaseRequestService leaseRequestService) {
@@ -163,7 +171,7 @@ public class FormLeaseAction extends ActionSupport {
 		lease.setDeposit(DEPOSIT);
 		lease.setPenalty(PENALTY);
 		lease.setPayment(leaseRequest.getPaymentMethod());
-		lease.setStatus("Approved");
+		lease.setStatus("current");
 		leaseService.addLease(lease);
 		return lease;
 	}
@@ -173,7 +181,18 @@ public class FormLeaseAction extends ActionSupport {
 		String preference1=leaseRequest.getPreference1();
 		String preference2=leaseRequest.getPreference2();
 		String preference3=leaseRequest.getPreference3();
-		String category=studentService.queryStudentByID(leaseRequest.getStudentId()).getCategory();
+		Student student=studentService.queryStudentByID(leaseRequest.getStudentId());
+		String category;
+		Guest guest=null;
+		
+		if(student==null)
+		{
+			category="guest";
+			guest=guestService.queryGuestByID(leaseRequest.getStudentId());
+		}
+		else
+			category=student.getCategory();
+		
 		if (category.equalsIgnoreCase("graduate")) {
 			level=10;
 		}
@@ -208,6 +227,12 @@ public class FormLeaseAction extends ActionSupport {
 		}
 		Lease lease=generateLease(leaseRequest);
 		leaseRequest.setStatus("Approved");
+		
+		if(student!=null)student.setStatus("placed");
+		else 
+			if(guest!=null)guest.setStatus("placed");
+		
+		
 		leaseRequestService.updateLeaseRequest(leaseRequest);
 		ServletActionContext.getRequest().setAttribute("lease", lease);
 		return SUCCESS;

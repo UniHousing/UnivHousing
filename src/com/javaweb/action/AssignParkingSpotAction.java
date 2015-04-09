@@ -114,6 +114,9 @@ public class AssignParkingSpotAction extends ActionSupport {
 			else {
 				for (ParkingSpot parkingSpot : parkingSpots) {
 					spot_id=parkingSpot.getId();
+					System.out.println(parkingSpot.getClassification());
+					//System.out.println(parkingSpotPriceService.findPricebySpotClassification(parkingSpot.getClassification()));
+					
 					parkingSpot.setFee(parkingSpotPriceService.findPricebySpotClassification(parkingSpot.getClassification()));
 					parkingSpot.setAvailability(1);
 					parkingSpot.setStartDate(startDate);

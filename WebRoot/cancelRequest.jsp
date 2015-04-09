@@ -40,6 +40,18 @@
 					<input type="button" value="Back" style="width:50px" onclick="javascript:window.location='requestViewCancel.jsp';">
 				</td>
 				</form>
+				<form action="cancelTerminRequest.action" method="post">
+				<td>
+					<label for="request">Enter Request ID To Cancel:</label>
+
+					<input type="text" name="id" placeholder="Enter request id" required>
+				</td>
+				<td colspan="2" align="center">
+					<input type="submit" value="Cancel Request" style="width: 116px">
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" value="Back" style="width:50px" onclick="javascript:window.location='requestViewCancel.jsp';">
+				</td>
+				</form>
 			</tr>
 		
 	</div>
