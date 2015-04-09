@@ -123,9 +123,11 @@ public class UpdateTerminAction extends ActionSupport{
 			Guest guest=guestService.queryGuestByID(lease.getStudentId());
 			if (guest!=null) {
 				guest.setStatus("unplaced");
+				guestService.updateGuest(guest);
 			}
 			else if (student!=null) {
 				student.setStatus("unplaced");
+				studentService.updateStudent(student);
 			}
 			else return ERROR;
 			return SUCCESS;

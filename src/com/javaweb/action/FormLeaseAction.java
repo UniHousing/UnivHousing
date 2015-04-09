@@ -101,6 +101,7 @@ public class FormLeaseAction extends ActionSupport {
 		this.id = id;
 	}
 	public Object checkHouse(String prefer) {
+		prefer="%"+prefer+"%";
 		if (!prefer.equalsIgnoreCase(APARTMENT) && !prefer.equalsIgnoreCase(RESIDENCE)) {
 			int houseId;
 			if (level==10) {

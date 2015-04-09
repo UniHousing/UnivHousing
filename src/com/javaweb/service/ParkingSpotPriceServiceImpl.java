@@ -59,7 +59,7 @@ public class ParkingSpotPriceServiceImpl  implements ParkingSpotPriceService{
 	public float findPricebySpotClassification(String classification)
 	{
 		String [] reqStrings=classification.split(" ");
-		List<ParkingSpotPrice> parkingSpotPrices=parkingSpotPriceDAO.findPricebySpotClassification(reqStrings[0]);
+		List<ParkingSpotPrice> parkingSpotPrices=parkingSpotPriceDAO.findPricebySpotClassification("%"+reqStrings[0]+"%");
 		if (parkingSpotPrices.size()==0) {
 			return 0;
 		}
