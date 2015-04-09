@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,6 +45,7 @@
 		
 	</div>
 	<br><br><br>
+	<s:debug></s:debug>
 	<div id="footer">Copyright ©2015 CSC540 Database Team.</div>
 </body>
 </html>
