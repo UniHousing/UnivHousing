@@ -63,6 +63,7 @@ CREATE TABLE `house` (
 DROP TABLE IF EXISTS `invoice`;
 CREATE TABLE `invoice` (
   `id` int(11) NOT NULL auto_increment,
+  `due_date` datetime default NULL,
   `lease_id` int(11) NOT NULL default 0,
   `pay_date` datetime default NULL,
   `pay_method` varchar(50) default NULL,
@@ -348,7 +349,7 @@ CREATE TABLE `parking_request` (
 
 DROP TABLE IF EXISTS `housing_interest`;
 CREATE TABLE `housing_interest`(
-	`id` int(11) NOT NULL,
+	`id` int(11) NOT NULL auto_increment,
 	`house_id` int(11) NOT NULL,
 	`interests` varchar(20) NOT NULL,
 	PRIMARY KEY  (`id`),

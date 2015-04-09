@@ -16,4 +16,6 @@ public interface GeneralApartmentService {
 	public GeneralApartment queryGeneralApartmentByID(int id);
 	
 	public int queryAvailableApartments();
+
+	int queryAvailableApartmentsByInterest(String interest);
 }

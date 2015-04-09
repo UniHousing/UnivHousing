@@ -11,6 +11,7 @@
   <!-- 定义其他属性 -->
   <property generated="never" lazy="false" column="lease_id" name="leaseId" type="int"/>
   <property generated="never" lazy="false" column="pay_date" name="payDate" type="date"/>
+  <property generated="never" lazy="false" column="due_date" name="dueDate" type="date"/>
   <property column="pay_method" name="payMethod"/>
   <property generated="never" lazy="false" name="status"/>
   <property generated="never" lazy="false" name="penalty" type="double"/>

@@ -1,3 +1,18 @@
+/*Fill in NULL area*/
+UPDATE `housing`.`guest` SET `alter_tel`='None' WHERE `id`='200540002';
+UPDATE `housing`.`kin_info` SET `city`='None' WHERE `id`='1';
+UPDATE `housing`.`kin_info` SET `post_code`='None' WHERE `id`='1';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540002';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Chess' WHERE `id`='100540003';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540004';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Art' WHERE `id`='100540006';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540007';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Chess' WHERE `id`='100540010';
+UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540001';
+UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540005';
+UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540008';
+
+
 /*Link kin_info with student and guest*/
 
 UPDATE `housing`.`student` SET `kin_id`='1' WHERE `id`='100540001';
@@ -254,4 +269,15 @@ INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`statu
 INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('8', '5', '2015-04-01','cash','current','410');
 INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('9', '8', '2015-04-01','check','current','385');
 INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`status`, `total`) VALUES ('10', '9', '2015-04-01','credit','current','385');
+
+
+
+
+
+INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `alter_tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `status`, `courses`) VALUES ('1005408000','123456', 'Vernon', 'Dursley', 'Family', 'Male', '9198954357', '9198954786', '32 A, Dursley Road, Raleigh', 'Raleigh', '27606', '1975-11-29', 'Graduate', 'American', 'Yes', 'Placed', 'Muggle Studies');
+INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `alter_tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `status`, `courses`) VALUES ('1005408001','123456', 'Vernon', 'Dursley', 'Family', 'Male', '9198954357', '9198954786', '32 A, Dursley Road, Raleigh', 'Raleigh', '27606', '1975-11-29', 'Graduate', 'American', 'Yes', 'Placed', 'Muggle Studies');
+
+
+
+
 
