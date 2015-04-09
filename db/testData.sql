@@ -4,56 +4,6 @@ INSERT INTO `housing`.`student` (`id`, `password`, `fname`, `lname`, `type`, `ge
 INSERT INTO `housing`.`guest` (`id`, `fname`, `lname`, `type`, `gender`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `status`, `courses`) VALUES ('200540012', 'Remus', 'Lupin', 'Student', 'Male','12, Grimmauld Place, London-27605', 'London', '27605', '1972-11-29', 'Visitor', 'British', 'No', 'No', 'Defense Against Dark Arts');
 
 
-/*Fill in NULL area*/
-UPDATE `housing`.`guest` SET `alter_tel`='None' WHERE `id`='200540002';
-UPDATE `housing`.`kin_info` SET `city`='None' WHERE `id`='1';
-UPDATE `housing`.`kin_info` SET `post_code`='None' WHERE `id`='1';
-UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540002';
-UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Chess' WHERE `id`='100540003';
-UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540004';
-UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Art' WHERE `id`='100540006';
-UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540007';
-UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Chess' WHERE `id`='100540010';
-UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540001';
-UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540005';
-UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540008';
-UPDATE `housing`.`student` SET `need`='None', `comment`='Math' WHERE `id`='100540008';
-UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540005';
-
-
-
-/*Link kin_info with student and guest*/
-
-UPDATE `housing`.`student` SET `kin_id`='1' WHERE `id`='100540001';
-UPDATE `housing`.`student` SET `kin_id`='2' WHERE `id`='100540002';
-UPDATE `housing`.`student` SET `kin_id`='3' WHERE `id`='100540003';
-UPDATE `housing`.`student` SET `kin_id`='4' WHERE `id`='100540004';
-UPDATE `housing`.`student` SET `kin_id`='3' WHERE `id`='100540005';
-UPDATE `housing`.`student` SET `kin_id`='3' WHERE `id`='100540006';
-UPDATE `housing`.`student` SET `kin_id`='3' WHERE `id`='100540007';
-UPDATE `housing`.`student` SET `kin_id`='7' WHERE `id`='100540008';
-UPDATE `housing`.`guest` SET `kin_id`='5' WHERE `id`='200540001';
-UPDATE `housing`.`guest` SET `kin_id`='6' WHERE `id`='200540002';
-
-
-
-
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='1';
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='3';
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='6';
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='9';
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='14';
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='19';
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='23';
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='27';
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='31';
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='34';
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='52';
-UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='48';
-
-
-
-
 
 
 INSERT INTO `housing`.`nearby` (`id`, `lot_id`, `house_id`) VALUES ('1', '1', '1');
@@ -285,7 +235,46 @@ INSERT INTO `housing`.`invoice` (`id`, `lease_id`,`pay_date`,`pay_method`,`statu
 INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `alter_tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `status`, `courses`) VALUES ('1005408000','123456', 'Vernon', 'Dursley', 'Family', 'Male', '9198954357', '9198954786', '32 A, Dursley Road, Raleigh', 'Raleigh', '27606', '1975-11-29', 'Graduate', 'American', 'Yes', 'Placed', 'Muggle Studies');
 INSERT INTO `housing`.`student` (`id`,`password`, `fname`, `lname`, `type`, `gender`, `tel`, `alter_tel`, `addr`, `city`, `post_code`, `birth_date`, `category`, `nation`, `smoker`, `status`, `courses`) VALUES ('1005408001','123456', 'Vernon', 'Dursley', 'Family', 'Male', '9198954357', '9198954786', '32 A, Dursley Road, Raleigh', 'Raleigh', '27606', '1975-11-29', 'Graduate', 'American', 'Yes', 'Placed', 'Muggle Studies');
 
+/*Link kin_info with student and guest*/
 
+UPDATE `housing`.`student` SET `kin_id`='1' WHERE `id`='100540001';
+UPDATE `housing`.`student` SET `kin_id`='2' WHERE `id`='100540002';
+UPDATE `housing`.`student` SET `kin_id`='3' WHERE `id`='100540003';
+UPDATE `housing`.`student` SET `kin_id`='4' WHERE `id`='100540004';
+UPDATE `housing`.`student` SET `kin_id`='3' WHERE `id`='100540005';
+UPDATE `housing`.`student` SET `kin_id`='3' WHERE `id`='100540006';
+UPDATE `housing`.`student` SET `kin_id`='3' WHERE `id`='100540007';
+UPDATE `housing`.`student` SET `kin_id`='7' WHERE `id`='100540008';
+UPDATE `housing`.`guest` SET `kin_id`='5' WHERE `id`='200540001';
+UPDATE `housing`.`guest` SET `kin_id`='6' WHERE `id`='200540002';
 
+/*parking_spot availablity*/
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='1';
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='3';
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='6';
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='9';
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='14';
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='19';
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='23';
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='27';
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='31';
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='34';
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='52';
+UPDATE `housing`.`parking_spot` SET `availability`='available' WHERE `id`='48';
 
+/*Fill in NULL area*/
+UPDATE `housing`.`guest` SET `alter_tel`='None' WHERE `id`='200540002';
+UPDATE `housing`.`kin_info` SET `city`='None' WHERE `id`='1';
+UPDATE `housing`.`kin_info` SET `post_code`='None' WHERE `id`='1';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540002';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Chess' WHERE `id`='100540003';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540004';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Art' WHERE `id`='100540006';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Math' WHERE `id`='100540007';
+UPDATE `housing`.`student` SET `alter_tel`='0', `comment`='Chess' WHERE `id`='100540010';
+UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540001';
+UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540005';
+UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540008';
+UPDATE `housing`.`student` SET `need`='None', `comment`='Math' WHERE `id`='100540008';
+UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540005';
 
