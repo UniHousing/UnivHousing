@@ -277,4 +277,6 @@ UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540005';
 UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540008';
 UPDATE `housing`.`student` SET `need`='None', `comment`='Math' WHERE `id`='100540008';
 UPDATE `housing`.`student` SET `comment`='Art' WHERE `id`='100540005';
+UPDATE `housing`.`student` SET `comment`='Biology' WHERE `id`='100540006';
+
 
